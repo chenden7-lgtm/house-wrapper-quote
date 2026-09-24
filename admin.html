@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>完整性驗收與管理儀表板 | 好室多膜配件查詢系統</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20260923">
+  <style>
+    .admin-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .metric-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .metric-card.clickable {
+      cursor: pointer;
+    }
+    .metric-card.clickable:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+    .metric-card.active {
+      border-color: var(--primary);
+      background: rgba(232, 86, 55, 0.12);
+      box-shadow: 0 0 16px rgba(232, 86, 55, 0.35);
+    }
+    .metric-val {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0.5rem 0;
+    }
+    .metric-label {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+    .warning-banner {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+    .warning-banner.success {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid #10b981;
+      color: #34d399;
+    }
+    .warning-banner.warn {
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid #f59e0b;
+      color: #fbbf24;
+    }
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .filter-group label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      white-space: nowrap;
+    }
+    .filter-select, .filter-input {
+      background: var(--bg-card-hover);
+      border: 1px solid var(--border-color);
+      color: var(--text-bright);
+      padding: 0.5rem 0.85rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      outline: none;
+    }
+    .filter-input {
+      min-width: 240px;
+    }
+    .audit-table, .error-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .audit-table th, .audit-table td, .error-table th, .error-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      text-align: left;
+      font-size: 0.9rem;
+    }
+    .audit-table th, .error-table th {
+      background: var(--bg-card-hover);
+      color: var(--text-bright);
+    }
+    .badge-model {
+      display: inline-block;
+      padding: 0.2rem 0.55rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: rgba(235, 12, 0, 0.15);
+      color: var(--tesla-red);
+      border: 1px solid rgba(235, 12, 0, 0.3);
+      margin-right: 0.25rem;
+      margin-bottom: 0.25rem;
+    }
+    .btn-sync {
+      background: linear-gradient(135deg, var(--primary), var(--accent-glow));
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+    }
+    .btn-sync:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+    .btn-sync:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <!-- Login Modal Overlay -->
+  <div id="loginModalOverlay" style="display: flex; position: fixed; inset: 0; z-index: 9999; background: rgba(15, 12, 11, 0.88); backdrop-filter: blur(14px); align-items: center; justify-content: center; padding: 1.5rem; transition: all 0.3s ease;">
+    <div style="background: var(--bg-secondary); border: 1px solid var(--border-active); box-shadow: var(--shadow-glow), 0 25px 50px rgba(0,0,0,0.6); border-radius: var(--radius-lg); width: 100%; max-width: 440px; padding: 2.25rem; text-align: center; position: relative;">
+      <img src="images/house_wrapper_logo.svg" alt="好室多膜" style="height: 48px; margin-bottom: 0.85rem;">
+      <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--text-bright); margin-bottom: 0.35rem;">🔒 管理驗收系統身份驗證</h2>
+      <p style="font-size: 0.85rem; color: var(--text-dim); margin-bottom: 1.5rem;">請輸入好室多膜內部管理人員帳號與密碼</p>
+      
+      <form id="adminLoginForm" onsubmit="handleLoginSubmit(event)">
+        <div id="loginErrorMsg" style="display: none; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.3); color: #f87171; border-radius: var(--radius-sm); padding: 0.65rem; font-size: 0.85rem; margin-bottom: 1rem; text-align: left;"></div>
+
+        <div style="margin-bottom: 1rem; text-align: left;">
+          <label style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 0.35rem;">👤 管理員帳號 (Username)</label>
+          <input type="text" id="loginUsername" placeholder="請輸入管理員帳號" required style="width: 100%; padding: 0.75rem 1rem; background: var(--bg-primary); border: 1px solid var(--border-color); color: var(--text-bright); border-radius: var(--radius-sm); font-size: 0.95rem; outline: none;">
+        </div>
+
+        <div style="margin-bottom: 1.5rem; text-align: left;">
+          <label style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 0.35rem;">🔑 登入密碼 (Password)</label>
+          <input type="password" id="loginPassword" placeholder="請輸入登入密碼" required style="width: 100%; padding: 0.75rem 1rem; background: var(--bg-primary); border: 1px solid var(--border-color); color: var(--text-bright); border-radius: var(--radius-sm); font-size: 0.95rem; outline: none;">
+        </div>
+
+        <button type="submit" id="btnLoginSubmit" style="width: 100%; padding: 0.85rem; background: var(--orange-gradient); color: #fff; font-weight: 700; border: none; border-radius: var(--radius-sm); font-size: 1rem; cursor: pointer; box-shadow: var(--shadow-md); transition: transform 0.15s ease;">
+          🚀 登入管理儀表板
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div id="adminMainContent" style="filter: blur(8px); transition: filter 0.3s ease;">
+    <header style="border-bottom: 1px solid var(--border-color); padding: 1.1rem 0; margin-bottom: 2rem; background: var(--bg-secondary);">
+      <div class="container" style="display: flex; justify-content: space-between; align-items: center; gap: 1rem;">
+        <a href="index.html" class="brand" style="text-decoration: none;">
+          <img src="images/house_wrapper_logo.svg" alt="好室多膜" class="brand-logo-img">
+          <span class="brand-badge" style="margin-left: 0.35rem; font-size: 0.72rem; padding: 3px 10px; background: var(--orange-gradient); letter-spacing: 0.03em;">管理驗收儀表板</span>
+        </a>
+        <div style="display: flex; gap: 0.75rem; align-items: center;">
+          <a href="electrical.html" class="btn" style="padding: 0.55rem 1.1rem; background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-bright); border-radius: var(--radius-sm); text-decoration: none; font-size: 0.85rem;">⚡️ 電系改裝價目</a>
+          <a href="index.html" class="btn" style="padding: 0.55rem 1.1rem; background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-bright); border-radius: var(--radius-sm); text-decoration: none; font-size: 0.85rem;">🔍 回到主頁面</a>
+          <button id="btnSync" class="btn-sync">
+            <span id="syncIcon">🔄</span> 立即重新同步
+          </button>
+          <button id="btnLogout" onclick="handleLogout()" style="display: none; padding: 0.55rem 0.95rem; background: rgba(239, 68, 68, 0.12); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 600; cursor: pointer;" title="登出管理員帳號">
+            🚪 登出
+          </button>
+        </div>
+      </div>
+    </header>
+
+  <main class="container">
+    <!-- Status & Warning Banner -->
+    <div id="statusBanner" class="warning-banner success">
+      系統連線正常，正在讀取最新驗收數據...
+    </div>
+
+    <!-- Crawl Key Metrics Grid -->
+    <h2 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--text-bright);">📊 爬蟲完整性關鍵指標</h2>
+    <div class="admin-grid">
+      <div class="metric-card">
+        <div class="metric-label">發現 Sitemap 數量</div>
+        <div id="mSitemaps" class="metric-val">-</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">爬取分類頁與分頁數</div>
+        <div id="mPages" class="metric-val">-</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">發現商品 URL 總數</div>
+        <div id="mTotalUrls" class="metric-val">-</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">去重前 / 去重後商品數</div>
+        <div id="mDedup" class="metric-val">- / -</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">成功讀取全量商品</div>
+        <div id="mSuccess" class="metric-val" style="color: #34d399;">-</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">新增 / 更新 / 下架</div>
+        <div id="mChanges" class="metric-val" style="font-size: 1.4rem;">-</div>
+      </div>
+    </div>
+
+    <!-- Vehicle Model Inventory Breakdown Grid (Clickable Filter) -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 2.5rem; margin-bottom: 1rem;">
+      <h2 style="font-size: 1.25rem; margin: 0; color: var(--text-bright);">🚘 各車型商品數量盤點 (點擊卡片快速篩選)</h2>
+      <span style="font-size: 0.85rem; color: var(--text-dim);">點擊下方車型卡片，即可於清單檢視該車型之所有商品</span>
+    </div>
+
+    <div class="admin-grid" id="modelBreakdownGrid">
+      <div class="metric-card clickable active" data-model="all">
+        <div class="metric-label">🚗 全部 Tesla 車型</div>
+        <div id="cnt-all" class="metric-val">-</div>
+        <div class="metric-label">全站收錄商品</div>
+      </div>
+      <div class="metric-card clickable" data-model="m3_highland">
+        <div class="metric-label">Model 3 (2024+)</div>
+        <div id="cnt-m3_highland" class="metric-val">-</div>
+        <div class="metric-label">煥新版適配</div>
+      </div>
+      <div class="metric-card clickable" data-model="m3_2021_2023">
+        <div class="metric-label">Model 3 (2021-2023)</div>
+        <div id="cnt-m3_2021_2023" class="metric-val">-</div>
+        <div class="metric-label">新中控適配</div>
+      </div>
+      <div class="metric-card clickable" data-model="m3_2018_2023">
+        <div class="metric-label">Model 3 (2018-2023)</div>
+        <div id="cnt-m3_2018_2023" class="metric-val">-</div>
+        <div class="metric-label">經典款適配</div>
+      </div>
+      <div class="metric-card clickable" data-model="m3_2017_2020">
+        <div class="metric-label">Model 3 (2018-2020)</div>
+        <div id="cnt-m3_2017_2020" class="metric-val">-</div>
+        <div class="metric-label">舊中控適配</div>
+      </div>
+      <div class="metric-card clickable" data-model="my_classic">
+        <div class="metric-label">Model Y (2020-2024)</div>
+        <div id="cnt-my_classic" class="metric-val">-</div>
+        <div class="metric-label">經典款適配</div>
+      </div>
+      <div class="metric-card clickable" data-model="my_juniper">
+        <div class="metric-label">Model Y (2025+)</div>
+        <div id="cnt-my_juniper" class="metric-val">-</div>
+        <div class="metric-label">煥新版適配</div>
+      </div>
+      <div class="metric-card clickable" data-model="ms_refresh">
+        <div class="metric-label">Model S (2021+)</div>
+        <div id="cnt-ms_refresh" class="metric-val">-</div>
+        <div class="metric-label">旗艦轎跑適配</div>
+      </div>
+      <div class="metric-card clickable" data-model="mx_refresh">
+        <div class="metric-label">Model X (2021+)</div>
+        <div id="cnt-mx_refresh" class="metric-val">-</div>
+        <div class="metric-label">鷹翼休旅適配</div>
+      </div>
+      <div class="metric-card clickable" data-model="cybertruck">
+        <div class="metric-label">Cybertruck</div>
+        <div id="cnt-cybertruck" class="metric-val">-</div>
+        <div class="metric-label">賽博皮卡適配</div>
+      </div>
+    </div>
+
+    <!-- Dynamic Master Inventory Filter & Table -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 2.5rem; margin-bottom: 1rem;">
+      <h2 style="font-size: 1.25rem; margin: 0; color: var(--text-bright);">📋 車型品項主清單與動態篩選 (Master Product Inventory)</h2>
+      <span id="filteredCountText" style="font-size: 0.9rem; font-weight: 600; color: var(--primary);">顯示 0 / 0 項商品</span>
+    </div>
+
+    <!-- Filter Control Bar -->
+    <div class="filter-bar">
+      <div class="filter-group">
+        <label for="adminModelFilter">🏎️ 篩選適用車型：</label>
+        <select id="adminModelFilter" class="filter-select">
+          <option value="all">所有車型 (全部商品)</option>
+          <option value="m3_highland">Model 3 (2024+ 煥新版)</option>
+          <option value="m3_2021_2023">Model 3 (2021-2023 新中控)</option>
+          <option value="m3_2018_2023">Model 3 (2018-2023 經典全車系)</option>
+          <option value="m3_2017_2020">Model 3 (2018-2020 舊中控)</option>
+          <option value="my_classic">Model Y (2020-2024 經典款)</option>
+          <option value="my_juniper">Model Y (2025+ 煥新版)</option>
+          <option value="ms_refresh">Model S (2021+)</option>
+          <option value="mx_refresh">Model X (2021+)</option>
+          <option value="cybertruck">Cybertruck</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="adminStoreFilter">🏪 篩選來源品牌：</label>
+        <select id="adminStoreFilter" class="filter-select">
+          <option value="all">全部品牌 (Quack & Jowua)</option>
+          <option value="quackev">呱樂電驢 (QuackEV)</option>
+          <option value="jowua">Jowua Global</option>
+        </select>
+      </div>
+
+      <div class="filter-group" style="flex: 1;">
+        <label for="adminSearchInput">🔍 關鍵字搜尋：</label>
+        <input type="text" id="adminSearchInput" class="filter-input" placeholder="搜尋商品名稱、品牌、SKU...">
+      </div>
+    </div>
+
+    <table class="audit-table">
+      <thead>
+        <tr>
+          <th style="width: 50px;">#</th>
+          <th style="width: 130px;">來源品牌</th>
+          <th>商品名稱</th>
+          <th style="width: 110px;">類型</th>
+          <th style="width: 100px;">售價</th>
+          <th style="width: 220px;">適用車型與版本</th>
+          <th style="width: 120px;">官方頁面</th>
+        </tr>
+      </thead>
+      <tbody id="masterInventoryBody">
+        <tr><td colspan="7" style="text-align: center;">正在載入商品主清單...</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Random 20 Sample Verification -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 3rem; margin-bottom: 1rem;">
+      <h2 style="font-size: 1.25rem; margin: 0; color: var(--text-bright);">🎲 隨機抽查 20 項驗收對照 (Random Audit Sample)</h2>
+      <button id="btnResample" class="btn" style="padding: 0.5rem 1rem; background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-bright); border-radius: var(--radius-sm); cursor: pointer;">🔀 重新隨機抽樣</button>
+    </div>
+    
+    <table class="audit-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>來源網站</th>
+          <th>商品名稱</th>
+          <th>售價</th>
+          <th>庫存狀態</th>
+          <th>適用車型</th>
+          <th>官方連結</th>
+        </tr>
+      </thead>
+      <tbody id="sampleBody">
+        <tr><td colspan="7" style="text-align: center;">正在載入隨機抽查樣本...</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Failed URLs Section -->
+    <h2 style="font-size: 1.25rem; margin-top: 3rem; margin-bottom: 1rem; color: var(--text-bright);">⚠️ 抓取失敗網址與原因紀錄 (Error Logs)</h2>
+    <table class="error-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>失敗網址 (URL)</th>
+          <th>失敗原因 (Reason)</th>
+        </tr>
+      </thead>
+      <tbody id="errorBody">
+        <tr><td colspan="3" style="text-align: center; color: var(--text-dim);">完美！無任何失敗網址。</td></tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top: 3rem; text-align: center; color: var(--text-dim); font-size: 0.85rem; padding-bottom: 2rem;">
+      📅 <strong>最後同步時間：</strong> <span id="lastSyncTime">-</span> | 好室多膜配件查詢系統 &copy; 2026
+    </div>
+  </main>
+</div>
+
+  <script>
+    let allMasterProducts = [];
+    let currentModelCounts = {};
+
+    const MODEL_NAMES = {
+      'all': '全車型通用',
+      'm3_highland': 'Model 3 2024+',
+      'm3_2021_2023': 'Model 3 2021-23',
+      'm3_2018_2023': 'Model 3 2018-23',
+      'm3_2017_2020': 'Model 3 2018-20',
+      'my_classic': 'Model Y 2020-24',
+      'my_juniper': 'Model Y 2025+',
+      'ms_refresh': 'Model S',
+      'mx_refresh': 'Model X',
+      'cybertruck': 'Cybertruck'
+    };
+
+    function getAuthHeader() {
+      const token = sessionStorage.getItem('adminToken') || '';
+      return {
+        'Authorization': `Bearer ${token}`,
+        'X-Admin-Token': token,
+        'Content-Type': 'application/json'
+      };
+    }
+
+    function checkAdminAuth() {
+      const token = sessionStorage.getItem('adminToken');
+      const modal = document.getElementById('loginModalOverlay');
+      const content = document.getElementById('adminMainContent');
+      const btnLogout = document.getElementById('btnLogout');
+
+      if (!token) {
+        modal.style.display = 'flex';
+        content.style.filter = 'blur(10px)';
+        if (btnLogout) btnLogout.style.display = 'none';
+        return false;
+      }
+
+      modal.style.display = 'none';
+      content.style.filter = 'none';
+      if (btnLogout) btnLogout.style.display = 'inline-flex';
+      return true;
+    }
+
+    async function handleLoginSubmit(e) {
+      e.preventDefault();
+      const username = document.getElementById('loginUsername').value;
+      const password = document.getElementById('loginPassword').value;
+      const errorBox = document.getElementById('loginErrorMsg');
+      const btn = document.getElementById('btnLoginSubmit');
+
+      errorBox.style.display = 'none';
+      btn.disabled = true;
+      btn.innerText = '🔐 正在驗證身分...';
+
+      try {
+        const res = await fetch('/api/admin/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+        const data = await res.json();
+
+        if (res.ok && data.success && data.token) {
+          sessionStorage.setItem('adminToken', data.token);
+          if (checkAdminAuth()) {
+            loadStats();
+            loadMasterProducts();
+            loadSample();
+          }
+        } else {
+          errorBox.innerText = data.message || '帳號或密碼錯誤，請重新輸入！';
+          errorBox.style.display = 'block';
+        }
+      } catch (err) {
+        errorBox.innerText = '網路連線失敗，請稍後再試！';
+        errorBox.style.display = 'block';
+      } finally {
+        btn.disabled = false;
+        btn.innerText = '🚀 登入管理儀表板';
+      }
+    }
+
+    function handleLogout() {
+      if (confirm('確定要登出好室多膜管理驗收系統嗎？')) {
+        sessionStorage.removeItem('adminToken');
+        checkAdminAuth();
+      }
+    }
+
+    async function loadStats() {
+      if (!sessionStorage.getItem('adminToken')) return;
+
+      try {
+        const res = await fetch('/api/admin/stats', { headers: getAuthHeader() });
+        
+        if (res.status === 401) {
+          sessionStorage.removeItem('adminToken');
+          checkAdminAuth();
+          return;
+        }
+
+        const data = await res.json();
+        const s = data.stats || {};
+        currentModelCounts = data.modelCounts || {};
+
+        document.getElementById('mSitemaps').innerText = s.sitemapsFound || 0;
+        document.getElementById('mPages').innerText = `${s.categoryPagesCrawled || 0} 分類 / ${s.paginationPagesCrawled || 0} 頁`;
+        document.getElementById('mTotalUrls').innerText = s.totalUrlsDiscovered || 0;
+        document.getElementById('mDedup').innerText = `${s.preDedupCount || 0} / ${s.postDedupCount || 0}`;
+        document.getElementById('mSuccess').innerText = s.successfulCount || 0;
+        document.getElementById('mChanges').innerText = `+${s.addedCount || 0} / ~${s.updatedCount || 0} / -${s.delistedCount || 0}`;
+        document.getElementById('lastSyncTime').innerText = s.lastSyncTime ? new Date(s.lastSyncTime).toLocaleString('zh-TW') : '尚無同步紀錄';
+
+        // Update vehicle counts
+        Object.keys(currentModelCounts).forEach(mId => {
+          const el = document.getElementById(`cnt-${mId}`);
+          if (el) el.innerText = currentModelCounts[mId];
+        });
+
+        const banner = document.getElementById('statusBanner');
+        const failed = s.failedUrls || [];
+        if (failed.length === 0) {
+          banner.className = 'warning-banner success';
+          banner.innerHTML = '✅ <strong>完整收錄驗收通過：</strong> 所有 Sitemap、分類及分頁均已讀取完成，0 個失敗網址。';
+        } else {
+          banner.className = 'warning-banner warn';
+          banner.innerHTML = `⚠️ <strong>發現 ${failed.length} 個網址擷取異常：</strong> 系統已寫入失敗紀錄並進行多次重試。`;
+        }
+
+        // Render Error Body
+        const errorBody = document.getElementById('errorBody');
+        if (failed.length === 0) {
+          errorBody.innerHTML = '<tr><td colspan="3" style="text-align: center; color: var(--text-dim);">完美！無任何失敗網址。</td></tr>';
+        } else {
+          errorBody.innerHTML = failed.map((item, idx) => `
+            <tr>
+              <td>${idx + 1}</td>
+              <td style="word-break: break-all;"><a href="${item.url}" target="_blank" style="color: var(--primary);">${item.url}</a></td>
+              <td style="color: #f87171;">${item.reason}</td>
+            </tr>
+          `).join('');
+        }
+      } catch(e) {
+        console.error('Failed to load admin stats:', e);
+      }
+    }
+
+    async function loadMasterProducts() {
+      try {
+        const res = await fetch('/api/products?modelId=all&storeId=all');
+        const data = await res.json();
+        allMasterProducts = data.products || [];
+        renderMasterTable();
+      } catch(e) {
+        console.error('Failed to load master products:', e);
+      }
+    }
+
+    function renderMasterTable() {
+      const modelId = document.getElementById('adminModelFilter').value;
+      const storeId = document.getElementById('adminStoreFilter').value;
+      const query = document.getElementById('adminSearchInput').value.trim().toLowerCase();
+
+      let filtered = allMasterProducts.filter(item => {
+        // Store filter
+        if (storeId !== 'all') {
+          if (storeId === 'jowua' && !item.source.includes('Jowua')) return false;
+          if (storeId === 'quackev' && !item.source.includes('QuackEV') && !item.source.includes('呱樂')) return false;
+        }
+
+        // Keyword filter
+        if (query) {
+          const nameMatch = (item.name || '').toLowerCase().includes(query);
+          const brandMatch = (item.brand || '').toLowerCase().includes(query);
+          const skuMatch = (item.id || '').toLowerCase().includes(query);
+          if (!nameMatch && !brandMatch && !skuMatch) return false;
+        }
+
+        // Vehicle fitment model filter
+        if (modelId !== 'all') {
+          const title = item.name || '';
+
+          if (modelId.startsWith('m3_')) {
+            if (title.includes('Model Y') && !title.includes('Model 3')) return false;
+            if (title.includes('Model S') && !title.includes('Model 3')) return false;
+            if (title.includes('Model X') && !title.includes('Model 3')) return false;
+            if (title.includes('Cybertruck') && !title.includes('Model 3')) return false;
+          }
+
+          if (modelId.startsWith('my_')) {
+            if (title.includes('Model 3') && !title.includes('Model Y')) return false;
+            if (title.includes('Model S') && !title.includes('Model Y')) return false;
+            if (title.includes('Model X') && !title.includes('Model Y')) return false;
+            if (title.includes('Cybertruck') && !title.includes('Model Y')) return false;
+          }
+
+          const fitment = item.fitment || [];
+          if (fitment.includes('all')) return true;
+          if (modelId === 'm3_highland') return fitment.includes('m3_highland');
+          if (modelId === 'm3_2021_2023') return fitment.includes('m3_2021_2023') || fitment.includes('m3_classic');
+          if (modelId === 'm3_2018_2023') return fitment.includes('m3_2018_2023') || fitment.includes('m3_classic') || fitment.includes('m3_2021_2023') || fitment.includes('m3_2017_2020');
+          if (modelId === 'm3_2017_2020') return fitment.includes('m3_2017_2020') || fitment.includes('m3_classic');
+          if (modelId === 'my_classic') return fitment.includes('my_classic');
+          if (modelId === 'my_juniper') return fitment.includes('my_juniper');
+          return fitment.includes(modelId);
+        }
+
+        return true;
+      });
+
+      document.getElementById('filteredCountText').innerText = `顯示 ${filtered.length} / ${allMasterProducts.length} 項商品`;
+
+      const tbody = document.getElementById('masterInventoryBody');
+      if (filtered.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: var(--text-dim);">沒有符合篩選條件的商品品項。</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = filtered.map((item, idx) => {
+        const fitBadges = (item.fitment || []).map(f => `<span class="badge-model">${MODEL_NAMES[f] || f}</span>`).join('');
+        const typeBadge = item.category === 'bundle' 
+          ? '<span style="color:#fbbf24; font-weight:600;">🎁 特惠禮包</span>' 
+          : '<span style="color:var(--text-dim);">📦 單品配件</span>';
+
+        return `
+          <tr>
+            <td>${idx + 1}</td>
+            <td><span class="badge" style="background: var(--bg-card-hover); font-weight: 600;">${item.source}</span></td>
+            <td style="font-weight: 600;">${item.name}</td>
+            <td>${typeBadge}</td>
+            <td style="color: var(--primary); font-weight: 700;">NT$ ${item.price ? item.price.toLocaleString() : '-'}</td>
+            <td>${fitBadges}</td>
+            <td><a href="${item.officialUrl}" target="_blank" style="color: var(--primary); font-weight: 600;">開啟官網頁面 ↗</a></td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    async function loadSample() {
+      if (!sessionStorage.getItem('adminToken')) return;
+
+      try {
+        const res = await fetch('/api/admin/sample', { headers: getAuthHeader() });
+        
+        if (res.status === 401) {
+          sessionStorage.removeItem('adminToken');
+          checkAdminAuth();
+          return;
+        }
+
+        const data = await res.json();
+        const sample = data.sample || [];
+
+        const body = document.getElementById('sampleBody');
+        if (sample.length === 0) {
+          body.innerHTML = '<tr><td colspan="7" style="text-align: center;">目前無商品資料，請先執行同步。</td></tr>';
+          return;
+        }
+
+        body.innerHTML = sample.map((item, idx) => `
+          <tr>
+            <td>${idx + 1}</td>
+            <td><span class="badge" style="background: var(--bg-card-hover);">${item.source}</span></td>
+            <td style="font-weight: 600;">${item.name}</td>
+            <td style="color: var(--primary); font-weight: 600;">NT$ ${item.price ? item.price.toLocaleString() : '-'}</td>
+            <td>${item.stockStatus === 'in_stock' ? '<span style="color:#34d399;">現貨供貨中</span>' : '<span style="color:#fbbf24;">缺貨/即將到貨</span>'}</td>
+            <td>${(item.fitment || []).join(', ')}</td>
+            <td><a href="${item.officialUrl}" target="_blank" style="color: var(--primary);">開啟官網頁面 ↗</a></td>
+          </tr>
+        `).join('');
+      } catch(e) {
+        console.error('Failed to load sample:', e);
+      }
+    }
+
+    // Bind Click Events on Vehicle Breakdown Cards
+    document.querySelectorAll('#modelBreakdownGrid .metric-card.clickable').forEach(card => {
+      card.addEventListener('click', () => {
+        document.querySelectorAll('#modelBreakdownGrid .metric-card.clickable').forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+        const m = card.dataset.model;
+        document.getElementById('adminModelFilter').value = m;
+        renderMasterTable();
+      });
+    });
+
+    // Filter controls change listeners
+    document.getElementById('adminModelFilter').addEventListener('change', (e) => {
+      const m = e.target.value;
+      document.querySelectorAll('#modelBreakdownGrid .metric-card.clickable').forEach(c => {
+        c.classList.toggle('active', c.dataset.model === m);
+      });
+      renderMasterTable();
+    });
+
+    document.getElementById('adminStoreFilter').addEventListener('change', renderMasterTable);
+    document.getElementById('adminSearchInput').addEventListener('input', renderMasterTable);
+
+    document.getElementById('btnResample').addEventListener('click', loadSample);
+
+    document.getElementById('btnSync').addEventListener('click', async () => {
+      const btn = document.getElementById('btnSync');
+      const icon = document.getElementById('syncIcon');
+      btn.disabled = true;
+      icon.innerText = '⏳';
+
+      try {
+        const res = await fetch('/api/sync', { method: 'POST', headers: getAuthHeader() });
+        
+        if (res.status === 401) {
+          alert('您的登入憑證已過期，請重新登入！');
+          sessionStorage.removeItem('adminToken');
+          checkAdminAuth();
+          btn.disabled = false;
+          icon.innerText = '🔄';
+          return;
+        }
+
+        const data = await res.json();
+        alert(data.message || '已發起同步任務！');
+
+        const interval = setInterval(async () => {
+          const stRes = await fetch('/api/sync/status');
+          const stData = await stRes.json();
+          if (!stData.isSyncing) {
+            clearInterval(interval);
+            btn.disabled = false;
+            icon.innerText = '🔄';
+            loadStats();
+            loadMasterProducts();
+            loadSample();
+            alert('🎉 同步已全部完成！');
+          }
+        }, 3000);
+      } catch(e) {
+        alert('發起同步失敗：' + e.message);
+        btn.disabled = false;
+        icon.innerText = '🔄';
+      }
+    });
+
+    // Initialize Page Check
+    if (checkAdminAuth()) {
+      loadStats();
+      loadMasterProducts();
+      loadSample();
+    }
+  </script>
+</body>
+</html>

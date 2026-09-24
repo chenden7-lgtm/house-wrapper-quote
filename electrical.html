@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>好室多膜 電系改裝一站式服務價目表 | 好室多膜</title>
+  <meta name="description" content="好室多膜內部專用特斯拉電系改裝價目對照表，包含電吸前箱、電動前箱、電動天窗遮陽簾、電吸門、Yoke方向盤、換檔撥桿與抬頭儀表，支援專屬車型規格切換與跨頁統一 LINE 報價單。">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css?v=20260924">
+  
+  <style>
+    .elec-hero {
+      text-align: center;
+      padding: 2.25rem 1.25rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .elec-model-note {
+      background: rgba(232, 86, 55, 0.08);
+      border: 1px solid rgba(232, 86, 55, 0.25);
+      color: var(--text-bright);
+      padding: 1rem 1.25rem;
+      border-radius: var(--radius-md);
+      font-size: 0.88rem;
+      margin-top: 1.25rem;
+      display: inline-block;
+      text-align: left;
+      line-height: 1.6;
+    }
+    .elec-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+    .elec-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all var(--transition-normal);
+      position: relative;
+      overflow: hidden;
+    }
+    .elec-card:hover {
+      border-color: var(--border-active);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    .elec-card-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(232, 86, 55, 0.12);
+      color: var(--primary);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 20px;
+      border: 1px solid rgba(232, 86, 55, 0.3);
+    }
+    .elec-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-bright);
+      margin-bottom: 0.4rem;
+      padding-right: 4.5rem;
+    }
+    .elec-fitment-text {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .elec-note-text {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      line-height: 1.45;
+    }
+    .elec-option-box {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .elec-option-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .option-pills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .opt-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 0.35rem 0.65rem;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .opt-btn:hover {
+      border-color: var(--primary);
+      color: var(--text-bright);
+    }
+    .opt-btn.active {
+      background: var(--orange-gradient);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 2px 8px rgba(232, 86, 55, 0.3);
+    }
+    .elec-price-box {
+      margin-top: 0.5rem;
+      padding-top: 0.85rem;
+      border-top: 1px dashed var(--border-color);
+    }
+    .elec-price-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.85rem;
+    }
+    .elec-disc-price {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+    }
+    .elec-price-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.2rem;
+    }
+    .elec-orig-price {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      text-decoration: line-through;
+    }
+    .elec-save-pill {
+      background: #059669;
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 10px;
+    }
+    .btn-add-quote {
+      width: 100%;
+      padding: 0.7rem;
+      background: var(--orange-gradient);
+      background-color: var(--primary);
+      color: #ffffff !important;
+      font-weight: 700;
+      font-size: 0.88rem;
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(232, 86, 55, 0.3);
+    }
+    .btn-add-quote * {
+      color: #ffffff !important;
+    }
+    .btn-add-quote:hover {
+      opacity: 0.95;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(232, 86, 55, 0.45);
+    }
+    .btn-add-quote.added {
+      background: #059669 !important;
+      background-color: #059669 !important;
+      color: #ffffff !important;
+      box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="brand">
+        <img src="images/house_wrapper_logo.svg" alt="好室多膜" class="brand-logo-img">
+        <span class="brand-badge" style="margin-left: 0.35rem; font-size: 0.72rem; padding: 3px 10px; background: rgba(232, 86, 55, 0.12); color: #111111; font-weight: 800; border: 1px solid rgba(232, 86, 55, 0.3); letter-spacing: 0.03em;">一站式電系改裝</span>
+      </a>
+
+      <div class="nav-actions">
+        <a href="index.html" class="nav-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.45rem 0.85rem; font-size: 0.8rem; font-weight: 600; background: var(--bg-card); color: var(--text-bright); border: 1px solid var(--border-color); border-radius: 20px;">
+          <i class="fas fa-boxes" style="color: var(--primary);"></i>
+          <span>配件報價大廳</span>
+        </a>
+
+        <a href="tinting.html" class="nav-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.45rem 0.85rem; font-size: 0.8rem; font-weight: 600; background: var(--bg-card); color: var(--text-bright); border: 1px solid var(--border-color); border-radius: 20px;">
+          <i class="fas fa-sun" style="color: #ffb703;"></i>
+          <span>隔熱紙價目</span>
+        </a>
+
+        <button id="btn-open-quote-drawer" class="nav-btn quote-btn" title="點擊檢視已加入之配件與電系跨頁統一報價單">
+          <i class="fas fa-shopping-cart" style="color: var(--primary);"></i> 
+          <span>客戶 LINE 報價單</span>
+          <span class="badge-count" id="nav-quote-count">0</span>
+        </button>
+
+        <button id="btn-theme-toggle" class="nav-btn theme-toggle" title="切換深/淺色主題">
+          <i class="fas fa-sun"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="margin-top: 1.5rem;">
+    <!-- Hero Header -->
+    <section class="elec-hero">
+      <h1 style="font-size: 1.85rem; font-weight: 900; color: var(--text-bright); margin-bottom: 0.5rem;">
+        ⚡️ 好室多膜 <span style="color: #111111; font-weight: 900;">一站式服務</span> <span style="color: var(--primary);">電系改裝價目表</span>
+      </h1>
+      <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 740px; margin: 0 auto;">
+        專業完工施工服務，包含專用線組連接、安全電路防護與完工檢測。可同時將配件與電系改裝合併於同份客戶 LINE 報價單中！
+      </p>
+
+      <div class="elec-model-note">
+        <strong>💡 車型說明與對照：</strong><br>
+        • <strong>舊 3</strong>：指的是 2024 年以前的 Model 3 (2017-2023 舊款中控)<br>
+        • <strong>新 3</strong>：指的是 2024+ 煥新版 Model 3 (Highland)<br>
+        • <strong>舊 Y</strong>：指的是 2020-2024 Model Y (經典款)<br>
+        • <strong>新 Y</strong>：指的是 2025+ 煥新版 Model Y (Juniper)
+      </div>
+
+      <!-- Vehicle Model Filter Pills -->
+      <div style="display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+        <button class="store-pill active" onclick="filterElec('all', this)">🚗 全車型改裝 (14 項專案)</button>
+        <button class="store-pill" onclick="filterElec('m3_classic', this)">Model 3 (2017-23 舊3)</button>
+        <button class="store-pill" onclick="filterElec('m3_highland', this)">Model 3 (2024+ 新3)</button>
+        <button class="store-pill" onclick="filterElec('my_classic', this)">Model Y (2020-24 舊Y)</button>
+        <button class="store-pill" onclick="filterElec('my_juniper', this)">Model Y (2025+ 新Y)</button>
+      </div>
+    </section>
+
+    <!-- Electrical Modification Price Matrix Grid -->
+    <div id="elec-grid-container" class="elec-grid">
+      <!-- Dynamically rendered -->
+    </div>
+  </main>
+
+  <!-- Quote Drawer Modal Overlay (Unified across all pages) -->
+  <div id="quote-drawer-overlay" class="drawer-overlay">
+    <div class="drawer-container">
+      <div class="drawer-header">
+        <div>
+          <h2>📄 客戶 LINE 客服報價單</h2>
+          <p>已整合單品配件、特惠套餐與電系改裝項目</p>
+        </div>
+        <button id="btn-close-quote-drawer" class="btn-close">&times;</button>
+      </div>
+      
+      <div class="drawer-body" id="modal-quote-body">
+        <!-- Dynamically rendered by QuotationManager -->
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { ELECTRICAL_MODS } from './js/electricalData.js';
+    import { QuotationManager } from './js/quotation.js';
+
+    const quotation = new QuotationManager('quoteCart');
+    let currentFilter = 'all';
+    const selectedOptionsMap = {};
+
+    function updateQuoteBadge() {
+      const countEl = document.getElementById('nav-quote-count');
+      if (countEl) {
+        const totals = quotation.calculateTotals();
+        countEl.innerText = totals.itemCount;
+      }
+    }
+
+    window.filterElec = function(modelId, btnEl) {
+      currentFilter = modelId;
+      document.querySelectorAll('.store-pill').forEach(b => b.classList.remove('active'));
+      if (btnEl) btnEl.classList.add('active');
+      renderGrid();
+    };
+
+    window.selectItemOption = function(itemId, optIdx) {
+      selectedOptionsMap[itemId] = optIdx;
+      renderGrid();
+    };
+
+    window.toggleQuoteItem = function(itemId) {
+      const item = ELECTRICAL_MODS.find(i => i.id === itemId);
+      if (!item) return;
+
+      const options = item.options || [];
+      const activeOptIdx = selectedOptionsMap[itemId] || 0;
+      const currentOpt = options[activeOptIdx] || options[0] || { label: '', discountPrice: 0 };
+      const vId = String(activeOptIdx);
+
+      const existingIdx = quotation.quoteItems.findIndex(q => 
+        q.id === itemId && q.type === 'electrical' && (q.variantId || '0') === vId
+      );
+
+      if (existingIdx >= 0) {
+        quotation.removeItem(itemId, 'electrical', vId);
+      } else {
+        quotation.addItem(itemId, 'electrical', vId, {
+          name: item.name,
+          price: currentOpt.discountPrice,
+          variantTitle: (options.length > 1 && currentOpt.label !== "Model 3 / Model Y (全車系)") ? currentOpt.label : null,
+          store: '好室多膜一站式服務'
+        });
+      }
+
+      updateQuoteBadge();
+      renderGrid();
+      if (document.getElementById('quote-drawer-overlay').classList.contains('active')) {
+        quotation.renderDrawerContent('modal-quote-body', 'all');
+      }
+    };
+
+    function renderGrid() {
+      const container = document.getElementById('elec-grid-container');
+      
+      const filtered = currentFilter === 'all' 
+        ? ELECTRICAL_MODS 
+        : ELECTRICAL_MODS.filter(item => {
+            if (currentFilter === 'm3_classic') return item.fitmentModels.includes('m3_classic');
+            if (currentFilter === 'm3_highland') return item.fitmentModels.includes('m3_highland');
+            if (currentFilter === 'my_classic') return item.fitmentModels.includes('my_classic');
+            if (currentFilter === 'my_juniper') return item.fitmentModels.includes('my_juniper');
+            return true;
+          });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; color: var(--text-dim); padding: 3rem;">沒有符合此車型的電系改裝項目。</div>`;
+        return;
+      }
+
+      container.innerHTML = filtered.map(item => {
+        const options = item.options || [];
+        
+        let activeOptIdx = selectedOptionsMap[item.id];
+        if (activeOptIdx === undefined) {
+          if (currentFilter !== 'all') {
+            const matchedIdx = options.findIndex(opt => opt.modelId === currentFilter || opt.modelId === 'all_models' || (currentFilter.startsWith('m3') && opt.modelId === 'm3_all'));
+            activeOptIdx = matchedIdx >= 0 ? matchedIdx : 0;
+          } else {
+            activeOptIdx = 0;
+          }
+        }
+        if (activeOptIdx >= options.length) activeOptIdx = 0;
+
+        const currentOpt = options[activeOptIdx] || options[0] || { originalPrice: 0, discountPrice: 0 };
+        const origPrice = currentOpt.originalPrice || 0;
+        const discPrice = currentOpt.discountPrice || 0;
+        const savings = origPrice > discPrice ? origPrice - discPrice : 0;
+        const vId = String(activeOptIdx);
+
+        const inCart = quotation.quoteItems.some(q => 
+          q.id === item.id && q.type === 'electrical' && (q.variantId || '0') === vId
+        );
+
+        let optionsHtml = '';
+        if (options.length > 1) {
+          optionsHtml = `
+            <div class="elec-option-box">
+              <div class="elec-option-label">
+                <i class="fas fa-sliders-h"></i> 點擊切換適用車型與規格：
+              </div>
+              <div class="option-pills-row">
+                ${options.map((opt, idx) => `
+                  <button class="opt-btn ${idx === activeOptIdx ? 'active' : ''}" onclick="selectItemOption('${item.id}', ${idx})">
+                    ${opt.label}
+                  </button>
+                `).join('')}
+              </div>
+            </div>
+          `;
+        } else if (options.length === 1 && options[0].label !== "Model 3 / Model Y (全車系)") {
+          optionsHtml = `
+            <div class="elec-option-box" style="padding: 0.5rem 0.75rem;">
+              <div class="elec-option-label" style="margin-bottom: 0;">
+                <i class="fas fa-check-circle" style="color: #059669;"></i> 規格：${options[0].label}
+              </div>
+            </div>
+          `;
+        }
+
+        return `
+          <div class="elec-card">
+            <span class="elec-card-badge">一站式優惠</span>
+            <div>
+              <div class="elec-title">${item.name}</div>
+              <div class="elec-fitment-text">
+                <i class="fas fa-car" style="color: var(--primary);"></i>
+                <span>適用車型：${item.fitmentText}</span>
+              </div>
+              <div class="elec-note-text">${item.note}</div>
+            </div>
+
+            <div>
+              ${optionsHtml}
+
+              <div class="elec-price-box">
+                <div class="elec-price-row">
+                  <div>
+                    <span style="font-size: 0.8rem; color: var(--text-dim); display: block;">一站式優惠價</span>
+                    <div class="elec-disc-price">NT$ ${discPrice.toLocaleString()}</div>
+                  </div>
+                  <div class="elec-price-right">
+                    ${origPrice > 0 ? `<div class="elec-orig-price">原價 NT$ ${origPrice.toLocaleString()}</div>` : ''}
+                    ${savings > 0 ? `<span class="elec-save-pill">立省 NT$ ${savings.toLocaleString()}</span>` : ''}
+                  </div>
+                </div>
+
+                <button class="btn-add-quote ${inCart ? 'added' : ''}" onclick="toggleQuoteItem('${item.id}')">
+                  <i class="${inCart ? 'fas fa-check-circle' : 'fas fa-plus-circle'}"></i>
+                  <span>${inCart ? '已加入報價單' : '＋加入報價單'}</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Modal drawer toggle
+    document.getElementById('btn-open-quote-drawer').addEventListener('click', () => {
+      quotation.renderDrawerContent('modal-quote-body', 'all');
+      document.getElementById('quote-drawer-overlay').classList.add('active');
+    });
+
+    document.getElementById('btn-close-quote-drawer').addEventListener('click', () => {
+      document.getElementById('quote-drawer-overlay').classList.remove('active');
+    });
+
+    // Theme toggle
+    document.getElementById('btn-theme-toggle').addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'light';
+      const next = current === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+    });
+
+    updateQuoteBadge();
+    renderGrid();
+  </script>
+</body>
+</html>

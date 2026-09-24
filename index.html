@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>好室多膜 一站式服務相關 快速報價查詢</title>
+  <meta name="description" content="好室多膜內部專用特斯拉配件、電系改裝與特惠組合查詢系統，整合一站式服務相關價格，支援一鍵生成 LINE 客服報價單。">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="#" class="brand">
+        <img src="images/house_wrapper_logo.svg" alt="好室多膜" class="brand-logo-img">
+        <span class="brand-badge" style="margin-left: 0.35rem; font-size: 0.72rem; padding: 3px 10px; background: rgba(232, 86, 55, 0.12); color: #111111; font-weight: 800; border: 1px solid rgba(232, 86, 55, 0.3); letter-spacing: 0.03em;">一站式服務</span>
+      </a>
+
+      <div class="nav-actions">
+        <a href="tinting.html" class="nav-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.45rem 0.85rem; font-size: 0.8rem; font-weight: 600; background: var(--bg-card); color: var(--text-bright); border: 1px solid var(--border-color); border-radius: 20px;" title="查看特斯拉隔熱紙一站式服務價目表">
+          <i class="fas fa-sun" style="color: #ffb703;"></i>
+          <span>隔熱紙價目</span>
+        </a>
+
+        <a href="electrical.html" class="nav-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.45rem 0.85rem; font-size: 0.8rem; font-weight: 600; background: var(--bg-card); color: var(--text-bright); border: 1px solid var(--border-color); border-radius: 20px;" title="查看電系改裝一站式服務價目表">
+          <i class="fas fa-bolt" style="color: #ffb703;"></i>
+          <span>電系改裝價目</span>
+        </a>
+
+        <button id="btn-open-quote-drawer" class="nav-btn quote-btn">
+          <i class="fas fa-file-invoice-dollar" style="color: var(--tesla-red);"></i> 
+          <span>客戶 LINE 報價單</span>
+          <span class="badge-count" id="nav-quote-count">0</span>
+        </button>
+
+        <button id="btn-theme-toggle" class="nav-btn theme-toggle" title="切換深/淺色主題">
+          <i class="fas fa-sun"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Store Filter Pills Bar -->
+    <div style="margin-top: 1.5rem;">
+      <div class="store-bar" id="store-bar-container">
+        <!-- Dynamically populated -->
+      </div>
+    </div>
+
+    <!-- Hero Header -->
+    <section class="hero-header">
+      <h1>好室多膜 <span class="text-black">一站式服務</span><span class="text-orange"> 快速報價查詢</span></h1>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
+        私用快速對照單品、套餐價格與完工服務，無需切換網頁即可向客戶提供優雅報價。
+      </p>
+
+      <!-- Vehicle Model Selection Banner -->
+      <div class="model-grid" id="model-grid-container">
+        <!-- Dynamically populated -->
+      </div>
+    </section>
+
+    <!-- Model Fitment Banner Alert -->
+    <div id="compat-alert-banner" class="glass-panel" style="padding: 0.85rem 1.25rem; margin-bottom: 1.5rem; display: none; align-items: center; justify-content: space-between; border-color: var(--tesla-red);">
+      <div style="display: flex; align-items: center; gap: 0.75rem; font-size: 0.9rem;">
+        <i class="fas fa-shield-alt" style="color: var(--tesla-red); font-size: 1.1rem;"></i>
+        <div id="compat-alert-text">已切換車型。</div>
+      </div>
+    </div>
+
+    <!-- View Switchers (Single Items vs Combo Bundles vs Visualizer vs Checklist) -->
+    <nav class="view-tabs" style="margin-bottom: 1.5rem;">
+      <button class="view-tab-btn active" data-view="catalog">
+        <i class="fas fa-box-open"></i> 單品配件目錄
+      </button>
+      <button class="view-tab-btn" data-view="bundles">
+        <i class="fas fa-cubes"></i> 特惠組合/交車禮包
+      </button>
+      <a href="tinting.html" class="view-tab-btn" style="text-decoration: none; display: inline-flex; align-items: center; color: inherit;">
+        <i class="fas fa-sun" style="color: #ffb703; margin-right: 0.4rem;"></i> 特斯拉隔熱紙價目
+      </a>
+      <a href="electrical.html" class="view-tab-btn" style="text-decoration: none; display: inline-flex; align-items: center; color: inherit;">
+        <i class="fas fa-bolt" style="color: #ffb703; margin-right: 0.4rem;"></i> 電系改裝價目
+      </a>
+      <button class="view-tab-btn" data-view="visualizer">
+        <i class="fas fa-car-side"></i> 實車圖解視角
+      </button>
+      <button class="view-tab-btn" data-view="checklist">
+        <i class="fas fa-tasks"></i> 新車提車必備點檢
+      </button>
+    </nav>
+
+    <!-- VIEW 1: CATALOG VIEW (SINGLE ITEMS) -->
+    <section id="view-catalog">
+      <div class="filter-section">
+        <div class="search-bar-row">
+          <div class="search-input-wrapper">
+            <i class="fas fa-search"></i>
+            <input type="text" id="search-input" class="search-input" placeholder="搜尋配件名稱、品牌或關鍵字 (例如: 腳踏墊, 遮陽簾, 電吸門, Jowua, 呱樂)...">
+          </div>
+          
+          <select id="sort-select" class="sort-select">
+            <option value="popular">預設推薦排序</option>
+            <option value="price_asc">價格：由低到高</option>
+            <option value="price_desc">價格：由高到低</option>
+          </select>
+        </div>
+
+        <!-- Category Pills -->
+        <div class="category-pills" id="category-pills-container">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+      <!-- Single Accessory Product Cards Grid -->
+      <div class="product-grid" id="product-grid-container">
+        <!-- Dynamically populated -->
+      </div>
+    </section>
+
+    <!-- VIEW 2: BUNDLES VIEW (COMBO PACKAGES) -->
+    <section id="view-bundles" style="display: none;">
+      <div style="margin-bottom: 1.5rem;">
+        <h2 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+          <i class="fas fa-tags" style="color: var(--tesla-red);"></i> 熱門特惠套餐與交車大禮包
+        </h2>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">包含多項必備週邊打包組合，價格比單買更省，客服一鍵報價首選。</p>
+      </div>
+
+      <div class="product-grid" id="bundles-grid-container">
+        <!-- Dynamically populated -->
+      </div>
+    </section>
+
+    <!-- VIEW 3: VISUALIZER VIEW -->
+    <section id="view-visualizer" style="display: none;">
+      <div class="visualizer-container" id="visualizer-container">
+        <!-- Dynamically populated -->
+      </div>
+    </section>
+
+    <!-- VIEW 4: CHECKLIST VIEW -->
+    <section id="view-checklist" style="display: none;">
+      <div class="checklist-container" id="checklist-container">
+        <!-- Dynamically populated -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Detail Modal -->
+  <div id="detail-modal-overlay" class="modal-overlay">
+    <div class="modal-card-detail">
+      <button id="btn-close-modal" class="modal-close-btn"><i class="fas fa-times"></i></button>
+      <div id="modal-detail-body">
+        <!-- Dynamically populated -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Quotation Drawer Modal -->
+  <div id="quote-modal-overlay" class="modal-overlay">
+    <div class="modal-card-detail" style="max-width: 750px;">
+      <button id="btn-close-quote-modal" class="modal-close-btn"><i class="fas fa-times"></i></button>
+      <div id="modal-quote-body">
+        <!-- Dynamically populated by quotation.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer style="border-top: 1px solid var(--border-color); padding: 3rem 0; margin-top: 4rem; text-align: center; color: var(--text-dim); font-size: 0.85rem;">
+    <div class="container">
+      <p style="margin-bottom: 0.5rem;">好室多膜配件查詢系統 &copy; 2026</p>
+      <p>內部對照與客戶 LINE 報價專用工具 (QuackEV 呱樂電驢 & Jowua Global 專屬整合)。</p>
+    </div>
+  </footer>
+
+  <!-- App Main Scripts -->
+  <script type="module" src="js/app.js?v=20260922_v3"></script>
+</body>
+</html>

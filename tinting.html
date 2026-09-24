@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>好室多膜 特斯拉隔熱紙一站式價目表 | 好室多膜</title>
+  <meta name="description" content="好室多膜特斯拉專用隔熱紙價目表，包含桑馬克、3M極透/極黑、舒熱佳LX/XE、FSK冰鑽KT/F與XPEL，支援自訂混搭試算與一鍵加入 LINE 客服報價單。">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css?v=20260924">
+  
+  <style>
+    .tint-hero {
+      text-align: center;
+      padding: 2.25rem 1.25rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .tint-model-note {
+      background: rgba(232, 86, 55, 0.08);
+      border: 1px solid rgba(232, 86, 55, 0.25);
+      color: var(--text-bright);
+      padding: 1rem 1.25rem;
+      border-radius: var(--radius-md);
+      font-size: 0.88rem;
+      margin-top: 1.25rem;
+      display: inline-block;
+      text-align: left;
+      line-height: 1.6;
+    }
+    .builder-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .builder-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+    }
+    .part-select-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+    }
+    .part-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text-bright);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .part-select {
+      width: 100%;
+      padding: 0.65rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-bright);
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.9rem;
+      outline: none;
+    }
+    .builder-summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding-top: 1.25rem;
+      border-top: 1px dashed var(--border-color);
+    }
+    .builder-total-price {
+      font-size: 1.85rem;
+      font-weight: 900;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+    }
+    .builder-raw-price {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      text-decoration: line-through;
+    }
+    .discount-banner-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: #059669;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 12px;
+      margin-left: 0.5rem;
+    }
+    .tint-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+    .tint-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all var(--transition-normal);
+      position: relative;
+    }
+    .tint-card:hover {
+      border-color: var(--border-active);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    .tint-card-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(232, 86, 55, 0.12);
+      color: var(--primary);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 20px;
+      border: 1px solid rgba(232, 86, 55, 0.3);
+    }
+    .tint-brand-name {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-bright);
+      margin-bottom: 0.2rem;
+    }
+    .tint-series-name {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.6rem;
+    }
+    .tint-part-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.85rem 0;
+      font-size: 0.85rem;
+    }
+    .tint-part-table td {
+      padding: 0.45rem 0;
+      border-bottom: 1px dashed var(--border-color);
+      color: var(--text-muted);
+    }
+    .tint-part-table tr:last-child td {
+      border-bottom: none;
+    }
+    .tint-part-price {
+      text-align: right;
+      font-weight: 800;
+      color: var(--text-bright);
+    }
+    .btn-add-quote {
+      width: 100%;
+      padding: 0.7rem;
+      background: var(--orange-gradient);
+      background-color: var(--primary);
+      color: #ffffff !important;
+      font-weight: 700;
+      font-size: 0.88rem;
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(232, 86, 55, 0.3);
+    }
+    .btn-add-quote * {
+      color: #ffffff !important;
+    }
+    .btn-add-quote:hover {
+      opacity: 0.95;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(232, 86, 55, 0.45);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="brand">
+        <img src="images/house_wrapper_logo.svg" alt="好室多膜" class="brand-logo-img">
+        <span class="brand-badge" style="margin-left: 0.35rem; font-size: 0.72rem; padding: 3px 10px; background: rgba(232, 86, 55, 0.12); color: #111111; font-weight: 800; border: 1px solid rgba(232, 86, 55, 0.3); letter-spacing: 0.03em;">一站式隔熱紙</span>
+      </a>
+
+      <div class="nav-actions">
+        <a href="index.html" class="nav-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.45rem 0.85rem; font-size: 0.8rem; font-weight: 600; background: var(--bg-card); color: var(--text-bright); border: 1px solid var(--border-color); border-radius: 20px;">
+          <i class="fas fa-boxes" style="color: var(--primary);"></i>
+          <span>配件報價大廳</span>
+        </a>
+
+        <a href="electrical.html" class="nav-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.45rem 0.85rem; font-size: 0.8rem; font-weight: 600; background: var(--bg-card); color: var(--text-bright); border: 1px solid var(--border-color); border-radius: 20px;">
+          <i class="fas fa-bolt" style="color: #ffb703;"></i>
+          <span>電系改裝價目</span>
+        </a>
+
+        <button id="btn-open-quote-drawer" class="nav-btn quote-btn" title="點擊檢視跨頁統一報價單">
+          <i class="fas fa-shopping-cart" style="color: var(--primary);"></i> 
+          <span>客戶 LINE 報價單</span>
+          <span class="badge-count" id="nav-quote-count">0</span>
+        </button>
+
+        <button id="btn-theme-toggle" class="nav-btn theme-toggle" title="切換深/淺色主題">
+          <i class="fas fa-sun"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="margin-top: 1.5rem;">
+    <!-- Hero Header -->
+    <section class="tint-hero">
+      <h1 style="font-size: 1.85rem; font-weight: 900; color: var(--text-bright); margin-bottom: 0.5rem;">
+        ☀️ 好室多膜 <span style="color: #111111; font-weight: 900;">一站式服務</span> <span style="color: var(--primary);">特斯拉隔熱紙價目表</span>
+      </h1>
+      <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 740px; margin: 0 auto;">
+        收錄桑馬克、3M、舒熱佳、FSK冰鑽、XPEL 與 Ezsun 專業隔熱紙。支援自由混搭部位試算（選前擋+車身即折 $500，含天窗即折 $1,000）！
+      </p>
+
+      <div class="tint-model-note">
+        <strong>💡 隔熱紙部位與特惠折扣說明：</strong><br>
+        • <strong>前擋</strong>：前擋風玻璃 ｜ <strong>車身</strong>：前座門窗 ＋ 駕駛座門窗 ＋ 後擋風玻璃 ｜ <strong>天窗</strong>：全景天窗玻璃<br>
+        🎁 <strong>混搭組合滿額折價：</strong><br>
+        • 選【前擋 ＋ 車身 ＋ 天窗】三部位全選 ➔ <strong>總金額自動現折 NT$ 1,000</strong><br>
+        • 選【前擋 ＋ 車身】兩部位（無天窗） ➔ <strong>總金額自動現折 NT$ 500</strong>
+      </div>
+
+      <!-- Vehicle Model Selection Pills -->
+      <div style="display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+        <button class="store-pill active" id="pill-m3" onclick="selectModel('m3')">🚗 Model 3 全車系</button>
+        <button class="store-pill" id="pill-my" onclick="selectModel('my')">🚙 Model Y 全車系</button>
+      </div>
+    </section>
+
+    <!-- Custom Mix & Match Builder Calculator -->
+    <section class="builder-box">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+        <div>
+          <h2 style="font-size: 1.25rem; font-weight: 800; color: var(--text-bright); margin: 0;">
+            🛠️ 客製化部位混搭試算器 (<span id="builder-model-name">Model 3</span>)
+          </h2>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">
+            自由為前擋、車身與天窗選擇不同品牌規格，系統自動試算組合金額與套用專案折價
+          </p>
+        </div>
+      </div>
+
+      <div class="builder-grid">
+        <!-- Front Windshield -->
+        <div class="part-select-card">
+          <div class="part-title">
+            <i class="fas fa-shield-alt" style="color: var(--primary);"></i> 1. 前擋玻璃 (Front)
+          </div>
+          <select id="select-front" class="part-select" onchange="updateBuilderCalculations()">
+            <!-- Dynamically populated -->
+          </select>
+        </div>
+
+        <!-- Body Windows -->
+        <div class="part-select-card">
+          <div class="part-title">
+            <i class="fas fa-car-side" style="color: var(--primary);"></i> 2. 車身 (前座+駕駛+後擋)
+          </div>
+          <select id="select-body" class="part-select" onchange="updateBuilderCalculations()">
+            <!-- Dynamically populated -->
+          </select>
+        </div>
+
+        <!-- Sunroof -->
+        <div class="part-select-card">
+          <div class="part-title">
+            <i class="fas fa-sun" style="color: var(--primary);"></i> 3. 全景天窗 (Sunroof)
+          </div>
+          <select id="select-sunroof" class="part-select" onchange="updateBuilderCalculations()">
+            <!-- Dynamically populated -->
+          </select>
+        </div>
+      </div>
+
+      <div class="builder-summary-row">
+        <div>
+          <span style="font-size: 0.85rem; color: var(--text-dim); display: inline-block;">混搭組合優惠價：</span>
+          <span id="discount-pill-container"></span>
+          <div style="display: flex; align-items: baseline; gap: 0.75rem; margin-top: 4px;">
+            <div class="builder-total-price" id="builder-total-price">NT$ 0</div>
+            <div class="builder-raw-price" id="builder-raw-price"></div>
+          </div>
+        </div>
+        <button class="btn-add-quote" style="max-width: 260px;" onclick="addBuilderToQuote()">
+          <i class="fas fa-plus-circle"></i>
+          <span>將此混搭組合加入報價單</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Full Brand Comparison Grid -->
+    <h2 style="font-size: 1.35rem; font-weight: 900; color: var(--text-bright); margin-bottom: 1.25rem;">
+      📋 隔熱紙全品牌完工價目一覽
+    </h2>
+    <div id="tint-grid-container" class="tint-grid">
+      <!-- Dynamically rendered -->
+    </div>
+  </main>
+
+  <!-- Quote Drawer Modal Overlay (Unified across all pages) -->
+  <div id="quote-drawer-overlay" class="drawer-overlay">
+    <div class="drawer-container">
+      <div class="drawer-header">
+        <div>
+          <h2>📄 客戶 LINE 客服報價單</h2>
+          <p>已整合單品配件、特惠套餐、電系改裝與隔熱紙項目</p>
+        </div>
+        <button id="btn-close-quote-drawer" class="btn-close">&times;</button>
+      </div>
+      
+      <div class="drawer-body" id="modal-quote-body">
+        <!-- Dynamically rendered by QuotationManager -->
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { TINTING_BRANDS } from './js/tintingData.js';
+    import { QuotationManager } from './js/quotation.js';
+
+    const quotation = new QuotationManager('quoteCart');
+    let selectedCarModel = 'm3'; // 'm3' or 'my'
+
+    window.selectModel = function(modelKey) {
+      selectedCarModel = modelKey;
+      document.getElementById('pill-m3').classList.toggle('active', modelKey === 'm3');
+      document.getElementById('pill-my').classList.toggle('active', modelKey === 'my');
+      document.getElementById('builder-model-name').innerText = modelKey === 'm3' ? 'Model 3' : 'Model Y';
+
+      populateSelects();
+      updateBuilderCalculations();
+      renderBrandGrid();
+    };
+
+    function updateQuoteBadge() {
+      const countEl = document.getElementById('nav-quote-count');
+      if (countEl) {
+        const totals = quotation.calculateTotals();
+        countEl.innerText = totals.itemCount;
+      }
+    }
+
+    function populateSelects() {
+      const frontSel = document.getElementById('select-front');
+      const bodySel = document.getElementById('select-body');
+      const sunroofSel = document.getElementById('select-sunroof');
+
+      const frontOpts = ['<option value="none">-- 不貼前擋 ($0) --</option>'];
+      const bodyOpts = ['<option value="none">-- 不貼車身 ($0) --</option>'];
+      const sunroofOpts = ['<option value="none">-- 不貼天窗 ($0) --</option>'];
+
+      TINTING_BRANDS.forEach(b => {
+        const p = b.prices[selectedCarModel];
+        if (!p) return;
+
+        if (p.front) frontOpts.push(`<option value="${b.id}">${b.name} - NT$ ${p.front.toLocaleString()}</option>`);
+        if (p.body) bodyOpts.push(`<option value="${b.id}">${b.name} - NT$ ${p.body.toLocaleString()}</option>`);
+        if (p.sunroof) sunroofOpts.push(`<option value="${b.id}">${b.name} - NT$ ${p.sunroof.toLocaleString()}</option>`);
+      });
+
+      frontSel.innerHTML = frontOpts.join('');
+      bodySel.innerHTML = bodyOpts.join('');
+      sunroofSel.innerHTML = sunroofOpts.join('');
+    }
+
+    window.updateBuilderCalculations = function() {
+      const fId = document.getElementById('select-front').value;
+      const bId = document.getElementById('select-body').value;
+      const sId = document.getElementById('select-sunroof').value;
+
+      let rawTotal = 0;
+      let hasFront = fId !== 'none';
+      let hasBody = bId !== 'none';
+      let hasSunroof = sId !== 'none';
+
+      if (hasFront) {
+        const brand = TINTING_BRANDS.find(x => x.id === fId);
+        if (brand && brand.prices[selectedCarModel].front) rawTotal += brand.prices[selectedCarModel].front;
+      }
+      if (hasBody) {
+        const brand = TINTING_BRANDS.find(x => x.id === bId);
+        if (brand && brand.prices[selectedCarModel].body) rawTotal += brand.prices[selectedCarModel].body;
+      }
+      if (hasSunroof) {
+        const brand = TINTING_BRANDS.find(x => x.id === sId);
+        if (brand && brand.prices[selectedCarModel].sunroof) rawTotal += brand.prices[selectedCarModel].sunroof;
+      }
+
+      // Discount Logic:
+      // 前擋+車身+天窗 => 折1000
+      // 前擋+車身 (無天窗) => 折500
+      let discount = 0;
+      let discountLabel = '';
+
+      if (hasFront && hasBody && hasSunroof) {
+        discount = 1000;
+        discountLabel = '🎁 全車含天窗特惠現折 $1,000';
+      } else if (hasFront && hasBody && !hasSunroof) {
+        discount = 500;
+        discountLabel = '🎁 前擋+車身組合特惠現折 $500';
+      }
+
+      const finalPrice = Math.max(0, rawTotal - discount);
+
+      document.getElementById('builder-total-price').innerText = `NT$ ${finalPrice.toLocaleString()}`;
+      
+      const rawPriceEl = document.getElementById('builder-raw-price');
+      const pillContainer = document.getElementById('discount-pill-container');
+
+      if (discount > 0) {
+        rawPriceEl.innerText = `原價 NT$ ${rawTotal.toLocaleString()}`;
+        pillContainer.innerHTML = `<span class="discount-banner-pill">${discountLabel}</span>`;
+      } else {
+        rawPriceEl.innerText = '';
+        pillContainer.innerHTML = '';
+      }
+    };
+
+    window.addBuilderToQuote = function() {
+      const fId = document.getElementById('select-front').value;
+      const bId = document.getElementById('select-body').value;
+      const sId = document.getElementById('select-sunroof').value;
+
+      let hasFront = fId !== 'none';
+      let hasBody = bId !== 'none';
+      let hasSunroof = sId !== 'none';
+
+      if (!hasFront && !hasBody && !hasSunroof) {
+        alert('請至少選擇一個部位（前擋、車身或天窗）的隔熱紙！');
+        return;
+      }
+
+      let partsText = [];
+      let rawTotal = 0;
+
+      if (hasFront) {
+        const brand = TINTING_BRANDS.find(x => x.id === fId);
+        const p = brand.prices[selectedCarModel].front;
+        rawTotal += p;
+        partsText.push(`前擋: ${brand.name} ($${p.toLocaleString()})`);
+      }
+      if (hasBody) {
+        const brand = TINTING_BRANDS.find(x => x.id === bId);
+        const p = brand.prices[selectedCarModel].body;
+        rawTotal += p;
+        partsText.push(`車身: ${brand.name} ($${p.toLocaleString()})`);
+      }
+      if (hasSunroof) {
+        const brand = TINTING_BRANDS.find(x => x.id === sId);
+        const p = brand.prices[selectedCarModel].sunroof;
+        rawTotal += p;
+        partsText.push(`天窗: ${brand.name} ($${p.toLocaleString()})`);
+      }
+
+      let discount = 0;
+      let discNote = '';
+      if (hasFront && hasBody && hasSunroof) {
+        discount = 1000;
+        discNote = ' [全車含天窗現折$1,000]';
+      } else if (hasFront && hasBody && !hasSunroof) {
+        discount = 500;
+        discNote = ' [前擋+車身現折$500]';
+      }
+
+      const finalPrice = Math.max(0, rawTotal - discount);
+      const carName = selectedCarModel === 'm3' ? 'Model 3' : 'Model Y';
+      const quoteItemId = `tint-mix-${selectedCarModel}-${fId}-${bId}-${sId}`;
+
+      quotation.addItem(quoteItemId, 'electrical', '0', {
+        name: `☀️ [隔熱紙] ${carName} 自訂混搭專案${discNote}`,
+        price: finalPrice,
+        variantTitle: partsText.join(' + '),
+        store: '好室多膜一站式服務'
+      });
+
+      updateQuoteBadge();
+      alert(`已將「${carName} 隔熱紙混搭專案」加入報價單！ (最終價 NT$ ${finalPrice.toLocaleString()})`);
+    };
+
+    window.addBrandFullPackage = function(brandId) {
+      const brand = TINTING_BRANDS.find(x => x.id === brandId);
+      if (!brand) return;
+
+      const p = brand.prices[selectedCarModel];
+      const carName = selectedCarModel === 'm3' ? 'Model 3' : 'Model Y';
+      
+      let price = p.full;
+      let variantTitle = '全車完整套餐 (前擋+車身+天窗)';
+      if (!price) {
+        price = (p.front || 0) + (p.body || 0) + (p.sunroof || 0);
+        variantTitle = '組合套餐 (前擋+車身+天窗)';
+      }
+
+      quotation.addItem(`tint-pkg-${brandId}-${selectedCarModel}`, 'electrical', '0', {
+        name: `☀️ [隔熱紙] ${carName} ${brand.name} 套餐`,
+        price: price,
+        variantTitle: variantTitle,
+        store: '好室多膜一站式服務'
+      });
+
+      updateQuoteBadge();
+      alert(`已將「${carName} ${brand.name} 隔熱紙套餐」加入報價單！`);
+    };
+
+    function renderBrandGrid() {
+      const container = document.getElementById('tint-grid-container');
+
+      container.innerHTML = TINTING_BRANDS.map(brand => {
+        const p = brand.prices[selectedCarModel] || {};
+
+        return `
+          <div class="tint-card">
+            <span class="tint-card-badge">${brand.brand}</span>
+            <div>
+              <div class="tint-brand-name">${brand.name}</div>
+              <div class="tint-series-name">${brand.series}</div>
+              <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.85rem; line-height: 1.4;">
+                ${brand.features}
+              </div>
+
+              <table class="tint-part-table">
+                <tr>
+                  <td>前擋玻璃 (Front)</td>
+                  <td class="tint-part-price">${p.front ? 'NT$ ' + p.front.toLocaleString() : '未提供/自選'}</td>
+                </tr>
+                <tr>
+                  <td>車身 (前座+駕駛+後擋)</td>
+                  <td class="tint-part-price">${p.body ? 'NT$ ' + p.body.toLocaleString() : '未提供/自選'}</td>
+                </tr>
+                <tr>
+                  <td>全景天窗 (Sunroof)</td>
+                  <td class="tint-part-price">${p.sunroof ? 'NT$ ' + p.sunroof.toLocaleString() : '未提供/自選'}</td>
+                </tr>
+                ${p.full ? `
+                  <tr style="border-top: 1px solid var(--border-color);">
+                    <td style="font-weight: 800; color: var(--primary);">全車全套優惠價</td>
+                    <td class="tint-part-price" style="color: var(--primary); font-size: 1rem; font-weight: 900;">
+                      NT$ ${p.full.toLocaleString()}
+                    </td>
+                  </tr>
+                ` : ''}
+              </table>
+            </div>
+
+            <button class="btn-add-quote" onclick="addBrandFullPackage('${brand.id}')">
+              <i class="fas fa-plus-circle"></i>
+              <span>加入 ${brand.name} 套餐報價</span>
+            </button>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Modal drawer toggle
+    document.getElementById('btn-open-quote-drawer').addEventListener('click', () => {
+      quotation.renderDrawerContent('modal-quote-body', 'all');
+      document.getElementById('quote-drawer-overlay').classList.add('active');
+    });
+
+    document.getElementById('btn-close-quote-drawer').addEventListener('click', () => {
+      document.getElementById('quote-drawer-overlay').classList.remove('active');
+    });
+
+    // Theme toggle
+    document.getElementById('btn-theme-toggle').addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'light';
+      const next = current === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+    });
+
+    // Initialize
+    selectModel('m3');
+    updateQuoteBadge();
+  </script>
+</body>
+</html>
