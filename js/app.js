@@ -572,27 +572,6 @@ class TeslaApp {
           }
         }
       });
-    });ta-id="${item.id}">
-                  <i class="fas fa-eye"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      `;
-    }).join('');
-
-    // Attach variant select change event listeners
-    this.productGridContainer.querySelectorAll('.product-variant-select').forEach(selectEl => {
-      selectEl.addEventListener('change', (e) => {
-        const itemId = e.currentTarget.dataset.id;
-        const selectedOpt = e.currentTarget.options[e.currentTarget.selectedIndex];
-        const newPrice = parseInt(selectedOpt.dataset.price);
-        const priceEl = document.getElementById(`card-price-${itemId}`);
-        if (priceEl && !isNaN(newPrice)) {
-          priceEl.innerHTML = `NT$ ${newPrice.toLocaleString()}`;
-        }
-      });
     });
 
     this.productGridContainer.querySelectorAll('.btn-add-quote').forEach(btn => {
@@ -796,14 +775,16 @@ class TeslaApp {
             ${item.description}
           </p>
 
-          <table style="width: 100%; font-size: 0.85rem; border-collapse: collapse; margin-bottom: 1.5rem;">
-            ${item.specs.map(s => `
-              <tr style="border-bottom: 1px solid var(--border-color);">
-                <td style="padding: 6px 0; color: var(--text-muted); font-weight: 600;">${s.key}</td>
-                <td style="padding: 6px 0; color: var(--text-main);">${s.value}</td>
-              </tr>
-            `).join('')}
-          </table>
+          ${item.specs && item.specs.length > 0 ? `
+            <table style="width: 100%; font-size: 0.85rem; border-collapse: collapse; margin-bottom: 1.5rem;">
+              ${item.specs.map(s => `
+                <tr style="border-bottom: 1px solid var(--border-color);">
+                  <td style="padding: 6px 0; color: var(--text-muted); font-weight: 600;">${s.key}</td>
+                  <td style="padding: 6px 0; color: var(--text-main);">${s.value}</td>
+                </tr>
+              `).join('')}
+            </table>
+          ` : ''}
 
           <div style="display: flex; gap: 0.75rem;">
             <button id="modal-add-quote-btn" class="btn-primary" style="flex: 1; justify-content: center; padding: 0.75rem;">
