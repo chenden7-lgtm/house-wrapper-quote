@@ -439,7 +439,28 @@ class TeslaApp {
     }
 
     if (item.storeId === 'quackev' || item.brand === 'QuackEV' || item.brand === '呱樂電驢工坊') {
-      return `https://www.quackev.com/products/info.php?id=94851    this.productGridContainer.innerHTML = products.map(item => {
+      return `https://www.quackev.com/products/info.php?id=94851`;
+    } else {
+      return `https://global.jowua-life.com/collections/model3-2024`;
+    }
+  }
+
+  renderProductGrid() {
+    if (!this.productGridContainer) return;
+    const products = this.fitment.getFilteredSingleItems();
+
+    if (products.length === 0) {
+      this.productGridContainer.innerHTML = `
+        <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem; color: var(--text-muted);">
+          <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 1rem; color: var(--tesla-red);"></i>
+          <h3>找不到符合條件的單品配件</h3>
+          <p>請嘗試切換店家品牌或清空搜尋關鍵字</p>
+        </div>
+      `;
+      return;
+    }
+
+    this.productGridContainer.innerHTML = products.map(item => {
       const compat = this.fitment.checkCompatibility(item);
       const itemUrl = this.getItemUrl(item);
       const bestVariant = getBestMatchingVariant(item, this.fitment.selectedModelId);
