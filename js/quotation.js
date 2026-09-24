@@ -113,6 +113,8 @@ export class QuotationManager {
             storeId: 'electrical'
           },
           unitPrice: q.price || 0,
+          officialOriginalPrice: q.price || 0,
+          isJowua: false,
           variantTitle: q.variantTitle || null,
           subtotal: (q.price || 0) * (q.quantity || 1)
         };
@@ -138,23 +140,27 @@ export class QuotationManager {
         }
       }
 
-      let unitPrice = q.price !== null && q.price !== undefined ? q.price : dataObj.price;
+      let officialOriginalPrice = q.price !== null && q.price !== undefined ? q.price : dataObj.price;
       let variantTitle = q.variantTitle || null;
 
       if (q.type === 'single' && q.variantId && dataObj.variants) {
         const foundVar = dataObj.variants.find(v => String(v.id) === String(q.variantId));
         if (foundVar) {
-          unitPrice = foundVar.price;
+          officialOriginalPrice = foundVar.price;
           variantTitle = foundVar.title;
         }
       }
 
+      const isJowua = dataObj.storeId === 'jowua' || dataObj.brand === 'Jowua' || (dataObj.id && dataObj.id.startsWith('jowua_'));
+      const unitPrice = isJowua ? Math.round(officialOriginalPrice * 0.95) : officialOriginalPrice;
       const subtotal = unitPrice * (q.quantity || 1);
 
       return {
         ...q,
         data: dataObj,
         unitPrice,
+        officialOriginalPrice,
+        isJowua,
         variantTitle,
         subtotal
       };
@@ -188,11 +194,13 @@ export class QuotationManager {
     lines.push(`----------------------------------------`);
 
     details.forEach((item, index) => {
-      let storeTag = '[Jowua]';
+      let storeTag = '[JOWUA 代購 95折]';
       if (item.type === 'electrical') {
         storeTag = '[⚡️電系改裝]';
       } else if (item.data.storeId === 'quackev') {
-        storeTag = '[呱樂電驢]';
+        storeTag = '[呱樂完工價(已含安裝費)]';
+      } else if (!item.isJowua) {
+        storeTag = '[好室配件]';
       }
 
       lines.push(`${index + 1}. ${storeTag} ${item.data.name}`);
@@ -201,18 +209,24 @@ export class QuotationManager {
         lines.push(`   └ 選擇規格：${item.variantTitle}`);
       }
 
+      if (item.isJowua) {
+        lines.push(`   └ 好室代購 95 折優惠（JOWUA 官網原價 NT$ ${item.officialOriginalPrice.toLocaleString()}）`);
+      } else if (item.data.storeId === 'quackev') {
+        lines.push(`   └ 價格說明：已包含所有門市施工安裝費`);
+      }
+
       if (item.type === 'bundle' && item.data.itemsIncluded) {
         lines.push(`   └ 組合內含：${item.data.itemsIncluded.join(' + ')}`);
       }
 
-      lines.push(`   └ 數量：x${item.quantity}  單價：NT$ ${item.unitPrice.toLocaleString()}  小計：NT$ ${item.subtotal.toLocaleString()}`);
+      lines.push(`   └ 數量：x${item.quantity}  優惠價：NT$ ${item.unitPrice.toLocaleString()}  小計：NT$ ${item.subtotal.toLocaleString()}`);
     });
 
     lines.push(`----------------------------------------`);
     lines.push(`💰 小計總額：NT$ ${totals.rawTotal.toLocaleString()}`);
 
     if (totals.extraDiscount > 0) {
-      lines.push(`🎁 促銷折扣：-NT$ ${totals.extraDiscount.toLocaleString()}`);
+      lines.push(`🎁 組合加碼折扣：-NT$ ${totals.extraDiscount.toLocaleString()}`);
     }
 
     lines.push(`🔥 最終報價：NT$ ${totals.finalTotal.toLocaleString()}`);
@@ -222,7 +236,7 @@ export class QuotationManager {
     }
 
     lines.push(`----------------------------------------`);
-    lines.push(`感謝您的詢問！好室多膜提供原廠完工保固與專業施工，歡迎預約施工時間！`);
+    lines.push(`感謝您的詢問！好室多膜提供 JOWUA 保固登入協助與呱樂完工保固，歡迎預約施工時間！`);
 
     return lines.join('\n');
   }
@@ -248,23 +262,23 @@ export class QuotationManager {
           <div style="text-align: center; padding: 3rem 1rem; color: var(--text-muted); background: var(--bg-secondary); border-radius: var(--radius-md); border: 1px dashed var(--border-color);">
             <i class="fas fa-shopping-bag" style="font-size: 2.5rem; margin-bottom: 0.75rem; color: var(--text-dim);"></i>
             <p>目前報價單內尚無配件、組合包或電系改裝項目。</p>
-            <p style="font-size: 0.8rem; margin-top: 4px;">請在商品或改裝卡片上記擊「＋加報價單」按鈕。</p>
+            <p style="font-size: 0.8rem; margin-top: 4px;">請在商品或改裝卡片點擊「＋加報價單」按鈕。</p>
           </div>
         ` : `
           <div style="margin-bottom: 1.5rem; max-height: 360px; overflow-y: auto;">
             ${details.map(item => {
-              let storeBadgeText = 'Jowua原廠';
+              let storeBadgeText = 'JOWUA 95折代購';
               let badgeBg = 'rgba(245,158,11,0.2)';
-              let badgeColor = 'var(--accent-amber)';
+              let badgeColor = '#b45309';
 
               if (item.type === 'electrical') {
                 storeBadgeText = '⚡️電系改裝';
                 badgeBg = 'rgba(232,86,55,0.2)';
                 badgeColor = 'var(--primary)';
               } else if (item.data.storeId === 'quackev') {
-                storeBadgeText = 'QuackEV完工';
+                storeBadgeText = 'QuackEV (含安裝費)';
                 badgeBg = 'rgba(16,185,129,0.2)';
-                badgeColor = 'var(--accent-green)';
+                badgeColor = '#047857';
               }
 
               return `
@@ -284,7 +298,12 @@ export class QuotationManager {
                       </div>
                     ` : ''}
                     <div style="font-size: 0.8rem; color: var(--text-muted);">
-                      單價：NT$ ${item.unitPrice.toLocaleString()}
+                      ${item.isJowua ? `
+                        <span>好室 95 折：<strong style="color: var(--primary);">NT$ ${item.unitPrice.toLocaleString()}</strong></span>
+                        <span style="font-size: 0.72rem; margin-left: 4px;">(官網原價 $${item.officialOriginalPrice.toLocaleString()})</span>
+                      ` : `
+                        <span>單價：NT$ ${item.unitPrice.toLocaleString()} (已含安裝費)</span>
+                      `}
                     </div>
                   </div>
 

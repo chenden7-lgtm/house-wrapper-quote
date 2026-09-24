@@ -284,11 +284,64 @@ class TeslaApp {
 
   renderAll() {
     this.renderStoreBar();
+    this.renderStoreNoticeBanner();
     this.renderModelGrid();
     this.renderCategoryPills();
     this.renderProductGrid();
     this.renderBundlesGrid();
     this.updateNavQuoteBadge();
+  }
+
+  renderStoreNoticeBanner() {
+    const bannerContainer = document.getElementById('store-notice-banner-container');
+    if (!bannerContainer) return;
+
+    const storeId = this.fitment.selectedStoreId;
+
+    if (storeId === 'jowua') {
+      bannerContainer.innerHTML = `
+        <div style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(232, 86, 55, 0.12)); border: 1.5px solid rgba(245, 158, 11, 0.4); padding: 1.1rem 1.5rem; border-radius: 14px; margin-bottom: 1.5rem; text-align: center; box-shadow: 0 4px 16px rgba(245,158,11,0.08);">
+          <div style="font-weight: 900; font-size: 1.12rem; color: #b45309; margin-bottom: 4px; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+            <i class="fas fa-gift"></i> 好室多膜代購協助安裝，享 95 折優惠
+          </div>
+          <div style="font-size: 0.92rem; color: var(--text-bright); font-weight: 700;">
+            保固協助登入，後續保固問題皆可直接與我們詢問處理
+          </div>
+        </div>
+      `;
+    } else if (storeId === 'quackev') {
+      bannerContainer.innerHTML = `
+        <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(5, 150, 105, 0.12)); border: 1.5px solid rgba(16, 185, 129, 0.4); padding: 1.1rem 1.5rem; border-radius: 14px; margin-bottom: 1.5rem; text-align: center; box-shadow: 0 4px 16px rgba(16,185,129,0.08);">
+          <div style="font-weight: 900; font-size: 1.12rem; color: #047857; margin-bottom: 4px; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+            <i class="fas fa-wrench"></i> 商品價格已包含所有安裝費用
+          </div>
+          <div style="font-size: 0.92rem; color: var(--text-bright); font-weight: 700;">
+            因本身價格已非常優惠，恕無額外折價優惠
+          </div>
+        </div>
+      `;
+    } else {
+      bannerContainer.innerHTML = `
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+          <div style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(232, 86, 55, 0.1)); border: 1.5px solid rgba(245, 158, 11, 0.35); padding: 0.9rem 1.25rem; border-radius: 12px; text-align: left;">
+            <div style="font-weight: 900; font-size: 1.02rem; color: #b45309; margin-bottom: 3px;">
+              🎁 JOWUA 代購：好室多膜協助安裝享 95 折優惠
+            </div>
+            <div style="font-size: 0.83rem; color: var(--text-main); font-weight: 600;">
+              保固協助登入，後續保固問題皆可直接與我們詢問處理
+            </div>
+          </div>
+          <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(5, 150, 105, 0.1)); border: 1.5px solid rgba(16, 185, 129, 0.35); padding: 0.9rem 1.25rem; border-radius: 12px; text-align: left;">
+            <div style="font-weight: 900; font-size: 1.02rem; color: #047857; margin-bottom: 3px;">
+              🔧 呱樂電驢：商品價格已包含所有安裝費用
+            </div>
+            <div style="font-size: 0.83rem; color: var(--text-main); font-weight: 600;">
+              因本身價格已非常優惠，恕無額外折價優惠
+            </div>
+          </div>
+        </div>
+      `;
+    }
   }
 
   renderStoreBar() {
@@ -305,6 +358,7 @@ class TeslaApp {
         const id = e.currentTarget.dataset.storeId;
         this.fitment.setStore(id);
         this.renderStoreBar();
+        this.renderStoreNoticeBanner();
         this.renderProductGrid();
         this.renderBundlesGrid();
       });
@@ -385,32 +439,16 @@ class TeslaApp {
     }
 
     if (item.storeId === 'quackev' || item.brand === 'QuackEV' || item.brand === '呱樂電驢工坊') {
-      return `https://www.quackev.com/products/info.php?id=94851`;
-    } else {
-      return `https://global.jowua-life.com/collections/model3-2024`;
-    }
-  }
-
-  renderProductGrid() {
-    if (!this.productGridContainer) return;
-    const products = this.fitment.getFilteredSingleItems();
-
-    if (products.length === 0) {
-      this.productGridContainer.innerHTML = `
-        <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem; color: var(--text-muted);">
-          <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 1rem; color: var(--tesla-red);"></i>
-          <h3>找不到符合條件的單品配件</h3>
-          <p>請嘗試切換店家品牌或清空搜尋關鍵字</p>
-        </div>
-      `;
-      return;
-    }
-
-    this.productGridContainer.innerHTML = products.map(item => {
+      return `https://www.quackev.com/products/info.php?id=94851    this.productGridContainer.innerHTML = products.map(item => {
       const compat = this.fitment.checkCompatibility(item);
       const itemUrl = this.getItemUrl(item);
       const bestVariant = getBestMatchingVariant(item, this.fitment.selectedModelId);
-      const activePrice = bestVariant ? bestVariant.price : item.price;
+      const officialPrice = bestVariant ? bestVariant.price : item.price;
+      
+      const isJowua = item.storeId === 'jowua' || item.brand === 'Jowua' || (item.id && item.id.startsWith('jowua_'));
+      const isQuack = item.storeId === 'quackev' || item.brand === 'QuackEV' || item.brand === '呱樂電驢工坊' || (item.id && item.id.startsWith('quack_'));
+
+      const discountPrice = isJowua ? Math.round(officialPrice * 0.95) : officialPrice;
 
       return `
         <div class="product-card ${compat.status === 'incompatible' ? 'incompatible' : ''}">
@@ -420,18 +458,26 @@ class TeslaApp {
               <span class="img-external-badge"><i class="fas fa-external-link-alt"></i> 官方頁面</span>
             </a>
             <span class="store-brand-badge ${item.storeId}">
-              ${item.storeId === 'quackev' ? 'QuackEV完工' : 'Jowua原廠'}
+              ${isQuack ? 'QuackEV完工' : (isJowua ? 'Jowua代購95折' : item.brand)}
             </span>
           </div>
 
           <div class="product-card-body">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
               <span style="font-size: 0.8rem; color: var(--text-muted);">${item.brand}</span>
-              ${item.isOnSale ? `
+              ${isJowua ? `
+                <span style="background: rgba(245, 158, 11, 0.15); color: #d97706; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; border: 1px solid rgba(245,158,11,0.3); display: inline-flex; align-items: center; gap: 3px;" title="好室多膜代購優惠（非官網官方促銷）">
+                  🏷️ 好室代購 95 折
+                </span>
+              ` : (isQuack ? `
+                <span style="background: rgba(16, 185, 129, 0.15); color: #059669; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; border: 1px solid rgba(16,185,129,0.3); display: inline-flex; align-items: center; gap: 3px;">
+                  <i class="fas fa-check-circle"></i> 已含安裝費
+                </span>
+              ` : (item.isOnSale ? `
                 <span style="background: linear-gradient(135deg, #ef4444, #dc2626); color: #fff; font-size: 0.7rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; display: inline-flex; align-items: center; gap: 3px; box-shadow: 0 2px 6px rgba(239,68,68,0.3);">
                   <i class="fas fa-fire"></i> 官網促銷價
                 </span>
-              ` : ''}
+              ` : ''))}
             </div>
 
             <div class="product-title">${item.name}</div>
@@ -445,9 +491,10 @@ class TeslaApp {
                   <i class="fas fa-list-ul" style="color: var(--tesla-red);"></i> 選擇規格款式 / 顏色組合：
                 </label>
                 <select class="product-variant-select" id="variant-select-${item.id}" data-id="${item.id}" style="width: 100%; padding: 6px 8px; border-radius: 6px; background: var(--bg-card); color: var(--text-main); border: 1px solid var(--border-color); font-size: 0.82rem; font-weight: 600; cursor: pointer;">
-                  ${item.variants.map(v => `
-                    <option value="${v.id}" data-price="${v.price}" ${bestVariant && String(v.id) === String(bestVariant.id) ? 'selected' : ''}>${v.title}${v.price !== item.price ? ` (NT$ ${v.price.toLocaleString()})` : ''}</option>
-                  `).join('')}
+                  ${item.variants.map(v => {
+                    const varDisc = isJowua ? Math.round(v.price * 0.95) : v.price;
+                    return `<option value="${v.id}" data-price="${v.price}" ${bestVariant && String(v.id) === String(bestVariant.id) ? 'selected' : ''}>${v.title} (${isJowua ? `95折 NT$ ${varDisc.toLocaleString()} | 原價 $${v.price.toLocaleString()}` : `NT$ ${v.price.toLocaleString()}`})</option>`;
+                  }).join('')}
                 </select>
               </div>
             ` : ''}
@@ -455,15 +502,14 @@ class TeslaApp {
             <div class="product-card-footer">
               <div>
                 <div class="product-price" id="card-price-${item.id}">
-                  NT$ ${activePrice.toLocaleString()}
-                  ${item.originalPrice ? `<del>NT$ ${item.originalPrice.toLocaleString()}</del>` : ''}
+                  ${isJowua ? `
+                    <div style="font-size: 1.25rem; font-weight: 900; color: var(--primary);">NT$ ${discountPrice.toLocaleString()}</div>
+                    <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: 500; margin-top: 2px;">JOWUA 官網原價 NT$ ${officialPrice.toLocaleString()}</div>
+                  ` : `
+                    <div style="font-size: 1.25rem; font-weight: 900; color: var(--text-bright);">NT$ ${officialPrice.toLocaleString()}</div>
+                    <div style="font-size: 0.75rem; color: #059669; font-weight: 700; margin-top: 2px;"><i class="fas fa-check-circle"></i> 已含安裝費</div>
+                  `}
                 </div>
-                ${item.storeId === 'quackev' && item.installFee !== undefined ? `
-                  <div style="font-size: 0.75rem; color: ${item.installFee > 0 ? 'var(--accent-green)' : 'var(--text-muted)'}; margin-top: 3px; font-weight: 600; display: flex; align-items: center; gap: 4px;">
-                    <i class="fas ${item.installFee > 0 ? 'fa-wrench' : 'fa-check-circle'}"></i>
-                    ${item.installFee > 0 ? `含門市工資 NT$ ${item.installFee.toLocaleString()} (零件 $${item.partsPrice.toLocaleString()})` : `門市免安裝費`}
-                  </div>
-                ` : ''}
               </div>
 
               <div style="display: flex; gap: 0.5rem;">
@@ -471,6 +517,41 @@ class TeslaApp {
                   <i class="fas fa-plus"></i> 加報價
                 </button>
                 <button class="btn-icon-action btn-open-detail" data-id="${item.id}">
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    // Attach variant select change event listeners
+    this.productGridContainer.querySelectorAll('.product-variant-select').forEach(selectEl => {
+      selectEl.addEventListener('change', (e) => {
+        const itemId = e.currentTarget.dataset.id;
+        const selectedOpt = e.currentTarget.options[e.currentTarget.selectedIndex];
+        const newOfficialPrice = parseInt(selectedOpt.dataset.price);
+        const priceEl = document.getElementById(`card-price-${itemId}`);
+        const itemObj = ACCESSORIES.find(a => a.id === itemId);
+        const itemIsJowua = itemObj && (itemObj.storeId === 'jowua' || itemObj.brand === 'Jowua' || (itemObj.id && itemObj.id.startsWith('jowua_')));
+
+        if (priceEl && !isNaN(newOfficialPrice)) {
+          if (itemIsJowua) {
+            const newDisc = Math.round(newOfficialPrice * 0.95);
+            priceEl.innerHTML = `
+              <div style="font-size: 1.25rem; font-weight: 900; color: var(--primary);">NT$ ${newDisc.toLocaleString()}</div>
+              <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: 500; margin-top: 2px;">JOWUA 官網原價 NT$ ${newOfficialPrice.toLocaleString()}</div>
+            `;
+          } else {
+            priceEl.innerHTML = `
+              <div style="font-size: 1.25rem; font-weight: 900; color: var(--text-bright);">NT$ ${newOfficialPrice.toLocaleString()}</div>
+              <div style="font-size: 0.75rem; color: #059669; font-weight: 700; margin-top: 3px;"><i class="fas fa-check-circle"></i> 已含安裝費</div>
+            `;
+          }
+        }
+      });
+    });ta-id="${item.id}">
                   <i class="fas fa-eye"></i>
                 </button>
               </div>
@@ -599,7 +680,12 @@ class TeslaApp {
     const compat = this.fitment.checkCompatibility(item);
     const itemUrl = this.getItemUrl(item);
     const bestVariant = getBestMatchingVariant(item, this.fitment.selectedModelId);
-    const activePrice = bestVariant ? bestVariant.price : item.price;
+    const officialPrice = bestVariant ? bestVariant.price : item.price;
+
+    const isJowua = item.storeId === 'jowua' || item.brand === 'Jowua' || (item.id && item.id.startsWith('jowua_'));
+    const isQuack = item.storeId === 'quackev' || item.brand === 'QuackEV' || item.brand === '呱樂電驢工坊' || (item.id && item.id.startsWith('quack_'));
+
+    const discountPrice = isJowua ? Math.round(officialPrice * 0.95) : officialPrice;
 
     this.modalDetailBody.innerHTML = `
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding: 2rem;">
@@ -627,8 +713,25 @@ class TeslaApp {
           <div style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.25rem;">${item.brand}</div>
           <h2 style="font-size: 1.4rem; font-weight: 800; line-height: 1.3; margin-bottom: 0.75rem;">${item.name}</h2>
 
-          <div style="font-size: 2rem; font-weight: 900; color: var(--tesla-red); margin-bottom: 0.5rem;" id="modal-display-price">
-            NT$ ${activePrice.toLocaleString()}
+          <div style="margin-bottom: 0.85rem;">
+            <div style="font-size: 2rem; font-weight: 900; color: ${isJowua ? 'var(--primary)' : 'var(--text-bright)'}; line-height: 1;" id="modal-display-price">
+              NT$ ${discountPrice.toLocaleString()}
+            </div>
+            <div id="modal-display-subprice" style="font-size: 0.9rem; margin-top: 4px; ${isJowua ? 'color: var(--text-muted); font-weight: 500;' : 'color: #059669; font-weight: 700;'}">
+              ${isJowua ? `JOWUA 官網原價 NT$ ${officialPrice.toLocaleString()}` : `<i class="fas fa-check-circle"></i> 已含安裝費 (無額外折價)`}
+            </div>
+          </div>
+
+          <div style="margin-bottom: 1rem;">
+            ${isJowua ? `
+              <div style="display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(245, 158, 11, 0.15); color: #d97706; padding: 4px 12px; border-radius: 6px; font-weight: 800; font-size: 0.85rem; border: 1px solid rgba(245, 158, 11, 0.3);">
+                🏷️ 好室代購 95 折 (好室多膜代購優惠)
+              </div>
+            ` : (isQuack ? `
+              <div style="display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(16, 185, 129, 0.15); color: #047857; padding: 4px 12px; border-radius: 6px; font-weight: 800; font-size: 0.85rem; border: 1px solid rgba(16, 185, 129, 0.3);">
+                <i class="fas fa-wrench"></i> 呱樂電驢工坊直營完工價 (商品價格已包含所有安裝費)
+              </div>
+            ` : '')}
           </div>
 
           ${item.variants && item.variants.length > 1 ? `
@@ -637,9 +740,10 @@ class TeslaApp {
                 <i class="fas fa-list-ul" style="color: var(--tesla-red);"></i> 選擇規格款式 / 顏色組合：
               </label>
               <select id="modal-variant-select" style="width: 100%; padding: 8px 12px; border-radius: 6px; background: var(--bg-card); color: var(--text-main); border: 1px solid var(--border-color); font-size: 0.9rem; font-weight: 700; cursor: pointer;">
-                ${item.variants.map(v => `
-                  <option value="${v.id}" data-price="${v.price}" ${bestVariant && String(v.id) === String(bestVariant.id) ? 'selected' : ''}>${v.title}${v.price !== item.price ? ` (NT$ ${v.price.toLocaleString()})` : ''}</option>
-                `).join('')}
+                ${item.variants.map(v => {
+                  const varDisc = isJowua ? Math.round(v.price * 0.95) : v.price;
+                  return `<option value="${v.id}" data-price="${v.price}" ${bestVariant && String(v.id) === String(bestVariant.id) ? 'selected' : ''}>${v.title} (${isJowua ? `95折 NT$ ${varDisc.toLocaleString()} | 原價 $${v.price.toLocaleString()}` : `NT$ ${v.price.toLocaleString()}`})</option>`;
+                }).join('')}
               </select>
             </div>
           ` : ''}
@@ -696,10 +800,18 @@ class TeslaApp {
     if (modalVSelect) {
       modalVSelect.addEventListener('change', (e) => {
         const selectedOpt = e.currentTarget.options[e.currentTarget.selectedIndex];
-        const newPrice = parseInt(selectedOpt.dataset.price);
+        const newOfficialPrice = parseInt(selectedOpt.dataset.price);
         const priceEl = document.getElementById('modal-display-price');
-        if (priceEl && !isNaN(newPrice)) {
-          priceEl.innerText = `NT$ ${newPrice.toLocaleString()}`;
+        const subPriceEl = document.getElementById('modal-display-subprice');
+        if (priceEl && !isNaN(newOfficialPrice)) {
+          if (isJowua) {
+            const newDisc = Math.round(newOfficialPrice * 0.95);
+            priceEl.innerText = `NT$ ${newDisc.toLocaleString()}`;
+            if (subPriceEl) subPriceEl.innerText = `JOWUA 官網原價 NT$ ${newOfficialPrice.toLocaleString()}`;
+          } else {
+            priceEl.innerText = `NT$ ${newOfficialPrice.toLocaleString()}`;
+            if (subPriceEl) subPriceEl.innerHTML = `<i class="fas fa-check-circle"></i> 已含安裝費 (無額外折價)`;
+          }
         }
       });
     }

@@ -319,33 +319,44 @@
 
       <div class="filter-group">
         <label for="adminStoreFilter">🏪 篩選來源品牌：</label>
-        <select id="adminStoreFilter" class="filter-select">
+        <select id="adminStoreFilter" class="filter-select" onchange="renderMasterTable()">
           <option value="all">全部品牌 (Quack & Jowua)</option>
           <option value="quackev">呱樂電驢 (QuackEV)</option>
           <option value="jowua">Jowua Global</option>
         </select>
       </div>
 
+      <div class="filter-group">
+        <label for="adminInstallStatusFilter">🔧 安裝費與折扣狀態：</label>
+        <select id="adminInstallStatusFilter" class="filter-select" onchange="renderMasterTable()">
+          <option value="all">全部狀態</option>
+          <option value="jowua_95">🏷️ JOWUA 代購 95 折</option>
+          <option value="quack_installed">✅ 呱樂已含安裝費</option>
+          <option value="pending">❓ 待確認 (門市例外項目)</option>
+        </select>
+      </div>
+
       <div class="filter-group" style="flex: 1;">
         <label for="adminSearchInput">🔍 關鍵字搜尋：</label>
-        <input type="text" id="adminSearchInput" class="filter-input" placeholder="搜尋商品名稱、品牌、SKU...">
+        <input type="text" id="adminSearchInput" class="filter-input" placeholder="搜尋商品名稱、品牌、SKU..." onkeyup="renderMasterTable()">
       </div>
     </div>
 
     <table class="audit-table">
       <thead>
         <tr>
-          <th style="width: 50px;">#</th>
-          <th style="width: 130px;">來源品牌</th>
+          <th style="width: 45px;">#</th>
+          <th style="width: 120px;">來源品牌</th>
           <th>商品名稱</th>
-          <th style="width: 110px;">類型</th>
-          <th style="width: 100px;">售價</th>
-          <th style="width: 220px;">適用車型與版本</th>
-          <th style="width: 120px;">官方頁面</th>
+          <th style="width: 100px;">類型</th>
+          <th style="width: 170px;">官網價 vs 報價金額</th>
+          <th style="width: 140px;">安裝與折扣標籤</th>
+          <th style="width: 200px;">適用車型與版本</th>
+          <th style="width: 110px;">官方頁面</th>
         </tr>
       </thead>
       <tbody id="masterInventoryBody">
-        <tr><td colspan="7" style="text-align: center;">正在載入商品主清單...</td></tr>
+        <tr><td colspan="8" style="text-align: center;">正在載入商品主清單...</td></tr>
       </tbody>
     </table>
 
@@ -556,13 +567,23 @@
     function renderMasterTable() {
       const modelId = document.getElementById('adminModelFilter').value;
       const storeId = document.getElementById('adminStoreFilter').value;
+      const installFilter = document.getElementById('adminInstallStatusFilter') ? document.getElementById('adminInstallStatusFilter').value : 'all';
       const query = document.getElementById('adminSearchInput').value.trim().toLowerCase();
 
       let filtered = allMasterProducts.filter(item => {
+        const isJowua = (item.source && item.source.includes('Jowua')) || (item.id && item.id.includes('jowua'));
+
         // Store filter
         if (storeId !== 'all') {
-          if (storeId === 'jowua' && !item.source.includes('Jowua')) return false;
-          if (storeId === 'quackev' && !item.source.includes('QuackEV') && !item.source.includes('呱樂')) return false;
+          if (storeId === 'jowua' && !isJowua) return false;
+          if (storeId === 'quackev' && isJowua) return false;
+        }
+
+        // Install status filter
+        if (installFilter !== 'all') {
+          if (installFilter === 'jowua_95' && !isJowua) return false;
+          if (installFilter === 'quack_installed' && (isJowua || item.isPendingConfirm)) return false;
+          if (installFilter === 'pending' && (!item.isPendingConfirm && isJowua)) return false;
         }
 
         // Keyword filter
@@ -609,7 +630,7 @@
 
       const tbody = document.getElementById('masterInventoryBody');
       if (filtered.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: var(--text-dim);">沒有符合篩選條件的商品品項。</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; color: var(--text-dim);">沒有符合篩選條件的商品品項。</td></tr>';
         return;
       }
 
@@ -619,13 +640,34 @@
           ? '<span style="color:#fbbf24; font-weight:600;">🎁 特惠禮包</span>' 
           : '<span style="color:var(--text-dim);">📦 單品配件</span>';
 
+        const isJowua = (item.source && item.source.includes('Jowua')) || (item.id && item.id.includes('jowua'));
+        let priceDisplay = '';
+        let ruleBadge = '';
+
+        if (isJowua) {
+          const discountPrice = Math.round((item.price || 0) * 0.95);
+          priceDisplay = `
+            <div style="font-weight: 800; color: var(--primary);">NT$ ${discountPrice.toLocaleString()}</div>
+            <div style="font-size: 0.75rem; color: var(--text-dim);">JOWUA 官網原價 NT$ ${item.price ? item.price.toLocaleString() : '-'}</div>
+          `;
+          ruleBadge = `<span style="background: rgba(245, 158, 11, 0.15); color: #d97706; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.78rem;">🏷️ 好室代購 95 折</span>`;
+        } else {
+          priceDisplay = `<div style="font-weight: 800; color: var(--text-bright);">NT$ ${item.price ? item.price.toLocaleString() : '-'}</div>`;
+          if (item.isPendingConfirm) {
+            ruleBadge = `<span style="background: rgba(245, 158, 11, 0.2); color: #d97706; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.78rem;">❓ 待確認</span>`;
+          } else {
+            ruleBadge = `<span style="background: rgba(16, 185, 129, 0.15); color: #059669; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.78rem;">✅ 已含安裝費</span>`;
+          }
+        }
+
         return `
           <tr>
             <td>${idx + 1}</td>
             <td><span class="badge" style="background: var(--bg-card-hover); font-weight: 600;">${item.source}</span></td>
             <td style="font-weight: 600;">${item.name}</td>
             <td>${typeBadge}</td>
-            <td style="color: var(--primary); font-weight: 700;">NT$ ${item.price ? item.price.toLocaleString() : '-'}</td>
+            <td>${priceDisplay}</td>
+            <td>${ruleBadge}</td>
             <td>${fitBadges}</td>
             <td><a href="${item.officialUrl}" target="_blank" style="color: var(--primary); font-weight: 600;">開啟官網頁面 ↗</a></td>
           </tr>
