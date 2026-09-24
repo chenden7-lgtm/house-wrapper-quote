@@ -3,12 +3,12 @@
  * Integrates QuackEV & Jowua store catalogs, combo bundles, and LINE quotation exporter.
  */
 
-import { TESLA_MODELS, STORES, CATEGORIES, ACCESSORIES, BUNDLES } from './data.js?v=20260922_v3';
-import { FitmentEngine } from './fitment.js?v=20260922_v3';
-import { Visualizer } from './visualizer.js?v=20260922_v3';
-import { ChecklistManager } from './checklist.js?v=20260922_v3';
-import { QuotationManager } from './quotation.js?v=20260922_v3';
-import { PriceSyncEngine } from './sync.js?v=20260922_v3';
+import { TESLA_MODELS, STORES, CATEGORIES, ACCESSORIES, BUNDLES } from './data.js?v=20260924_v100';
+import { FitmentEngine } from './fitment.js?v=20260924_v100';
+import { Visualizer } from './visualizer.js?v=20260924_v100';
+import { ChecklistManager } from './checklist.js?v=20260924_v100';
+import { QuotationManager } from './quotation.js?v=20260924_v100';
+import { PriceSyncEngine } from './sync.js?v=20260924_v100';
 
 export function getBestMatchingVariant(item, selectedModelId) {
   if (!item || !item.variants || item.variants.length === 0) return null;
