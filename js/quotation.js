@@ -186,11 +186,11 @@ export class QuotationManager {
   calculateTotals() {
     const details = this.getItemDetails();
     const rawTotal = details.reduce((sum, item) => sum + item.subtotal, 0);
-    const finalTotal = Math.max(0, rawTotal - this.extraDiscount);
+    const finalTotal = rawTotal;
 
     return {
       rawTotal,
-      extraDiscount: this.extraDiscount,
+      extraDiscount: 0,
       finalTotal,
       itemCount: details.reduce((sum, item) => sum + item.quantity, 0)
     };
@@ -239,13 +239,7 @@ export class QuotationManager {
     });
 
     lines.push(`----------------------------------------`);
-    lines.push(`💰 小計總額：NT$ ${totals.rawTotal.toLocaleString()}`);
-
-    if (totals.extraDiscount > 0) {
-      lines.push(`🎁 組合加碼折扣：-NT$ ${totals.extraDiscount.toLocaleString()}`);
-    }
-
-    lines.push(`🔥 最終報價：NT$ ${totals.finalTotal.toLocaleString()}`);
+    lines.push(`💰 最終報價總額：NT$ ${totals.finalTotal.toLocaleString()}`);
 
     if (this.customerNote.trim()) {
       lines.push(`📝 備註事項：${this.customerNote.trim()}`);
@@ -343,18 +337,8 @@ export class QuotationManager {
           </div>
 
           <div class="glass-panel" style="padding: 1.25rem; margin-bottom: 1.5rem;">
-            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem;">
-              <span>品項小計 (${totals.itemCount} 件)</span>
-              <strong>NT$ ${totals.rawTotal.toLocaleString()}</strong>
-            </div>
-
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; font-size: 0.9rem;">
-              <span>手動額外整單折扣 (TWD)</span>
-              <input type="number" id="quote-extra-discount-input" value="${this.extraDiscount}" placeholder="0" style="width: 100px; background: var(--bg-secondary); border: 1px solid var(--border-color); color: var(--text-bright); padding: 4px 8px; border-radius: 6px; text-align: right; font-weight: 700;">
-            </div>
-
-            <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 0.75rem; border-top: 1px solid var(--border-color); font-size: 1.25rem; font-weight: 900;">
-              <span>最終報價金額</span>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 1.25rem; font-weight: 900;">
+              <span>最終報價金額 <span style="font-size: 0.85rem; font-weight: normal; color: var(--text-muted);">(${totals.itemCount} 件品項)</span></span>
               <span style="color: var(--primary);">NT$ ${totals.finalTotal.toLocaleString()}</span>
             </div>
           </div>
@@ -406,14 +390,6 @@ export class QuotationManager {
         this.renderDrawerContent(containerId, selectedModelId);
       });
     });
-
-    const discInput = document.getElementById('quote-extra-discount-input');
-    if (discInput) {
-      discInput.addEventListener('input', (e) => {
-        this.extraDiscount = Math.max(0, parseInt(e.target.value) || 0);
-        this.renderDrawerContent(containerId, selectedModelId);
-      });
-    }
 
     const noteInput = document.getElementById('quote-note-input');
     if (noteInput) {

@@ -7,7 +7,7 @@ import { TESLA_MODELS, STORES, CATEGORIES, ACCESSORIES, BUNDLES } from './data.j
 import { FitmentEngine } from './fitment.js?v=20260924_v100';
 import { Visualizer } from './visualizer.js?v=20260924_v100';
 import { ChecklistManager } from './checklist.js?v=20260924_v100';
-import { QuotationManager } from './quotation.js?v=20260925_v3';
+import { QuotationManager } from './quotation.js?v=20260925_v4';
 import { PriceSyncEngine } from './sync.js?v=20260924_v100';
 
 export function getBestMatchingVariant(item, selectedModelId) {
