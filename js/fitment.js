@@ -236,9 +236,10 @@ export class FitmentEngine {
       }
       // Search Query
       if (this.searchQuery) {
-        const titleMatch = bundle.name.toLowerCase().includes(this.searchQuery);
-        const descMatch = bundle.description.toLowerCase().includes(this.searchQuery);
-        const itemsMatch = bundle.itemsIncluded.some(i => i.toLowerCase().includes(this.searchQuery));
+        const titleMatch = (bundle.name || '').toLowerCase().includes(this.searchQuery);
+        const descMatch = (bundle.description || '').toLowerCase().includes(this.searchQuery);
+        const items = Array.isArray(bundle.itemsIncluded) ? bundle.itemsIncluded : [];
+        const itemsMatch = items.some(i => (i || '').toLowerCase().includes(this.searchQuery));
         if (!titleMatch && !descMatch && !itemsMatch) {
           return false;
         }

@@ -447,224 +447,239 @@ class TeslaApp {
 
   renderProductGrid() {
     if (!this.productGridContainer) return;
-    const products = this.fitment.getFilteredSingleItems();
+    try {
+      const products = this.fitment.getFilteredSingleItems();
 
-    if (products.length === 0) {
-      this.productGridContainer.innerHTML = `
-        <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem; color: var(--text-muted);">
-          <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 1rem; color: var(--tesla-red);"></i>
-          <h3>找不到符合條件的單品配件</h3>
-          <p>請嘗試切換店家品牌或清空搜尋關鍵字</p>
-        </div>
-      `;
-      return;
-    }
-
-    this.productGridContainer.innerHTML = products.map(item => {
-      const compat = this.fitment.checkCompatibility(item);
-      const itemUrl = this.getItemUrl(item);
-      const bestVariant = getBestMatchingVariant(item, this.fitment.selectedModelId);
-      const officialPrice = bestVariant ? bestVariant.price : item.price;
-      
-      const isJowua = item.storeId === 'jowua' || item.brand === 'Jowua' || (item.id && item.id.startsWith('jowua_'));
-      const isQuack = item.storeId === 'quackev' || item.brand === 'QuackEV' || item.brand === '呱樂電驢工坊' || (item.id && item.id.startsWith('quack_'));
-
-      const discountPrice = isJowua ? Math.round(officialPrice * 0.95) : officialPrice;
-
-      return `
-        <div class="product-card ${compat.status === 'incompatible' ? 'incompatible' : ''}">
-          <div class="product-card-img-wrapper">
-            <a href="${itemUrl}" target="_blank" rel="noopener noreferrer" class="product-img-link" title="點擊開啟 ${item.brand} 官方商品頁面">
-              <img src="${item.image}" alt="${item.name}" class="product-card-img" loading="lazy">
-              <span class="img-external-badge"><i class="fas fa-external-link-alt"></i> 官方頁面</span>
-            </a>
-            <span class="store-brand-badge ${item.storeId}">
-              ${isQuack ? 'QuackEV完工' : (isJowua ? 'Jowua代購95折' : item.brand)}
-            </span>
+      if (!products || products.length === 0) {
+        this.productGridContainer.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem; color: var(--text-muted);">
+            <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 1rem; color: var(--tesla-red);"></i>
+            <h3>找不到符合條件的單品配件</h3>
+            <p>請嘗試切換店家品牌或清空搜尋關鍵字</p>
           </div>
+        `;
+        return;
+      }
 
-          <div class="product-card-body">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-              <span style="font-size: 0.8rem; color: var(--text-muted);">${item.brand}</span>
-              ${isJowua ? `
-                <span style="background: rgba(245, 158, 11, 0.15); color: #d97706; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; border: 1px solid rgba(245,158,11,0.3); display: inline-flex; align-items: center; gap: 3px;" title="好室多膜代購優惠（非官網官方促銷）">
-                  🏷️ 好室代購 95 折
-                </span>
-              ` : (isQuack ? `
-                <span style="background: rgba(16, 185, 129, 0.15); color: #059669; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; border: 1px solid rgba(16,185,129,0.3); display: inline-flex; align-items: center; gap: 3px;">
-                  <i class="fas fa-check-circle"></i> 已含安裝費
-                </span>
-              ` : (item.isOnSale ? `
-                <span style="background: linear-gradient(135deg, #ef4444, #dc2626); color: #fff; font-size: 0.7rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; display: inline-flex; align-items: center; gap: 3px; box-shadow: 0 2px 6px rgba(239,68,68,0.3);">
-                  <i class="fas fa-fire"></i> 官網促銷價
-                </span>
-              ` : ''))}
+      this.productGridContainer.innerHTML = products.map(item => {
+        const compat = this.fitment.checkCompatibility(item);
+        const itemUrl = this.getItemUrl(item);
+        const bestVariant = getBestMatchingVariant(item, this.fitment.selectedModelId);
+        const officialPrice = bestVariant ? bestVariant.price : item.price;
+        
+        const isJowua = item.storeId === 'jowua' || item.brand === 'Jowua' || (item.id && item.id.startsWith('jowua_'));
+        const isQuack = item.storeId === 'quackev' || item.brand === 'QuackEV' || item.brand === '呱樂電驢工坊' || (item.id && item.id.startsWith('quack_'));
+
+        const discountPrice = isJowua ? Math.round(officialPrice * 0.95) : officialPrice;
+
+        return `
+          <div class="product-card ${compat.status === 'incompatible' ? 'incompatible' : ''}">
+            <div class="product-card-img-wrapper">
+              <a href="${itemUrl}" target="_blank" rel="noopener noreferrer" class="product-img-link" title="點擊開啟 ${item.brand} 官方商品頁面">
+                <img src="${item.image || 'images/default_thumb.jpg'}" alt="${item.name || ''}" class="product-card-img" loading="lazy">
+                <span class="img-external-badge"><i class="fas fa-external-link-alt"></i> 官方頁面</span>
+              </a>
+              <span class="store-brand-badge ${item.storeId}">
+                ${isQuack ? 'QuackEV完工' : (isJowua ? 'Jowua代購95折' : item.brand)}
+              </span>
             </div>
 
-            <div class="product-title">${item.name}</div>
-            <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
-              ${item.description}
-            </div>
-
-            ${item.variants && item.variants.length > 1 ? `
-              <div style="margin-bottom: 0.85rem; background: var(--bg-secondary); padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border-color);">
-                <label style="font-size: 0.75rem; color: var(--text-muted); display: block; margin-bottom: 4px; font-weight: 700;">
-                  <i class="fas fa-list-ul" style="color: var(--tesla-red);"></i> 選擇規格款式 / 顏色組合：
-                </label>
-                <select class="product-variant-select" id="variant-select-${item.id}" data-id="${item.id}" style="width: 100%; padding: 6px 8px; border-radius: 6px; background: var(--bg-card); color: var(--text-main); border: 1px solid var(--border-color); font-size: 0.82rem; font-weight: 600; cursor: pointer;">
-                  ${item.variants.map(v => {
-                    const varDisc = isJowua ? Math.round(v.price * 0.95) : v.price;
-                    return `<option value="${v.id}" data-price="${v.price}" ${bestVariant && String(v.id) === String(bestVariant.id) ? 'selected' : ''}>${v.title} (${isJowua ? `95折 NT$ ${varDisc.toLocaleString()} | 原價 $${v.price.toLocaleString()}` : `NT$ ${v.price.toLocaleString()}`})</option>`;
-                  }).join('')}
-                </select>
+            <div class="product-card-body">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                <span style="font-size: 0.8rem; color: var(--text-muted);">${item.brand}</span>
+                ${isJowua ? `
+                  <span style="background: rgba(245, 158, 11, 0.15); color: #d97706; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; border: 1px solid rgba(245,158,11,0.3); display: inline-flex; align-items: center; gap: 3px;" title="好室多膜代購優惠（非官網官方促銷）">
+                    🏷️ 好室代購 95 折
+                  </span>
+                ` : (isQuack ? `
+                  <span style="background: rgba(16, 185, 129, 0.15); color: #059669; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; border: 1px solid rgba(16,185,129,0.3); display: inline-flex; align-items: center; gap: 3px;">
+                    <i class="fas fa-check-circle"></i> 已含安裝費
+                  </span>
+                ` : (item.isOnSale ? `
+                  <span style="background: linear-gradient(135deg, #ef4444, #dc2626); color: #fff; font-size: 0.7rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; display: inline-flex; align-items: center; gap: 3px; box-shadow: 0 2px 6px rgba(239,68,68,0.3);">
+                    <i class="fas fa-fire"></i> 官網促銷價
+                  </span>
+                ` : ''))}
               </div>
-            ` : ''}
 
-            <div class="product-card-footer">
-              <div>
-                <div class="product-price" id="card-price-${item.id}">
-                  ${isJowua ? `
-                    <div style="font-size: 1.25rem; font-weight: 900; color: var(--primary);">NT$ ${discountPrice.toLocaleString()}</div>
-                    <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: 500; margin-top: 2px;">JOWUA 官網原價 NT$ ${officialPrice.toLocaleString()}</div>
-                  ` : `
-                    <div style="font-size: 1.25rem; font-weight: 900; color: var(--text-bright);">NT$ ${officialPrice.toLocaleString()}</div>
-                    <div style="font-size: 0.75rem; color: #059669; font-weight: 700; margin-top: 2px;"><i class="fas fa-check-circle"></i> 已含安裝費</div>
-                  `}
+              <div class="product-title">${item.name || ''}</div>
+              <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                ${item.description || ''}
+              </div>
+
+              ${item.variants && item.variants.length > 1 ? `
+                <div style="margin-bottom: 0.85rem; background: var(--bg-secondary); padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border-color);">
+                  <label style="font-size: 0.75rem; color: var(--text-muted); display: block; margin-bottom: 4px; font-weight: 700;">
+                    <i class="fas fa-list-ul" style="color: var(--tesla-red);"></i> 選擇規格款式 / 顏色組合：
+                  </label>
+                  <select class="product-variant-select" id="variant-select-${item.id}" data-id="${item.id}" style="width: 100%; padding: 6px 8px; border-radius: 6px; background: var(--bg-card); color: var(--text-main); border: 1px solid var(--border-color); font-size: 0.82rem; font-weight: 600; cursor: pointer;">
+                    ${item.variants.map(v => {
+                      const varDisc = isJowua ? Math.round(v.price * 0.95) : v.price;
+                      return `<option value="${v.id}" data-price="${v.price}" ${bestVariant && String(v.id) === String(bestVariant.id) ? 'selected' : ''}>${v.title} (${isJowua ? `95折 NT$ ${varDisc.toLocaleString()} | 原價 $${v.price.toLocaleString()}` : `NT$ ${v.price.toLocaleString()}`})</option>`;
+                    }).join('')}
+                  </select>
+                </div>
+              ` : ''}
+
+              <div class="product-card-footer">
+                <div>
+                  <div class="product-price" id="card-price-${item.id}">
+                    ${isJowua ? `
+                      <div style="font-size: 1.25rem; font-weight: 900; color: var(--primary);">NT$ ${discountPrice.toLocaleString()}</div>
+                      <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: 500; margin-top: 2px;">JOWUA 官網原價 NT$ ${officialPrice.toLocaleString()}</div>
+                    ` : `
+                      <div style="font-size: 1.25rem; font-weight: 900; color: var(--text-bright);">NT$ ${officialPrice.toLocaleString()}</div>
+                      <div style="font-size: 0.75rem; color: #059669; font-weight: 700; margin-top: 2px;"><i class="fas fa-check-circle"></i> 已含安裝費</div>
+                    `}
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 0.5rem;">
+                  <button class="btn-add-quote" data-id="${item.id}" data-type="single">
+                    <i class="fas fa-plus"></i> 加報價
+                  </button>
+                  <button class="btn-icon-action btn-open-detail" data-id="${item.id}">
+                    <i class="fas fa-eye"></i>
+                  </button>
                 </div>
               </div>
-
-              <div style="display: flex; gap: 0.5rem;">
-                <button class="btn-add-quote" data-id="${item.id}" data-type="single">
-                  <i class="fas fa-plus"></i> 加報價
-                </button>
-                <button class="btn-icon-action btn-open-detail" data-id="${item.id}">
-                  <i class="fas fa-eye"></i>
-                </button>
-              </div>
             </div>
           </div>
-        </div>
-      `;
-    }).join('');
+        `;
+      }).join('');
 
-    // Attach variant select change event listeners
-    this.productGridContainer.querySelectorAll('.product-variant-select').forEach(selectEl => {
-      selectEl.addEventListener('change', (e) => {
-        const itemId = e.currentTarget.dataset.id;
-        const selectedOpt = e.currentTarget.options[e.currentTarget.selectedIndex];
-        const newOfficialPrice = parseInt(selectedOpt.dataset.price);
-        const priceEl = document.getElementById(`card-price-${itemId}`);
-        const itemObj = ACCESSORIES.find(a => a.id === itemId);
-        const itemIsJowua = itemObj && (itemObj.storeId === 'jowua' || itemObj.brand === 'Jowua' || (itemObj.id && itemObj.id.startsWith('jowua_')));
+      // Attach variant select change event listeners
+      this.productGridContainer.querySelectorAll('.product-variant-select').forEach(selectEl => {
+        selectEl.addEventListener('change', (e) => {
+          const itemId = e.currentTarget.dataset.id;
+          const selectedOpt = e.currentTarget.options[e.currentTarget.selectedIndex];
+          const newOfficialPrice = parseInt(selectedOpt.dataset.price);
+          const priceEl = document.getElementById(`card-price-${itemId}`);
+          const itemObj = ACCESSORIES.find(a => a.id === itemId);
+          const itemIsJowua = itemObj && (itemObj.storeId === 'jowua' || itemObj.brand === 'Jowua' || (itemObj.id && itemObj.id.startsWith('jowua_')));
 
-        if (priceEl && !isNaN(newOfficialPrice)) {
-          if (itemIsJowua) {
-            const newDisc = Math.round(newOfficialPrice * 0.95);
-            priceEl.innerHTML = `
-              <div style="font-size: 1.25rem; font-weight: 900; color: var(--primary);">NT$ ${newDisc.toLocaleString()}</div>
-              <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: 500; margin-top: 2px;">JOWUA 官網原價 NT$ ${newOfficialPrice.toLocaleString()}</div>
-            `;
-          } else {
-            priceEl.innerHTML = `
-              <div style="font-size: 1.25rem; font-weight: 900; color: var(--text-bright);">NT$ ${newOfficialPrice.toLocaleString()}</div>
-              <div style="font-size: 0.75rem; color: #059669; font-weight: 700; margin-top: 3px;"><i class="fas fa-check-circle"></i> 已含安裝費</div>
-            `;
+          if (priceEl && !isNaN(newOfficialPrice)) {
+            if (itemIsJowua) {
+              const newDisc = Math.round(newOfficialPrice * 0.95);
+              priceEl.innerHTML = `
+                <div style="font-size: 1.25rem; font-weight: 900; color: var(--primary);">NT$ ${newDisc.toLocaleString()}</div>
+                <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: 500; margin-top: 2px;">JOWUA 官網原價 NT$ ${newOfficialPrice.toLocaleString()}</div>
+              `;
+            } else {
+              priceEl.innerHTML = `
+                <div style="font-size: 1.25rem; font-weight: 900; color: var(--text-bright);">NT$ ${newOfficialPrice.toLocaleString()}</div>
+                <div style="font-size: 0.75rem; color: #059669; font-weight: 700; margin-top: 3px;"><i class="fas fa-check-circle"></i> 已含安裝費</div>
+              `;
+            }
           }
-        }
+        });
       });
-    });
 
-    this.productGridContainer.querySelectorAll('.btn-add-quote').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const id = e.currentTarget.dataset.id;
-        const vSelect = document.getElementById(`variant-select-${id}`);
-        const selectedVariantId = vSelect ? vSelect.value : null;
-        this.quotation.addItem(id, 'single', selectedVariantId);
-        this.updateNavQuoteBadge();
-        
-        const item = ACCESSORIES.find(a => a.id === id);
-        let variantText = '';
-        if (vSelect && item && item.variants) {
-          const v = item.variants.find(x => String(x.id) === String(selectedVariantId));
-          if (v) variantText = ` (${v.title})`;
-        }
-        alert(`✅ 已新增至客戶報價單草稿！${variantText}`);
+      this.productGridContainer.querySelectorAll('.btn-add-quote').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const id = e.currentTarget.dataset.id;
+          const vSelect = document.getElementById(`variant-select-${id}`);
+          const selectedVariantId = vSelect ? vSelect.value : null;
+          this.quotation.addItem(id, 'single', selectedVariantId);
+          this.updateNavQuoteBadge();
+          
+          const item = ACCESSORIES.find(a => a.id === id);
+          let variantText = '';
+          if (vSelect && item && item.variants) {
+            const v = item.variants.find(x => String(x.id) === String(selectedVariantId));
+            if (v) variantText = ` (${v.title})`;
+          }
+          alert(`✅ 已新增至客戶報價單草稿！${variantText}`);
+        });
       });
-    });
 
-    this.productGridContainer.querySelectorAll('.btn-open-detail').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const id = e.currentTarget.dataset.id;
-        this.openDetailModal(id);
+      this.productGridContainer.querySelectorAll('.btn-open-detail').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const id = e.currentTarget.dataset.id;
+          this.openDetailModal(id);
+        });
       });
-    });
+    } catch (err) {
+      console.error('renderProductGrid error:', err);
+    }
   }
 
   renderBundlesGrid() {
     if (!this.bundlesGridContainer) return;
-    const bundles = this.fitment.getFilteredBundles();
+    try {
+      const bundles = this.fitment.getFilteredBundles();
 
-    if (bundles.length === 0) {
-      this.bundlesGridContainer.innerHTML = `
-        <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem; color: var(--text-muted);">
-          <i class="fas fa-cubes" style="font-size: 3rem; margin-bottom: 1rem; color: var(--tesla-red);"></i>
-          <h3>目前無對應的特惠套餐組合</h3>
-        </div>
-      `;
-      return;
-    }
-
-    this.bundlesGridContainer.innerHTML = bundles.map(bundle => {
-      const bundleUrl = this.getItemUrl(bundle);
-      return `
-        <div class="product-card bundle-card">
-          <div class="product-card-img-wrapper" style="height: 180px;">
-            <a href="${bundleUrl}" target="_blank" rel="noopener noreferrer" class="product-img-link" title="點擊開啟 ${bundle.storeId === 'quackev' ? 'QuackEV' : 'Jowua'} 官方禮包網頁">
-              <img src="${bundle.image}" alt="${bundle.name}" class="product-card-img">
-              <span class="img-external-badge"><i class="fas fa-external-link-alt"></i> 官方頁面</span>
-            </a>
-            <span class="store-brand-badge ${bundle.storeId}">
-              ${bundle.storeId === 'quackev' ? 'QuackEV完工套餐' : 'Jowua原廠禮包'}
-            </span>
+      if (!bundles || bundles.length === 0) {
+        this.bundlesGridContainer.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem; color: var(--text-muted);">
+            <i class="fas fa-cubes" style="font-size: 3rem; margin-bottom: 1rem; color: var(--tesla-red);"></i>
+            <h3>目前無對應的特惠套餐組合</h3>
           </div>
+        `;
+        return;
+      }
 
-          <div class="product-card-body">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-              <span style="background: rgba(232,33,39,0.2); color: var(--tesla-red); font-size: 0.75rem; font-weight: 800; padding: 2px 8px; border-radius: 4px;">
-                ${bundle.badge || '特惠組合'}
+      this.bundlesGridContainer.innerHTML = bundles.map(bundle => {
+        const bundleUrl = this.getItemUrl(bundle);
+        const bPrice = bundle.price || 0;
+        const bOrigPrice = bundle.originalPrice || bPrice;
+        const saveAmount = bundle.saveAmount !== undefined ? bundle.saveAmount : Math.max(0, bOrigPrice - bPrice);
+        const itemsIncluded = Array.isArray(bundle.itemsIncluded) ? bundle.itemsIncluded : [];
+
+        return `
+          <div class="product-card bundle-card">
+            <div class="product-card-img-wrapper" style="height: 180px;">
+              <a href="${bundleUrl}" target="_blank" rel="noopener noreferrer" class="product-img-link" title="點擊開啟 ${bundle.storeId === 'quackev' ? 'QuackEV' : 'Jowua'} 官方禮包網頁">
+                <img src="${bundle.image || 'images/default_thumb.jpg'}" alt="${bundle.name || ''}" class="product-card-img">
+                <span class="img-external-badge"><i class="fas fa-external-link-alt"></i> 官方頁面</span>
+              </a>
+              <span class="store-brand-badge ${bundle.storeId || 'jowua'}">
+                ${bundle.storeId === 'quackev' ? 'QuackEV完工套餐' : 'Jowua原廠禮包'}
               </span>
-              <span class="bundle-save-pill">立省 NT$ ${bundle.saveAmount.toLocaleString()}</span>
             </div>
 
-            <div class="product-title" style="font-size: 1.15rem;">${bundle.name}</div>
-            
-            <ul class="bundle-items-list">
-              ${bundle.itemsIncluded.map(item => `<li><i class="fas fa-check" style="color: var(--accent-green); margin-right: 4px;"></i> ${item}</li>`).join('')}
-            </ul>
-
-            <div class="product-card-footer">
-              <div class="product-price">
-                NT$ ${bundle.price.toLocaleString()}
-                <del>NT$ ${bundle.originalPrice.toLocaleString()}</del>
+            <div class="product-card-body">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span style="background: rgba(232,33,39,0.2); color: var(--tesla-red); font-size: 0.75rem; font-weight: 800; padding: 2px 8px; border-radius: 4px;">
+                  ${bundle.badge || '特惠組合'}
+                </span>
+                ${saveAmount > 0 ? `<span class="bundle-save-pill">立省 NT$ ${saveAmount.toLocaleString()}</span>` : ''}
               </div>
 
-              <button class="btn-add-quote" data-id="${bundle.id}" data-type="bundle">
-                <i class="fas fa-cart-plus"></i> 整包加入報價單
-              </button>
+              <div class="product-title" style="font-size: 1.15rem;">${bundle.name || ''}</div>
+              
+              ${itemsIncluded.length > 0 ? `
+                <ul class="bundle-items-list">
+                  ${itemsIncluded.map(item => `<li><i class="fas fa-check" style="color: var(--accent-green); margin-right: 4px;"></i> ${item}</li>`).join('')}
+                </ul>
+              ` : ''}
+
+              <div class="product-card-footer">
+                <div class="product-price">
+                  NT$ ${bPrice.toLocaleString()}
+                  ${bOrigPrice > bPrice ? `<del>NT$ ${bOrigPrice.toLocaleString()}</del>` : ''}
+                </div>
+
+                <button class="btn-add-quote" data-id="${bundle.id}" data-type="bundle">
+                  <i class="fas fa-cart-plus"></i> 整包加入報價單
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      `;
-    }).join('');
+        `;
+      }).join('');
 
-    this.bundlesGridContainer.querySelectorAll('.btn-add-quote').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const id = e.currentTarget.dataset.id;
-        this.quotation.addItem(id, 'bundle');
-        this.updateNavQuoteBadge();
-        alert('✅ 已將整套【組合包】新增至客戶報價單！');
+      this.bundlesGridContainer.querySelectorAll('.btn-add-quote').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const id = e.currentTarget.dataset.id;
+          this.quotation.addItem(id, 'bundle');
+          this.updateNavQuoteBadge();
+          alert('✅ 已將整套【組合包】新增至客戶報價單！');
+        });
       });
-    });
+    } catch (e) {
+      console.warn('renderBundlesGrid error:', e);
+    }
   }
 
   updateNavQuoteBadge() {
