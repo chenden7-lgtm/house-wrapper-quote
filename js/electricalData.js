@@ -263,5 +263,101 @@ export const ELECTRICAL_MODS = [
         discountPrice: 4000
       }
     ]
+  },
+  {
+    id: "dashcam-damai-m996",
+    name: "大邁 M996 電子後視鏡",
+    category: "dashcam",
+    image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=500&auto=format&fit=crop&q=60",
+    note: "大邁 M996 專業高清流媒體電子後視鏡，前後雙鏡頭高畫質錄影，消除視野盲區，走線完工施工",
+    fitmentText: "舊3.Y / 新3.Y",
+    fitmentModels: ["m3_classic", "m3_highland", "my_classic", "my_juniper"],
+    options: [
+      { modelId: "all_models", label: "Model 3 / Model Y (全車系)", originalPrice: 15000, discountPrice: 12800 }
+    ]
+  },
+  {
+    id: "dashcam-abee-s95b",
+    name: "快譯通 S95B 電子後視鏡",
+    category: "dashcam",
+    image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=500&auto=format&fit=crop&q=60",
+    note: "快譯通 S95B 頂級 HDR 高解析流媒體電子後視鏡（含專用扣架與完工施工）",
+    fitmentText: "舊3.Y / 新3.Y",
+    fitmentModels: ["m3_classic", "m3_highland", "my_classic", "my_juniper"],
+    options: [
+      { modelId: "all_models", label: "Model 3 / Model Y (全車系)", originalPrice: 16000, discountPrice: 13800 }
+    ]
+  },
+  {
+    id: "dashcam-abee-s95a",
+    name: "快譯通 S95A 電子後視鏡",
+    category: "dashcam",
+    image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=500&auto=format&fit=crop&q=60",
+    note: "快譯通 S95A 高畫質星光夜視流媒體電子後視鏡（含專用支架與完工施工）",
+    fitmentText: "舊3.Y / 新3.Y",
+    fitmentModels: ["m3_classic", "m3_highland", "my_classic", "my_juniper"],
+    options: [
+      { modelId: "all_models", label: "Model 3 / Model Y (全車系)", originalPrice: 16000, discountPrice: 13800 }
+    ]
+  },
+  {
+    id: "dashcam-abee-s86",
+    name: "快譯通 S86 電子後視鏡",
+    category: "dashcam",
+    image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=500&auto=format&fit=crop&q=60",
+    note: "快譯通 S86 智慧流媒體電子後視鏡，高CP值廣角倒車顯影完工",
+    fitmentText: "舊3.Y / 新3.Y",
+    fitmentModels: ["m3_classic", "m3_highland", "my_classic", "my_juniper"],
+    options: [
+      { modelId: "all_models", label: "Model 3 / Model Y (全車系)", originalPrice: 14000, discountPrice: 11800 }
+    ]
+  },
+  {
+    id: "dashcam-dod-tone-plus",
+    name: "DOD T-one plus 電子後視鏡",
+    category: "dashcam",
+    image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=500&auto=format&fit=crop&q=60",
+    note: "DOD T-one plus 旗艦電子後視鏡（💡 即將升級新一代，目前無現貨預計10月中後新款上市）",
+    fitmentText: "舊3.Y / 新3.Y",
+    fitmentModels: ["m3_classic", "m3_highland", "my_classic", "my_juniper"],
+    options: [
+      { modelId: "all_models", label: "Model 3 / Model Y (全車系)", originalPrice: 23000, discountPrice: 20000 }
+    ]
+  },
+  {
+    id: "dashcam-papago-x898",
+    name: "PAPAGO X898 電子後視鏡",
+    category: "dashcam",
+    image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=500&auto=format&fit=crop&q=60",
+    note: "PAPAGO X898 高畫質電子後視鏡 / 行車記錄器（專用隱藏走線完工施工）",
+    fitmentText: "舊3.Y / 新3.Y",
+    fitmentModels: ["m3_classic", "m3_highland", "my_classic", "my_juniper"],
+    options: [
+      { modelId: "all_models", label: "Model 3 / Model Y (全車系)", originalPrice: 22000, discountPrice: 19800 }
+    ]
+  },
+  {
+    id: "dashcam-abee-v92gh",
+    name: "快譯通 V92GH 行車記錄器",
+    category: "dashcam",
+    image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=500&auto=format&fit=crop&q=60",
+    note: "快譯通 V92GH 前後雙鏡頭高畫質行車記錄器，GPS測速警示完工",
+    fitmentText: "舊3.Y / 新3.Y",
+    fitmentModels: ["m3_classic", "m3_highland", "my_classic", "my_juniper"],
+    options: [
+      { modelId: "all_models", label: "Model 3 / Model Y (全車系)", originalPrice: 14000, discountPrice: 11800 }
+    ]
+  },
+  {
+    id: "dashcam-addon-lighter-splitter",
+    name: "一轉三 點煙器延伸孔",
+    category: "dashcam",
+    image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=500&auto=format&fit=crop&q=60",
+    note: "用於增加點煙器擴充孔（💡 如果會使用 HUB 建議加購避免無法使用）",
+    fitmentText: "舊3.Y / 新3.Y",
+    fitmentModels: ["m3_classic", "m3_highland", "my_classic", "my_juniper"],
+    options: [
+      { modelId: "all_models", label: "Model 3 / Model Y (全車系)", originalPrice: 1800, discountPrice: 1500 }
+    ]
   }
 ];
