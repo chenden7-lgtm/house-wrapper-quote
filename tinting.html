@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/style.css?v=20260924">
+  <link rel="stylesheet" href="css/style.css?v=20260925_v3">
   
   <style>
     .tint-hero {
@@ -338,26 +338,19 @@
     </div>
   </main>
 
-  <!-- Quote Drawer Modal Overlay (Unified across all pages) -->
-  <div id="quote-drawer-overlay" class="drawer-overlay">
-    <div class="drawer-container">
-      <div class="drawer-header">
-        <div>
-          <h2>📄 客戶 LINE 客服報價單</h2>
-          <p>已整合單品配件、特惠套餐、電系改裝與隔熱紙項目</p>
-        </div>
-        <button id="btn-close-quote-drawer" class="btn-close">&times;</button>
-      </div>
-      
-      <div class="drawer-body" id="modal-quote-body">
+  <!-- Quotation Drawer Modal -->
+  <div id="quote-modal-overlay" class="modal-overlay">
+    <div class="modal-card-detail" style="max-width: 750px;">
+      <button id="btn-close-quote-modal" class="modal-close-btn" title="關閉"><i class="fas fa-times"></i></button>
+      <div id="modal-quote-body">
         <!-- Dynamically rendered by QuotationManager -->
       </div>
     </div>
   </div>
 
   <script type="module">
-    import { TINTING_BRANDS } from './js/tintingData.js';
-    import { QuotationManager } from './js/quotation.js';
+    import { TINTING_BRANDS } from './js/tintingData.js?v=20260925_v3';
+    import { QuotationManager } from './js/quotation.js?v=20260925_v3';
 
     const quotation = new QuotationManager('quoteCart');
     let selectedCarModel = 'm3'; // 'm3' or 'my'
@@ -592,14 +585,36 @@
       }).join('');
     }
 
-    // Modal drawer toggle
-    document.getElementById('btn-open-quote-drawer').addEventListener('click', () => {
-      quotation.renderDrawerContent('modal-quote-body', 'all');
-      document.getElementById('quote-drawer-overlay').classList.add('active');
+    // Quotation Modal toggle
+    const quoteModal = document.getElementById('quote-modal-overlay');
+    const quoteBtn = document.getElementById('btn-open-quote-drawer');
+    const closeQuoteBtn = document.getElementById('btn-close-quote-modal');
+
+    function openQuoteModal() {
+      quotation.renderDrawerContent('modal-quote-body', selectedCarModel);
+      quoteModal.classList.add('active');
+    }
+
+    function closeQuoteModal() {
+      quoteModal.classList.remove('active');
+    }
+
+    if (quoteBtn) quoteBtn.addEventListener('click', openQuoteModal);
+    if (closeQuoteBtn) closeQuoteBtn.addEventListener('click', closeQuoteModal);
+    if (quoteModal) {
+      quoteModal.addEventListener('click', (e) => {
+        if (e.target === quoteModal) closeQuoteModal();
+      });
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && quoteModal && quoteModal.classList.contains('active')) {
+        closeQuoteModal();
+      }
     });
 
-    document.getElementById('btn-close-quote-drawer').addEventListener('click', () => {
-      document.getElementById('quote-drawer-overlay').classList.remove('active');
+    window.addEventListener('quoteUpdated', () => {
+      updateQuoteBadge();
     });
 
     // Theme toggle

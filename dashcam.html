@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20260925_v3">
   
   <style>
     .dashcam-hero {
@@ -294,17 +294,20 @@
     </div>
   </main>
 
-  <!-- Sliding Quote Drawer Overlay -->
-  <div class="drawer-overlay" id="drawer-overlay"></div>
-  <div class="quote-drawer" id="quote-drawer">
-    <button class="drawer-close" id="btn-close-quote-drawer"><i class="fas fa-times"></i></button>
-    <div id="drawer-content-area"></div>
+  <!-- Quotation Drawer Modal -->
+  <div id="quote-modal-overlay" class="modal-overlay">
+    <div class="modal-card-detail" style="max-width: 750px;">
+      <button id="btn-close-quote-modal" class="modal-close-btn" title="關閉"><i class="fas fa-times"></i></button>
+      <div id="modal-quote-body">
+        <!-- Dynamically rendered by QuotationManager -->
+      </div>
+    </div>
   </div>
 
   <!-- Scripts -->
   <script type="module">
-    import { DASHCAM_ITEMS } from './js/dashcamData.js?v=20260924_v100';
-    import { QuotationManager } from './js/quotation.js?v=20260924_v100';
+    import { DASHCAM_ITEMS } from './js/dashcamData.js?v=20260925_v3';
+    import { QuotationManager } from './js/quotation.js?v=20260925_v3';
 
     const quotationManager = new QuotationManager('quoteCart');
     let activeCat = 'all';
@@ -380,6 +383,7 @@
             quotationManager.addItem(id, 'electrical', null, {
               name: item.name,
               price: item.price,
+              image: item.image,
               variantTitle: item.fitmentText,
               store: '📷行車記錄器/電子後視鏡'
             });
@@ -401,58 +405,38 @@
       });
     });
 
-    // Quote Drawer Interactions
+    // Quotation Modal Logic
+    const quoteModal = document.getElementById('quote-modal-overlay');
     const openBtn = document.getElementById('btn-open-quote-drawer');
-    const closeBtn = document.getElementById('btn-close-quote-drawer');
-    const drawer = document.getElementById('quote-drawer');
-    const overlay = document.getElementById('drawer-overlay');
+    const closeBtn = document.getElementById('btn-close-quote-modal');
 
-    function openDrawer() {
-      quotationManager.renderDrawerContent('drawer-content-area');
-      drawer.classList.add('open');
-      overlay.classList.add('open');
-      bindDrawerEvents();
+    function openQuoteModal() {
+      quotationManager.renderDrawerContent('modal-quote-body', 'all');
+      quoteModal.classList.add('active');
     }
 
-    function closeDrawer() {
-      drawer.classList.remove('open');
-      overlay.classList.remove('open');
+    function closeQuoteModal() {
+      quoteModal.classList.remove('active');
     }
 
-    function bindDrawerEvents() {
-      // Quantity and remove buttons in drawer
-      const container = document.getElementById('drawer-content-area');
-      if (!container) return;
-
-      container.querySelectorAll('.btn-remove-quote-item').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const id = btn.getAttribute('data-id');
-          const type = btn.getAttribute('data-type');
-          const vId = btn.getAttribute('data-vid') || null;
-          quotationManager.removeItem(id, type, vId);
-          openDrawer();
-          updateNavBadge();
-          renderGrid();
-        });
+    if (openBtn) openBtn.addEventListener('click', openQuoteModal);
+    if (closeBtn) closeBtn.addEventListener('click', closeQuoteModal);
+    if (quoteModal) {
+      quoteModal.addEventListener('click', (e) => {
+        if (e.target === quoteModal) closeQuoteModal();
       });
-
-      const copyBtn = document.getElementById('btn-copy-line-quote');
-      if (copyBtn) {
-        copyBtn.addEventListener('click', () => {
-          const text = quotationManager.generateLineFormatText('特斯拉全車系');
-          navigator.clipboard.writeText(text).then(() => {
-            copyBtn.innerHTML = `<i class="fas fa-check"></i> 已複製 LINE 報價單！`;
-            setTimeout(() => {
-              copyBtn.innerHTML = `<i class="fab fa-line"></i> 複製客戶 LINE 格式報價單`;
-            }, 2500);
-          });
-        });
-      }
     }
 
-    if (openBtn) openBtn.addEventListener('click', openDrawer);
-    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
-    if (overlay) overlay.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && quoteModal && quoteModal.classList.contains('active')) {
+        closeQuoteModal();
+      }
+    });
+
+    window.addEventListener('quoteUpdated', () => {
+      updateNavBadge();
+      renderGrid();
+    });
 
     // Theme toggle
     const themeBtn = document.getElementById('btn-theme-toggle');

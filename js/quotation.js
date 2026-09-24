@@ -11,6 +11,17 @@ export class QuotationManager {
     this.quoteItems = this.loadState();
     this.customerNote = '';
     this.extraDiscount = 0; // Fixed TWD deduction
+    this.updateNavBadge();
+  }
+
+  updateNavBadge() {
+    if (typeof document !== 'undefined') {
+      const badge = document.getElementById('nav-quote-count');
+      if (badge) {
+        const count = this.quoteItems.reduce((sum, item) => sum + (item.quantity || 1), 0);
+        badge.textContent = count;
+      }
+    }
   }
 
   loadState() {
@@ -41,6 +52,10 @@ export class QuotationManager {
   saveState() {
     try {
       localStorage.setItem(this.storageKey, JSON.stringify(this.quoteItems));
+      this.updateNavBadge();
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new CustomEvent('quoteUpdated', { detail: { quoteItems: this.quoteItems } }));
+      }
     } catch (e) {
       console.warn('LocalStorage save error:', e);
     }
@@ -68,6 +83,7 @@ export class QuotationManager {
         cartKey: extraData.cartKey || `${type}-${id}-${vId || 0}`,
         name: extraData.name || null,
         price: extraData.price || null,
+        image: extraData.image || null,
         variantTitle: extraData.variantTitle || null,
         store: extraData.store || null
       });

@@ -659,7 +659,8 @@ body {
 }
 
 /* Modals & Floating Drawer */
-.modal-overlay {
+.modal-overlay,
+.drawer-overlay {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.8);
@@ -674,12 +675,16 @@ body {
   transition: opacity var(--transition-normal);
 }
 
-.modal-overlay.active {
+.modal-overlay.active,
+.drawer-overlay.active,
+.drawer-overlay.open {
   opacity: 1;
   pointer-events: auto;
 }
 
-.modal-card-detail {
+.modal-card-detail,
+.drawer-container,
+.quote-drawer {
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
@@ -688,9 +693,12 @@ body {
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
-.modal-close-btn {
+.modal-close-btn,
+.drawer-close,
+.btn-close {
   position: absolute;
   top: 16px;
   right: 16px;
@@ -706,9 +714,15 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 10;
+  transition: background var(--transition-fast);
 }
 
-.modal-close-btn:hover { background: var(--tesla-red); }
+.modal-close-btn:hover,
+.drawer-close:hover,
+.btn-close:hover { 
+  background: var(--tesla-red);
+  color: #fff;
+}
 
 .floating-bar {
   position: fixed;
