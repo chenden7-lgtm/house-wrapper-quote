@@ -12,6 +12,23 @@ export class QuotationManager {
     this.customerNote = '';
     this.extraDiscount = 0; // Fixed TWD deduction
     this.updateNavBadge();
+    this.initMobileNavScroll();
+  }
+
+  initMobileNavScroll() {
+    if (typeof document !== 'undefined') {
+      const scrollNav = () => {
+        const activeNavTab = document.querySelector('.nav-tab-pill.active');
+        if (activeNavTab) {
+          activeNavTab.scrollIntoView({ inline: 'center', block: 'nearest' });
+        }
+      };
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', scrollNav);
+      } else {
+        setTimeout(scrollNav, 150);
+      }
+    }
   }
 
   updateNavBadge() {

@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/style.css?v=20260925_v3">
+  <link rel="stylesheet" href="css/style.css?v=20261012_v1">
   
   <style>
     .tint-hero {
@@ -202,44 +202,46 @@
 <body>
 
   <!-- Top Navigation Bar -->
+  <!-- Top Navigation Bar -->
   <header class="navbar">
     <div class="container navbar-inner">
-      <a href="index.html" class="brand">
-        <img src="images/house_wrapper_logo.svg" alt="好室多膜" class="brand-logo-img">
-        <span class="brand-badge" style="margin-left: 0.35rem; font-size: 0.72rem; padding: 3px 10px; background: rgba(232, 86, 55, 0.12); color: #111111; font-weight: 800; border: 1px solid rgba(232, 86, 55, 0.3); letter-spacing: 0.03em;">一站式服務項目</span>
-      </a>
-
-      <div class="nav-actions">
-        <a href="tinting.html" class="nav-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.45rem 0.85rem; font-size: 0.8rem; font-weight: 700; background: rgba(232, 86, 55, 0.12); color: var(--primary); border: 1.5px solid var(--primary); border-radius: 20px;" title="特斯拉隔熱紙價目">
-          <i class="fas fa-sun" style="color: #ffb703;"></i>
-          <span>特斯拉隔熱紙價目</span>
+      <div class="navbar-top-row">
+        <a href="index.html" class="brand">
+          <img src="images/house_wrapper_logo.svg" alt="好室多膜" class="brand-logo-img">
+          <span class="brand-badge">一站式服務</span>
         </a>
 
-        <a href="electrical.html" class="nav-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.45rem 0.85rem; font-size: 0.8rem; font-weight: 600; background: var(--bg-card); color: var(--text-bright); border: 1px solid var(--border-color); border-radius: 20px;" title="查看特斯拉電系改裝一站式服務價目表">
-          <i class="fas fa-bolt" style="color: #ffb703;"></i>
-          <span>特斯拉電系改裝價目</span>
-        </a>
+        <div class="navbar-actions">
+          <button id="btn-open-quote-drawer" class="nav-btn quote-btn" title="查看客戶 LINE 報價單">
+            <i class="fas fa-file-invoice-dollar" style="color: var(--tesla-red);"></i> 
+            <span>客戶 LINE 報價單</span>
+            <span class="badge-count" id="nav-quote-count">0</span>
+          </button>
 
-        <a href="dashcam.html" class="nav-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.45rem 0.85rem; font-size: 0.8rem; font-weight: 600; background: var(--bg-card); color: var(--text-bright); border: 1px solid var(--border-color); border-radius: 20px;" title="查看行車記錄器與電子後視鏡價目">
-          <i class="fas fa-video" style="color: #ffb703;"></i>
-          <span>行車記錄器、電子後視鏡</span>
-        </a>
+          <button id="btn-theme-toggle" class="nav-btn theme-toggle" title="切換深/淺色主題">
+            <i class="fas fa-sun"></i>
+          </button>
+        </div>
+      </div>
 
-        <a href="index.html" class="nav-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.45rem 0.85rem; font-size: 0.8rem; font-weight: 600; background: var(--bg-card); color: var(--text-bright); border: 1px solid var(--border-color); border-radius: 20px;" title="配件報價大廳">
+      <nav class="nav-tabs-bar" aria-label="主要服務項目">
+        <a href="index.html" class="nav-tab-pill" title="配件報價大廳">
           <i class="fas fa-boxes" style="color: var(--primary);"></i>
           <span>配件報價大廳</span>
         </a>
-
-        <button id="btn-open-quote-drawer" class="nav-btn quote-btn" title="點擊檢視跨頁統一報價單">
-          <i class="fas fa-shopping-cart" style="color: var(--primary);"></i> 
-          <span>客戶 LINE 報價單</span>
-          <span class="badge-count" id="nav-quote-count">0</span>
-        </button>
-
-        <button id="btn-theme-toggle" class="nav-btn theme-toggle" title="切換深/淺色主題">
-          <i class="fas fa-sun"></i>
-        </button>
-      </div>
+        <a href="tinting.html" class="nav-tab-pill active" title="查看特斯拉隔熱紙一站式服務價目表">
+          <i class="fas fa-sun" style="color: #ffb703;"></i>
+          <span>特斯拉隔熱紙價目</span>
+        </a>
+        <a href="electrical.html" class="nav-tab-pill" title="查看特斯拉電系改裝一站式服務價目表">
+          <i class="fas fa-bolt" style="color: #ffb703;"></i>
+          <span>特斯拉電系改裝價目</span>
+        </a>
+        <a href="dashcam.html" class="nav-tab-pill" title="查看行車記錄器與電子後視鏡價目">
+          <i class="fas fa-video" style="color: #ffb703;"></i>
+          <span>行車記錄器、電子後視鏡</span>
+        </a>
+      </nav>
     </div>
   </header>
 
@@ -350,7 +352,7 @@
 
   <script type="module">
     import { TINTING_BRANDS } from './js/tintingData.js?v=20260925_v4';
-    import { QuotationManager } from './js/quotation.js?v=20260925_v4';
+    import { QuotationManager } from './js/quotation.js?v=20261012_v1';
 
     const quotation = new QuotationManager('quoteCart');
     let selectedCarModel = 'm3'; // 'm3' or 'my'
