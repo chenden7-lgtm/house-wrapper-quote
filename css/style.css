@@ -375,13 +375,27 @@ body {
 
   .nav-tabs-bar {
     width: 100%;
-    padding: 2px 2px 4px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 0.4rem;
+    padding: 2px 0 4px;
+    overflow-x: visible;
   }
 
   .nav-tab-pill {
-    padding: 0.38rem 0.75rem;
-    font-size: 0.78rem;
+    width: 100%;
+    padding: 0.45rem 0.35rem;
+    font-size: 0.76rem;
+    border-radius: 10px;
+    justify-content: center;
+    box-sizing: border-box;
+    white-space: nowrap;
+  }
+
+  .nav-tab-pill span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .nav-btn.quote-btn {
