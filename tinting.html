@@ -197,6 +197,118 @@
       transform: translateY(-1px);
       box-shadow: 0 6px 16px rgba(232, 86, 55, 0.45);
     }
+
+    /* 廠商成本與利潤分析卡片 */
+    .vendor-analysis-card {
+      margin-top: 1.5rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      border-left: 4px solid #10b981;
+      transition: all 0.2s ease;
+    }
+    .vendor-best-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: #ffffff !important;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 800;
+      font-size: 0.85rem;
+      box-shadow: 0 2px 6px rgba(16, 185, 129, 0.25);
+    }
+    .vendor-stat-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 0.85rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px dashed var(--border-color);
+    }
+    .vendor-stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .vendor-stat-label {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      font-weight: 600;
+    }
+    .vendor-stat-val {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-bright);
+    }
+    .vendor-stat-val.profit {
+      color: #10b981;
+    }
+    .vendor-stat-val.cost {
+      color: #e63946;
+    }
+    .vendor-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+    .vendor-card-mini {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1rem;
+      position: relative;
+      transition: all 0.2s ease;
+    }
+    .vendor-card-mini.is-best {
+      border: 2px solid #10b981;
+      background: rgba(16, 185, 129, 0.05);
+      box-shadow: 0 3px 10px rgba(16, 185, 129, 0.15);
+    }
+    .vendor-card-mini.is-unavailable {
+      opacity: 0.65;
+      background: var(--bg-secondary);
+    }
+    .vendor-mini-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: var(--text-bright);
+      margin-bottom: 0.4rem;
+    }
+    .vendor-mini-costs {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .vendor-mini-total {
+      margin-top: 0.5rem;
+      padding-top: 0.4rem;
+      border-top: 1px dashed var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-weight: 800;
+    }
+    .tint-card-vendor-hint {
+      margin: 0.75rem 0 0.5rem;
+      padding: 0.5rem 0.75rem;
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      color: var(--text-bright);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
   </style>
 </head>
 <body>
@@ -329,6 +441,9 @@
           <span>將此混搭組合加入報價單</span>
         </button>
       </div>
+
+      <!-- 內部廠商成本試算與最佳施工廠商推薦 -->
+      <div id="builder-vendor-analysis"></div>
     </section>
 
     <!-- Full Brand Comparison Grid -->
@@ -351,7 +466,7 @@
   </div>
 
   <script type="module">
-    import { TINTING_BRANDS } from './js/tintingData.js?v=20260925_v4';
+    import { TINTING_BRANDS, VENDOR_INFO, calculateBestVendor } from './js/tintingData.js?v=20261014_v1';
     import { QuotationManager } from './js/quotation.js?v=20261012_v1';
 
     const quotation = new QuotationManager('quoteCart');
@@ -411,15 +526,15 @@
 
       if (hasFront) {
         const brand = TINTING_BRANDS.find(x => x.id === fId);
-        if (brand && brand.prices[selectedCarModel].front) rawTotal += brand.prices[selectedCarModel].front;
+        if (brand && brand.prices[selectedCarModel]?.front) rawTotal += brand.prices[selectedCarModel].front;
       }
       if (hasBody) {
         const brand = TINTING_BRANDS.find(x => x.id === bId);
-        if (brand && brand.prices[selectedCarModel].body) rawTotal += brand.prices[selectedCarModel].body;
+        if (brand && brand.prices[selectedCarModel]?.body) rawTotal += brand.prices[selectedCarModel].body;
       }
       if (hasSunroof) {
         const brand = TINTING_BRANDS.find(x => x.id === sId);
-        if (brand && brand.prices[selectedCarModel].sunroof) rawTotal += brand.prices[selectedCarModel].sunroof;
+        if (brand && brand.prices[selectedCarModel]?.sunroof) rawTotal += brand.prices[selectedCarModel].sunroof;
       }
 
       // Discount Logic:
@@ -450,7 +565,147 @@
         rawPriceEl.innerText = '';
         pillContainer.innerHTML = '';
       }
+
+      // 進行內部廠商成本計算與最划算廠商推薦
+      renderVendorAnalysis(selectedCarModel, {
+        frontId: fId,
+        bodyId: bId,
+        sunroofId: sId,
+        customerPrice: finalPrice
+      });
     };
+
+    function renderVendorAnalysis(modelKey, selection) {
+      const container = document.getElementById('builder-vendor-analysis');
+      if (!container) return;
+
+      const hasAny = (selection.frontId && selection.frontId !== 'none') ||
+                     (selection.bodyId && selection.bodyId !== 'none') ||
+                     (selection.sunroofId && selection.sunroofId !== 'none');
+
+      if (!hasAny) {
+        container.innerHTML = `
+          <div class="vendor-analysis-card" style="border-left-color: var(--border-color); opacity: 0.85;">
+            <div style="font-size: 0.95rem; font-weight: 700; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem;">
+              <i class="fas fa-calculator" style="color: var(--primary);"></i>
+              <span>請先於上方選取至少一個施工部位，系統將自動比對【錸沛、ACME、星輝】之施工成本並計算最佳利潤！</span>
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      const result = calculateBestVendor(modelKey, selection);
+
+      if (!result.hasCapableVendor) {
+        container.innerHTML = `
+          <div class="vendor-analysis-card" style="border-left-color: #f59e0b;">
+            <div style="font-weight: 800; color: #f59e0b; display: flex; align-items: center; gap: 0.5rem;">
+              <i class="fas fa-exclamation-triangle"></i>
+              <span>內部成本提醒：目前尚無單一廠商能全包此自選膜料組合</span>
+            </div>
+            <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.4rem;">
+              部分廠商缺少您所選的特定系列膜料，建議調整部位搭配或改分批向不同店家採購施工。
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      const best = result.bestVendor;
+      const marginColor = result.profitMargin >= 20 ? '#10b981' : (result.profitMargin >= 10 ? '#f59e0b' : '#ef4444');
+
+      let savingsNotice = '';
+      if (result.savings > 0 && result.secondBest) {
+        savingsNotice = `，相較次低廠商【${result.secondBest.vendorName}】多省 <strong>NT$ ${result.savings.toLocaleString()}</strong> 成本！`;
+      } else if (result.capableVendors.length === 1) {
+        savingsNotice = `（此膜料組合目前僅【${best.vendorName}】具備全套施作能力！）`;
+      }
+
+      const vendorCardsHtml = result.allVendors.map(v => {
+        const isBest = best && v.vendorKey === best.vendorKey;
+        const can = v.canPerform;
+        
+        let costsList = [];
+        if (v.breakdown.package) {
+          costsList.push(`全車套裝優惠: NT$ ${v.breakdown.package.toLocaleString()}`);
+        } else {
+          if (v.breakdown.front !== null) costsList.push(`前擋: NT$ ${v.breakdown.front.toLocaleString()}`);
+          if (v.breakdown.body !== null) costsList.push(`車身: NT$ ${v.breakdown.body.toLocaleString()}`);
+        }
+        if (v.breakdown.sunroof !== null) costsList.push(`天窗: NT$ ${v.breakdown.sunroof.toLocaleString()}`);
+
+        const profitForV = can ? (result.customerPrice - v.totalCost) : null;
+        const marginForV = can && result.customerPrice > 0 ? (Math.round((profitForV / result.customerPrice) * 1000) / 10) : null;
+
+        return `
+          <div class="vendor-card-mini ${isBest ? 'is-best' : ''} ${!can ? 'is-unavailable' : ''}">
+            <div class="vendor-mini-header">
+              <span>${v.shortName}</span>
+              ${isBest ? '<span class="vendor-best-badge" style="font-size: 0.72rem; padding: 2px 8px;"><i class="fas fa-crown"></i> 最划算推薦</span>' : (!can ? '<span style="font-size: 0.72rem; color: #ef4444; font-weight: 700;">無此膜料</span>' : '')}
+            </div>
+
+            <div class="vendor-mini-costs">
+              ${can ? costsList.join('<br>') : `<span style="color: #ef4444;">缺：${v.missingParts.join('、')}</span>`}
+            </div>
+
+            <div class="vendor-mini-total">
+              <span style="font-size: 0.8rem; color: var(--text-dim);">施工成本：</span>
+              <span style="color: ${isBest ? '#10b981' : (can ? 'var(--text-bright)' : '#9ca3af')}; font-size: 1.05rem;">
+                ${can ? 'NT$ ' + v.totalCost.toLocaleString() : '無法施作'}
+              </span>
+            </div>
+
+            ${can ? `
+              <div style="display: flex; justify-content: space-between; font-size: 0.78rem; margin-top: 0.25rem;">
+                <span style="color: var(--text-dim);">預估毛利：</span>
+                <span style="color: #10b981; font-weight: 800;">+NT$ ${profitForV.toLocaleString()} (${marginForV}%)</span>
+              </div>
+            ` : ''}
+          </div>
+        `;
+      }).join('');
+
+      container.innerHTML = `
+        <div class="vendor-analysis-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span class="vendor-best-badge"><i class="fas fa-crown"></i> 最佳施工推薦：${best.vendorName}</span>
+              <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-bright);">最便宜施工成本</span>
+            </div>
+            <span style="font-size: 0.8rem; color: var(--text-dim);">內部利潤試算（不對客公開）</span>
+          </div>
+
+          <div class="vendor-stat-row">
+            <div class="vendor-stat-item">
+              <span class="vendor-stat-label">最佳進價成本 (${best.vendorName})</span>
+              <span class="vendor-stat-val cost">NT$ ${best.totalCost.toLocaleString()}</span>
+            </div>
+            <div class="vendor-stat-item">
+              <span class="vendor-stat-label">對客報價總額</span>
+              <span class="vendor-stat-val">NT$ ${result.customerPrice.toLocaleString()}</span>
+            </div>
+            <div class="vendor-stat-item">
+              <span class="vendor-stat-label">預估毛利空間</span>
+              <span class="vendor-stat-val profit">NT$ ${result.profit.toLocaleString()}</span>
+            </div>
+            <div class="vendor-stat-item">
+              <span class="vendor-stat-label">毛利率</span>
+              <span class="vendor-stat-val" style="color: ${marginColor};">${result.profitMargin}%</span>
+            </div>
+          </div>
+
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.75rem 0 0.5rem;">
+            💡 <strong>決策建議：</strong>此組合選擇由 <strong>【${best.vendorName}】</strong> 施工最划算${savingsNotice}
+          </p>
+
+          <!-- 3 Vendors Comparison Grid -->
+          <div class="vendor-cards-grid">
+            ${vendorCardsHtml}
+          </div>
+        </div>
+      `;
+    }
 
     window.addBuilderToQuote = function() {
       const fId = document.getElementById('select-front').value;
@@ -471,19 +726,19 @@
 
       if (hasFront) {
         const brand = TINTING_BRANDS.find(x => x.id === fId);
-        const p = brand.prices[selectedCarModel].front;
+        const p = brand.prices[selectedCarModel]?.front || 0;
         rawTotal += p;
         partsText.push(`前擋: ${brand.name} ($${p.toLocaleString()})`);
       }
       if (hasBody) {
         const brand = TINTING_BRANDS.find(x => x.id === bId);
-        const p = brand.prices[selectedCarModel].body;
+        const p = brand.prices[selectedCarModel]?.body || 0;
         rawTotal += p;
         partsText.push(`車身: ${brand.name} ($${p.toLocaleString()})`);
       }
       if (hasSunroof) {
         const brand = TINTING_BRANDS.find(x => x.id === sId);
-        const p = brand.prices[selectedCarModel].sunroof;
+        const p = brand.prices[selectedCarModel]?.sunroof || 0;
         rawTotal += p;
         partsText.push(`天窗: ${brand.name} ($${p.toLocaleString()})`);
       }
@@ -521,10 +776,10 @@
       const carName = selectedCarModel === 'm3' ? 'Model 3' : 'Model Y';
       
       let price = p.full;
-      let variantTitle = '全車完整套餐 (前擋+車身+天窗)';
+      let variantTitle = '全車完整套餐 (前擋+車身)';
       if (!price) {
-        price = (p.front || 0) + (p.body || 0) + (p.sunroof || 0);
-        variantTitle = '組合套餐 (前擋+車身+天窗)';
+        price = (p.front || 0) + (p.body || 0);
+        variantTitle = '組合套餐 (前擋+車身)';
       }
 
       quotation.addItem(`tint-pkg-${brandId}-${selectedCarModel}`, 'electrical', '0', {
@@ -543,6 +798,26 @@
 
       container.innerHTML = TINTING_BRANDS.map(brand => {
         const p = brand.prices[selectedCarModel] || {};
+        
+        // 試算全車套餐最佳施工廠商
+        const pkgPrice = p.full || ((p.front || 0) + (p.body || 0));
+        let vendorHintHtml = '';
+        if (pkgPrice > 0) {
+          const vAnalysis = calculateBestVendor(selectedCarModel, {
+            isPackage: true,
+            packageBrandId: brand.id,
+            customerPrice: pkgPrice
+          });
+          if (vAnalysis.bestVendor) {
+            vendorHintHtml = `
+              <div class="tint-card-vendor-hint">
+                <span>👑 最佳廠商：<strong style="color: #10b981;">${vAnalysis.bestVendor.vendorName}</strong></span>
+                <span>成本: <strong>NT$ ${vAnalysis.bestVendor.totalCost.toLocaleString()}</strong></span>
+                <span style="color: #10b981; font-weight: 800;">毛利: +NT$ ${vAnalysis.profit.toLocaleString()} (${vAnalysis.profitMargin}%)</span>
+              </div>
+            `;
+          }
+        }
 
         return `
           <div class="tint-card">
@@ -576,6 +851,8 @@
                   </tr>
                 ` : ''}
               </table>
+
+              ${vendorHintHtml}
             </div>
 
             <button class="btn-add-quote" onclick="addBrandFullPackage('${brand.id}')">
