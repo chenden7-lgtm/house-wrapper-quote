@@ -197,6 +197,51 @@
       transform: translateY(-1px);
       box-shadow: 0 6px 16px rgba(232, 86, 55, 0.45);
     }
+    .assigned-vendor-row {
+      margin-top: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .assigned-vendor-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #059669;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 20px;
+    }
+    [data-theme="dark"] .assigned-vendor-pill {
+      background: rgba(16, 185, 129, 0.15);
+      border-color: rgba(16, 185, 129, 0.45);
+      color: #34d399;
+    }
+    .assigned-vendor-pill.warning {
+      background: rgba(245, 158, 11, 0.1);
+      border-color: rgba(245, 158, 11, 0.35);
+      color: #d97706;
+    }
+    .tint-vendor-tag {
+      margin-top: 0.75rem;
+      padding: 0.45rem 0.75rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+    .tint-vendor-tag strong {
+      color: var(--text-bright);
+      font-weight: 800;
+    }
   </style>
 </head>
 <body>
@@ -323,6 +368,8 @@
             <div class="builder-total-price" id="builder-total-price">NT$ 0</div>
             <div class="builder-raw-price" id="builder-raw-price"></div>
           </div>
+          <!-- 施工配合店家標籤（依內部最佳成本自動指派，不顯示成本與利潤） -->
+          <div class="assigned-vendor-row" id="assigned-vendor-row"></div>
         </div>
         <button class="btn-add-quote" style="max-width: 260px;" onclick="addBuilderToQuote()">
           <i class="fas fa-plus-circle"></i>
@@ -351,7 +398,7 @@
   </div>
 
   <script type="module">
-    import { TINTING_BRANDS } from './js/tintingData.js?v=20261014_v2';
+    import { TINTING_BRANDS, calculateBestVendor } from './js/tintingData.js?v=20261014_v3';
     import { QuotationManager } from './js/quotation.js?v=20261012_v1';
 
     const quotation = new QuotationManager('quoteCart');
@@ -450,6 +497,34 @@
         rawPriceEl.innerText = '';
         pillContainer.innerHTML = '';
       }
+
+      // 更新配合施工店家標籤（依內部最划算成本自動指派，不顯示成本與利潤）
+      const vendorRowEl = document.getElementById('assigned-vendor-row');
+      if (vendorRowEl) {
+        if (!hasFront && !hasBody && !hasSunroof) {
+          vendorRowEl.innerHTML = '';
+        } else {
+          const vAnalysis = calculateBestVendor(selectedCarModel, {
+            frontId: fId,
+            bodyId: bId,
+            sunroofId: sId,
+            customerPrice: finalPrice
+          });
+          if (vAnalysis.bestVendor) {
+            vendorRowEl.innerHTML = `
+              <span class="assigned-vendor-pill">
+                <i class="fas fa-store"></i> 施工配合店家：<strong>${vAnalysis.bestVendor.vendorName}</strong>
+              </span>
+            `;
+          } else {
+            vendorRowEl.innerHTML = `
+              <span class="assigned-vendor-pill warning">
+                <i class="fas fa-info-circle"></i> 此特殊組合需由多間特約店家協同施作
+              </span>
+            `;
+          }
+        }
+      }
     };
 
     window.addBuilderToQuote = function() {
@@ -502,10 +577,18 @@
       const carName = selectedCarModel === 'm3' ? 'Model 3' : 'Model Y';
       const quoteItemId = `tint-mix-${selectedCarModel}-${fId}-${bId}-${sId}`;
 
+      const vAnalysis = calculateBestVendor(selectedCarModel, {
+        frontId: fId,
+        bodyId: bId,
+        sunroofId: sId,
+        customerPrice: finalPrice
+      });
+      const vendorSuffix = vAnalysis.bestVendor ? ` ｜ 施工店家: ${vAnalysis.bestVendor.vendorName}` : '';
+
       quotation.addItem(quoteItemId, 'electrical', '0', {
         name: `☀️ [隔熱紙] ${carName} 自訂混搭專案${discNote}`,
         price: finalPrice,
-        variantTitle: partsText.join(' + '),
+        variantTitle: partsText.join(' + ') + vendorSuffix,
         store: '好室多膜一站式服務'
       });
 
@@ -527,10 +610,17 @@
         variantTitle = '組合套餐 (前擋+車身)';
       }
 
+      const vAnalysis = calculateBestVendor(selectedCarModel, {
+        isPackage: true,
+        packageBrandId: brandId,
+        customerPrice: price
+      });
+      const vendorSuffix = vAnalysis.bestVendor ? ` ｜ 施工店家: ${vAnalysis.bestVendor.vendorName}` : '';
+
       quotation.addItem(`tint-pkg-${brandId}-${selectedCarModel}`, 'electrical', '0', {
         name: `☀️ [隔熱紙] ${carName} ${brand.name} 套餐`,
         price: price,
-        variantTitle: variantTitle,
+        variantTitle: variantTitle + vendorSuffix,
         store: '好室多膜一站式服務'
       });
 
@@ -543,6 +633,23 @@
 
       container.innerHTML = TINTING_BRANDS.map(brand => {
         const p = brand.prices[selectedCarModel] || {};
+        const pkgPrice = p.full || ((p.front || 0) + (p.body || 0));
+
+        let vendorTagHtml = '';
+        if (pkgPrice > 0) {
+          const vAnalysis = calculateBestVendor(selectedCarModel, {
+            isPackage: true,
+            packageBrandId: brand.id,
+            customerPrice: pkgPrice
+          });
+          if (vAnalysis.bestVendor) {
+            vendorTagHtml = `
+              <div class="tint-vendor-tag">
+                <i class="fas fa-store" style="color: var(--primary);"></i> 施工配合店家：<strong>${vAnalysis.bestVendor.vendorName}</strong>
+              </div>
+            `;
+          }
+        }
 
         return `
           <div class="tint-card">
@@ -576,6 +683,8 @@
                   </tr>
                 ` : ''}
               </table>
+
+              ${vendorTagHtml}
             </div>
 
             <button class="btn-add-quote" onclick="addBrandFullPackage('${brand.id}')">
