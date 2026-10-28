@@ -204,6 +204,134 @@
       gap: 0.5rem;
       flex-wrap: wrap;
     }
+    .vendor-sequence-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.55rem 0.95rem;
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      border-radius: var(--radius-md);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+    [data-theme="dark"] .vendor-sequence-container {
+      background: rgba(16, 185, 129, 0.12);
+      border-color: rgba(16, 185, 129, 0.4);
+    }
+    .vendor-sequence-title {
+      font-size: 0.86rem;
+      font-weight: 800;
+      color: var(--text-bright);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      white-space: nowrap;
+    }
+    .vendor-sequence-list {
+      display: inline-flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+    .vendor-seq-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 3px 10px 3px 6px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      transition: all 0.2s ease;
+    }
+    .vendor-seq-badge .rank-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.25rem;
+      height: 1.25rem;
+      border-radius: 50%;
+      font-size: 0.72rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .vendor-seq-badge.rank-1 {
+      background: rgba(16, 185, 129, 0.18);
+      border: 1px solid rgba(16, 185, 129, 0.55);
+      color: #059669;
+    }
+    [data-theme="dark"] .vendor-seq-badge.rank-1 {
+      background: rgba(16, 185, 129, 0.25);
+      border-color: rgba(16, 185, 129, 0.6);
+      color: #34d399;
+    }
+    .vendor-seq-badge.rank-1 .rank-num {
+      background: #10b981;
+      color: #ffffff;
+    }
+    .vendor-seq-badge.rank-2 {
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      color: #2563eb;
+    }
+    [data-theme="dark"] .vendor-seq-badge.rank-2 {
+      background: rgba(59, 130, 246, 0.2);
+      border-color: rgba(59, 130, 246, 0.5);
+      color: #60a5fa;
+    }
+    .vendor-seq-badge.rank-2 .rank-num {
+      background: #3b82f6;
+      color: #ffffff;
+    }
+    .vendor-seq-badge.rank-3 {
+      background: rgba(100, 116, 139, 0.12);
+      border: 1px solid rgba(100, 116, 139, 0.35);
+      color: #475569;
+    }
+    [data-theme="dark"] .vendor-seq-badge.rank-3 {
+      background: rgba(148, 163, 184, 0.15);
+      border-color: rgba(148, 163, 184, 0.35);
+      color: #94a3b8;
+    }
+    .vendor-seq-badge.rank-3 .rank-num {
+      background: #64748b;
+      color: #ffffff;
+    }
+    .vendor-seq-badge .rank-tag {
+      font-size: 0.7rem;
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-weight: 800;
+    }
+    .vendor-seq-badge.rank-1 .rank-tag {
+      background: rgba(16, 185, 129, 0.2);
+      color: #047857;
+    }
+    [data-theme="dark"] .vendor-seq-badge.rank-1 .rank-tag {
+      background: rgba(16, 185, 129, 0.35);
+      color: #a7f3d0;
+    }
+    .vendor-seq-badge.rank-2 .rank-tag {
+      background: rgba(59, 130, 246, 0.2);
+      color: #1d4ed8;
+    }
+    [data-theme="dark"] .vendor-seq-badge.rank-2 .rank-tag {
+      background: rgba(59, 130, 246, 0.3);
+      color: #bfdbfe;
+    }
+    .vendor-seq-badge.rank-3 .rank-tag {
+      background: rgba(100, 116, 139, 0.18);
+      color: #334155;
+    }
+    [data-theme="dark"] .vendor-seq-badge.rank-3 .rank-tag {
+      background: rgba(148, 163, 184, 0.25);
+      color: #cbd5e1;
+    }
+    .seq-arrow {
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      opacity: 0.65;
+    }
     .assigned-vendor-pill {
       display: inline-flex;
       align-items: center;
@@ -237,10 +365,29 @@
       display: flex;
       align-items: center;
       gap: 0.45rem;
+      flex-wrap: wrap;
     }
-    .tint-vendor-tag strong {
-      color: var(--text-bright);
-      font-weight: 800;
+    .brand-rank-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 0.76rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+    }
+    .brand-rank-chip.rank-1 {
+      border-color: rgba(16, 185, 129, 0.5);
+      color: #10b981;
+    }
+    .brand-rank-chip.rank-2 {
+      border-color: rgba(59, 130, 246, 0.45);
+      color: #3b82f6;
+    }
+    .brand-rank-chip.rank-3 {
+      border-color: var(--border-color);
+      color: var(--text-muted);
     }
   </style>
 </head>
@@ -398,7 +545,7 @@
   </div>
 
   <script type="module">
-    import { TINTING_BRANDS, calculateBestVendor } from './js/tintingData.js?v=20261028_v1';
+    import { TINTING_BRANDS, calculateBestVendor } from './js/tintingData.js?v=20261028_v2';
     import { QuotationManager } from './js/quotation.js?v=20261012_v1';
 
     const quotation = new QuotationManager('quoteCart');
@@ -498,7 +645,7 @@
         pillContainer.innerHTML = '';
       }
 
-      // 更新配合施工店家標籤（依內部最划算成本自動指派，不顯示成本與利潤）
+      // 更新配合施工店家順位（依內部最划算成本自動排序，不顯示成本與利潤）
       const vendorRowEl = document.getElementById('assigned-vendor-row');
       if (vendorRowEl) {
         if (!hasFront && !hasBody && !hasSunroof) {
@@ -510,11 +657,30 @@
             sunroofId: sId,
             customerPrice: finalPrice
           });
-          if (vAnalysis.bestVendor) {
+          if (vAnalysis.capableVendors && vAnalysis.capableVendors.length > 0) {
+            const listHtml = vAnalysis.capableVendors.slice(0, 3).map((v, idx) => {
+              const rankNum = idx + 1;
+              const tagText = rankNum === 1 
+                ? (vAnalysis.capableVendors.length === 1 ? '專屬' : '首選') 
+                : (rankNum === 2 ? '次選' : '備選');
+              return `
+                <span class="vendor-seq-badge rank-${rankNum}">
+                  <span class="rank-num">${rankNum}</span>
+                  <span class="rank-name">${v.vendorName}</span>
+                  <span class="rank-tag">${tagText}</span>
+                </span>
+              `;
+            }).join('<i class="fas fa-angle-right seq-arrow"></i>');
+
             vendorRowEl.innerHTML = `
-              <span class="assigned-vendor-pill">
-                <i class="fas fa-store"></i> 施工配合店家：<strong>${vAnalysis.bestVendor.vendorName}</strong>
-              </span>
+              <div class="vendor-sequence-container">
+                <span class="vendor-sequence-title">
+                  <i class="fas fa-clipboard-list" style="color: var(--primary);"></i> 施工配合店家順位：
+                </span>
+                <div class="vendor-sequence-list">
+                  ${listHtml}
+                </div>
+              </div>
             `;
           } else {
             vendorRowEl.innerHTML = `
@@ -583,12 +749,14 @@
         sunroofId: sId,
         customerPrice: finalPrice
       });
-      const vendorSuffix = vAnalysis.bestVendor ? ` ｜ 施工店家: ${vAnalysis.bestVendor.vendorName}` : '';
+      const vendorSeqSuffix = vAnalysis.capableVendors.length > 0 
+        ? ` ｜ 施工店家順位: ` + vAnalysis.capableVendors.slice(0, 3).map((v, i) => `${i+1}.${v.vendorName}`).join(' > ')
+        : '';
 
       quotation.addItem(quoteItemId, 'electrical', '0', {
         name: `☀️ [隔熱紙] ${carName} 自訂混搭專案${discNote}`,
         price: finalPrice,
-        variantTitle: partsText.join(' + ') + vendorSuffix,
+        variantTitle: partsText.join(' + ') + vendorSeqSuffix,
         store: '好室多膜一站式服務'
       });
 
@@ -615,12 +783,14 @@
         packageBrandId: brandId,
         customerPrice: price
       });
-      const vendorSuffix = vAnalysis.bestVendor ? ` ｜ 施工店家: ${vAnalysis.bestVendor.vendorName}` : '';
+      const vendorSeqSuffix = vAnalysis.capableVendors.length > 0 
+        ? ` ｜ 施工店家順位: ` + vAnalysis.capableVendors.slice(0, 3).map((v, i) => `${i+1}.${v.vendorName}`).join(' > ')
+        : '';
 
       quotation.addItem(`tint-pkg-${brandId}-${selectedCarModel}`, 'electrical', '0', {
         name: `☀️ [隔熱紙] ${carName} ${brand.name} 套餐`,
         price: price,
-        variantTitle: variantTitle + vendorSuffix,
+        variantTitle: variantTitle + vendorSeqSuffix,
         store: '好室多膜一站式服務'
       });
 
@@ -642,10 +812,22 @@
             packageBrandId: brand.id,
             customerPrice: pkgPrice
           });
-          if (vAnalysis.bestVendor) {
+          if (vAnalysis.capableVendors && vAnalysis.capableVendors.length > 0) {
+            const seqChips = vAnalysis.capableVendors.slice(0, 3).map((v, idx) => {
+              const rankNum = idx + 1;
+              const tagText = rankNum === 1 
+                ? (vAnalysis.capableVendors.length === 1 ? '專屬' : '首選') 
+                : (rankNum === 2 ? '次選' : '備選');
+              return `<span class="brand-rank-chip rank-${rankNum}"><strong>${rankNum}. ${v.vendorName}</strong> <small>(${tagText})</small></span>`;
+            }).join(' <i class="fas fa-angle-right" style="font-size: 0.65rem; opacity: 0.5;"></i> ');
+
             vendorTagHtml = `
               <div class="tint-vendor-tag">
-                <i class="fas fa-store" style="color: var(--primary);"></i> 施工配合店家：<strong>${vAnalysis.bestVendor.vendorName}</strong>
+                <i class="fas fa-clipboard-list" style="color: var(--primary);"></i> 
+                <span style="font-weight: 700; white-space: nowrap;">施工順位：</span>
+                <div style="display: flex; align-items: center; gap: 0.35rem; flex-wrap: wrap;">
+                  ${seqChips}
+                </div>
               </div>
             `;
           }
