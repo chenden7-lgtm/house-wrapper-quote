@@ -16,6 +16,7 @@
  */
 
 export const VENDOR_INFO = {
+  yingge: { id: "yingge", name: "營哥", shortName: "營哥" },
   laipei: { id: "laipei", name: "錸沛", shortName: "錸沛" },
   acme: { id: "acme", name: "ACME", shortName: "ACME (昆哥)" },
   xinghui: { id: "xinghui", name: "星輝", shortName: "星輝" }
@@ -31,11 +32,13 @@ export const TINTING_BRANDS = [
     // 廠商原始成本
     vendorCosts: {
       m3: {
+        yingge: { front: 9000, body: 17000, sunroof: 9000, full: 28000 },
         laipei: {},
         acme: {},
         xinghui: { front: 15000, body: 35000, sunroof: 10000, full: 50000 }
       },
       my: {
+        yingge: { front: 9000, body: 17000, full: 25000 },
         laipei: {},
         acme: {},
         xinghui: { front: 15000, body: 25000, sunroof: 15000, full: 40000 }
@@ -55,11 +58,13 @@ export const TINTING_BRANDS = [
     features: "高隔熱率、高透光微金屬奈米技術、後擋原廠分開兩張貼工",
     vendorCosts: {
       m3: {
+        yingge: { front: 7000, body: 14000, sunroof: 7000, full: 21000 },
         laipei: { front: 14000, sunroof: 9000 },
         acme: { front: 12000, body: 22000, full: 32000 },
         xinghui: { front: 10000, body: 20000, sunroof: 8000, full: 30000 }
       },
       my: {
+        yingge: { front: 7000, body: 14000, full: 21000 },
         laipei: { front: 12000 },
         acme: { front: 12000, body: 20000, full: 30000 },
         xinghui: { front: 10000, body: 20000, sunroof: 12000, full: 30000 }
@@ -78,11 +83,13 @@ export const TINTING_BRANDS = [
     features: "陶瓷防爆隔熱、不影響電子訊號、尊榮暗色高隱密性",
     vendorCosts: {
       m3: {
+        yingge: { front: 6000, body: 15000, sunroof: 6000, full: 27000 },
         laipei: { front: 10000, body: 16000, sunroof: 8000, full: 34000 },
         acme: { front: 10000, body: 18000, sunroof: 4000, full: 32000 },
         xinghui: { front: 9000, body: 20000, sunroof: 8000, full: 29000 }
       },
       my: {
+        yingge: { front: 6000, body: 12000, sunroof: 10000, full: 28000 },
         laipei: { front: 10000, body: 14000, sunroof: 8000, full: 32000 },
         acme: { front: 10000, body: 16000, sunroof: 8000, full: 34000 },
         xinghui: { front: 9000, body: 18000, sunroof: 8000, full: 27000 }
@@ -101,11 +108,13 @@ export const TINTING_BRANDS = [
     features: "高 CP 值隔熱之選、清晰高透光、親民實惠",
     vendorCosts: {
       m3: {
+        yingge: { front: 3000, body: 8000, sunroof: 3000, full: 14000 },
         laipei: {},
         acme: {},
         xinghui: { front: 6000, body: 15000, sunroof: 6000, full: 21000 }
       },
       my: {
+        yingge: { front: 3000, body: 6000, sunroof: 5000, full: 14000 },
         laipei: {},
         acme: {},
         xinghui: { front: 6500, body: 12000, sunroof: 6000, full: 18500 }
@@ -124,11 +133,13 @@ export const TINTING_BRANDS = [
     features: "仿生百層奈米光學膜、超高透光與頂級絕熱效果、不擋電子訊號",
     vendorCosts: {
       m3: {
+        yingge: { front: 9000, body: 20000, sunroof: 8000, full: 29000 },
         laipei: { front: 10000, body: 24000, sunroof: 6000, full: 40000 },
         acme: { front: 12000, body: 20000, sunroof: 4000, full: 30000 },
         xinghui: { front: 10000, body: 20000, sunroof: 4000, full: 30000 }
       },
       my: {
+        yingge: { front: 9000, body: 17000, sunroof: 14000, full: 36000 },
         laipei: { front: 10000, body: 16000, sunroof: 12000, full: 38000 },
         acme: { front: 12000, body: 18000, sunroof: 10000, full: 28000 },
         xinghui: { front: 10000, body: 20000, sunroof: 10000, full: 30000 }
@@ -147,11 +158,13 @@ export const TINTING_BRANDS = [
     features: "極致黑色質感美學、低紅外線穿透、奈米陶瓷不退色、高隱密性",
     vendorCosts: {
       m3: {
+        yingge: { front: 6000, body: 14000, sunroof: 6000, full: 24000 },
         laipei: { front: 9000, body: 16000, sunroof: 5000, full: 30000 },
         acme: { front: 10000, body: 16000, sunroof: 3000, full: 24000 },
         xinghui: { front: 6500, body: 15000, sunroof: 3000, full: 21500 }
       },
       my: {
+        yingge: { front: 6000, body: 12000, sunroof: 10000, full: 26000 },
         laipei: { front: 9000, body: 11000, sunroof: 10000, full: 30000 },
         acme: { front: 10000, body: 14000, sunroof: 8000, full: 22000 },
         xinghui: { front: 7000, body: 15000, sunroof: 8000, full: 22000 }
@@ -170,11 +183,13 @@ export const TINTING_BRANDS = [
     features: "14層磁控濺射貴金屬、頂級立體防爆安全性極高、超強隔熱實力",
     vendorCosts: {
       m3: {
+        yingge: { front: 10000, body: 18000, sunroof: 8000, full: 28000 },
         laipei: { front: 13000, sunroof: 9000 },
         acme: {},
         xinghui: { front: 15000, body: 30000, sunroof: 8000, full: 45000 }
       },
       my: {
+        yingge: { front: 10000, body: 18000, full: 25000 },
         laipei: { front: 12000, body: 21000 },
         acme: {},
         xinghui: { front: 15000, body: 30000, sunroof: 15000, full: 45000 }
@@ -193,11 +208,13 @@ export const TINTING_BRANDS = [
     features: "純黑沉穩色澤、奈米陶瓷不擋 GPS / eTag 訊號、極佳清透視線",
     vendorCosts: {
       m3: {
+        yingge: { front: 7000, body: 17000, sunroof: 7000, full: 28000 },
         laipei: { front: 11000, body: 24000, sunroof: 8000, full: 43000 },
         acme: {},
         xinghui: { front: 15000, body: 30000, sunroof: 8000, full: 45000 }
       },
       my: {
+        yingge: { front: 7000, body: 15000, sunroof: 12000, full: 30000 },
         laipei: { front: 11000, body: 18000, sunroof: 12000, full: 41000 },
         acme: {},
         xinghui: { front: 15000, body: 30000, sunroof: 15000, full: 45000 }
@@ -216,11 +233,13 @@ export const TINTING_BRANDS = [
     features: "N-HD 超高清晰度、極高紅外線阻隔率、奢華隱密黑色澤",
     vendorCosts: {
       m3: {
+        yingge: { front: 8000, body: 18000, sunroof: 7000, full: 27000 },
         laipei: { front: 10000, body: 24000, sunroof: 6000, full: 40000 },
         acme: {},
         xinghui: { front: 10000, body: 20000, sunroof: 8000, full: 30000 }
       },
       my: {
+        yingge: { front: 8000, body: 10000, sunroof: 12000, full: 30000 },
         laipei: { front: 10000, body: 16000, sunroof: 12000, full: 38000 },
         acme: {},
         xinghui: { front: 10000, body: 20000, sunroof: 10000, full: 30000 }
@@ -239,11 +258,13 @@ export const TINTING_BRANDS = [
     features: "無毒環保高質感、無眩光夜間視線佳、長年熱銷經典",
     vendorCosts: {
       m3: {
+        yingge: { front: 6000, body: 12000, sunroof: 6000, full: 23000 },
         laipei: { front: 9000, body: 16000, sunroof: 5000, full: 30000 },
         acme: {},
         xinghui: { front: 8000, body: 16000, sunroof: 6000, full: 24000 }
       },
       my: {
+        yingge: { front: 6000, body: 12000, full: 15000 },
         laipei: { front: 9000, body: 11000 },
         acme: {},
         xinghui: { front: 8000, body: 16000, sunroof: 8000, full: 24000 }
@@ -262,11 +283,13 @@ export const TINTING_BRANDS = [
     features: "美國頂級漆面保護膜品牌出品、高效阻隔 99% 紫外線、絕佳耐候",
     vendorCosts: {
       m3: {
+        yingge: {},
         laipei: { front: 10000, body: 18000, sunroof: 6000, full: 34000 },
         acme: {},
         xinghui: {}
       },
       my: {
+        yingge: {},
         laipei: { front: 10000, body: 14000, sunroof: 11000, full: 35000 },
         acme: {},
         xinghui: {}
@@ -285,11 +308,13 @@ export const TINTING_BRANDS = [
     features: "前擋高清晰高隔熱性 CP 值首選、電子訊號無阻",
     vendorCosts: {
       m3: {
+        yingge: {},
         laipei: {},
         acme: { front: 9000 },
         xinghui: {}
       },
       my: {
+        yingge: {},
         laipei: {},
         acme: { front: 9000 },
         xinghui: {}
@@ -308,11 +333,13 @@ export const TINTING_BRANDS = [
     features: "經濟實惠、防曬隔熱效果優良、親民高性價比",
     vendorCosts: {
       m3: {
+        yingge: {},
         laipei: {},
         acme: { body: 10000, sunroof: 3000 },
         xinghui: {}
       },
       my: {
+        yingge: {},
         laipei: {},
         acme: { body: 8000, sunroof: 6000 },
         xinghui: {}
@@ -363,7 +390,7 @@ export function calculateBestVendor(modelKey, selection) {
 
   const sunroofBrand = hasSunroof ? TINTING_BRANDS.find(b => b.id === sunroofId) : null;
 
-  const vendorKeys = ['laipei', 'acme', 'xinghui'];
+  const vendorKeys = ['yingge', 'laipei', 'acme', 'xinghui'];
   const vendorResults = [];
 
   vendorKeys.forEach(vKey => {
@@ -374,16 +401,24 @@ export function calculateBestVendor(modelKey, selection) {
     let totalCost = 0;
 
     if (isPackage) {
-      // 全車套餐：檢查是否有套裝報價
+      // 全車套餐：檢查是否有套裝報價或前擋+車身分項
       const vCosts = frontBrand?.vendorCosts[modelKey]?.[vKey] || {};
+      let pkgBaseCost = null;
+      
+      const itemizedFrontBody = (vCosts.front !== undefined && vCosts.body !== undefined)
+        ? (vCosts.front + vCosts.body)
+        : null;
+
       if (vCosts.full !== undefined && vCosts.full !== null) {
-        breakdown.package = vCosts.full;
-        totalCost += vCosts.full;
-      } else if (vCosts.front !== undefined && vCosts.body !== undefined) {
-        // 沒有 package 價但有前擋+車身，分項加總
-        breakdown.front = vCosts.front;
-        breakdown.body = vCosts.body;
-        totalCost += vCosts.front + vCosts.body;
+        // 取套裝或分項合計中較划算者
+        pkgBaseCost = itemizedFrontBody !== null ? Math.min(vCosts.full, itemizedFrontBody) : vCosts.full;
+      } else if (itemizedFrontBody !== null) {
+        pkgBaseCost = itemizedFrontBody;
+      }
+
+      if (pkgBaseCost !== null) {
+        breakdown.package = pkgBaseCost;
+        totalCost += pkgBaseCost;
       } else {
         canPerform = false;
         missingParts.push('全車套裝');
@@ -467,6 +502,7 @@ export function calculateBestVendor(modelKey, selection) {
 
   const bestVendor = capableVendors.length > 0 ? capableVendors[0] : null;
   const secondBest = capableVendors.length > 1 ? capableVendors[1] : null;
+  const thirdBest = capableVendors.length > 2 ? capableVendors[2] : null;
 
   let profit = 0;
   let profitMargin = 0;
@@ -485,6 +521,10 @@ export function calculateBestVendor(modelKey, selection) {
     hasCapableVendor: capableVendors.length > 0,
     bestVendor,
     secondBest,
+    thirdBest,
+    rank1: bestVendor,
+    rank2: secondBest,
+    rank3: thirdBest,
     allVendors: vendorResults,
     capableVendors,
     customerPrice,
