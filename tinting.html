@@ -558,6 +558,14 @@
       document.getElementById('builder-model-name').innerText = modelKey === 'm3' ? 'Model 3' : 'Model Y';
 
       populateSelects();
+      const frontSel = document.getElementById('select-front');
+      const bodySel = document.getElementById('select-body');
+      if (frontSel && frontSel.querySelector('option[value="sunmark_rr"]')) {
+        frontSel.value = 'sunmark_rr';
+      }
+      if (bodySel && bodySel.querySelector('option[value="sunmark_smart"]')) {
+        bodySel.value = 'sunmark_smart';
+      }
       updateBuilderCalculations();
       renderBrandGrid();
     };
