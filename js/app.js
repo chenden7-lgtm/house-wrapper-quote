@@ -4,7 +4,7 @@
  */
 
 import { TESLA_MODELS, STORES, CATEGORIES, ACCESSORIES, BUNDLES } from './data.js?v=20260924_v100';
-import { FitmentEngine } from './fitment.js?v=20260924_v100';
+import { FitmentEngine } from './fitment.js?v=20261029_v1';
 import { Visualizer } from './visualizer.js?v=20260924_v100';
 import { ChecklistManager } from './checklist.js?v=20260924_v100';
 import { QuotationManager } from './quotation.js?v=20261012_v1';

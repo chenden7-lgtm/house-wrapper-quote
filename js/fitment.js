@@ -47,69 +47,146 @@ export class FitmentEngine {
    * Evaluates if a given item (single or bundle) is compatible with selected Tesla model.
    */
   checkCompatibility(item, modelId = this.selectedModelId) {
+    if (!item) return { status: 'incompatible', note: '無效項目' };
+
+    const title = item.name || '';
+    const id = item.id || '';
+    const compats = item.fitment || item.compatibilities || ['all'];
+
+    // 1. Non-car accessories & demo/test items
+    const NON_CAR_REGEX = /滑板車|電動滑板車|UpPromote|勿下單|Powerwall|場勘費用|配電箱|呱樂電驢配件\s*#/i;
+    if (NON_CAR_REGEX.test(title) || NON_CAR_REGEX.test(id)) {
+      return { status: 'incompatible', note: '非 Tesla 車用配件' };
+    }
+
+    // 2. Non-Tesla vehicle accessories (Foxtron, Luxgen, Volvo, Toyota, MG, Ford Mach-E)
+    const NON_TESLA_CAR_REGEX = /Foxtron|Cavira|Bria|LUXGEN|n7|n⁷|bZ4X|Toyota|Volvo|EX30|MG4|MG\s*4|Mustang|Mach-E/i;
+    if (NON_TESLA_CAR_REGEX.test(title)) {
+      if (!/Model\s*[3YSX]|Tesla|全車系/i.test(title)) {
+        return { status: 'incompatible', note: '非 Tesla 車型專用配件' };
+      }
+    }
+
     if (modelId === 'all') {
       return { status: 'fit', note: '通用適配所有車型' };
     }
 
-    const compats = item.fitment || item.compatibilities || ['all'];
-    const title = item.name || '';
-
-    // Title Negative Exclusivity Guard
-    if (modelId.startsWith('m3_')) {
-      if (title.includes('Model Y') && !title.includes('Model 3')) {
-        return { status: 'incompatible', note: '僅適配 Model Y 車型' };
-      }
-      if (title.includes('Model S') && !title.includes('Model 3')) {
-        return { status: 'incompatible', note: '僅適配 Model S 車型' };
-      }
-      if (title.includes('Model X') && !title.includes('Model 3')) {
-        return { status: 'incompatible', note: '僅適配 Model X 車型' };
-      }
-      if (title.includes('Cybertruck') && !title.includes('Model 3')) {
-        return { status: 'incompatible', note: '僅適配 Cybertruck 車型' };
-      }
-    }
-
+    // 3. Negative Exclusivity Guards for Model Y
     if (modelId.startsWith('my_')) {
-      if (title.includes('Model 3') && !title.includes('Model Y')) {
+      // 18-inch wheels are exclusively for Model 3 (Model Y uses 19, 20, 21-inch)
+      if (/18\s*吋/i.test(title)) {
+        return { status: 'incompatible', note: '僅適配 Model 3 車型 (18吋)' };
+      }
+
+      // Model 3 exclusives (mentions Model 3 / Highland, but NOT Model Y or 3/Y)
+      if ((/Model\s*3|煥新\s*3|舊\s*3|Highland/i.test(title)) && !/Model\s*Y|MY|3\/Y|3與Y|3和Y|3\+Y|全車系/i.test(title)) {
         return { status: 'incompatible', note: '僅適配 Model 3 車型' };
       }
-      if (title.includes('Model S') && !title.includes('Model Y')) {
+
+      // Model S, X, Cybertruck exclusives
+      if (/Model\s*S/i.test(title) && !/Model\s*Y|3\/Y|全車系/i.test(title)) {
         return { status: 'incompatible', note: '僅適配 Model S 車型' };
       }
-      if (title.includes('Model X') && !title.includes('Model Y')) {
+      if (/Model\s*X/i.test(title) && !/Model\s*Y|3\/Y|全車系/i.test(title)) {
         return { status: 'incompatible', note: '僅適配 Model X 車型' };
       }
-      if (title.includes('Cybertruck') && !title.includes('Model Y')) {
+      if (/Cybertruck/i.test(title) && !/Model\s*Y|3\/Y|全車系/i.test(title)) {
         return { status: 'incompatible', note: '僅適配 Cybertruck 車型' };
       }
-    }
 
-    // Handle split Model 3 model IDs: m3_highland, m3_2021_2023, m3_2018_2023, m3_2017_2020
-    if (modelId === 'm3_highland') {
-      const isFit = compats.includes('all') || compats.includes('m3_highland');
-      return isFit ? { status: 'fit', note: '100% 專車相容 (2024+)' } : { status: 'incompatible', note: '未適配 2024+ 車型' };
-    }
-
-    if (modelId === 'm3_2021_2023') {
-      if (title.includes('舊版中控 2017-2020') || title.includes('2017-2020 舊版')) {
-        return { status: 'incompatible', note: '僅適配 2017-2020 舊版中控' };
+      // Classic Model Y (2020-2024 舊款)
+      if (modelId === 'my_classic') {
+        const isJuniperOnly = (/2025\+|煥新\s*Y|煥新版\s*Model\s*Y|Juniper/i.test(title) || 
+                              (/煥新版\s*Model\s*3\/Y|煥新\s*Model\s*3\/Y|煥新\s*3\/Y/i.test(title))) &&
+                              !/2021-2024|~2024|舊Y|舊\s*Y|新\/舊|新舊|各版本|全車系/i.test(title);
+        if (isJuniperOnly) {
+          return { status: 'incompatible', note: '僅適配 Model Y 煥新版 (2025+)' };
+        }
+        if (compats.length === 1 && compats[0] === 'my_juniper') {
+          return { status: 'incompatible', note: '僅適配 Model Y 煥新版 (2025+)' };
+        }
       }
-      const isFit = compats.includes('all') || compats.includes('m3_classic') || compats.includes('m3_2021_2023') || compats.includes('m3_2018_2023');
-      return isFit ? { status: 'fit', note: '100% 專車相容 (2021-2023)' } : { status: 'incompatible', note: '未適配 2021-2023 車型' };
-    }
 
-    if (modelId === 'm3_2018_2023') {
-      const isFit = compats.includes('all') || compats.includes('m3_classic') || compats.includes('m3_2018_2023') || compats.includes('m3_2021_2023') || compats.includes('m3_2017_2020');
-      return isFit ? { status: 'fit', note: '100% 專車相容 (2018-2023 全車系)' } : { status: 'incompatible', note: '未適配 2018-2023 車型' };
-    }
-
-    if (modelId === 'm3_2017_2020') {
-      if (title.includes('新版中控 2021-2023') || title.includes('45W HUB集線器 (雙 USB-C 版)') || (title.includes('中控收納盒') && title.includes('2021-2023'))) {
-        return { status: 'incompatible', note: '僅適配 2021-2023 滑蓋中控' };
+      // Juniper Model Y (2025+ 煥新版)
+      if (modelId === 'my_juniper') {
+        const isClassicOnly = (/(~2024|～24|~24|2020-2024|2021-2024|舊\s*Y|舊款\s*Model\s*3\/Y|舊\s*Model\s*3\/Y|舊版\s*Model\s*3\/Y)/i.test(title)) &&
+                              !/2025\+|煥新|新\/舊|新舊|各版本|全車系/i.test(title);
+        if (isClassicOnly) {
+          return { status: 'incompatible', note: '僅適配 Model Y (2020-2024) 舊款' };
+        }
+        if (compats.length === 1 && compats[0] === 'my_classic') {
+          return { status: 'incompatible', note: '未適配 2025+ 煥新版' };
+        }
       }
-      const isFit = compats.includes('all') || compats.includes('m3_classic') || compats.includes('m3_2017_2020') || compats.includes('m3_2018_2023');
-      return isFit ? { status: 'fit', note: '100% 專車相容 (2018-2020)' } : { status: 'incompatible', note: '未適配 2018-2020 車型' };
+    }
+
+    // 4. Negative Exclusivity Guards for Model 3
+    if (modelId.startsWith('m3_')) {
+      // Model Y exclusives
+      if (/Model\s*Y|節能蓋MY/i.test(title) && !/Model\s*3|3\/Y|3與Y|3和Y|3\+Y|全車系/i.test(title)) {
+        return { status: 'incompatible', note: '僅適配 Model Y 車型' };
+      }
+      if (/Model\s*S/i.test(title) && !/Model\s*3|3\/Y|全車系/i.test(title)) {
+        return { status: 'incompatible', note: '僅適配 Model S 車型' };
+      }
+      if (/Model\s*X/i.test(title) && !/Model\s*3|3\/Y|全車系/i.test(title)) {
+        return { status: 'incompatible', note: '僅適配 Model X 車型' };
+      }
+      if (/Cybertruck/i.test(title) && !/Model\s*3|3\/Y|全車系/i.test(title)) {
+        return { status: 'incompatible', note: '僅適配 Cybertruck 車型' };
+      }
+
+      if (modelId === 'm3_highland') {
+        if (/2017-2020|2021-2023|舊版\s*Model\s*3\/Y|舊款\s*Model\s*3\/Y|舊\s*Model\s*3/i.test(title) && !/2024\+|Highland|煥新|新\/舊|新舊|各版本|全車系/i.test(title)) {
+          return { status: 'incompatible', note: '未適配 2024+ 煥新版' };
+        }
+        const isFit = compats.includes('all') || compats.includes('m3_highland');
+        return isFit ? { status: 'fit', note: '100% 專車相容 (2024+)' } : { status: 'incompatible', note: '未適配 2024+ 車型' };
+      }
+
+      if (modelId === 'm3_2021_2023') {
+        if (/2024\+|Highland|煥新/i.test(title) && !/2021-2023|舊\s*3|新\/舊|新舊|各版本|全車系/i.test(title)) {
+          return { status: 'incompatible', note: '僅適配 2024+ 煥新版' };
+        }
+        if (title.includes('舊版中控 2017-2020') || title.includes('2017-2020 舊版')) {
+          return { status: 'incompatible', note: '僅適配 2017-2020 舊版中控' };
+        }
+        const isFit = compats.includes('all') || compats.includes('m3_classic') || compats.includes('m3_2021_2023') || compats.includes('m3_2018_2023');
+        return isFit ? { status: 'fit', note: '100% 專車相容 (2021-2023)' } : { status: 'incompatible', note: '未適配 2021-2023 車型' };
+      }
+
+      if (modelId === 'm3_2018_2023') {
+        if (/2024\+|Highland|煥新/i.test(title) && !/2018-2023|舊\s*3|新\/舊|新舊|各版本|全車系/i.test(title)) {
+          return { status: 'incompatible', note: '僅適配 2024+ 煥新版' };
+        }
+        const isFit = compats.includes('all') || compats.includes('m3_classic') || compats.includes('m3_2018_2023') || compats.includes('m3_2021_2023') || compats.includes('m3_2017_2020');
+        return isFit ? { status: 'fit', note: '100% 專車相容 (2018-2023 全車系)' } : { status: 'incompatible', note: '未適配 2018-2023 車型' };
+      }
+
+      if (modelId === 'm3_2017_2020') {
+        if (/2024\+|Highland|煥新|2021-2023/i.test(title) && !/2017-2020|舊\s*3|新\/舊|新舊|各版本|全車系/i.test(title)) {
+          return { status: 'incompatible', note: '僅適配新版中控' };
+        }
+        const isFit = compats.includes('all') || compats.includes('m3_classic') || compats.includes('m3_2017_2020') || compats.includes('m3_2018_2023');
+        return isFit ? { status: 'fit', note: '100% 專車相容 (2018-2020)' } : { status: 'incompatible', note: '未適配 2018-2020 車型' };
+      }
+    }
+
+    // 5. Negative Exclusivity Guards for Model S, Model X, Cybertruck
+    if (modelId === 'ms_refresh') {
+      if (/Model\s*[3YX]|Cybertruck/i.test(title) && !/Model\s*S|全車系/i.test(title)) {
+        return { status: 'incompatible', note: '未適配 Model S 車型' };
+      }
+    }
+    if (modelId === 'mx_refresh') {
+      if (/Model\s*[3YS]|Cybertruck/i.test(title) && !/Model\s*X|全車系/i.test(title)) {
+        return { status: 'incompatible', note: '未適配 Model X 車型' };
+      }
+    }
+    if (modelId === 'cybertruck') {
+      if (/Model\s*[3YSX]/i.test(title) && !/Cybertruck|全車系/i.test(title)) {
+        return { status: 'incompatible', note: '未適配 Cybertruck 車型' };
+      }
     }
 
     const isDirectMatch = compats.includes('all') || compats.includes(modelId);
@@ -130,12 +207,10 @@ export class FitmentEngine {
 
   getFilteredSingleItems() {
     return ACCESSORIES.filter(item => {
-      // Model Fitment Filter - Filter out incompatible items when a specific model is selected!
-      if (this.selectedModelId !== 'all') {
-        const compat = this.checkCompatibility(item, this.selectedModelId);
-        if (compat.status === 'incompatible') {
-          return false;
-        }
+      // Model Fitment Filter - Filter out incompatible items
+      const compat = this.checkCompatibility(item, this.selectedModelId);
+      if (compat.status === 'incompatible') {
+        return false;
       }
       // Store filter
       const itemStoreId = item.storeId || (item.brand === 'Jowua' || (item.source && item.source.includes('Jowua')) || (item.id && item.id.includes('jowua')) ? 'jowua' : 'quackev');
@@ -222,12 +297,10 @@ export class FitmentEngine {
 
   getFilteredBundles() {
     return BUNDLES.filter(bundle => {
-      // Model Fitment Filter - Filter out incompatible bundles when a specific model is selected!
-      if (this.selectedModelId !== 'all') {
-        const compat = this.checkCompatibility(bundle, this.selectedModelId);
-        if (compat.status === 'incompatible') {
-          return false;
-        }
+      // Model Fitment Filter - Filter out incompatible bundles
+      const compat = this.checkCompatibility(bundle, this.selectedModelId);
+      if (compat.status === 'incompatible') {
+        return false;
       }
       // Store filter
       const bundleStoreId = bundle.storeId || (bundle.brand === 'Jowua' || (bundle.source && bundle.source.includes('Jowua')) || (bundle.id && bundle.id.includes('jowua')) ? 'jowua' : 'quackev');
