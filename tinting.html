@@ -389,11 +389,104 @@
       border-color: var(--border-color);
       color: var(--text-muted);
     }
+
+    /* Staff Auth & Hidden Vendor Styles */
+    .assigned-vendor-locked {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+    .vendor-locked-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .staff-unlock-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 4px 11px;
+      border-radius: 20px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      background: rgba(59, 130, 246, 0.12);
+      color: #2563eb;
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .staff-unlock-link:hover {
+      background: #2563eb;
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+    [data-theme="dark"] .staff-unlock-link {
+      background: rgba(59, 130, 246, 0.2);
+      color: #93c5fd;
+      border-color: rgba(59, 130, 246, 0.45);
+    }
+    .nav-btn.staff-auth-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      font-weight: 600;
+    }
+    .nav-btn.staff-auth-btn:hover {
+      border-color: var(--primary);
+    }
+    .nav-btn.staff-auth-btn.is-logged-in {
+      background: rgba(16, 185, 129, 0.12);
+      border-color: rgba(16, 185, 129, 0.5);
+      color: #059669;
+      font-weight: 700;
+    }
+    [data-theme="dark"] .nav-btn.staff-auth-btn.is-logged-in {
+      background: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+      border-color: rgba(16, 185, 129, 0.6);
+    }
+    .vendor-sequence-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      width: 100%;
+      margin-bottom: 0.35rem;
+    }
+    .staff-auth-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #059669;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      padding: 2px 7px;
+      border-radius: 8px;
+    }
+    [data-theme="dark"] .staff-auth-badge {
+      color: #34d399;
+      background: rgba(16, 185, 129, 0.25);
+    }
+    @media (max-width: 600px) {
+      .nav-btn.staff-auth-btn {
+        padding: 0.38rem 0.65rem;
+        font-size: 0.78rem;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Top Navigation Bar -->
   <!-- Top Navigation Bar -->
   <header class="navbar">
     <div class="container navbar-inner">
@@ -404,6 +497,11 @@
         </a>
 
         <div class="navbar-actions">
+          <button id="btn-staff-auth" class="nav-btn staff-auth-btn" title="員工登入查看施工配合店家順位">
+            <i class="fas fa-user-lock" id="staff-auth-icon"></i> 
+            <span id="staff-auth-label">員工登入</span>
+          </button>
+
           <button id="btn-open-quote-drawer" class="nav-btn quote-btn" title="查看客戶 LINE 報價單">
             <i class="fas fa-file-invoice-dollar" style="color: var(--tesla-red);"></i> 
             <span>客戶 LINE 報價單</span>
@@ -544,12 +642,145 @@
     </div>
   </div>
 
+  <!-- Staff Login Modal -->
+  <div id="staff-login-modal" class="modal-overlay">
+    <div class="modal-card-detail" style="max-width: 440px; padding: 2rem 1.75rem;">
+      <button id="btn-close-staff-modal" class="modal-close-btn" title="關閉"><i class="fas fa-times"></i></button>
+      
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <div style="width: 52px; height: 52px; margin: 0 auto 0.75rem; border-radius: 50%; background: rgba(232,33,39,0.12); color: var(--tesla-red); display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">
+          <i class="fas fa-user-lock"></i>
+        </div>
+        <h3 style="font-size: 1.2rem; font-weight: 800; color: var(--text-bright); margin-bottom: 0.35rem;">好室多膜 員工內部登入</h3>
+        <p style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.45;">
+          此功能為內部派工專用，登入後方可查閱各品牌隔熱紙施工配合店家順序。
+        </p>
+      </div>
+
+      <form id="staff-login-form" onsubmit="handleStaffLoginSubmit(event)">
+        <div style="margin-bottom: 1.25rem;">
+          <label for="staff-password-input" style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.45rem;">
+            員工授權密碼
+          </label>
+          <div style="position: relative;">
+            <input type="password" id="staff-password-input" placeholder="請輸入內部員工密碼" required autocomplete="current-password"
+              style="width: 100%; box-sizing: border-box; padding: 0.7rem 2.5rem 0.7rem 0.85rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); background: var(--bg-surface); color: var(--text-main); font-size: 0.95rem; outline: none; transition: border-color 0.2s;" />
+            <button type="button" id="btn-toggle-pwd-visibility" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--text-dim); cursor: pointer; padding: 4px;" title="切換密碼顯示">
+              <i class="fas fa-eye"></i>
+            </button>
+          </div>
+          <div id="staff-login-error" style="display: none; color: #ef4444; font-size: 0.8rem; margin-top: 0.45rem; font-weight: 600;">
+            <i class="fas fa-exclamation-circle"></i> 密碼錯誤，請重新輸入！
+          </div>
+        </div>
+
+        <button type="submit" style="width: 100%; padding: 0.75rem; border: none; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--tesla-red), #b91c1c); color: #fff; font-weight: 800; font-size: 0.95rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem; box-shadow: 0 4px 14px rgba(232,33,39,0.35); transition: opacity 0.2s;">
+          <i class="fas fa-sign-in-alt"></i> 登入解鎖查看順位
+        </button>
+      </form>
+
+      <div style="margin-top: 1.25rem; padding-top: 0.9rem; border-top: 1px solid var(--border-color); text-align: center; font-size: 0.78rem; color: var(--text-dim);">
+        <i class="fas fa-shield-alt" style="color: var(--primary);"></i> 對外與客戶報價單僅顯示好室多膜特約認證施工工坊
+      </div>
+    </div>
+  </div>
+
   <script type="module">
     import { TINTING_BRANDS, calculateBestVendor } from './js/tintingData.js?v=20261028_v2';
     import { QuotationManager } from './js/quotation.js?v=20261012_v1';
 
     const quotation = new QuotationManager('quoteCart');
     let selectedCarModel = 'm3'; // 'm3' or 'my'
+
+    const STAFF_AUTH_KEY = 'housewrapper_staff_auth';
+
+    function isStaffLoggedIn() {
+      try {
+        return localStorage.getItem(STAFF_AUTH_KEY) === 'true' || 
+               sessionStorage.getItem('adminToken') !== null;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    function updateStaffUI() {
+      const loggedIn = isStaffLoggedIn();
+      const btn = document.getElementById('btn-staff-auth');
+      const label = document.getElementById('staff-auth-label');
+      const icon = document.getElementById('staff-auth-icon');
+      if (btn && label && icon) {
+        if (loggedIn) {
+          btn.classList.add('is-logged-in');
+          btn.title = '員工已登入 (點擊可登出)';
+          icon.className = 'fas fa-user-check';
+          label.innerText = '員工已登入 (登出)';
+        } else {
+          btn.classList.remove('is-logged-in');
+          btn.title = '員工登入查看施工配合店家順位';
+          icon.className = 'fas fa-user-lock';
+          label.innerText = '員工登入';
+        }
+      }
+    }
+
+    window.handleStaffAuthClick = function() {
+      if (isStaffLoggedIn()) {
+        if (confirm('確定要登出員工身份嗎？登出後將隱藏施工店家順序。')) {
+          localStorage.removeItem(STAFF_AUTH_KEY);
+          sessionStorage.removeItem('adminToken');
+          updateStaffUI();
+          updateBuilderCalculations();
+          renderBrandGrid();
+          alert('已登出員工身份。施工配合店家順位已隱藏。');
+        }
+      } else {
+        openStaffLoginModal();
+      }
+    };
+
+    window.openStaffLoginModal = function() {
+      const modal = document.getElementById('staff-login-modal');
+      const err = document.getElementById('staff-login-error');
+      const pwdInput = document.getElementById('staff-password-input');
+      if (err) err.style.display = 'none';
+      if (pwdInput) {
+        pwdInput.value = '';
+        setTimeout(() => pwdInput.focus(), 150);
+      }
+      if (modal) modal.classList.add('active');
+    };
+
+    window.closeStaffLoginModal = function() {
+      const modal = document.getElementById('staff-login-modal');
+      if (modal) modal.classList.remove('active');
+    };
+
+    window.handleStaffLoginSubmit = function(e) {
+      if (e) e.preventDefault();
+      const pwdInput = document.getElementById('staff-password-input');
+      const err = document.getElementById('staff-login-error');
+      const val = (pwdInput?.value || '').trim();
+
+      // 驗證管理者/員工密碼: q120591 (相容 chenden7)
+      if (val === 'q120591' || val.toLowerCase() === 'chenden7') {
+        localStorage.setItem(STAFF_AUTH_KEY, 'true');
+        if (err) err.style.display = 'none';
+        closeStaffLoginModal();
+        updateStaffUI();
+        updateBuilderCalculations();
+        renderBrandGrid();
+        alert('🎉 員工登入成功！已解鎖隔熱紙施工配合店家順位查看權限。');
+      } else {
+        if (err) {
+          err.style.display = 'block';
+          err.innerHTML = '<i class="fas fa-exclamation-circle"></i> 密碼錯誤，請重新輸入！';
+        }
+        if (pwdInput) {
+          pwdInput.focus();
+          pwdInput.select();
+        }
+      }
+    };
 
     window.selectModel = function(modelKey) {
       selectedCarModel = modelKey;
@@ -653,12 +884,25 @@
         pillContainer.innerHTML = '';
       }
 
-      // 更新配合施工店家順位（依內部最划算成本自動排序，不顯示成本與利潤）
+      // 施工配合店家顯示控制
       const vendorRowEl = document.getElementById('assigned-vendor-row');
       if (vendorRowEl) {
         if (!hasFront && !hasBody && !hasSunroof) {
           vendorRowEl.innerHTML = '';
+        } else if (!isStaffLoggedIn()) {
+          // 未登入員工：隱藏內部配合施工店家與順序，對外一律顯示好室多膜特約認證施工工坊
+          vendorRowEl.innerHTML = `
+            <div class="assigned-vendor-locked">
+              <span class="vendor-locked-pill">
+                <i class="fas fa-shield-alt" style="color: var(--primary);"></i> 施工配合店家：好室多膜特約認證施工工坊
+              </span>
+              <button type="button" class="staff-unlock-link" onclick="openStaffLoginModal()" title="員工登入解鎖查看施工順序">
+                <i class="fas fa-lock"></i> 員工登入查看派工順序
+              </button>
+            </div>
+          `;
         } else {
+          // 已登入員工：顯示內部各店家派工順位
           const vAnalysis = calculateBestVendor(selectedCarModel, {
             frontId: fId,
             bodyId: bId,
@@ -682,9 +926,12 @@
 
             vendorRowEl.innerHTML = `
               <div class="vendor-sequence-container">
-                <span class="vendor-sequence-title">
-                  <i class="fas fa-clipboard-list" style="color: var(--primary);"></i> 施工配合店家順位：
-                </span>
+                <div class="vendor-sequence-header">
+                  <span class="vendor-sequence-title">
+                    <i class="fas fa-clipboard-list" style="color: var(--primary);"></i> 施工配合店家順位：
+                  </span>
+                  <span class="staff-auth-badge"><i class="fas fa-user-check"></i> 員工內部派工權限</span>
+                </div>
                 <div class="vendor-sequence-list">
                   ${listHtml}
                 </div>
@@ -751,15 +998,19 @@
       const carName = selectedCarModel === 'm3' ? 'Model 3' : 'Model Y';
       const quoteItemId = `tint-mix-${selectedCarModel}-${fId}-${bId}-${sId}`;
 
-      const vAnalysis = calculateBestVendor(selectedCarModel, {
-        frontId: fId,
-        bodyId: bId,
-        sunroofId: sId,
-        customerPrice: finalPrice
-      });
-      const vendorSeqSuffix = vAnalysis.capableVendors.length > 0 
-        ? ` ｜ 施工店家順位: ` + vAnalysis.capableVendors.slice(0, 3).map((v, i) => `${i+1}.${v.vendorName}`).join(' > ')
-        : '';
+      // 只有在員工登入狀態下，報價單項目才附加內部施工店家順位；對外客戶報價單不顯示
+      let vendorSeqSuffix = '';
+      if (isStaffLoggedIn()) {
+        const vAnalysis = calculateBestVendor(selectedCarModel, {
+          frontId: fId,
+          bodyId: bId,
+          sunroofId: sId,
+          customerPrice: finalPrice
+        });
+        if (vAnalysis.capableVendors.length > 0) {
+          vendorSeqSuffix = ` ｜ 施工店家順位: ` + vAnalysis.capableVendors.slice(0, 3).map((v, i) => `${i+1}.${v.vendorName}`).join(' > ');
+        }
+      }
 
       quotation.addItem(quoteItemId, 'electrical', '0', {
         name: `☀️ [隔熱紙] ${carName} 自訂混搭專案${discNote}`,
@@ -786,14 +1037,18 @@
         variantTitle = '組合套餐 (前擋+車身)';
       }
 
-      const vAnalysis = calculateBestVendor(selectedCarModel, {
-        isPackage: true,
-        packageBrandId: brandId,
-        customerPrice: price
-      });
-      const vendorSeqSuffix = vAnalysis.capableVendors.length > 0 
-        ? ` ｜ 施工店家順位: ` + vAnalysis.capableVendors.slice(0, 3).map((v, i) => `${i+1}.${v.vendorName}`).join(' > ')
-        : '';
+      // 只有在員工登入狀態下，報價單項目才附加內部施工店家順位；對外客戶報價單不顯示
+      let vendorSeqSuffix = '';
+      if (isStaffLoggedIn()) {
+        const vAnalysis = calculateBestVendor(selectedCarModel, {
+          isPackage: true,
+          packageBrandId: brandId,
+          customerPrice: price
+        });
+        if (vAnalysis.capableVendors.length > 0) {
+          vendorSeqSuffix = ` ｜ 施工店家順位: ` + vAnalysis.capableVendors.slice(0, 3).map((v, i) => `${i+1}.${v.vendorName}`).join(' > ');
+        }
+      }
 
       quotation.addItem(`tint-pkg-${brandId}-${selectedCarModel}`, 'electrical', '0', {
         name: `☀️ [隔熱紙] ${carName} ${brand.name} 套餐`,
@@ -808,13 +1063,15 @@
 
     function renderBrandGrid() {
       const container = document.getElementById('tint-grid-container');
+      const staffActive = isStaffLoggedIn();
 
       container.innerHTML = TINTING_BRANDS.map(brand => {
         const p = brand.prices[selectedCarModel] || {};
         const pkgPrice = p.full || ((p.front || 0) + (p.body || 0));
 
         let vendorTagHtml = '';
-        if (pkgPrice > 0) {
+        // 只有員工登入後才顯示各品牌卡片的施工順位
+        if (staffActive && pkgPrice > 0) {
           const vAnalysis = calculateBestVendor(selectedCarModel, {
             isPackage: true,
             packageBrandId: brand.id,
@@ -831,8 +1088,12 @@
 
             vendorTagHtml = `
               <div class="tint-vendor-tag">
-                <i class="fas fa-clipboard-list" style="color: var(--primary);"></i> 
-                <span style="font-weight: 700; white-space: nowrap;">施工順位：</span>
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 3px;">
+                  <span style="font-weight: 700; color: #10b981; font-size: 0.8rem;">
+                    <i class="fas fa-user-check"></i> [員工] 施工順位：
+                  </span>
+                  <span class="staff-auth-badge" style="font-size: 0.68rem; padding: 1px 5px;"><i class="fas fa-lock-open"></i> 內部</span>
+                </div>
                 <div style="display: flex; align-items: center; gap: 0.35rem; flex-wrap: wrap;">
                   ${seqChips}
                 </div>
@@ -908,9 +1169,39 @@
       });
     }
 
+    // Staff Login Modal event listeners
+    const staffModal = document.getElementById('staff-login-modal');
+    const closeStaffBtn = document.getElementById('btn-close-staff-modal');
+    const togglePwdBtn = document.getElementById('btn-toggle-pwd-visibility');
+
+    if (closeStaffBtn) closeStaffBtn.addEventListener('click', window.closeStaffLoginModal);
+    if (staffModal) {
+      staffModal.addEventListener('click', (e) => {
+        if (e.target === staffModal) window.closeStaffLoginModal();
+      });
+    }
+    if (togglePwdBtn) {
+      togglePwdBtn.addEventListener('click', () => {
+        const input = document.getElementById('staff-password-input');
+        const icon = togglePwdBtn.querySelector('i');
+        if (input.type === 'password') {
+          input.type = 'text';
+          icon.className = 'fas fa-eye-slash';
+        } else {
+          input.type = 'password';
+          icon.className = 'fas fa-eye';
+        }
+      });
+    }
+
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && quoteModal && quoteModal.classList.contains('active')) {
-        closeQuoteModal();
+      if (e.key === 'Escape') {
+        if (quoteModal && quoteModal.classList.contains('active')) {
+          closeQuoteModal();
+        }
+        if (staffModal && staffModal.classList.contains('active')) {
+          window.closeStaffLoginModal();
+        }
       }
     });
 
@@ -926,6 +1217,7 @@
     });
 
     // Initialize
+    updateStaffUI();
     selectModel('m3');
     updateQuoteBadge();
   </script>
