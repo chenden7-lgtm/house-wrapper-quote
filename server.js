@@ -85,7 +85,7 @@ const server = http.createServer(async (req, res) => {
         const username = (data.username || '').trim();
         const password = (data.password || '').trim();
 
-        if (username === 'chenden7' && password === 'q120591') {
+        if (username === 'chenden7' && (password === '88284299' || password === 'q120591')) {
           const token = 'token_house_wrapper_admin_authenticated';
           res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
           return res.end(JSON.stringify({ success: true, token, message: '登入驗證成功！' }));

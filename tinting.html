@@ -725,6 +725,37 @@
         window.openStaffLoginModal();
       }
     };
+
+    window.handleStaffLoginSubmit = function(e) {
+      if (e) e.preventDefault();
+      var pwdInput = document.getElementById('staff-password-input');
+      var err = document.getElementById('staff-login-error');
+      var val = (pwdInput ? pwdInput.value : '').trim();
+
+      // 員工授權密碼: 88284299 (亦相容原密碼 q120591 / chenden7)
+      if (val === '88284299' || val === 'q120591' || val.toLowerCase() === 'chenden7') {
+        localStorage.setItem('housewrapper_staff_auth', 'true');
+        if (err) err.style.display = 'none';
+        window.closeStaffLoginModal();
+        if (window.updateStaffUI && window.updateBuilderCalculations && window.renderBrandGrid) {
+          window.updateStaffUI();
+          window.updateBuilderCalculations();
+          window.renderBrandGrid();
+        } else {
+          location.reload();
+        }
+        alert('🎉 員工登入成功！已解鎖隔熱紙施工配合店家順位查看權限。');
+      } else {
+        if (err) {
+          err.style.display = 'block';
+          err.innerHTML = '<i class="fas fa-exclamation-circle"></i> 密碼錯誤，請重新輸入！';
+        }
+        if (pwdInput) {
+          pwdInput.focus();
+          pwdInput.select();
+        }
+      }
+    };
   </script>
 
   <script type="module">
@@ -803,8 +834,8 @@
       const err = document.getElementById('staff-login-error');
       const val = (pwdInput?.value || '').trim();
 
-      // 驗證管理者/員工密碼: q120591 (相容 chenden7)
-      if (val === 'q120591' || val.toLowerCase() === 'chenden7') {
+      // 驗證員工授權密碼: 88284299 (亦相容原管理者密碼 q120591 / chenden7)
+      if (val === '88284299' || val === 'q120591' || val.toLowerCase() === 'chenden7') {
         localStorage.setItem(STAFF_AUTH_KEY, 'true');
         if (err) err.style.display = 'none';
         closeStaffLoginModal();
