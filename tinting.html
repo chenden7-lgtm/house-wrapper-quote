@@ -497,7 +497,7 @@
         </a>
 
         <div class="navbar-actions">
-          <button id="btn-staff-auth" class="nav-btn staff-auth-btn" title="員工登入查看施工配合店家順位">
+          <button id="btn-staff-auth" class="nav-btn staff-auth-btn" title="員工 / 會員登入查看施工配合店家順位" onclick="window.handleStaffAuthClick && window.handleStaffAuthClick()">
             <i class="fas fa-user-lock" id="staff-auth-icon"></i> 
             <span id="staff-auth-label">員工登入</span>
           </button>
@@ -684,6 +684,48 @@
       </div>
     </div>
   </div>
+
+  <script>
+    // Immediate fallback handlers so button clicks work reliably at any time
+    window.openStaffLoginModal = function() {
+      var modal = document.getElementById('staff-login-modal');
+      var err = document.getElementById('staff-login-error');
+      var pwdInput = document.getElementById('staff-password-input');
+      if (err) err.style.display = 'none';
+      if (pwdInput) {
+        pwdInput.value = '';
+        setTimeout(function() { pwdInput.focus(); }, 120);
+      }
+      if (modal) modal.classList.add('active');
+    };
+    window.closeStaffLoginModal = function() {
+      var modal = document.getElementById('staff-login-modal');
+      if (modal) modal.classList.remove('active');
+    };
+    window.handleStaffAuthClick = function() {
+      try {
+        var isAuth = localStorage.getItem('housewrapper_staff_auth') === 'true' || sessionStorage.getItem('adminToken') !== null;
+        if (isAuth) {
+          if (confirm('確定要登出員工身份嗎？登出後將隱藏施工店家順序。')) {
+            localStorage.removeItem('housewrapper_staff_auth');
+            sessionStorage.removeItem('adminToken');
+            if (window.updateStaffUI && window.updateBuilderCalculations && window.renderBrandGrid) {
+              window.updateStaffUI();
+              window.updateBuilderCalculations();
+              window.renderBrandGrid();
+              alert('已登出員工身份。施工配合店家順位已隱藏。');
+            } else {
+              location.reload();
+            }
+          }
+        } else {
+          window.openStaffLoginModal();
+        }
+      } catch (e) {
+        window.openStaffLoginModal();
+      }
+    };
+  </script>
 
   <script type="module">
     import { TINTING_BRANDS, calculateBestVendor } from './js/tintingData.js?v=20261028_v2';
@@ -1173,6 +1215,15 @@
     const staffModal = document.getElementById('staff-login-modal');
     const closeStaffBtn = document.getElementById('btn-close-staff-modal');
     const togglePwdBtn = document.getElementById('btn-toggle-pwd-visibility');
+    const btnStaffAuth = document.getElementById('btn-staff-auth');
+
+    if (btnStaffAuth) {
+      btnStaffAuth.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.handleStaffAuthClick();
+      });
+    }
+    window.updateStaffUI = updateStaffUI;
 
     if (closeStaffBtn) closeStaffBtn.addEventListener('click', window.closeStaffLoginModal);
     if (staffModal) {
