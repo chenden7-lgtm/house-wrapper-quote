@@ -10544,7 +10544,9 @@
           "name": "標準完工版",
           "price": 1000,
           "sku": "QK-149469",
-          "available": true
+          "available": true,
+          "partsPrice": 1000,
+          "installFee": 0
         }
       ],
       "shortDescription": "",
@@ -10553,7 +10555,9 @@
         "https://www.quackev.com/ogImg.webp"
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
-      "storeId": "quackev"
+      "storeId": "quackev",
+      "partsPrice": 1000,
+      "installFee": 0
     },
     {
       "id": "quack_146083",
@@ -10577,7 +10581,9 @@
           "name": "標準完工版",
           "price": 1000,
           "sku": "QK-146083",
-          "available": true
+          "available": true,
+          "partsPrice": 1000,
+          "installFee": 0
         }
       ],
       "shortDescription": "",
@@ -10586,7 +10592,9 @@
         "https://www.quackev.com/ogImg.webp"
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
-      "storeId": "quackev"
+      "storeId": "quackev",
+      "partsPrice": 1000,
+      "installFee": 0
     },
     {
       "id": "quack_133586",
@@ -10610,7 +10618,9 @@
           "name": "標準完工版",
           "price": 1000,
           "sku": "QK-133586",
-          "available": true
+          "available": true,
+          "partsPrice": 1000,
+          "installFee": 0
         }
       ],
       "shortDescription": "",
@@ -10619,7 +10629,9 @@
         "https://www.quackev.com/ogImg.webp"
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
-      "storeId": "quackev"
+      "storeId": "quackev",
+      "partsPrice": 1000,
+      "installFee": 0
     },
     {
       "id": "quack_133590",
@@ -10643,7 +10655,9 @@
           "name": "標準完工版",
           "price": 1000,
           "sku": "QK-133590",
-          "available": true
+          "available": true,
+          "partsPrice": 1000,
+          "installFee": 0
         }
       ],
       "shortDescription": "",
@@ -10652,7 +10666,9 @@
         "https://www.quackev.com/ogImg.webp"
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
-      "storeId": "quackev"
+      "storeId": "quackev",
+      "partsPrice": 1000,
+      "installFee": 0
     },
     {
       "id": "quack_94851",
@@ -10676,7 +10692,9 @@
           "name": "標準完工版",
           "price": 600,
           "sku": "QK-94851",
-          "available": true
+          "available": true,
+          "partsPrice": 600,
+          "installFee": 0
         }
       ],
       "shortDescription": "HALOBLK 黑洛 中控收納盒-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優",
@@ -10685,7 +10703,9 @@
         "https://www.workband.com.tw/store_image/quackev/P1177477860763.webp"
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
-      "storeId": "quackev"
+      "storeId": "quackev",
+      "partsPrice": 600,
+      "installFee": 0
     },
     {
       "id": "quack_94850",
@@ -10700,16 +10720,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 1800,
+      "price": 1900,
       "priceRange": "NT$ 1,800",
-      "originalPrice": 1800,
+      "originalPrice": 1900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 1800,
+          "price": 1900,
           "sku": "QK-94850",
-          "available": true
+          "available": true,
+          "partsPrice": 1900,
+          "installFee": 0
         }
       ],
       "shortDescription": "HALOBLK 黑洛 天窗遮陽簾-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優",
@@ -10718,7 +10740,9 @@
         "https://www.workband.com.tw/store_image/quackev/P1_20260526140613_5782.webp"
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
-      "storeId": "quackev"
+      "storeId": "quackev",
+      "partsPrice": 1900,
+      "installFee": 0
     },
     {
       "id": "quack_94845",
@@ -10742,7 +10766,9 @@
           "name": "標準完工版",
           "price": 600,
           "sku": "QK-94845",
-          "available": true
+          "available": true,
+          "partsPrice": 600,
+          "installFee": 0
         }
       ],
       "shortDescription": "HALOBLK 黑洛 中控水杯套-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優",
@@ -10751,7 +10777,9 @@
         "https://www.workband.com.tw/store_image/quackev/P5177475279682.webp"
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
-      "storeId": "quackev"
+      "storeId": "quackev",
+      "partsPrice": 600,
+      "installFee": 0
     },
     {
       "id": "quack_52489",
@@ -10766,16 +10794,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 1450,
+      "price": 1500,
       "priceRange": "NT$ 1,450",
-      "originalPrice": 1450,
+      "originalPrice": 1500,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 1450,
+          "price": 1500,
           "sku": "QK-52489",
-          "available": true
+          "available": true,
+          "partsPrice": 1450,
+          "installFee": 50
         }
       ],
       "shortDescription": "HALOBLK 黑洛 鋁合金踏板（全車系）-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUN",
@@ -10784,7 +10814,9 @@
         "https://www.workband.com.tw/store_image/quackev/P1177398177715.webp"
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
-      "storeId": "quackev"
+      "storeId": "quackev",
+      "partsPrice": 1450,
+      "installFee": 50
     },
     {
       "id": "quack_20647",
@@ -10808,7 +10840,9 @@
           "name": "標準完工版",
           "price": 5500,
           "sku": "QK-20647",
-          "available": true
+          "available": true,
+          "partsPrice": 5500,
+          "installFee": 0
         }
       ],
       "shortDescription": "HALOBLK 黑洛 雙層腳踏墊-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優",
@@ -10817,7 +10851,9 @@
         "https://www.workband.com.tw/store_image/quackev/P1_20260807154020_1737.webp"
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
-      "storeId": "quackev"
+      "storeId": "quackev",
+      "partsPrice": 5500,
+      "installFee": 0
     },
     {
       "id": "quack_18845",
@@ -10832,16 +10868,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 6400,
+      "price": 6800,
       "priceRange": "NT$ 6,400",
-      "originalPrice": 6400,
+      "originalPrice": 6800,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 6400,
+          "price": 6800,
           "sku": "QK-18845",
-          "available": true
+          "available": true,
+          "partsPrice": 6400,
+          "installFee": 400
         }
       ],
       "shortDescription": "HALOBLK 黑洛 動力盤 ( 一套4個)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOU",
@@ -10850,7 +10888,9 @@
         "https://www.workband.com.tw/store_image/quackev/P1177477581059.webp"
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
-      "storeId": "quackev"
+      "storeId": "quackev",
+      "partsPrice": 6400,
+      "installFee": 400
     },
     {
       "id": "quack_7590",
@@ -10865,16 +10905,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 1000,
+      "price": 1200,
       "priceRange": "NT$ 1,000",
-      "originalPrice": 1000,
+      "originalPrice": 1200,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 1000,
+          "price": 1200,
           "sku": "QK-7590",
-          "available": true
+          "available": true,
+          "partsPrice": 1200,
+          "installFee": 0
         }
       ],
       "shortDescription": "HALOBLK 黑洛 前擋遮陽傘-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優",
@@ -10883,7 +10925,9 @@
         "https://www.workband.com.tw/store_image/quackev/P1177477351898.webp"
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
-      "storeId": "quackev"
+      "storeId": "quackev",
+      "partsPrice": 1200,
+      "installFee": 0
     },
     {
       "id": "quack_7576",
@@ -10898,16 +10942,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 1200,
+      "price": 1400,
       "priceRange": "NT$ 1,200",
-      "originalPrice": 1200,
+      "originalPrice": 1400,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 1200,
+          "price": 1400,
           "sku": "QK-7576",
-          "available": true
+          "available": true,
+          "partsPrice": 1200,
+          "installFee": 200
         }
       ],
       "shortDescription": "HALOBLK 黑洛 前排椅背保護墊-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限",
@@ -10916,7 +10962,9 @@
         "https://www.workband.com.tw/store_image/quackev/P1177424271021.webp"
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
-      "storeId": "quackev"
+      "storeId": "quackev",
+      "partsPrice": 1200,
+      "installFee": 200
     },
     {
       "id": "quack_7529",
@@ -10940,7 +10988,9 @@
           "name": "標準完工版",
           "price": 1200,
           "sku": "QK-7529",
-          "available": true
+          "available": true,
+          "partsPrice": 1200,
+          "installFee": 0
         }
       ],
       "shortDescription": "HALOBLK 黑洛 車用香薰盒-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優",
@@ -10949,7 +10999,9 @@
         "https://www.workband.com.tw/store_image/quackev/P1177469519311.webp"
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
-      "storeId": "quackev"
+      "storeId": "quackev",
+      "partsPrice": 1200,
+      "installFee": 0
     },
     {
       "id": "quack_7527",
@@ -10973,7 +11025,9 @@
           "name": "標準完工版",
           "price": 700,
           "sku": "QK-7527",
-          "available": true
+          "available": true,
+          "partsPrice": 700,
+          "installFee": 0
         }
       ],
       "shortDescription": "HALOBLK 黑洛 香薰石膏-2入-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限",
@@ -10982,7 +11036,9 @@
         "https://www.workband.com.tw/store_image/quackev/P1177469554740.webp"
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
-      "storeId": "quackev"
+      "storeId": "quackev",
+      "partsPrice": 700,
+      "installFee": 0
     },
     {
       "id": "quack_45838",
@@ -10994,16 +11050,18 @@
       "fitment": [
         "my_juniper"
       ],
-      "price": 8800,
+      "price": 9000,
       "priceRange": "NT$ 8,800",
-      "originalPrice": 8800,
+      "originalPrice": 9000,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 8800,
+          "price": 9000,
           "sku": "QK-45838",
-          "available": true
+          "available": true,
+          "partsPrice": 8800,
+          "installFee": 200
         }
       ],
       "shortDescription": "HALOBLK 黑洛 真碳纖維尾翼（煥新Y 2025+）-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 ",
@@ -11012,7 +11070,9 @@
         "https://www.workband.com.tw/store_image/quackev/P1177398527180.webp"
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
-      "storeId": "quackev"
+      "storeId": "quackev",
+      "partsPrice": 8800,
+      "installFee": 200
     },
     {
       "id": "quack_127954",
@@ -11033,7 +11093,9 @@
           "name": "標準完工版",
           "price": 26000,
           "sku": "QK-127954",
-          "available": true
+          "available": true,
+          "partsPrice": 26000,
+          "installFee": 0
         }
       ],
       "shortDescription": "空力套件-YOFER ( 舊Y ~2024 )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCO",
@@ -11041,7 +11103,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260831114103_6067.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 26000,
+      "installFee": 0
     },
     {
       "id": "quack_124571",
@@ -11062,7 +11126,9 @@
           "name": "標準完工版",
           "price": 28000,
           "sku": "QK-124571",
-          "available": true
+          "available": true,
+          "partsPrice": 28000,
+          "installFee": 0
         }
       ],
       "shortDescription": "空力套件- AKASAKA系列_亮黑色 ( 煥新3 2024+ )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT ",
@@ -11070,7 +11136,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260814152823_1173.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 28000,
+      "installFee": 0
     },
     {
       "id": "quack_97760",
@@ -11091,7 +11159,9 @@
           "name": "標準完工版",
           "price": 20000,
           "sku": "QK-97760",
-          "available": true
+          "available": true,
+          "partsPrice": 20000,
+          "installFee": 0
         }
       ],
       "shortDescription": "空力套件- DC系列 ( 煥新Y 2025+ )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISC",
@@ -11099,7 +11169,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260729113451_5280.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 20000,
+      "installFee": 0
     },
     {
       "id": "quack_96391",
@@ -11120,7 +11192,9 @@
           "name": "標準完工版",
           "price": 26000,
           "sku": "QK-96391",
-          "available": true
+          "available": true,
+          "partsPrice": 26000,
+          "installFee": 0
         }
       ],
       "shortDescription": "空力套件- Xtan系列 ( 煥新Y 2025+ )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DI",
@@ -11128,7 +11202,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260814151222_9298.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 26000,
+      "installFee": 0
     },
     {
       "id": "quack_96111",
@@ -11149,7 +11225,9 @@
           "name": "標準完工版",
           "price": 28000,
           "sku": "QK-96111",
-          "available": true
+          "available": true,
+          "partsPrice": 28000,
+          "installFee": 0
         }
       ],
       "shortDescription": "空力套件- CMST系列 ( 煥新Y 2025+ )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DI",
@@ -11157,7 +11235,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260729114621_4854.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 28000,
+      "installFee": 0
     },
     {
       "id": "quack_55607",
@@ -11178,7 +11258,9 @@
           "name": "標準完工版",
           "price": 26000,
           "sku": "QK-55607",
-          "available": true
+          "available": true,
+          "partsPrice": 26000,
+          "installFee": 0
         }
       ],
       "shortDescription": "空力套件-YOFER ( 煥新Y 2025+ )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISC",
@@ -11186,7 +11268,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177562963617.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 26000,
+      "installFee": 0
     },
     {
       "id": "quack_62723",
@@ -11210,7 +11294,9 @@
           "name": "標準完工版",
           "price": 50,
           "sku": "QK-62723",
-          "available": true
+          "available": true,
+          "partsPrice": 50,
+          "installFee": 0
         }
       ],
       "shortDescription": "車內鏡頭蓋 (特斯拉任何車型皆適用)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限",
@@ -11218,7 +11304,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1176835485122.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 50,
+      "installFee": 0
     },
     {
       "id": "quack_62721",
@@ -11242,7 +11330,9 @@
           "name": "標準完工版",
           "price": 100,
           "sku": "QK-62721",
-          "available": true
+          "available": true,
+          "partsPrice": 100,
+          "installFee": 0
         }
       ],
       "shortDescription": "後螢幕風口護網( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCO",
@@ -11250,7 +11340,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1176835576650.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 100,
+      "installFee": 0
     },
     {
       "id": "quack_31761",
@@ -11262,16 +11354,18 @@
       "fitment": [
         "my_classic"
       ],
-      "price": 300,
+      "price": 400,
       "priceRange": "NT$ 300",
-      "originalPrice": 300,
+      "originalPrice": 400,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 300,
+          "price": 400,
           "sku": "QK-31761",
-          "available": true
+          "available": true,
+          "partsPrice": 300,
+          "installFee": 100
         }
       ],
       "shortDescription": "擋泥板( 煥新版 Model 3/Y、舊Y）-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOU",
@@ -11279,7 +11373,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1176835623242.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 300,
+      "installFee": 100
     },
     {
       "id": "quack_7538",
@@ -11294,16 +11390,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 350,
+      "price": 400,
       "priceRange": "NT$ 350",
-      "originalPrice": 350,
+      "originalPrice": 400,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 350,
+          "price": 400,
           "sku": "QK-7538",
-          "available": true
+          "available": true,
+          "partsPrice": 350,
+          "installFee": 50
         }
       ],
       "shortDescription": "前廂扣勾墊片( 適用各版本 3/Y )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT ",
@@ -11311,7 +11409,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1176835656063.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 350,
+      "installFee": 50
     },
     {
       "id": "quack_7514",
@@ -11326,16 +11426,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 1100,
+      "price": 1200,
       "priceRange": "NT$ 1,100",
-      "originalPrice": 1100,
+      "originalPrice": 1200,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 1100,
+          "price": 1200,
           "sku": "QK-7514",
-          "available": true
+          "available": true,
+          "partsPrice": 1100,
+          "installFee": 100
         }
       ],
       "shortDescription": "保桿防蟲網(Medel 3 /Medel Y版本皆有)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 D",
@@ -11343,7 +11445,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1176835779913.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 1100,
+      "installFee": 100
     },
     {
       "id": "quack_7512",
@@ -11358,16 +11462,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 900,
+      "price": 1000,
       "priceRange": "NT$ 900",
-      "originalPrice": 900,
+      "originalPrice": 1000,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 900,
+          "price": 1000,
           "sku": "QK-7512",
-          "available": true
+          "available": true,
+          "partsPrice": 900,
+          "installFee": 100
         }
       ],
       "shortDescription": "前廂擋水條-一體式 (Model Y ~2024)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DIS",
@@ -11375,7 +11481,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P2176835711039.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 900,
+      "installFee": 100
     },
     {
       "id": "quack_7509",
@@ -11399,7 +11507,9 @@
           "name": "標準完工版",
           "price": 400,
           "sku": "QK-7509",
-          "available": true
+          "available": true,
+          "partsPrice": 400,
+          "installFee": 0
         }
       ],
       "shortDescription": "前廂進氣防蟲網 (Medel 3 /Medel Y版本皆有)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優",
@@ -11407,7 +11517,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1176913564558.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 400,
+      "installFee": 0
     },
     {
       "id": "quack_7508",
@@ -11431,7 +11543,9 @@
           "name": "標準完工版",
           "price": 100,
           "sku": "QK-7508",
-          "available": true
+          "available": true,
+          "partsPrice": 100,
+          "installFee": 0
         }
       ],
       "shortDescription": "座椅下出風口護網-2入( Model 3/Y各型號 ) -呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 ",
@@ -11439,7 +11553,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1176913627188.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 100,
+      "installFee": 0
     },
     {
       "id": "quack_7510",
@@ -11454,16 +11570,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 1300,
+      "price": 1500,
       "priceRange": "NT$ 1,300",
-      "originalPrice": 1300,
+      "originalPrice": 1500,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 1300,
+          "price": 1500,
           "sku": "QK-7510",
-          "available": true
+          "available": true,
+          "partsPrice": 1300,
+          "installFee": 200
         }
       ],
       "shortDescription": "車牌架-鐵公公 (Medel 3 /Medel Y版本皆有)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優",
@@ -11471,7 +11589,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1176835534522.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 1300,
+      "installFee": 200
     },
     {
       "id": "quack_7568",
@@ -11495,7 +11615,9 @@
           "name": "標準完工版",
           "price": 450,
           "sku": "QK-7568",
-          "available": true
+          "available": true,
+          "partsPrice": 450,
+          "installFee": 0
         }
       ],
       "shortDescription": "中控收納盒( 煥新 Model 3/Y )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUN",
@@ -11503,7 +11625,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177650066620.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 450,
+      "installFee": 0
     },
     {
       "id": "quack_7577",
@@ -11527,7 +11651,9 @@
           "name": "標準完工版",
           "price": 300,
           "sku": "QK-7577",
-          "available": true
+          "available": true,
+          "partsPrice": 300,
+          "installFee": 0
         }
       ],
       "shortDescription": "中控收納盒 ( 舊 Model 3/Y )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUN",
@@ -11535,7 +11661,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177650043339.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 300,
+      "installFee": 0
     },
     {
       "id": "quack_114539",
@@ -11559,7 +11687,9 @@
           "name": "標準完工版",
           "price": 400,
           "sku": "QK-114539",
-          "available": true
+          "available": true,
+          "partsPrice": 400,
+          "installFee": 0
         }
       ],
       "shortDescription": "前排椅背掛勾( Model 3/Y各型號 ) -呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCO",
@@ -11567,7 +11697,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260701131919_4108.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 400,
+      "installFee": 0
     },
     {
       "id": "quack_109921",
@@ -11591,7 +11723,9 @@
           "name": "標準完工版",
           "price": 500,
           "sku": "QK-109921",
-          "available": true
+          "available": true,
+          "partsPrice": 500,
+          "installFee": 0
         }
       ],
       "shortDescription": "中控/扶手下底墊-前後一套( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠",
@@ -11599,7 +11733,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260615133439_2962.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 500,
+      "installFee": 0
     },
     {
       "id": "quack_101751",
@@ -11614,16 +11750,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 500,
+      "price": 600,
       "priceRange": "NT$ 500",
-      "originalPrice": 500,
+      "originalPrice": 600,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 500,
+          "price": 600,
           "sku": "QK-101751",
-          "available": true
+          "available": true,
+          "partsPrice": 600,
+          "installFee": 0
         }
       ],
       "shortDescription": "全車遮陽簾( Model 3/Y各型號 ) -呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOU",
@@ -11631,7 +11769,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177804060860.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 600,
+      "installFee": 0
     },
     {
       "id": "quack_7567",
@@ -11655,7 +11795,9 @@
           "name": "標準完工版",
           "price": 100,
           "sku": "QK-7567",
-          "available": true
+          "available": true,
+          "partsPrice": 100,
+          "installFee": 0
         }
       ],
       "shortDescription": "前車廂掛鉤-2入( 新/舊 Model Y )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCO",
@@ -11663,7 +11805,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177709259156.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 100,
+      "installFee": 0
     },
     {
       "id": "quack_7550",
@@ -11678,16 +11822,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 1000,
+      "price": 1150,
       "priceRange": "NT$ 1,000",
-      "originalPrice": 1000,
+      "originalPrice": 1150,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 1000,
+          "price": 1150,
           "sku": "QK-7550",
-          "available": true
+          "available": true,
+          "partsPrice": 1000,
+          "installFee": 150
         }
       ],
       "shortDescription": "螢幕保護貼 ( Model 3/Y各型號 ) -呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCO",
@@ -11695,7 +11841,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260531111024_1283.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 1000,
+      "installFee": 150
     },
     {
       "id": "quack_19134",
@@ -11710,16 +11858,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 2000,
+      "price": 2400,
       "priceRange": "NT$ 2,000",
-      "originalPrice": 2000,
+      "originalPrice": 2400,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 2000,
+          "price": 2400,
           "sku": "QK-19134",
-          "available": true
+          "available": true,
+          "partsPrice": 2000,
+          "installFee": 400
         }
       ],
       "shortDescription": "前後門檻四件套( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCO",
@@ -11727,7 +11877,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177356149413.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 2000,
+      "installFee": 400
     },
     {
       "id": "quack_7536",
@@ -11742,16 +11894,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 600,
+      "price": 650,
       "priceRange": "NT$ 600",
-      "originalPrice": 600,
+      "originalPrice": 650,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 600,
+          "price": 650,
           "sku": "QK-7536",
-          "available": true
+          "available": true,
+          "partsPrice": 600,
+          "installFee": 50
         }
       ],
       "shortDescription": "座椅下方防踢板( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCO",
@@ -11759,7 +11913,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177389696263.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 600,
+      "installFee": 50
     },
     {
       "id": "quack_62967",
@@ -11774,16 +11930,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 1000,
+      "price": 1200,
       "priceRange": "NT$ 1,000",
-      "originalPrice": 1000,
+      "originalPrice": 1200,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 1000,
+          "price": 1200,
           "sku": "QK-62967",
-          "available": true
+          "available": true,
+          "partsPrice": 1000,
+          "installFee": 200
         }
       ],
       "shortDescription": "中控兩側護板( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOU",
@@ -11791,7 +11949,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1176879207776.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 1000,
+      "installFee": 200
     },
     {
       "id": "quack_62991",
@@ -11803,16 +11963,18 @@
       "fitment": [
         "my_juniper"
       ],
-      "price": 1800,
+      "price": 2000,
       "priceRange": "NT$ 1,800",
-      "originalPrice": 1800,
+      "originalPrice": 2000,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 1800,
+          "price": 2000,
           "sku": "QK-62991",
-          "available": true
+          "available": true,
+          "partsPrice": 1800,
+          "installFee": 200
         }
       ],
       "shortDescription": "前座滑軌護角( 煥新版 Model Y 2025+ )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 D",
@@ -11820,7 +11982,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1176878591545.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 1800,
+      "installFee": 200
     },
     {
       "id": "quack_31762",
@@ -11844,7 +12008,9 @@
           "name": "標準完工版",
           "price": 300,
           "sku": "QK-31762",
-          "available": true
+          "available": true,
+          "partsPrice": 300,
+          "installFee": 0
         }
       ],
       "shortDescription": "中控水杯套 ( Model 3/Y各型號 )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOU",
@@ -11852,7 +12018,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177354701055.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 300,
+      "installFee": 0
     },
     {
       "id": "quack_7580",
@@ -11867,16 +12035,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 300,
+      "price": 350,
       "priceRange": "NT$ 300",
-      "originalPrice": 300,
+      "originalPrice": 350,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 300,
+          "price": 350,
           "sku": "QK-7580",
-          "available": true
+          "available": true,
+          "partsPrice": 300,
+          "installFee": 50
         }
       ],
       "shortDescription": "中扶手隱私盒( Model 3/Y各型號 ) -呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCO",
@@ -11884,7 +12054,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177356291245.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 300,
+      "installFee": 50
     },
     {
       "id": "quack_7530",
@@ -11899,16 +12071,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 1200,
+      "price": 1300,
       "priceRange": "NT$ 1,200",
-      "originalPrice": 1200,
+      "originalPrice": 1300,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 1200,
+          "price": 1300,
           "sku": "QK-7530",
-          "available": true
+          "available": true,
+          "partsPrice": 1200,
+          "installFee": 100
         }
       ],
       "shortDescription": "天窗遮陽簾-銀塗層( Model 3/Y各型號 ) -呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DI",
@@ -11916,7 +12090,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260716140548_9338.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 1200,
+      "installFee": 100
     },
     {
       "id": "quack_7557",
@@ -11940,7 +12116,9 @@
           "name": "標準完工版",
           "price": 1200,
           "sku": "QK-7557",
-          "available": true
+          "available": true,
+          "partsPrice": 1200,
+          "installFee": 0
         }
       ],
       "shortDescription": "螢幕上下置物-磁吸款( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DI",
@@ -11948,7 +12126,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177354518126.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 1200,
+      "installFee": 0
     },
     {
       "id": "quack_7558",
@@ -11960,16 +12140,18 @@
       "fitment": [
         "my_classic"
       ],
-      "price": 1500,
+      "price": 1600,
       "priceRange": "NT$ 1,500",
-      "originalPrice": 1500,
+      "originalPrice": 1600,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 1500,
+          "price": 1600,
           "sku": "QK-7558",
-          "available": true
+          "available": true,
+          "partsPrice": 1500,
+          "installFee": 100
         }
       ],
       "shortDescription": "車門收納防水墊( 煥新版 Model 3/Y、舊Y）-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DI",
@@ -11977,7 +12159,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177398036367.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 1500,
+      "installFee": 100
     },
     {
       "id": "quack_7569",
@@ -11992,16 +12176,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 500,
+      "price": 550,
       "priceRange": "NT$ 500",
-      "originalPrice": 500,
+      "originalPrice": 550,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 500,
+          "price": 550,
           "sku": "QK-7569",
-          "available": true
+          "available": true,
+          "partsPrice": 500,
+          "installFee": 50
         }
       ],
       "shortDescription": "後排出風口下護板( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISC",
@@ -12009,7 +12195,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177391342265.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 500,
+      "installFee": 50
     },
     {
       "id": "quack_7541",
@@ -12033,7 +12221,9 @@
           "name": "標準完工版",
           "price": 500,
           "sku": "QK-7541",
-          "available": true
+          "available": true,
+          "partsPrice": 500,
+          "installFee": 0
         }
       ],
       "shortDescription": "座椅下置物盒-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優惠 最新消息 知識分",
@@ -12041,7 +12231,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177407580781.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 500,
+      "installFee": 0
     },
     {
       "id": "quack_7547",
@@ -12065,7 +12257,9 @@
           "name": "標準完工版",
           "price": 300,
           "sku": "QK-7547",
-          "available": true
+          "available": true,
+          "partsPrice": 300,
+          "installFee": 0
         }
       ],
       "shortDescription": "頭枕-舒適麂皮絨(黑色/米色可選擇)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限",
@@ -12073,7 +12267,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P2177079946504.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 300,
+      "installFee": 0
     },
     {
       "id": "quack_7579",
@@ -12088,16 +12284,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 450,
+      "price": 500,
       "priceRange": "NT$ 450",
-      "originalPrice": 450,
+      "originalPrice": 500,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 450,
+          "price": 500,
           "sku": "QK-7579",
-          "available": true
+          "available": true,
+          "partsPrice": 450,
+          "installFee": 50
         }
       ],
       "shortDescription": "門檻護條-MODEL Y（～24）-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時",
@@ -12105,7 +12303,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177355203586.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 450,
+      "installFee": 50
     },
     {
       "id": "quack_62912",
@@ -12117,16 +12317,18 @@
       "fitment": [
         "my_classic"
       ],
-      "price": 1200,
+      "price": 1250,
       "priceRange": "NT$ 1,200",
-      "originalPrice": 1200,
+      "originalPrice": 1250,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 1200,
+          "price": 1250,
           "sku": "QK-62912",
-          "available": true
+          "available": true,
+          "partsPrice": 1200,
+          "installFee": 50
         }
       ],
       "shortDescription": "後廂置物盒+蓋子( 煥新版 Model 3/Y、舊Y）-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 D",
@@ -12134,7 +12336,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P3176913461654.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 1200,
+      "installFee": 50
     },
     {
       "id": "quack_31760",
@@ -12146,16 +12350,18 @@
       "fitment": [
         "my_juniper"
       ],
-      "price": 900,
+      "price": 950,
       "priceRange": "NT$ 900",
-      "originalPrice": 900,
+      "originalPrice": 950,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 900,
+          "price": 950,
           "sku": "QK-31760",
-          "available": true
+          "available": true,
+          "partsPrice": 900,
+          "installFee": 50
         }
       ],
       "shortDescription": "後廂開口防刮底座( 煥新Y 2025+ )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUN",
@@ -12163,7 +12369,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260608154231_2120.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 900,
+      "installFee": 50
     },
     {
       "id": "quack_31759",
@@ -12175,16 +12383,18 @@
       "fitment": [
         "my_juniper"
       ],
-      "price": 900,
+      "price": 1000,
       "priceRange": "NT$ 900",
-      "originalPrice": 900,
+      "originalPrice": 1000,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 900,
+          "price": 1000,
           "sku": "QK-31759",
-          "available": true
+          "available": true,
+          "partsPrice": 900,
+          "installFee": 100
         }
       ],
       "shortDescription": "後廂兩側輪拱防刮（煥新Y 2025+ ）-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT",
@@ -12192,7 +12402,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177390408890.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 900,
+      "installFee": 100
     },
     {
       "id": "quack_7572",
@@ -12204,16 +12416,18 @@
       "fitment": [
         "m3_highland"
       ],
-      "price": 1000,
+      "price": 1050,
       "priceRange": "NT$ 1,000",
-      "originalPrice": 1000,
+      "originalPrice": 1050,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 1000,
+          "price": 1050,
           "sku": "QK-7572",
-          "available": true
+          "available": true,
+          "partsPrice": 1000,
+          "installFee": 50
         }
       ],
       "shortDescription": "後廂開口防刮底座( 煥新版 Model 3 2024+ )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠",
@@ -12221,7 +12435,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260610124710_6431.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 1000,
+      "installFee": 50
     },
     {
       "id": "quack_7507",
@@ -12236,16 +12452,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 900,
+      "price": 1000,
       "priceRange": "NT$ 900",
-      "originalPrice": 900,
+      "originalPrice": 1000,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 900,
+          "price": 1000,
           "sku": "QK-7507",
-          "available": true
+          "available": true,
+          "partsPrice": 900,
+          "installFee": 100
         }
       ],
       "shortDescription": "後廂兩側輪拱防刮（Model Y ~2024）-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCO",
@@ -12253,7 +12471,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260608160207_2715.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 900,
+      "installFee": 100
     },
     {
       "id": "quack_7506",
@@ -12265,16 +12485,18 @@
       "fitment": [
         "m3_highland"
       ],
-      "price": 900,
+      "price": 950,
       "priceRange": "NT$ 900",
-      "originalPrice": 900,
+      "originalPrice": 950,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 900,
+          "price": 950,
           "sku": "QK-7506",
-          "available": true
+          "available": true,
+          "partsPrice": 900,
+          "installFee": 50
         }
       ],
       "shortDescription": "後排椅背保護墊（煥新3/Y、舊Y）-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時",
@@ -12282,7 +12504,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177390617255.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 900,
+      "installFee": 50
     },
     {
       "id": "quack_7505",
@@ -12294,16 +12518,18 @@
       "fitment": [
         "m3_highland"
       ],
-      "price": 900,
+      "price": 1000,
       "priceRange": "NT$ 900",
-      "originalPrice": 900,
+      "originalPrice": 1000,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 900,
+          "price": 1000,
           "sku": "QK-7505",
-          "available": true
+          "available": true,
+          "partsPrice": 900,
+          "installFee": 100
         }
       ],
       "shortDescription": "後廂尾門防刮護板（煥新3/Y ）-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優",
@@ -12311,7 +12537,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177407262499.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 900,
+      "installFee": 100
     },
     {
       "id": "quack_7504",
@@ -12323,16 +12551,18 @@
       "fitment": [
         "m3_highland"
       ],
-      "price": 1800,
+      "price": 2000,
       "priceRange": "NT$ 1,800",
-      "originalPrice": 1800,
+      "originalPrice": 2000,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 1800,
+          "price": 2000,
           "sku": "QK-7504",
-          "available": true
+          "available": true,
+          "partsPrice": 1800,
+          "installFee": 200
         }
       ],
       "shortDescription": "後廂門檻護板四件（煥新3）-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優惠 最",
@@ -12340,7 +12570,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177391084097.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 1800,
+      "installFee": 200
     },
     {
       "id": "quack_111152",
@@ -12355,16 +12587,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 2800,
+      "price": 3000,
       "priceRange": "NT$ 2,800",
-      "originalPrice": 2800,
+      "originalPrice": 3000,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 2800,
+          "price": 3000,
           "sku": "QK-111152",
-          "available": true
+          "available": true,
+          "partsPrice": 2800,
+          "installFee": 200
         }
       ],
       "shortDescription": "前保桿小風刃-真碳纖( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DI",
@@ -12372,7 +12606,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260701152102_3326.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 2800,
+      "installFee": 200
     },
     {
       "id": "quack_111151",
@@ -12387,16 +12623,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 900,
+      "price": 950,
       "priceRange": "NT$ 900",
-      "originalPrice": 900,
+      "originalPrice": 950,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 900,
+          "price": 950,
           "sku": "QK-111151",
-          "available": true
+          "available": true,
+          "partsPrice": 900,
+          "installFee": 50
         }
       ],
       "shortDescription": "閱讀燈飾板-真碳纖( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DIS",
@@ -12404,7 +12642,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260621123402_6890.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 900,
+      "installFee": 50
     },
     {
       "id": "quack_111150",
@@ -12419,16 +12659,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 3800,
+      "price": 3900,
       "priceRange": "NT$ 3,800",
-      "originalPrice": 3800,
+      "originalPrice": 3900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3800,
+          "price": 3900,
           "sku": "QK-111150",
-          "available": true
+          "available": true,
+          "partsPrice": 3800,
+          "installFee": 100
         }
       ],
       "shortDescription": "方向盤管套-真碳纖( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DIS",
@@ -12436,7 +12678,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260621123027_7476.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3800,
+      "installFee": 100
     },
     {
       "id": "quack_111121",
@@ -12451,16 +12695,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 4800,
+      "price": 5200,
       "priceRange": "NT$ 4,800",
-      "originalPrice": 4800,
+      "originalPrice": 5200,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 4800,
+          "price": 5200,
           "sku": "QK-111121",
-          "available": true
+          "available": true,
+          "partsPrice": 4800,
+          "installFee": 400
         }
       ],
       "shortDescription": "車門內裝飾條-真碳纖( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DI",
@@ -12468,7 +12714,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260619153524_8748.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 4800,
+      "installFee": 400
     },
     {
       "id": "quack_111117",
@@ -12483,16 +12731,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 3500,
+      "price": 3700,
       "priceRange": "NT$ 3,500",
-      "originalPrice": 3500,
+      "originalPrice": 3700,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3500,
+          "price": 3700,
           "sku": "QK-111117",
-          "available": true
+          "available": true,
+          "partsPrice": 3500,
+          "installFee": 200
         }
       ],
       "shortDescription": "儀表板氣氛燈飾板-真碳纖( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 ",
@@ -12500,7 +12750,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260619125233_5423.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3500,
+      "installFee": 200
     },
     {
       "id": "quack_110840",
@@ -12515,16 +12767,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 4700,
+      "price": 4900,
       "priceRange": "NT$ 4,700",
-      "originalPrice": 4700,
+      "originalPrice": 4900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 4700,
+          "price": 4900,
           "sku": "QK-110840",
-          "available": true
+          "available": true,
+          "partsPrice": 4700,
+          "installFee": 200
         }
       ],
       "shortDescription": "儀表板飾板-真碳纖( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DIS",
@@ -12532,7 +12786,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260618140648_2974.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 4700,
+      "installFee": 200
     },
     {
       "id": "quack_110838",
@@ -12547,16 +12803,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 3300,
+      "price": 3500,
       "priceRange": "NT$ 3,300",
-      "originalPrice": 3300,
+      "originalPrice": 3500,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3300,
+          "price": 3500,
           "sku": "QK-110838",
-          "available": true
+          "available": true,
+          "partsPrice": 3300,
+          "installFee": 200
         }
       ],
       "shortDescription": "出風口飾板-真碳纖( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DIS",
@@ -12564,7 +12822,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260618124924_8439.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3300,
+      "installFee": 200
     },
     {
       "id": "quack_110837",
@@ -12579,16 +12839,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 3500,
+      "price": 3800,
       "priceRange": "NT$ 3,500",
-      "originalPrice": 3500,
+      "originalPrice": 3800,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3500,
+          "price": 3800,
           "sku": "QK-110837",
-          "available": true
+          "available": true,
+          "partsPrice": 3500,
+          "installFee": 300
         }
       ],
       "shortDescription": "車內門板開關-真碳纖( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DI",
@@ -12596,7 +12858,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260618123505_5060.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3500,
+      "installFee": 300
     },
     {
       "id": "quack_110836",
@@ -12611,16 +12875,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 5200,
+      "price": 5500,
       "priceRange": "NT$ 5,200",
-      "originalPrice": 5200,
+      "originalPrice": 5500,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 5200,
+          "price": 5500,
           "sku": "QK-110836",
-          "available": true
+          "available": true,
+          "partsPrice": 5200,
+          "installFee": 300
         }
       ],
       "shortDescription": "中控兩側護蓋-真碳纖( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DI",
@@ -12628,7 +12894,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260618122532_3150.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 5200,
+      "installFee": 300
     },
     {
       "id": "quack_110835",
@@ -12643,16 +12911,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 2800,
+      "price": 2900,
       "priceRange": "NT$ 2,800",
-      "originalPrice": 2800,
+      "originalPrice": 2900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 2800,
+          "price": 2900,
           "sku": "QK-110835",
-          "available": true
+          "available": true,
+          "partsPrice": 2800,
+          "installFee": 100
         }
       ],
       "shortDescription": "後螢幕護蓋-真碳纖( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DIS",
@@ -12660,7 +12930,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260618121730_3067.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 2800,
+      "installFee": 100
     },
     {
       "id": "quack_110832",
@@ -12675,16 +12947,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 2800,
+      "price": 2900,
       "priceRange": "NT$ 2,800",
-      "originalPrice": 2800,
+      "originalPrice": 2900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 2800,
+          "price": 2900,
           "sku": "QK-110832",
-          "available": true
+          "available": true,
+          "partsPrice": 2800,
+          "installFee": 100
         }
       ],
       "shortDescription": "充電蓋護蓋-真碳纖( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DIS",
@@ -12692,7 +12966,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260618120319_4909.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 2800,
+      "installFee": 100
     },
     {
       "id": "quack_110830",
@@ -12707,16 +12983,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 3200,
+      "price": 3300,
       "priceRange": "NT$ 3,200",
-      "originalPrice": 3200,
+      "originalPrice": 3300,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3200,
+          "price": 3300,
           "sku": "QK-110830",
-          "available": true
+          "available": true,
+          "partsPrice": 3200,
+          "installFee": 100
         }
       ],
       "shortDescription": "無線充電外框-真碳纖( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DI",
@@ -12724,7 +13002,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260618115602_1568.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3200,
+      "installFee": 100
     },
     {
       "id": "quack_109853",
@@ -12739,16 +13019,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 3300,
+      "price": 3400,
       "priceRange": "NT$ 3,300",
-      "originalPrice": 3300,
+      "originalPrice": 3400,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3300,
+          "price": 3400,
           "sku": "QK-109853",
-          "available": true
+          "available": true,
+          "partsPrice": 3300,
+          "installFee": 100
         }
       ],
       "shortDescription": "扶手箱蓋-真碳纖( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISC",
@@ -12756,7 +13038,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260614143735_5993.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3300,
+      "installFee": 100
     },
     {
       "id": "quack_109710",
@@ -12768,16 +13052,18 @@
       "fitment": [
         "my_juniper"
       ],
-      "price": 3500,
+      "price": 3600,
       "priceRange": "NT$ 3,500",
-      "originalPrice": 3500,
+      "originalPrice": 3600,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3500,
+          "price": 3600,
           "sku": "QK-109710",
-          "available": true
+          "available": true,
+          "partsPrice": 3500,
+          "installFee": 100
         }
       ],
       "shortDescription": "照後鏡護蓋-真碳纖( 煥新版 Model Y 2025+ )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優",
@@ -12785,7 +13071,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260612113812_8181.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3500,
+      "installFee": 100
     },
     {
       "id": "quack_7574",
@@ -12800,16 +13088,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 600,
+      "price": 700,
       "priceRange": "NT$ 600",
-      "originalPrice": 600,
+      "originalPrice": 700,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 600,
+          "price": 700,
           "sku": "QK-7574",
-          "available": true
+          "available": true,
+          "partsPrice": 600,
+          "installFee": 100
         }
       ],
       "shortDescription": "雷霆款車側鏡頭飾板-ABS( 新舊 Model 3/Y）-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 ",
@@ -12817,7 +13107,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260612152436_4724.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 600,
+      "installFee": 100
     },
     {
       "id": "quack_7561",
@@ -12832,16 +13124,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 1500,
+      "price": 1550,
       "priceRange": "NT$ 1,500",
-      "originalPrice": 1500,
+      "originalPrice": 1550,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 1500,
+          "price": 1550,
           "sku": "QK-7561",
-          "available": true
+          "available": true,
+          "partsPrice": 1500,
+          "installFee": 50
         }
       ],
       "shortDescription": "方向盤飾板-真碳纖飾( 舊款Model 3/Y ) -呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DI",
@@ -12849,7 +13143,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260612144046_9683.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 1500,
+      "installFee": 50
     },
     {
       "id": "quack_7554",
@@ -12864,16 +13160,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 500,
+      "price": 700,
       "priceRange": "NT$ 500",
-      "originalPrice": 500,
+      "originalPrice": 700,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 500,
+          "price": 700,
           "sku": "QK-7554",
-          "available": true
+          "available": true,
+          "partsPrice": 500,
+          "installFee": 200
         }
       ],
       "shortDescription": "車尾標-TESLA字樣-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優惠 最新消",
@@ -12881,7 +13179,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260815163555_6987.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 500,
+      "installFee": 200
     },
     {
       "id": "quack_7549",
@@ -12896,16 +13196,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 900,
+      "price": 950,
       "priceRange": "NT$ 900",
-      "originalPrice": 900,
+      "originalPrice": 950,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 900,
+          "price": 950,
           "sku": "QK-7549",
-          "available": true
+          "available": true,
+          "partsPrice": 900,
+          "installFee": 50
         }
       ],
       "shortDescription": "方向盤飾板-真碳纖飾( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DI",
@@ -12913,7 +13215,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260612144647_6682.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 900,
+      "installFee": 50
     },
     {
       "id": "quack_7535",
@@ -12928,16 +13232,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 1500,
+      "price": 1600,
       "priceRange": "NT$ 1,500",
-      "originalPrice": 1500,
+      "originalPrice": 1600,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 1500,
+          "price": 1600,
           "sku": "QK-7535",
-          "available": true
+          "available": true,
+          "partsPrice": 1500,
+          "installFee": 100
         }
       ],
       "shortDescription": "真碳纖維-車門把手貼-4入( Model 3/Y各型號 ) -呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優",
@@ -12945,7 +13251,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260612111150_9398.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 1500,
+      "installFee": 100
     },
     {
       "id": "quack_7534",
@@ -12960,16 +13268,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 1300,
+      "price": 1350,
       "priceRange": "NT$ 1,300",
-      "originalPrice": 1300,
+      "originalPrice": 1350,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 1300,
+          "price": 1350,
           "sku": "QK-7534",
-          "available": true
+          "available": true,
+          "partsPrice": 1300,
+          "installFee": 50
         }
       ],
       "shortDescription": "排檔桿飾板-真碳纖( 舊款Model 3/Y )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISC",
@@ -12977,7 +13287,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260612150419_3639.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 1300,
+      "installFee": 50
     },
     {
       "id": "quack_7532",
@@ -12992,16 +13304,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 2500,
+      "price": 2700,
       "priceRange": "NT$ 2,500",
-      "originalPrice": 2500,
+      "originalPrice": 2700,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 2500,
+          "price": 2700,
           "sku": "QK-7532",
-          "available": true
+          "available": true,
+          "partsPrice": 2500,
+          "installFee": 200
         }
       ],
       "shortDescription": "中控面板貼-真碳纖( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DIS",
@@ -13009,7 +13323,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260612111920_1146.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 2500,
+      "installFee": 200
     },
     {
       "id": "quack_96896",
@@ -13021,16 +13337,18 @@
       "fitment": [
         "my_juniper"
       ],
-      "price": 1500,
+      "price": 1700,
       "priceRange": "NT$ 1,500",
-      "originalPrice": 1500,
+      "originalPrice": 1700,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 1500,
+          "price": 1700,
           "sku": "QK-96896",
-          "available": true
+          "available": true,
+          "partsPrice": 1500,
+          "installFee": 200
         }
       ],
       "shortDescription": "尾翼-ABS（煥新Y 2025+）-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時",
@@ -13038,7 +13356,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177572475855.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 1500,
+      "installFee": 200
     },
     {
       "id": "quack_45837",
@@ -13050,16 +13370,18 @@
       "fitment": [
         "my_juniper"
       ],
-      "price": 4500,
+      "price": 4700,
       "priceRange": "NT$ 4,500",
-      "originalPrice": 4500,
+      "originalPrice": 4700,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 4500,
+          "price": 4700,
           "sku": "QK-45837",
-          "available": true
+          "available": true,
+          "partsPrice": 4500,
+          "installFee": 200
         }
       ],
       "shortDescription": "尾翼-真碳纖（煥新Y 2025+）-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時",
@@ -13067,7 +13389,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177587917283.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 4500,
+      "installFee": 200
     },
     {
       "id": "quack_96898",
@@ -13079,16 +13403,18 @@
       "fitment": [
         "m3_highland"
       ],
-      "price": 1500,
+      "price": 1700,
       "priceRange": "NT$ 1,500",
-      "originalPrice": 1500,
+      "originalPrice": 1700,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 1500,
+          "price": 1700,
           "sku": "QK-96898",
-          "available": true
+          "available": true,
+          "partsPrice": 1500,
+          "installFee": 200
         }
       ],
       "shortDescription": "尾翼-ABS（煥新3 2023+）-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時",
@@ -13096,7 +13422,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177572491356.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 1500,
+      "installFee": 200
     },
     {
       "id": "quack_7499",
@@ -13108,16 +13436,18 @@
       "fitment": [
         "m3_highland"
       ],
-      "price": 4500,
+      "price": 4700,
       "priceRange": "NT$ 4,500",
-      "originalPrice": 4500,
+      "originalPrice": 4700,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 4500,
+          "price": 4700,
           "sku": "QK-7499",
-          "available": true
+          "available": true,
+          "partsPrice": 4500,
+          "installFee": 200
         }
       ],
       "shortDescription": "尾翼-真碳纖（煥新3 2023+）-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時",
@@ -13125,7 +13455,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177572405602.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 4500,
+      "installFee": 200
     },
     {
       "id": "quack_7500",
@@ -13140,16 +13472,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 1500,
+      "price": 1700,
       "priceRange": "NT$ 1,500",
-      "originalPrice": 1500,
+      "originalPrice": 1700,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 1500,
+          "price": 1700,
           "sku": "QK-7500",
-          "available": true
+          "available": true,
+          "partsPrice": 1500,
+          "installFee": 200
         }
       ],
       "shortDescription": "尾翼-ABS（Model Y~2024）-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT",
@@ -13157,7 +13491,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177588255862.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 1500,
+      "installFee": 200
     },
     {
       "id": "quack_7494",
@@ -13172,16 +13508,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 4500,
+      "price": 4700,
       "priceRange": "NT$ 4,500",
-      "originalPrice": 4500,
+      "originalPrice": 4700,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 4500,
+          "price": 4700,
           "sku": "QK-7494",
-          "available": true
+          "available": true,
+          "partsPrice": 4500,
+          "installFee": 200
         }
       ],
       "shortDescription": "尾翼-真碳纖維（Model Y~2024）-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUN",
@@ -13189,7 +13527,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177588260903.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 4500,
+      "installFee": 200
     },
     {
       "id": "quack_7552",
@@ -13204,16 +13544,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 3000,
+      "price": 3100,
       "priceRange": "NT$ 3,000",
-      "originalPrice": 3000,
+      "originalPrice": 3100,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3000,
+          "price": 3100,
           "sku": "QK-7552",
-          "available": true
+          "available": true,
+          "partsPrice": 3000,
+          "installFee": 100
         }
       ],
       "shortDescription": "照後鏡護蓋-真碳纖( Model Y ~2024 )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DI",
@@ -13221,7 +13563,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177406936745.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3000,
+      "installFee": 100
     },
     {
       "id": "quack_7503",
@@ -13236,16 +13580,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 2800,
+      "price": 3500,
       "priceRange": "NT$ 2,800",
-      "originalPrice": 2800,
+      "originalPrice": 3500,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 2800,
+          "price": 3500,
           "sku": "QK-7503",
-          "available": true
+          "available": true,
+          "partsPrice": 2800,
+          "installFee": 700
         }
       ],
       "shortDescription": "前下巴/前鏟（Model Y~2024）-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT",
@@ -13253,7 +13599,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177398751349.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 2800,
+      "installFee": 700
     },
     {
       "id": "quack_7497",
@@ -13277,7 +13625,9 @@
           "name": "標準完工版",
           "price": 100,
           "sku": "QK-7497",
-          "available": true
+          "available": true,
+          "partsPrice": 100,
+          "installFee": 0
         }
       ],
       "shortDescription": "合金氣嘴蓋-4入組-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優惠 最新消息 ",
@@ -13285,7 +13635,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1174106037543.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 100,
+      "installFee": 0
     },
     {
       "id": "quack_7544",
@@ -13309,7 +13661,9 @@
           "name": "標準完工版",
           "price": 1500,
           "sku": "QK-7544",
-          "available": true
+          "available": true,
+          "partsPrice": 1500,
+          "installFee": 0
         }
       ],
       "shortDescription": "車側鏡頭飾板-真碳纖（Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUN",
@@ -13317,7 +13671,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177391267606.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 1500,
+      "installFee": 0
     },
     {
       "id": "quack_130374",
@@ -13338,7 +13694,9 @@
           "name": "標準完工版",
           "price": 3600,
           "sku": "QK-130374",
-          "available": true
+          "available": true,
+          "partsPrice": 3600,
+          "installFee": 0
         }
       ],
       "shortDescription": "19吋輪框節能蓋-【P2款】( Model Y 2025+)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優",
@@ -13346,7 +13704,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260909142955_4470.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3600,
+      "installFee": 0
     },
     {
       "id": "quack_130372",
@@ -13358,16 +13718,18 @@
       "fitment": [
         "my_juniper"
       ],
-      "price": 3600,
+      "price": 3900,
       "priceRange": "NT$ 3,600",
-      "originalPrice": 3600,
+      "originalPrice": 3900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3600,
+          "price": 3900,
           "sku": "QK-130372",
-          "available": true
+          "available": true,
+          "partsPrice": 3600,
+          "installFee": 300
         }
       ],
       "shortDescription": "19吋輪框節能蓋-【P1款】( Model Y 2025+)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優",
@@ -13375,7 +13737,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260909142934_8771.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3600,
+      "installFee": 300
     },
     {
       "id": "quack_126485",
@@ -13390,16 +13754,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 3600,
+      "price": 3900,
       "priceRange": "NT$ 3,600",
-      "originalPrice": 3600,
+      "originalPrice": 3900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3600,
+          "price": 3900,
           "sku": "QK-126485",
-          "available": true
+          "available": true,
+          "partsPrice": 3600,
+          "installFee": 300
         }
       ],
       "shortDescription": "19吋輪框節能蓋-【Z2款】( Model Y ~2024 )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時",
@@ -13407,7 +13773,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260823122450_3502.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3600,
+      "installFee": 300
     },
     {
       "id": "quack_95734",
@@ -13422,16 +13790,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 3600,
+      "price": 3900,
       "priceRange": "NT$ 3,600",
-      "originalPrice": 3600,
+      "originalPrice": 3900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3600,
+          "price": 3900,
           "sku": "QK-95734",
-          "available": true
+          "available": true,
+          "partsPrice": 3600,
+          "installFee": 300
         }
       ],
       "shortDescription": "18吋輪框節能蓋-【L2款】( Model 3 2023+)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優",
@@ -13439,7 +13809,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177518791359.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3600,
+      "installFee": 300
     },
     {
       "id": "quack_118778",
@@ -13451,16 +13823,18 @@
       "fitment": [
         "my_juniper"
       ],
-      "price": 3600,
+      "price": 3900,
       "priceRange": "NT$ 3,600",
-      "originalPrice": 3600,
+      "originalPrice": 3900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3600,
+          "price": 3900,
           "sku": "QK-118778",
-          "available": true
+          "available": true,
+          "partsPrice": 3600,
+          "installFee": 300
         }
       ],
       "shortDescription": "19吋輪框節能蓋-【R1款】( Model Y 2025+)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優",
@@ -13468,7 +13842,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260717110723_9878.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3600,
+      "installFee": 300
     },
     {
       "id": "quack_95713",
@@ -13480,16 +13856,18 @@
       "fitment": [
         "my_juniper"
       ],
-      "price": 3600,
+      "price": 3900,
       "priceRange": "NT$ 3,600",
-      "originalPrice": 3600,
+      "originalPrice": 3900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3600,
+          "price": 3900,
           "sku": "QK-95713",
-          "available": true
+          "available": true,
+          "partsPrice": 3600,
+          "installFee": 300
         }
       ],
       "shortDescription": "19吋輪框節能蓋-【R2款】( Model Y 2025+)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優",
@@ -13497,7 +13875,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177832128230.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3600,
+      "installFee": 300
     },
     {
       "id": "quack_18840",
@@ -13509,16 +13889,18 @@
       "fitment": [
         "my_juniper"
       ],
-      "price": 3600,
+      "price": 3900,
       "priceRange": "NT$ 3,600",
-      "originalPrice": 3600,
+      "originalPrice": 3900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3600,
+          "price": 3900,
           "sku": "QK-18840",
-          "available": true
+          "available": true,
+          "partsPrice": 3600,
+          "installFee": 300
         }
       ],
       "shortDescription": "19吋輪框節能蓋-【Y1款】( Model Y 2025+)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優",
@@ -13526,7 +13908,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177512202437.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3600,
+      "installFee": 300
     },
     {
       "id": "quack_95728",
@@ -13538,16 +13922,18 @@
       "fitment": [
         "my_juniper"
       ],
-      "price": 3600,
+      "price": 3900,
       "priceRange": "NT$ 3,600",
-      "originalPrice": 3600,
+      "originalPrice": 3900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3600,
+          "price": 3900,
           "sku": "QK-95728",
-          "available": true
+          "available": true,
+          "partsPrice": 3600,
+          "installFee": 300
         }
       ],
       "shortDescription": "19吋輪框節能蓋-【Y2款】( Model Y 2025+)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優",
@@ -13555,7 +13941,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177518553632.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3600,
+      "installFee": 300
     },
     {
       "id": "quack_95712",
@@ -13567,16 +13955,18 @@
       "fitment": [
         "my_juniper"
       ],
-      "price": 3600,
+      "price": 3900,
       "priceRange": "NT$ 3,600",
-      "originalPrice": 3600,
+      "originalPrice": 3900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3600,
+          "price": 3900,
           "sku": "QK-95712",
-          "available": true
+          "available": true,
+          "partsPrice": 3600,
+          "installFee": 300
         }
       ],
       "shortDescription": "19吋輪框節能蓋-【Y3款】( Model Y 2025+)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優",
@@ -13584,7 +13974,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177512211187.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3600,
+      "installFee": 300
     },
     {
       "id": "quack_39912",
@@ -13596,16 +13988,18 @@
       "fitment": [
         "my_juniper"
       ],
-      "price": 3600,
+      "price": 3900,
       "priceRange": "NT$ 3,600",
-      "originalPrice": 3600,
+      "originalPrice": 3900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3600,
+          "price": 3900,
           "sku": "QK-39912",
-          "available": true
+          "available": true,
+          "partsPrice": 3600,
+          "installFee": 300
         }
       ],
       "shortDescription": "19吋輪框節能蓋-【X1款】( Model Y 2025+)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優",
@@ -13613,7 +14007,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177512189261.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3600,
+      "installFee": 300
     },
     {
       "id": "quack_95716",
@@ -13625,16 +14021,18 @@
       "fitment": [
         "my_juniper"
       ],
-      "price": 3600,
+      "price": 3900,
       "priceRange": "NT$ 3,600",
-      "originalPrice": 3600,
+      "originalPrice": 3900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3600,
+          "price": 3900,
           "sku": "QK-95716",
-          "available": true
+          "available": true,
+          "partsPrice": 3600,
+          "installFee": 300
         }
       ],
       "shortDescription": "19吋輪框節能蓋-【X2款】( Model Y 2025+)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優",
@@ -13642,7 +14040,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177512226120.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3600,
+      "installFee": 300
     },
     {
       "id": "quack_103698",
@@ -13657,16 +14057,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 3600,
+      "price": 3900,
       "priceRange": "NT$ 3,600",
-      "originalPrice": 3600,
+      "originalPrice": 3900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3600,
+          "price": 3900,
           "sku": "QK-103698",
-          "available": true
+          "available": true,
+          "partsPrice": 3600,
+          "installFee": 300
         }
       ],
       "shortDescription": "18吋輪框節能蓋-【N1款】( Model 3 2023+)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優",
@@ -13674,7 +14076,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177883157305.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3600,
+      "installFee": 300
     },
     {
       "id": "quack_103699",
@@ -13689,16 +14093,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 3600,
+      "price": 3900,
       "priceRange": "NT$ 3,600",
-      "originalPrice": 3600,
+      "originalPrice": 3900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3600,
+          "price": 3900,
           "sku": "QK-103699",
-          "available": true
+          "available": true,
+          "partsPrice": 3600,
+          "installFee": 300
         }
       ],
       "shortDescription": "18吋輪框節能蓋-【N2款】( Model 3 2023+)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優",
@@ -13706,7 +14112,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177883160217.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3600,
+      "installFee": 300
     },
     {
       "id": "quack_95732",
@@ -13721,16 +14129,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 3600,
+      "price": 3900,
       "priceRange": "NT$ 3,600",
-      "originalPrice": 3600,
+      "originalPrice": 3900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3600,
+          "price": 3900,
           "sku": "QK-95732",
-          "available": true
+          "available": true,
+          "partsPrice": 3600,
+          "installFee": 300
         }
       ],
       "shortDescription": "18吋輪框節能蓋-【K2款】( Model 3 2023+)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優",
@@ -13738,7 +14148,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177518723732.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3600,
+      "installFee": 300
     },
     {
       "id": "quack_18843",
@@ -13753,16 +14165,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 3600,
+      "price": 3900,
       "priceRange": "NT$ 3,600",
-      "originalPrice": 3600,
+      "originalPrice": 3900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3600,
+          "price": 3900,
           "sku": "QK-18843",
-          "available": true
+          "available": true,
+          "partsPrice": 3600,
+          "installFee": 300
         }
       ],
       "shortDescription": "18吋輪框節能蓋-【M2款】( Model 3 2023+)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優",
@@ -13770,7 +14184,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177518781394.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3600,
+      "installFee": 300
     },
     {
       "id": "quack_95680",
@@ -13785,16 +14201,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 3600,
+      "price": 3900,
       "priceRange": "NT$ 3,600",
-      "originalPrice": 3600,
+      "originalPrice": 3900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3600,
+          "price": 3900,
           "sku": "QK-95680",
-          "available": true
+          "available": true,
+          "partsPrice": 3600,
+          "installFee": 300
         }
       ],
       "shortDescription": "19吋輪框節能蓋-【D1款】( Model Y ~2024 )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時",
@@ -13802,7 +14220,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177511909368.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3600,
+      "installFee": 300
     },
     {
       "id": "quack_95681",
@@ -13817,16 +14237,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 3600,
+      "price": 3900,
       "priceRange": "NT$ 3,600",
-      "originalPrice": 3600,
+      "originalPrice": 3900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3600,
+          "price": 3900,
           "sku": "QK-95681",
-          "available": true
+          "available": true,
+          "partsPrice": 3600,
+          "installFee": 300
         }
       ],
       "shortDescription": "19吋輪框節能蓋-【D2款】( Model Y ~2024 )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時",
@@ -13834,7 +14256,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177511911980.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3600,
+      "installFee": 300
     },
     {
       "id": "quack_95679",
@@ -13849,16 +14273,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 3600,
+      "price": 3900,
       "priceRange": "NT$ 3,600",
-      "originalPrice": 3600,
+      "originalPrice": 3900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3600,
+          "price": 3900,
           "sku": "QK-95679",
-          "available": true
+          "available": true,
+          "partsPrice": 3600,
+          "installFee": 300
         }
       ],
       "shortDescription": "19吋輪框節能蓋-【T2款】( Model Y ~2024 )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時",
@@ -13866,7 +14292,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177511896624.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3600,
+      "installFee": 300
     },
     {
       "id": "quack_7517",
@@ -13881,16 +14309,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 3600,
+      "price": 3900,
       "priceRange": "NT$ 3,600",
-      "originalPrice": 3600,
+      "originalPrice": 3900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3600,
+          "price": 3900,
           "sku": "QK-7517",
-          "available": true
+          "available": true,
+          "partsPrice": 3600,
+          "installFee": 300
         }
       ],
       "shortDescription": "19吋輪框節能蓋-【S款】( Model Y ~2024 )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優",
@@ -13898,7 +14328,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177511658030.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3600,
+      "installFee": 300
     },
     {
       "id": "quack_95682",
@@ -13913,16 +14345,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 3600,
+      "price": 3900,
       "priceRange": "NT$ 3,600",
-      "originalPrice": 3600,
+      "originalPrice": 3900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3600,
+          "price": 3900,
           "sku": "QK-95682",
-          "available": true
+          "available": true,
+          "partsPrice": 3600,
+          "installFee": 300
         }
       ],
       "shortDescription": "19吋輪框節能蓋-【Z1款】( Model Y ~2024 )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時",
@@ -13930,7 +14364,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177511916040.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3600,
+      "installFee": 300
     },
     {
       "id": "quack_95678",
@@ -13945,16 +14381,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 3600,
+      "price": 3900,
       "priceRange": "NT$ 3,600",
-      "originalPrice": 3600,
+      "originalPrice": 3900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3600,
+          "price": 3900,
           "sku": "QK-95678",
-          "available": true
+          "available": true,
+          "partsPrice": 3600,
+          "installFee": 300
         }
       ],
       "shortDescription": "19吋輪框節能蓋-【W2款】( Model Y ~2024 )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時",
@@ -13962,7 +14400,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177511882367.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3600,
+      "installFee": 300
     },
     {
       "id": "quack_18842",
@@ -13977,16 +14417,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 3600,
+      "price": 3900,
       "priceRange": "NT$ 3,600",
-      "originalPrice": 3600,
+      "originalPrice": 3900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3600,
+          "price": 3900,
           "sku": "QK-18842",
-          "available": true
+          "available": true,
+          "partsPrice": 3600,
+          "installFee": 300
         }
       ],
       "shortDescription": "19吋輪框節能蓋-【W1款】( Model Y ~2024 )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時",
@@ -13994,7 +14436,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177511785536.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3600,
+      "installFee": 300
     },
     {
       "id": "quack_18841",
@@ -14009,16 +14453,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 3600,
+      "price": 3900,
       "priceRange": "NT$ 3,600",
-      "originalPrice": 3600,
+      "originalPrice": 3900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3600,
+          "price": 3900,
           "sku": "QK-18841",
-          "available": true
+          "available": true,
+          "partsPrice": 3600,
+          "installFee": 300
         }
       ],
       "shortDescription": "19吋輪框節能蓋-【U款】( Model Y ~2024 )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優",
@@ -14026,7 +14472,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1174683696061.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3600,
+      "installFee": 300
     },
     {
       "id": "quack_7523",
@@ -14041,16 +14489,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 3600,
+      "price": 3900,
       "priceRange": "NT$ 3,600",
-      "originalPrice": 3600,
+      "originalPrice": 3900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3600,
+          "price": 3900,
           "sku": "QK-7523",
-          "available": true
+          "available": true,
+          "partsPrice": 3600,
+          "installFee": 300
         }
       ],
       "shortDescription": "19吋輪框節能蓋-【C款】( Model Y ~2024 )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優",
@@ -14058,7 +14508,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177510446724.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3600,
+      "installFee": 300
     },
     {
       "id": "quack_7519",
@@ -14073,16 +14525,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 3600,
+      "price": 3900,
       "priceRange": "NT$ 3,600",
-      "originalPrice": 3600,
+      "originalPrice": 3900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3600,
+          "price": 3900,
           "sku": "QK-7519",
-          "available": true
+          "available": true,
+          "partsPrice": 3600,
+          "installFee": 300
         }
       ],
       "shortDescription": "19吋輪框節能蓋-【B款】( Model Y ~2024 )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優",
@@ -14090,7 +14544,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177510443988.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3600,
+      "installFee": 300
     },
     {
       "id": "quack_18838",
@@ -14105,16 +14561,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 3600,
+      "price": 3900,
       "priceRange": "NT$ 3,600",
-      "originalPrice": 3600,
+      "originalPrice": 3900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3600,
+          "price": 3900,
           "sku": "QK-18838",
-          "available": true
+          "available": true,
+          "partsPrice": 3600,
+          "installFee": 300
         }
       ],
       "shortDescription": "19吋輪框節能蓋-【A款】( Model Y ~2024 )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優",
@@ -14122,7 +14580,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177510332875.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3600,
+      "installFee": 300
     },
     {
       "id": "quack_18839",
@@ -14146,7 +14606,9 @@
           "name": "標準完工版",
           "price": 3000,
           "sku": "QK-18839",
-          "available": true
+          "available": true,
+          "partsPrice": 3000,
+          "installFee": 0
         }
       ],
       "shortDescription": "節能蓋MY-20吋（E款）-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優惠 最",
@@ -14154,7 +14616,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260823122450_3502.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 3000,
+      "installFee": 0
     },
     {
       "id": "quack_7564",
@@ -14178,7 +14642,9 @@
           "name": "標準完工版",
           "price": 2000,
           "sku": "QK-7564",
-          "available": true
+          "available": true,
+          "partsPrice": 2000,
+          "installFee": 0
         }
       ],
       "shortDescription": "節能蓋MY-21吋（F款）-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優惠 最",
@@ -14186,7 +14652,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1174106770708.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 2000,
+      "installFee": 0
     },
     {
       "id": "quack_36269",
@@ -14207,7 +14675,9 @@
           "name": "標準完工版",
           "price": 2500,
           "sku": "QK-36269",
-          "available": true
+          "available": true,
+          "partsPrice": 2500,
+          "installFee": 0
         }
       ],
       "shortDescription": "行李箱墊三件套-基本款( 煥新版 Model 3/Y、舊Y）-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優",
@@ -14215,7 +14685,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177795326165.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 2500,
+      "installFee": 0
     },
     {
       "id": "quack_7587",
@@ -14239,7 +14711,9 @@
           "name": "標準完工版",
           "price": 6500,
           "sku": "QK-7587",
-          "available": true
+          "available": true,
+          "partsPrice": 6500,
+          "installFee": 0
         }
       ],
       "shortDescription": "腳踏墊-3D卡固-菁智款-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優惠 最新",
@@ -14247,7 +14721,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1174106841337.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 6500,
+      "installFee": 0
     },
     {
       "id": "quack_7540",
@@ -14271,7 +14747,9 @@
           "name": "標準完工版",
           "price": 2500,
           "sku": "QK-7540",
-          "available": true
+          "available": true,
+          "partsPrice": 2500,
+          "installFee": 0
         }
       ],
       "shortDescription": "腳踏墊-基本防水款-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優惠 最新消息 ",
@@ -14279,7 +14757,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1175414510195.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 2500,
+      "installFee": 0
     },
     {
       "id": "quack_7526",
@@ -14303,7 +14783,9 @@
           "name": "標準完工版",
           "price": 5200,
           "sku": "QK-7526",
-          "available": true
+          "available": true,
+          "partsPrice": 5200,
+          "installFee": 0
         }
       ],
       "shortDescription": "腳踏墊-3D卡固 極致紋理款-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優惠 ",
@@ -14311,7 +14793,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177389573554.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 5200,
+      "installFee": 0
     },
     {
       "id": "quack_119999",
@@ -14326,16 +14810,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 990,
+      "price": 1300,
       "priceRange": "NT$ 990",
-      "originalPrice": 990,
+      "originalPrice": 1300,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 990,
+          "price": 1300,
           "sku": "QK-119999",
-          "available": true
+          "available": true,
+          "partsPrice": 1300,
+          "installFee": 0
         }
       ],
       "shortDescription": "AP 自駕輔助神器( Model 3/Y各型號 ) -呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DI",
@@ -14343,7 +14829,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260724135633_8404.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 1300,
+      "installFee": 0
     },
     {
       "id": "quack_119313",
@@ -14367,7 +14855,9 @@
           "name": "標準完工版",
           "price": 300,
           "sku": "QK-119313",
-          "available": true
+          "available": true,
+          "partsPrice": 300,
+          "installFee": 0
         }
       ],
       "shortDescription": "無線充電護墊( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOU",
@@ -14375,7 +14865,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260721112946_1345.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 300,
+      "installFee": 0
     },
     {
       "id": "quack_118777",
@@ -14399,7 +14891,9 @@
           "name": "標準完工版",
           "price": 800,
           "sku": "QK-118777",
-          "available": true
+          "available": true,
+          "partsPrice": 800,
+          "installFee": 0
         }
       ],
       "shortDescription": "點煙器一轉三分接器-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優惠 最新消息 ",
@@ -14407,7 +14901,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260717104637_6176.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 800,
+      "installFee": 0
     },
     {
       "id": "quack_115154",
@@ -14431,7 +14927,9 @@
           "name": "標準完工版",
           "price": 250,
           "sku": "QK-115154",
-          "available": true
+          "available": true,
+          "partsPrice": 250,
+          "installFee": 0
         }
       ],
       "shortDescription": "中性內裝清潔劑-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優惠 最新消息 知識",
@@ -14439,7 +14937,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260703175039_3265.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 250,
+      "installFee": 0
     },
     {
       "id": "quack_108953",
@@ -14463,7 +14963,9 @@
           "name": "標準完工版",
           "price": 2550,
           "sku": "QK-108953",
-          "available": true
+          "available": true,
+          "partsPrice": 2550,
+          "installFee": 0
         }
       ],
       "shortDescription": "Inhouse 香氛儀套組 (行動無水香氛儀+複方精油)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 ",
@@ -14471,7 +14973,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260609164134_2895.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 2550,
+      "installFee": 0
     },
     {
       "id": "quack_101393",
@@ -14495,7 +14999,9 @@
           "name": "標準完工版",
           "price": 500,
           "sku": "QK-101393",
-          "available": true
+          "available": true,
+          "partsPrice": 500,
+          "installFee": 0
         }
       ],
       "shortDescription": "避光墊( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT ",
@@ -14503,7 +15009,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177795561039.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 500,
+      "installFee": 0
     },
     {
       "id": "quack_7589",
@@ -14518,16 +15026,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 2100,
+      "price": 2200,
       "priceRange": "NT$ 2,100",
-      "originalPrice": 2100,
+      "originalPrice": 2200,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 2100,
+          "price": 2200,
           "sku": "QK-7589",
-          "available": true
+          "available": true,
+          "partsPrice": 2100,
+          "installFee": 100
         }
       ],
       "shortDescription": "矽膠雨刷-PIAA(全車系適用)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優",
@@ -14535,7 +15045,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1174106848919.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 2100,
+      "installFee": 100
     },
     {
       "id": "quack_7585",
@@ -14559,7 +15071,9 @@
           "name": "標準完工版",
           "price": 500,
           "sku": "QK-7585",
-          "available": true
+          "available": true,
+          "partsPrice": 500,
+          "installFee": 0
         }
       ],
       "shortDescription": "TITA-險-二合一破窗器-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優惠 最",
@@ -14567,7 +15081,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P2174106836229.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 500,
+      "installFee": 0
     },
     {
       "id": "quack_7583",
@@ -14591,7 +15107,9 @@
           "name": "標準完工版",
           "price": 50,
           "sku": "QK-7583",
-          "available": true
+          "available": true,
+          "partsPrice": 50,
+          "installFee": 0
         }
       ],
       "shortDescription": "安全帶卡扣 (全車系通用)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優惠 最",
@@ -14599,7 +15117,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177338073268.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 50,
+      "installFee": 0
     },
     {
       "id": "quack_7581",
@@ -14614,16 +15134,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 300,
+      "price": 400,
       "priceRange": "NT$ 300",
-      "originalPrice": 300,
+      "originalPrice": 400,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 300,
+          "price": 400,
           "sku": "QK-7581",
-          "available": true
+          "available": true,
+          "partsPrice": 300,
+          "installFee": 100
         }
       ],
       "shortDescription": "門把置杯架*2 (舊 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUN",
@@ -14631,7 +15153,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177709018709.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 300,
+      "installFee": 100
     },
     {
       "id": "quack_7575",
@@ -14655,7 +15179,9 @@
           "name": "標準完工版",
           "price": 300,
           "sku": "QK-7575",
-          "available": true
+          "available": true,
+          "partsPrice": 300,
+          "installFee": 0
         }
       ],
       "shortDescription": "3/Y儀表置杯架-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優惠 最新消息 知",
@@ -14663,7 +15189,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1174106801211.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 300,
+      "installFee": 0
     },
     {
       "id": "quack_7571",
@@ -14687,7 +15215,9 @@
           "name": "標準完工版",
           "price": 300,
           "sku": "QK-7571",
-          "available": true
+          "available": true,
+          "partsPrice": 300,
+          "installFee": 0
         }
       ],
       "shortDescription": "MY後廂開口護條-兩側-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優惠 最新消",
@@ -14695,7 +15225,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1174106788828.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 300,
+      "installFee": 0
     },
     {
       "id": "quack_7560",
@@ -14719,7 +15251,9 @@
           "name": "標準完工版",
           "price": 100,
           "sku": "QK-7560",
-          "available": true
+          "available": true,
+          "partsPrice": 100,
+          "installFee": 0
         }
       ],
       "shortDescription": "手套箱掛勾( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUN",
@@ -14727,7 +15261,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177399498726.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 100,
+      "installFee": 0
     },
     {
       "id": "quack_7559",
@@ -14742,16 +15278,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 800,
+      "price": 900,
       "priceRange": "NT$ 800",
-      "originalPrice": 800,
+      "originalPrice": 900,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 800,
+          "price": 900,
           "sku": "QK-7559",
-          "available": true
+          "available": true,
+          "partsPrice": 800,
+          "installFee": 100
         }
       ],
       "shortDescription": "手機支架系列( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOU",
@@ -14759,7 +15297,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260612173444_5129.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 800,
+      "installFee": 100
     },
     {
       "id": "quack_7556",
@@ -14774,16 +15314,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 1000,
+      "price": 1100,
       "priceRange": "NT$ 1,000",
-      "originalPrice": 1000,
+      "originalPrice": 1100,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 1000,
+          "price": 1100,
           "sku": "QK-7556",
-          "available": true
+          "available": true,
+          "partsPrice": 1000,
+          "installFee": 100
         }
       ],
       "shortDescription": "車門迎賓燈-雙燈漸變款-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優惠 最新消",
@@ -14791,7 +15333,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1175617531156.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 1000,
+      "installFee": 100
     },
     {
       "id": "quack_7553",
@@ -14806,16 +15350,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 300,
+      "price": 400,
       "priceRange": "NT$ 300",
-      "originalPrice": 300,
+      "originalPrice": 400,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 300,
+          "price": 400,
           "sku": "QK-7553",
-          "available": true
+          "available": true,
+          "partsPrice": 300,
+          "installFee": 100
         }
       ],
       "shortDescription": "後門安全拉環 2入( Model Y ~2024 )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DI",
@@ -14823,7 +15369,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260808131702_8289.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 300,
+      "installFee": 100
     },
     {
       "id": "quack_125548",
@@ -14847,7 +15395,9 @@
           "name": "標準完工版",
           "price": 10000,
           "sku": "QK-125548",
-          "available": true
+          "available": true,
+          "partsPrice": 10000,
+          "installFee": 0
         }
       ],
       "shortDescription": "換檔撥桿( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT",
@@ -14855,7 +15405,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260818150029_7414.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 10000,
+      "installFee": 0
     },
     {
       "id": "quack_108799",
@@ -14876,7 +15428,9 @@
           "name": "標準完工版",
           "price": 20800,
           "sku": "QK-108799",
-          "available": true
+          "available": true,
+          "partsPrice": 20800,
+          "installFee": 0
         }
       ],
       "shortDescription": "PAPAGO X898 行車記錄器 / 電子後視鏡 ( 煥新版 Model Y 2025+ )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款",
@@ -14884,7 +15438,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260609120256_5735.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 20800,
+      "installFee": 0
     },
     {
       "id": "quack_54927",
@@ -14908,7 +15464,9 @@
           "name": "標準完工版",
           "price": 16000,
           "sku": "QK-54927",
-          "available": true
+          "available": true,
+          "partsPrice": 16000,
+          "installFee": 0
         }
       ],
       "shortDescription": "快譯通電子後照鏡S95B（行車記錄器/測速提醒/前後鏡頭）-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠",
@@ -14916,7 +15474,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260524163017_9130.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 16000,
+      "installFee": 0
     },
     {
       "id": "quack_43297",
@@ -14940,7 +15500,9 @@
           "name": "標準完工版",
           "price": 4200,
           "sku": "QK-43297",
-          "available": true
+          "available": true,
+          "partsPrice": 4200,
+          "installFee": 0
         }
       ],
       "shortDescription": "ZAKA全包式通風座椅套( 舊版 Model 3/Y )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 ",
@@ -14948,7 +15510,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177398103687.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 4200,
+      "installFee": 0
     },
     {
       "id": "quack_36268",
@@ -14972,7 +15536,9 @@
           "name": "標準完工版",
           "price": 13000,
           "sku": "QK-36268",
-          "available": true
+          "available": true,
+          "partsPrice": 13000,
+          "installFee": 0
         }
       ],
       "shortDescription": "電動自吸車門( Model 3/Y各型號 ) -呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCO",
@@ -14980,7 +15546,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177399327477.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 13000,
+      "installFee": 0
     },
     {
       "id": "quack_36267",
@@ -15004,7 +15572,9 @@
           "name": "標準完工版",
           "price": 13000,
           "sku": "QK-36267",
-          "available": true
+          "available": true,
+          "partsPrice": 13000,
+          "installFee": 0
         }
       ],
       "shortDescription": "電動車門把手( Model 3/Y各型號 ) -呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCO",
@@ -15012,7 +15582,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260524161917_6185.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 13000,
+      "installFee": 0
     },
     {
       "id": "quack_36204",
@@ -15036,7 +15608,9 @@
           "name": "標準完工版",
           "price": 13000,
           "sku": "QK-36204",
-          "available": true
+          "available": true,
+          "partsPrice": 13000,
+          "installFee": 0
         }
       ],
       "shortDescription": "電動遮陽簾( 新/舊 Model Y )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT",
@@ -15044,7 +15618,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P2_20260524153733_9494.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 13000,
+      "installFee": 0
     },
     {
       "id": "quack_36203",
@@ -15068,7 +15644,9 @@
           "name": "標準完工版",
           "price": 7500,
           "sku": "QK-36203",
-          "available": true
+          "available": true,
+          "partsPrice": 7500,
+          "installFee": 0
         }
       ],
       "shortDescription": "YOKE方向盤( 舊版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOU",
@@ -15076,7 +15654,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260524160702_3207.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 7500,
+      "installFee": 0
     },
     {
       "id": "quack_36202",
@@ -15100,7 +15680,9 @@
           "name": "標準完工版",
           "price": 9500,
           "sku": "QK-36202",
-          "available": true
+          "available": true,
+          "partsPrice": 9500,
+          "installFee": 0
         }
       ],
       "shortDescription": "YOKE方向盤( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCO",
@@ -15108,7 +15690,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1_20260524161559_9063.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 9500,
+      "installFee": 0
     },
     {
       "id": "quack_36201",
@@ -15132,7 +15716,9 @@
           "name": "標準完工版",
           "price": 5000,
           "sku": "QK-36201",
-          "available": true
+          "available": true,
+          "partsPrice": 5000,
+          "installFee": 0
         }
       ],
       "shortDescription": "電吸前車廂( Model 3/Y各型號 ) -呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOU",
@@ -15140,7 +15726,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1175409975655.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 5000,
+      "installFee": 0
     },
     {
       "id": "quack_36200",
@@ -15164,7 +15752,9 @@
           "name": "標準完工版",
           "price": 12000,
           "sku": "QK-36200",
-          "available": true
+          "available": true,
+          "partsPrice": 12000,
+          "installFee": 0
         }
       ],
       "shortDescription": "電動前車廂( Model 3/Y各型號 ) -呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOU",
@@ -15172,7 +15762,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1175409850779.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 12000,
+      "installFee": 0
     },
     {
       "id": "quack_7573",
@@ -15196,7 +15788,9 @@
           "name": "標準完工版",
           "price": 7000,
           "sku": "QK-7573",
-          "available": true
+          "available": true,
+          "partsPrice": 7000,
+          "installFee": 0
         }
       ],
       "shortDescription": "TITA - 餅Ultra-質感儀表套組-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT",
@@ -15204,7 +15798,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1175688853985.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 7000,
+      "installFee": 0
     },
     {
       "id": "quack_76510",
@@ -15228,7 +15824,9 @@
           "name": "標準完工版",
           "price": 500,
           "sku": "QK-76510",
-          "available": true
+          "available": true,
+          "partsPrice": 500,
+          "installFee": 0
         }
       ],
       "shortDescription": "活性碳濾網 (全車系)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優惠 最新消",
@@ -15236,7 +15834,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177389225991.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 500,
+      "installFee": 0
     },
     {
       "id": "quack_37227",
@@ -15260,7 +15860,9 @@
           "name": "標準完工版",
           "price": 1600,
           "sku": "QK-37227",
-          "available": true
+          "available": true,
+          "partsPrice": 1600,
+          "installFee": 0
         }
       ],
       "shortDescription": "Purafil 專利濾網 (全車系)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限",
@@ -15268,7 +15870,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177389335826.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 1600,
+      "installFee": 0
     },
     {
       "id": "quack_103760",
@@ -15283,16 +15887,18 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 1300,
+      "price": 1600,
       "priceRange": "NT$ 1,300",
-      "originalPrice": 1300,
+      "originalPrice": 1600,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 1300,
+          "price": 1600,
           "sku": "QK-103760",
-          "available": true
+          "available": true,
+          "partsPrice": 1300,
+          "installFee": 300
         }
       ],
       "shortDescription": "TEMAI 出風口無線充手機支架( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限",
@@ -15300,7 +15906,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177883520189.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 1300,
+      "installFee": 300
     },
     {
       "id": "quack_100613",
@@ -15324,7 +15932,9 @@
           "name": "標準完工版",
           "price": 1400,
           "sku": "QK-100613",
-          "available": true
+          "available": true,
+          "partsPrice": 1400,
+          "installFee": 0
         }
       ],
       "shortDescription": "TEMAI 多功能車用桌板-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優惠 最",
@@ -15332,7 +15942,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177736405457.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 1400,
+      "installFee": 0
     },
     {
       "id": "quack_100558",
@@ -15356,7 +15968,9 @@
           "name": "標準完工版",
           "price": 800,
           "sku": "QK-100558",
-          "available": true
+          "available": true,
+          "partsPrice": 800,
+          "installFee": 0
         }
       ],
       "shortDescription": "TEMAI 磁吸眼鏡收納盒 ( 煥新 3/Y )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISC",
@@ -15364,7 +15978,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177735179617.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 800,
+      "installFee": 0
     },
     {
       "id": "quack_100323",
@@ -15388,7 +16004,9 @@
           "name": "標準完工版",
           "price": 1100,
           "sku": "QK-100323",
-          "available": true
+          "available": true,
+          "partsPrice": 1100,
+          "installFee": 0
         }
       ],
       "shortDescription": "TEMAI 車用記憶棉床墊 / 頭枕 ( 煥新 3/Y )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠",
@@ -15396,7 +16014,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177708734397.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 1100,
+      "installFee": 0
     },
     {
       "id": "quack_99892",
@@ -15420,7 +16040,9 @@
           "name": "標準完工版",
           "price": 2400,
           "sku": "QK-99892",
-          "available": true
+          "available": true,
+          "partsPrice": 2400,
+          "installFee": 0
         }
       ],
       "shortDescription": "TEMAI 雙線中控HUB ( 煥新 3/Y )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISC",
@@ -15428,7 +16050,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177691238873.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 2400,
+      "installFee": 0
     },
     {
       "id": "quack_94815",
@@ -15452,7 +16076,9 @@
           "name": "標準完工版",
           "price": 1000,
           "sku": "QK-94815",
-          "available": true
+          "available": true,
+          "partsPrice": 1000,
+          "installFee": 0
         }
       ],
       "shortDescription": "JOWUA 全系列商品代理-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優惠 最",
@@ -15460,7 +16086,9 @@
       "images": [
         "https://www.workband.com.tw/store_image/quackev/P1177466621357.webp"
       ],
-      "lastUpdated": "2026-09-23T03:52:13.660Z"
+      "lastUpdated": "2026-09-23T03:52:13.660Z",
+      "partsPrice": 1000,
+      "installFee": 0
     }
   ],
   "syncStats": {

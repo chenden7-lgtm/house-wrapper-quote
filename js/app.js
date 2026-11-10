@@ -556,7 +556,7 @@ class TeslaApp {
                       <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: 500; margin-top: 2px;">JOWUA 官網原價 NT$ ${officialPrice.toLocaleString()}</div>
                     ` : `
                       <div style="font-size: 1.25rem; font-weight: 900; color: var(--text-bright);">NT$ ${officialPrice.toLocaleString()}</div>
-                      <div style="font-size: 0.75rem; color: #059669; font-weight: 700; margin-top: 2px;"><i class="fas fa-check-circle"></i> 已含安裝費</div>
+                      <div style="font-size: 0.75rem; color: #059669; font-weight: 700; margin-top: 2px;"><i class="fas fa-check-circle"></i> 已含安裝費${item.installFee > 0 ? ` (+工資$${item.installFee})` : ''}</div>
                     `}
                   </div>
                 </div>
@@ -797,7 +797,7 @@ class TeslaApp {
               </div>
               <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 2px; color: var(--text-main);">
                 <span>配件零件淨價 (Parts Only)：</span>
-                <strong>NT$ ${item.partsPrice.toLocaleString()}</strong>
+                <strong>NT$ ${(item.partsPrice !== undefined ? item.partsPrice : (item.price - (item.installFee || 0))).toLocaleString()}</strong>
               </div>
               <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--accent-green);">
                 <span>呱樂門市專業施工工資 (Labor Fee)：</span>

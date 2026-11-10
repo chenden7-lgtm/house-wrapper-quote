@@ -22,30 +22,40 @@ export function syncDataJs() {
   const bundles = [];
 
   products.forEach(p => {
+    const isJowua = p.source.includes('Jowua');
+    const partsPrice = p.partsPrice !== undefined ? p.partsPrice : (isJowua ? p.price : (p.price - (p.installFee || 0)));
+    const installFee = p.installFee !== undefined ? p.installFee : 0;
+
     const item = {
       id: p.id,
       name: p.name,
-      brand: p.source.includes('Jowua') ? 'Jowua' : 'QuackEV',
-      storeId: p.source.includes('Jowua') ? 'jowua' : 'quackev',
+      brand: isJowua ? 'Jowua' : 'QuackEV',
+      storeId: isJowua ? 'jowua' : 'quackev',
       category: p.category || 'interior',
       fitment: p.fitment || ['all'],
       price: p.price || 1000,
       originalPrice: p.originalPrice || p.price || 1000,
+      partsPrice: partsPrice,
+      installFee: installFee,
       image: (p.images && p.images[0]) ? p.images[0] : 'https://www.quackev.com/ogImg.webp',
       description: p.shortDescription || p.name,
       officialUrl: p.officialUrl || p.canonicalUrl,
-      badge: p.source.includes('Jowua') ? 'Jowua 原廠正品' : '呱樂門市完工',
+      badge: isJowua ? 'Jowua 原廠正品' : '呱樂門市完工',
       variants: p.variants && p.variants.length > 0 ? p.variants.map(v => ({
         id: String(v.id || v.sku || p.id),
         title: v.title || v.name || '標準版',
         name: v.title || v.name || '標準版',
         price: v.price || p.price || 1000,
+        partsPrice: v.partsPrice !== undefined ? v.partsPrice : partsPrice,
+        installFee: v.installFee !== undefined ? v.installFee : installFee,
         sku: v.sku || `SKU-${p.id}`
       })) : [{
         id: `v-${p.id}`,
         title: '標準完工版',
         name: '標準完工版',
         price: p.price || 1000,
+        partsPrice: partsPrice,
+        installFee: installFee,
         sku: `SKU-${p.id}`
       }]
     };
