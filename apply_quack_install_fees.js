@@ -31,9 +31,11 @@ store.products.forEach(p => {
 
       if (p.variants && p.variants.length > 0) {
         p.variants.forEach(v => {
-          v.partsPrice = partsPrice;
-          v.installFee = installFee;
-          v.price = finalPrice;
+          const vParts = (p.variants.length > 1 && v.partsPrice !== undefined) ? v.partsPrice : partsPrice;
+          const vInstall = (v.installFee !== undefined) ? v.installFee : installFee;
+          v.partsPrice = vParts;
+          v.installFee = vInstall;
+          v.price = vParts + vInstall;
         });
       }
 

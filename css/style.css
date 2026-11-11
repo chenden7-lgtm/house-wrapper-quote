@@ -292,6 +292,23 @@ body {
   color: var(--text-bright);
 }
 
+.nav-btn.admin-btn {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  font-weight: 600;
+  color: var(--text-bright);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.nav-btn.admin-btn:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
 .nav-btn.theme-toggle {
   width: 34px;
   height: 34px;
@@ -399,6 +416,11 @@ body {
   }
 
   .nav-btn.quote-btn {
+    padding: 0.38rem 0.75rem;
+    font-size: 0.78rem;
+  }
+
+  .nav-btn.admin-btn {
     padding: 0.38rem 0.75rem;
     font-size: 0.78rem;
   }

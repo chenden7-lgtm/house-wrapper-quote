@@ -6661,26 +6661,73 @@ export const ACCESSORIES = [
     "fitment": [
       "m3_highland",
       "m3_2021_2023",
+      "m3_2018_2023",
+      "m3_2017_2020",
       "my_classic",
       "my_juniper"
     ],
-    "price": 1150,
-    "originalPrice": 1150,
-    "partsPrice": 1000,
+    "price": 1000,
+    "originalPrice": 1000,
+    "partsPrice": 850,
     "installFee": 150,
     "image": "https://www.workband.com.tw/store_image/quackev/P1_20260531111024_1283.webp",
-    "description": "螢幕保護貼 ( Model 3/Y各型號 ) -呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCO",
+    "description": "呱樂電驢官方正品特斯拉專用螢幕保護貼，提供高清版與四效合一（防眩光抗指紋）款式，支援舊款 Model 3/Y、煥新版前後螢幕雙貼組與 16 吋專用規格。含門市專業無損施工貼合服務（工資 $150）。",
     "officialUrl": "https://www.quackev.com/products/info.php?id=7550",
     "badge": "呱樂門市完工",
     "variants": [
       {
-        "id": "QK-7550",
-        "title": "標準完工版",
-        "name": "標準完工版",
+        "id": "QK-7550-OLD-HD",
+        "title": "Model 3/Y (舊版 2017-2024) / 高清版",
+        "name": "Model 3/Y (舊版 2017-2024) / 高清版",
+        "price": 1000,
+        "partsPrice": 850,
+        "installFee": 150,
+        "sku": "QK-7550-OLD-HD"
+      },
+      {
+        "id": "QK-7550-OLD-4IN1",
+        "title": "Model 3/Y (舊版 2017-2024) / 四效合一 (防眩抗指紋)",
+        "name": "Model 3/Y (舊版 2017-2024) / 四效合一 (防眩抗指紋)",
         "price": 1150,
         "partsPrice": 1000,
         "installFee": 150,
-        "sku": "QK-7550"
+        "sku": "QK-7550-OLD-4IN1"
+      },
+      {
+        "id": "QK-7550-HL-HD",
+        "title": "Model 3/Y (煥新版 2024+) 前+後雙螢幕組 / 高清版",
+        "name": "Model 3/Y (煥新版 2024+) 前+後雙螢幕組 / 高清版",
+        "price": 1400,
+        "partsPrice": 1250,
+        "installFee": 150,
+        "sku": "QK-7550-HL-HD"
+      },
+      {
+        "id": "QK-7550-HL-4IN1",
+        "title": "Model 3/Y (煥新版 2024+) 前+後雙螢幕組 / 四效合一 (防眩抗指紋)",
+        "name": "Model 3/Y (煥新版 2024+) 前+後雙螢幕組 / 四效合一 (防眩抗指紋)",
+        "price": 1600,
+        "partsPrice": 1450,
+        "installFee": 150,
+        "sku": "QK-7550-HL-4IN1"
+      },
+      {
+        "id": "QK-7550-JUN-16-HD",
+        "title": "Model Y (煥新版 2025+) 16吋螢幕 / 高清版",
+        "name": "Model Y (煥新版 2025+) 16吋螢幕 / 高清版",
+        "price": 1100,
+        "partsPrice": 950,
+        "installFee": 150,
+        "sku": "QK-7550-JUN-16-HD"
+      },
+      {
+        "id": "QK-7550-JUN-16-4IN1",
+        "title": "Model Y (煥新版 2025+) 16吋螢幕 / 四效合一 (防眩抗指紋)",
+        "name": "Model Y (煥新版 2025+) 16吋螢幕 / 四效合一 (防眩抗指紋)",
+        "price": 1300,
+        "partsPrice": 1150,
+        "installFee": 150,
+        "sku": "QK-7550-JUN-16-4IN1"
       }
     ]
   },
