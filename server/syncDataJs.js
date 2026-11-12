@@ -22,7 +22,8 @@ export function syncDataJs() {
   const bundles = [];
 
   products.forEach(p => {
-    const isJowua = p.source.includes('Jowua');
+    const isJowua = p.source && p.source.includes('Jowua');
+    const isPending = !!p.isPendingConfirm;
     const partsPrice = p.partsPrice !== undefined ? p.partsPrice : (isJowua ? p.price : (p.price - (p.installFee || 0)));
     const installFee = p.installFee !== undefined ? p.installFee : 0;
 
@@ -37,10 +38,12 @@ export function syncDataJs() {
       originalPrice: p.originalPrice || p.price || 1000,
       partsPrice: partsPrice,
       installFee: installFee,
+      isPendingConfirm: isPending,
+      priceRange: p.priceRange || (isPending ? '價格待確認' : undefined),
       image: (p.images && p.images[0]) ? p.images[0] : 'https://www.quackev.com/ogImg.webp',
       description: p.shortDescription || p.name,
       officialUrl: p.officialUrl || p.canonicalUrl,
-      badge: isJowua ? 'Jowua 原廠正品' : '呱樂門市完工',
+      badge: isJowua ? 'Jowua 原廠正品' : (isPending ? '呱樂・價格待確認' : '呱樂門市完工'),
       variants: p.variants && p.variants.length > 0 ? p.variants.map(v => ({
         id: String(v.id || v.sku || p.id),
         title: v.title || v.name || '標準版',
@@ -48,6 +51,8 @@ export function syncDataJs() {
         price: v.price || p.price || 1000,
         partsPrice: v.partsPrice !== undefined ? v.partsPrice : partsPrice,
         installFee: v.installFee !== undefined ? v.installFee : installFee,
+        isPendingConfirm: isPending || !!v.isPendingConfirm,
+        priceRange: v.priceRange || (isPending ? '價格待確認' : undefined),
         sku: v.sku || `SKU-${p.id}`
       })) : [{
         id: `v-${p.id}`,
@@ -56,6 +61,8 @@ export function syncDataJs() {
         price: p.price || 1000,
         partsPrice: partsPrice,
         installFee: installFee,
+        isPendingConfirm: isPending,
+        priceRange: isPending ? '價格待確認' : undefined,
         sku: `SKU-${p.id}`
       }]
     };

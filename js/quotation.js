@@ -185,12 +185,14 @@ export class QuotationManager {
       }
 
       const isJowua = dataObj.storeId === 'jowua' || dataObj.brand === 'Jowua' || (dataObj.id && dataObj.id.startsWith('jowua_'));
-      const unitPrice = isJowua ? Math.round(officialOriginalPrice * 0.95) : officialOriginalPrice;
-      const subtotal = unitPrice * (q.quantity || 1);
+      const isPending = !!dataObj.isPendingConfirm;
+      const unitPrice = isPending ? 0 : (isJowua ? Math.round(officialOriginalPrice * 0.95) : officialOriginalPrice);
+      const subtotal = isPending ? 0 : (unitPrice * (q.quantity || 1));
 
       return {
         ...q,
         data: dataObj,
+        isPending,
         unitPrice,
         officialOriginalPrice,
         isJowua,
@@ -203,12 +205,14 @@ export class QuotationManager {
   calculateTotals() {
     const details = this.getItemDetails();
     const rawTotal = details.reduce((sum, item) => sum + item.subtotal, 0);
+    const hasPending = details.some(item => item.isPending);
     const finalTotal = rawTotal;
 
     return {
       rawTotal,
       extraDiscount: 0,
       finalTotal,
+      hasPending,
       itemCount: details.reduce((sum, item) => sum + item.quantity, 0)
     };
   }
@@ -236,27 +240,35 @@ export class QuotationManager {
         storeTag = '[好室配件]';
       }
 
+      if (item.isPending) {
+        storeTag = '[呱樂(價格待確認)]';
+      }
       lines.push(`${index + 1}. ${storeTag} ${item.data.name}`);
       
       if (item.variantTitle) {
         lines.push(`   └ 選擇規格：${item.variantTitle}`);
       }
 
-      if (item.isJowua) {
-        lines.push(`   └ 好室代購 95 折優惠（JOWUA 官網原價 NT$ ${item.officialOriginalPrice.toLocaleString()}）`);
-      } else if (item.data.storeId === 'quackev') {
-        lines.push(`   └ 價格說明：已包含所有門市施工安裝費`);
-      }
+      if (item.isPending) {
+        lines.push(`   └ 價格說明：官網無標示牌價，價格待確認 (含門市施工${item.data.installFee > 0 ? `，工資約${item.data.installFee}` : ''})`);
+        lines.push(`   └ 數量：x${item.quantity}  報價：價格待確認`);
+      } else {
+        if (item.isJowua) {
+          lines.push(`   └ 好室代購 95 折優惠（JOWUA 官網原價 NT$ ${item.officialOriginalPrice.toLocaleString()}）`);
+        } else if (item.data.storeId === 'quackev') {
+          lines.push(`   └ 價格說明：已包含所有門市施工安裝費`);
+        }
 
-      if (item.type === 'bundle' && item.data.itemsIncluded) {
-        lines.push(`   └ 組合內含：${item.data.itemsIncluded.join(' + ')}`);
-      }
+        if (item.type === 'bundle' && item.data.itemsIncluded) {
+          lines.push(`   └ 組合內含：${item.data.itemsIncluded.join(' + ')}`);
+        }
 
-      lines.push(`   └ 數量：x${item.quantity}  優惠價：NT$ ${item.unitPrice.toLocaleString()}  小計：NT$ ${item.subtotal.toLocaleString()}`);
+        lines.push(`   └ 數量：x${item.quantity}  優惠價：NT$ ${item.unitPrice.toLocaleString()}  小計：NT$ ${item.subtotal.toLocaleString()}`);
+      }
     });
 
     lines.push(`----------------------------------------`);
-    lines.push(`💰 最終報價總額：NT$ ${totals.finalTotal.toLocaleString()}`);
+    lines.push(`💰 最終報價總額：NT$ ${totals.finalTotal.toLocaleString()}${totals.hasPending ? ' (+ 待確認項目另計)' : ''}`);
 
     if (this.customerNote.trim()) {
       lines.push(`📝 備註事項：${this.customerNote.trim()}`);
@@ -303,9 +315,15 @@ export class QuotationManager {
                 badgeBg = 'rgba(232,86,55,0.2)';
                 badgeColor = 'var(--primary)';
               } else if (item.data.storeId === 'quackev') {
-                storeBadgeText = 'QuackEV (含安裝費)';
-                badgeBg = 'rgba(16,185,129,0.2)';
-                badgeColor = '#047857';
+                if (item.isPending) {
+                  storeBadgeText = 'QuackEV (價格待確認)';
+                  badgeBg = 'rgba(245,158,11,0.2)';
+                  badgeColor = '#d97706';
+                } else {
+                  storeBadgeText = 'QuackEV (含安裝費)';
+                  badgeBg = 'rgba(16,185,129,0.2)';
+                  badgeColor = '#047857';
+                }
               }
 
               return `
@@ -325,12 +343,14 @@ export class QuotationManager {
                       </div>
                     ` : ''}
                     <div style="font-size: 0.8rem; color: var(--text-muted);">
-                      ${item.isJowua ? `
+                      ${item.isPending ? `
+                        <span style="color: #f59e0b; font-weight: 700;"><i class="fas fa-question-circle"></i> 呱樂官網未標價 (洽門市確認)</span>
+                      ` : (item.isJowua ? `
                         <span>好室 95 折：<strong style="color: var(--primary);">NT$ ${item.unitPrice.toLocaleString()}</strong></span>
-                        <span style="font-size: 0.72rem; margin-left: 4px;">(官網原價 $${item.officialOriginalPrice.toLocaleString()})</span>
+                        <span style="font-size: 0.72rem; margin-left: 4px;">(官網原價 ${item.officialOriginalPrice.toLocaleString()})</span>
                       ` : `
                         <span>單價：NT$ ${item.unitPrice.toLocaleString()} (已含安裝費)</span>
-                      `}
+                      `)}
                     </div>
                   </div>
 
@@ -341,8 +361,8 @@ export class QuotationManager {
                   </div>
 
                   <div style="text-align: right; min-width: 90px;">
-                    <div style="font-weight: 800; color: var(--primary); font-size: 0.95rem;">
-                      NT$ ${item.subtotal.toLocaleString()}
+                    <div style="font-weight: 800; color: ${item.isPending ? '#f59e0b' : 'var(--primary)'}; font-size: 0.95rem;">
+                      ${item.isPending ? '待確認' : `NT$ ${item.subtotal.toLocaleString()}`}
                     </div>
                     <button class="btn-remove-quote-item" data-id="${item.id}" data-type="${item.type}" data-variant-id="${item.variantId || ''}" style="background: none; border: none; color: #ef4444; font-size: 0.78rem; cursor: pointer; text-decoration: underline;">
                       刪除
@@ -356,7 +376,7 @@ export class QuotationManager {
           <div class="glass-panel" style="padding: 1.25rem; margin-bottom: 1.5rem;">
             <div style="display: flex; justify-content: space-between; align-items: center; font-size: 1.25rem; font-weight: 900;">
               <span>最終報價金額 <span style="font-size: 0.85rem; font-weight: normal; color: var(--text-muted);">(${totals.itemCount} 件品項)</span></span>
-              <span style="color: var(--primary);">NT$ ${totals.finalTotal.toLocaleString()}</span>
+              <span style="color: var(--primary);">NT$ ${totals.finalTotal.toLocaleString()}${totals.hasPending ? ' <span style="font-size: 0.8rem; color: #f59e0b; font-weight: 700;">(+ 待確認項目另計)</span>' : ''}</span>
             </div>
           </div>
 

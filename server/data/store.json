@@ -10536,7 +10536,7 @@
         "my_juniper"
       ],
       "price": 1000,
-      "priceRange": "NT$ 1,000",
+      "priceRange": "價格待確認",
       "originalPrice": 1000,
       "stockStatus": "in_stock",
       "variants": [
@@ -10546,7 +10546,8 @@
           "sku": "QK-149469",
           "available": true,
           "partsPrice": 1000,
-          "installFee": 0
+          "installFee": 0,
+          "isPendingConfirm": true
         }
       ],
       "shortDescription": "",
@@ -10557,7 +10558,8 @@
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "storeId": "quackev",
       "partsPrice": 1000,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": true
     },
     {
       "id": "quack_146083",
@@ -10573,7 +10575,7 @@
         "my_juniper"
       ],
       "price": 1000,
-      "priceRange": "NT$ 1,000",
+      "priceRange": "價格待確認",
       "originalPrice": 1000,
       "stockStatus": "in_stock",
       "variants": [
@@ -10583,7 +10585,8 @@
           "sku": "QK-146083",
           "available": true,
           "partsPrice": 1000,
-          "installFee": 0
+          "installFee": 0,
+          "isPendingConfirm": true
         }
       ],
       "shortDescription": "",
@@ -10594,7 +10597,8 @@
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "storeId": "quackev",
       "partsPrice": 1000,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": true
     },
     {
       "id": "quack_133586",
@@ -10610,7 +10614,7 @@
         "my_juniper"
       ],
       "price": 1000,
-      "priceRange": "NT$ 1,000",
+      "priceRange": "價格待確認",
       "originalPrice": 1000,
       "stockStatus": "in_stock",
       "variants": [
@@ -10620,7 +10624,8 @@
           "sku": "QK-133586",
           "available": true,
           "partsPrice": 1000,
-          "installFee": 0
+          "installFee": 0,
+          "isPendingConfirm": true
         }
       ],
       "shortDescription": "",
@@ -10631,7 +10636,8 @@
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "storeId": "quackev",
       "partsPrice": 1000,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": true
     },
     {
       "id": "quack_133590",
@@ -10647,7 +10653,7 @@
         "my_juniper"
       ],
       "price": 1000,
-      "priceRange": "NT$ 1,000",
+      "priceRange": "價格待確認",
       "originalPrice": 1000,
       "stockStatus": "in_stock",
       "variants": [
@@ -10657,7 +10663,8 @@
           "sku": "QK-133590",
           "available": true,
           "partsPrice": 1000,
-          "installFee": 0
+          "installFee": 0,
+          "isPendingConfirm": true
         }
       ],
       "shortDescription": "",
@@ -10668,7 +10675,8 @@
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "storeId": "quackev",
       "partsPrice": 1000,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": true
     },
     {
       "id": "quack_94851",
@@ -10705,7 +10713,8 @@
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "storeId": "quackev",
       "partsPrice": 600,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_94850",
@@ -10742,7 +10751,8 @@
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "storeId": "quackev",
       "partsPrice": 1900,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_94845",
@@ -10779,7 +10789,8 @@
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "storeId": "quackev",
       "partsPrice": 600,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_52489",
@@ -10816,7 +10827,8 @@
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "storeId": "quackev",
       "partsPrice": 1450,
-      "installFee": 50
+      "installFee": 50,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_20647",
@@ -10853,7 +10865,8 @@
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "storeId": "quackev",
       "partsPrice": 5500,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_18845",
@@ -10890,7 +10903,8 @@
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "storeId": "quackev",
       "partsPrice": 6400,
-      "installFee": 400
+      "installFee": 400,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7590",
@@ -10927,7 +10941,8 @@
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "storeId": "quackev",
       "partsPrice": 1200,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7576",
@@ -10964,7 +10979,8 @@
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "storeId": "quackev",
       "partsPrice": 1200,
-      "installFee": 200
+      "installFee": 200,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7529",
@@ -11001,7 +11017,8 @@
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "storeId": "quackev",
       "partsPrice": 1200,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7527",
@@ -11038,7 +11055,8 @@
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "storeId": "quackev",
       "partsPrice": 700,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_45838",
@@ -11072,7 +11090,8 @@
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "storeId": "quackev",
       "partsPrice": 8800,
-      "installFee": 200
+      "installFee": 200,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_127954",
@@ -11105,7 +11124,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 26000,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_124571",
@@ -11138,7 +11158,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 28000,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_97760",
@@ -11171,7 +11192,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 20000,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_96391",
@@ -11204,7 +11226,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 26000,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_96111",
@@ -11237,7 +11260,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 28000,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_55607",
@@ -11270,7 +11294,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 26000,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_62723",
@@ -11306,7 +11331,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 50,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_62721",
@@ -11342,7 +11368,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 100,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_31761",
@@ -11375,7 +11402,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 300,
-      "installFee": 100
+      "installFee": 100,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7538",
@@ -11411,7 +11439,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 350,
-      "installFee": 50
+      "installFee": 50,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7514",
@@ -11447,7 +11476,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 1100,
-      "installFee": 100
+      "installFee": 100,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7512",
@@ -11483,7 +11513,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 900,
-      "installFee": 100
+      "installFee": 100,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7509",
@@ -11519,7 +11550,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 400,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7508",
@@ -11555,7 +11587,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 100,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7510",
@@ -11591,7 +11624,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 1300,
-      "installFee": 200
+      "installFee": 200,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7568",
@@ -11627,7 +11661,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 450,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7577",
@@ -11663,7 +11698,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 300,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_114539",
@@ -11699,7 +11735,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 400,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_109921",
@@ -11735,7 +11772,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 500,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_101751",
@@ -11771,7 +11809,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 600,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7567",
@@ -11807,7 +11846,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 100,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7550",
@@ -11825,7 +11865,7 @@
         "my_juniper"
       ],
       "price": 1000,
-      "priceRange": "NT$ 1,000 - NT$ 1,600",
+      "priceRange": "價格待確認",
       "originalPrice": 1000,
       "stockStatus": "in_stock",
       "variants": [
@@ -11837,7 +11877,8 @@
           "partsPrice": 850,
           "installFee": 150,
           "sku": "QK-7550-OLD-HD",
-          "available": true
+          "available": true,
+          "isPendingConfirm": true
         },
         {
           "id": "QK-7550-OLD-4IN1",
@@ -11847,7 +11888,8 @@
           "partsPrice": 1000,
           "installFee": 150,
           "sku": "QK-7550-OLD-4IN1",
-          "available": true
+          "available": true,
+          "isPendingConfirm": true
         },
         {
           "id": "QK-7550-HL-HD",
@@ -11857,7 +11899,8 @@
           "partsPrice": 1250,
           "installFee": 150,
           "sku": "QK-7550-HL-HD",
-          "available": true
+          "available": true,
+          "isPendingConfirm": true
         },
         {
           "id": "QK-7550-HL-4IN1",
@@ -11867,7 +11910,8 @@
           "partsPrice": 1450,
           "installFee": 150,
           "sku": "QK-7550-HL-4IN1",
-          "available": true
+          "available": true,
+          "isPendingConfirm": true
         },
         {
           "id": "QK-7550-JUN-16-HD",
@@ -11877,7 +11921,8 @@
           "partsPrice": 950,
           "installFee": 150,
           "sku": "QK-7550-JUN-16-HD",
-          "available": true
+          "available": true,
+          "isPendingConfirm": true
         },
         {
           "id": "QK-7550-JUN-16-4IN1",
@@ -11887,7 +11932,8 @@
           "partsPrice": 1150,
           "installFee": 150,
           "sku": "QK-7550-JUN-16-4IN1",
-          "available": true
+          "available": true,
+          "isPendingConfirm": true
         }
       ],
       "shortDescription": "呱樂電驢官方正品特斯拉專用螢幕保護貼，提供高清版與四效合一（防眩光抗指紋）款式，支援舊款 Model 3/Y、煥新版前後螢幕雙貼組與 16 吋專用規格。含門市專業無損施工貼合服務（工資 $150）。",
@@ -11897,7 +11943,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 850,
-      "installFee": 150
+      "installFee": 150,
+      "isPendingConfirm": true
     },
     {
       "id": "quack_19134",
@@ -11913,7 +11960,7 @@
         "my_juniper"
       ],
       "price": 2400,
-      "priceRange": "NT$ 2,000",
+      "priceRange": "價格待確認",
       "originalPrice": 2400,
       "stockStatus": "in_stock",
       "variants": [
@@ -11923,7 +11970,8 @@
           "sku": "QK-19134",
           "available": true,
           "partsPrice": 2000,
-          "installFee": 400
+          "installFee": 400,
+          "isPendingConfirm": true
         }
       ],
       "shortDescription": "前後門檻四件套( 煥新版 Model 3/Y)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCO",
@@ -11933,7 +11981,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 2000,
-      "installFee": 400
+      "installFee": 400,
+      "isPendingConfirm": true
     },
     {
       "id": "quack_7536",
@@ -11969,7 +12018,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 600,
-      "installFee": 50
+      "installFee": 50,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_62967",
@@ -12005,7 +12055,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 1000,
-      "installFee": 200
+      "installFee": 200,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_62991",
@@ -12038,7 +12089,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 1800,
-      "installFee": 200
+      "installFee": 200,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_31762",
@@ -12074,7 +12126,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 300,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7580",
@@ -12110,7 +12163,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 300,
-      "installFee": 50
+      "installFee": 50,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7530",
@@ -12146,7 +12200,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 1200,
-      "installFee": 100
+      "installFee": 100,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7557",
@@ -12182,7 +12237,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 1200,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7558",
@@ -12215,7 +12271,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 1500,
-      "installFee": 100
+      "installFee": 100,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7569",
@@ -12251,7 +12308,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 500,
-      "installFee": 50
+      "installFee": 50,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7541",
@@ -12287,7 +12345,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 500,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7547",
@@ -12323,7 +12382,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 300,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7579",
@@ -12359,7 +12419,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 450,
-      "installFee": 50
+      "installFee": 50,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_62912",
@@ -12392,7 +12453,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 1200,
-      "installFee": 50
+      "installFee": 50,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_31760",
@@ -12425,7 +12487,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 900,
-      "installFee": 50
+      "installFee": 50,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_31759",
@@ -12458,7 +12521,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 900,
-      "installFee": 100
+      "installFee": 100,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7572",
@@ -12471,7 +12535,7 @@
         "m3_highland"
       ],
       "price": 1050,
-      "priceRange": "NT$ 1,000",
+      "priceRange": "價格待確認",
       "originalPrice": 1050,
       "stockStatus": "in_stock",
       "variants": [
@@ -12481,7 +12545,8 @@
           "sku": "QK-7572",
           "available": true,
           "partsPrice": 1000,
-          "installFee": 50
+          "installFee": 50,
+          "isPendingConfirm": true
         }
       ],
       "shortDescription": "後廂開口防刮底座( 煥新版 Model 3 2024+ )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠",
@@ -12491,7 +12556,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 1000,
-      "installFee": 50
+      "installFee": 50,
+      "isPendingConfirm": true
     },
     {
       "id": "quack_7507",
@@ -12527,7 +12593,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 900,
-      "installFee": 100
+      "installFee": 100,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7506",
@@ -12560,7 +12627,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 900,
-      "installFee": 50
+      "installFee": 50,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7505",
@@ -12593,7 +12661,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 900,
-      "installFee": 100
+      "installFee": 100,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7504",
@@ -12626,7 +12695,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 1800,
-      "installFee": 200
+      "installFee": 200,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_111152",
@@ -12662,7 +12732,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 2800,
-      "installFee": 200
+      "installFee": 200,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_111151",
@@ -12698,7 +12769,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 900,
-      "installFee": 50
+      "installFee": 50,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_111150",
@@ -12734,7 +12806,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3800,
-      "installFee": 100
+      "installFee": 100,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_111121",
@@ -12770,7 +12843,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 4800,
-      "installFee": 400
+      "installFee": 400,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_111117",
@@ -12806,7 +12880,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3500,
-      "installFee": 200
+      "installFee": 200,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_110840",
@@ -12842,7 +12917,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 4700,
-      "installFee": 200
+      "installFee": 200,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_110838",
@@ -12878,7 +12954,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3300,
-      "installFee": 200
+      "installFee": 200,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_110837",
@@ -12914,7 +12991,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3500,
-      "installFee": 300
+      "installFee": 300,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_110836",
@@ -12950,7 +13028,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 5200,
-      "installFee": 300
+      "installFee": 300,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_110835",
@@ -12986,7 +13065,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 2800,
-      "installFee": 100
+      "installFee": 100,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_110832",
@@ -13022,7 +13102,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 2800,
-      "installFee": 100
+      "installFee": 100,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_110830",
@@ -13058,7 +13139,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3200,
-      "installFee": 100
+      "installFee": 100,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_109853",
@@ -13094,7 +13176,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3300,
-      "installFee": 100
+      "installFee": 100,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_109710",
@@ -13127,7 +13210,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3500,
-      "installFee": 100
+      "installFee": 100,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7574",
@@ -13163,7 +13247,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 600,
-      "installFee": 100
+      "installFee": 100,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7561",
@@ -13199,7 +13284,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 1500,
-      "installFee": 50
+      "installFee": 50,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7554",
@@ -13235,7 +13321,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 500,
-      "installFee": 200
+      "installFee": 200,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7549",
@@ -13271,7 +13358,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 900,
-      "installFee": 50
+      "installFee": 50,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7535",
@@ -13307,7 +13395,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 1500,
-      "installFee": 100
+      "installFee": 100,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7534",
@@ -13343,7 +13432,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 1300,
-      "installFee": 50
+      "installFee": 50,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7532",
@@ -13379,7 +13469,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 2500,
-      "installFee": 200
+      "installFee": 200,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_96896",
@@ -13412,7 +13503,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 1500,
-      "installFee": 200
+      "installFee": 200,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_45837",
@@ -13445,7 +13537,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 4500,
-      "installFee": 200
+      "installFee": 200,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_96898",
@@ -13478,7 +13571,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 1500,
-      "installFee": 200
+      "installFee": 200,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7499",
@@ -13511,7 +13605,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 4500,
-      "installFee": 200
+      "installFee": 200,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7500",
@@ -13547,7 +13642,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 1500,
-      "installFee": 200
+      "installFee": 200,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7494",
@@ -13583,7 +13679,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 4500,
-      "installFee": 200
+      "installFee": 200,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7552",
@@ -13619,7 +13716,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3000,
-      "installFee": 100
+      "installFee": 100,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7503",
@@ -13655,7 +13753,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 2800,
-      "installFee": 700
+      "installFee": 700,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7497",
@@ -13691,7 +13790,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 100,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7544",
@@ -13727,7 +13827,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 1500,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_130374",
@@ -13740,7 +13841,7 @@
         "my_juniper"
       ],
       "price": 3600,
-      "priceRange": "NT$ 3,600",
+      "priceRange": "價格待確認",
       "originalPrice": 3600,
       "stockStatus": "in_stock",
       "variants": [
@@ -13750,7 +13851,8 @@
           "sku": "QK-130374",
           "available": true,
           "partsPrice": 3600,
-          "installFee": 0
+          "installFee": 0,
+          "isPendingConfirm": true
         }
       ],
       "shortDescription": "19吋輪框節能蓋-【P2款】( Model Y 2025+)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優",
@@ -13760,7 +13862,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3600,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": true
     },
     {
       "id": "quack_130372",
@@ -13793,7 +13896,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3600,
-      "installFee": 300
+      "installFee": 300,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_126485",
@@ -13829,7 +13933,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3600,
-      "installFee": 300
+      "installFee": 300,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_95734",
@@ -13865,7 +13970,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3600,
-      "installFee": 300
+      "installFee": 300,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_118778",
@@ -13898,7 +14004,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3600,
-      "installFee": 300
+      "installFee": 300,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_95713",
@@ -13931,7 +14038,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3600,
-      "installFee": 300
+      "installFee": 300,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_18840",
@@ -13964,7 +14072,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3600,
-      "installFee": 300
+      "installFee": 300,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_95728",
@@ -13997,7 +14106,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3600,
-      "installFee": 300
+      "installFee": 300,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_95712",
@@ -14030,7 +14140,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3600,
-      "installFee": 300
+      "installFee": 300,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_39912",
@@ -14063,7 +14174,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3600,
-      "installFee": 300
+      "installFee": 300,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_95716",
@@ -14096,7 +14208,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3600,
-      "installFee": 300
+      "installFee": 300,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_103698",
@@ -14132,7 +14245,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3600,
-      "installFee": 300
+      "installFee": 300,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_103699",
@@ -14168,7 +14282,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3600,
-      "installFee": 300
+      "installFee": 300,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_95732",
@@ -14204,7 +14319,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3600,
-      "installFee": 300
+      "installFee": 300,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_18843",
@@ -14240,7 +14356,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3600,
-      "installFee": 300
+      "installFee": 300,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_95680",
@@ -14276,7 +14393,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3600,
-      "installFee": 300
+      "installFee": 300,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_95681",
@@ -14312,7 +14430,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3600,
-      "installFee": 300
+      "installFee": 300,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_95679",
@@ -14348,7 +14467,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3600,
-      "installFee": 300
+      "installFee": 300,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7517",
@@ -14384,7 +14504,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3600,
-      "installFee": 300
+      "installFee": 300,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_95682",
@@ -14420,7 +14541,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3600,
-      "installFee": 300
+      "installFee": 300,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_95678",
@@ -14456,7 +14578,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3600,
-      "installFee": 300
+      "installFee": 300,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_18842",
@@ -14492,7 +14615,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3600,
-      "installFee": 300
+      "installFee": 300,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_18841",
@@ -14528,7 +14652,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3600,
-      "installFee": 300
+      "installFee": 300,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7523",
@@ -14564,7 +14689,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3600,
-      "installFee": 300
+      "installFee": 300,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7519",
@@ -14600,7 +14726,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3600,
-      "installFee": 300
+      "installFee": 300,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_18838",
@@ -14636,7 +14763,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3600,
-      "installFee": 300
+      "installFee": 300,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_18839",
@@ -14672,7 +14800,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 3000,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7564",
@@ -14688,7 +14817,7 @@
         "my_juniper"
       ],
       "price": 2000,
-      "priceRange": "NT$ 2,000",
+      "priceRange": "價格待確認",
       "originalPrice": 2000,
       "stockStatus": "in_stock",
       "variants": [
@@ -14698,7 +14827,8 @@
           "sku": "QK-7564",
           "available": true,
           "partsPrice": 2000,
-          "installFee": 0
+          "installFee": 0,
+          "isPendingConfirm": true
         }
       ],
       "shortDescription": "節能蓋MY-21吋（F款）-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優惠 最",
@@ -14708,7 +14838,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 2000,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": true
     },
     {
       "id": "quack_36269",
@@ -14741,7 +14872,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 2500,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7587",
@@ -14777,7 +14909,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 6500,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7540",
@@ -14813,7 +14946,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 2500,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7526",
@@ -14849,7 +14983,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 5200,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_119999",
@@ -14885,7 +15020,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 1300,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_119313",
@@ -14921,7 +15057,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 300,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_118777",
@@ -14957,7 +15094,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 800,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_115154",
@@ -14993,7 +15131,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 250,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_108953",
@@ -15029,7 +15168,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 2550,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_101393",
@@ -15065,7 +15205,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 500,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7589",
@@ -15101,7 +15242,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 2100,
-      "installFee": 100
+      "installFee": 100,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7585",
@@ -15137,7 +15279,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 500,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7583",
@@ -15173,7 +15316,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 50,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7581",
@@ -15209,7 +15353,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 300,
-      "installFee": 100
+      "installFee": 100,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7575",
@@ -15245,7 +15390,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 300,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7571",
@@ -15281,7 +15427,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 300,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7560",
@@ -15317,7 +15464,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 100,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7559",
@@ -15353,7 +15501,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 800,
-      "installFee": 100
+      "installFee": 100,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7556",
@@ -15389,7 +15538,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 1000,
-      "installFee": 100
+      "installFee": 100,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7553",
@@ -15425,7 +15575,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 300,
-      "installFee": 100
+      "installFee": 100,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_125548",
@@ -15461,7 +15612,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 10000,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_108799",
@@ -15494,7 +15646,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 20800,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_54927",
@@ -15530,7 +15683,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 16000,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_43297",
@@ -15566,7 +15720,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 4200,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_36268",
@@ -15602,7 +15757,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 13000,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_36267",
@@ -15638,7 +15794,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 13000,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_36204",
@@ -15674,7 +15831,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 13000,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_36203",
@@ -15710,7 +15868,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 7500,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_36202",
@@ -15746,7 +15905,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 9500,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_36201",
@@ -15782,7 +15942,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 5000,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_36200",
@@ -15818,7 +15979,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 12000,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7573",
@@ -15854,7 +16016,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 7000,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_76510",
@@ -15890,7 +16053,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 500,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_37227",
@@ -15926,7 +16090,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 1600,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_103760",
@@ -15962,7 +16127,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 1300,
-      "installFee": 300
+      "installFee": 300,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_100613",
@@ -15998,7 +16164,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 1400,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_100558",
@@ -16034,7 +16201,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 800,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_100323",
@@ -16070,7 +16238,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 1100,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_99892",
@@ -16106,7 +16275,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 2400,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": false
     },
     {
       "id": "quack_94815",
@@ -16122,7 +16292,7 @@
         "my_juniper"
       ],
       "price": 1000,
-      "priceRange": "NT$ 1,000",
+      "priceRange": "價格待確認",
       "originalPrice": 1000,
       "stockStatus": "in_stock",
       "variants": [
@@ -16132,7 +16302,8 @@
           "sku": "QK-94815",
           "available": true,
           "partsPrice": 1000,
-          "installFee": 0
+          "installFee": 0,
+          "isPendingConfirm": true
         }
       ],
       "shortDescription": "JOWUA 全系列商品代理-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優惠 最",
@@ -16142,7 +16313,8 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 1000,
-      "installFee": 0
+      "installFee": 0,
+      "isPendingConfirm": true
     }
   ],
   "syncStats": {

@@ -2,34 +2,38 @@
   {
     "id": "quack_149469",
     "name": "呱樂電驢 - 呱樂電驢配件 #149469",
-    "currentPrice": 1000,
-    "sitePrice": 1000,
+    "currentPrice": 0,
+    "sitePrice": 0,
     "installFee": 0,
-    "specSnippet": ""
+    "specSnippet": "",
+    "isPendingConfirm": true
   },
   {
     "id": "quack_146083",
     "name": "呱樂電驢 - 呱樂電驢配件 #146083",
-    "currentPrice": 1000,
-    "sitePrice": 1000,
+    "currentPrice": 0,
+    "sitePrice": 0,
     "installFee": 0,
-    "specSnippet": ""
+    "specSnippet": "",
+    "isPendingConfirm": true
   },
   {
     "id": "quack_133586",
     "name": "呱樂電驢 - 呱樂電驢配件 #133586",
-    "currentPrice": 1000,
-    "sitePrice": 1000,
+    "currentPrice": 0,
+    "sitePrice": 0,
     "installFee": 0,
-    "specSnippet": ""
+    "specSnippet": "",
+    "isPendingConfirm": true
   },
   {
     "id": "quack_133590",
     "name": "呱樂電驢 - 呱樂電驢配件 #133590",
-    "currentPrice": 1000,
-    "sitePrice": 1000,
+    "currentPrice": 0,
+    "sitePrice": 0,
     "installFee": 0,
-    "specSnippet": ""
+    "specSnippet": "",
+    "isPendingConfirm": true
   },
   {
     "id": "quack_94851",
@@ -37,7 +41,8 @@
     "currentPrice": 600,
     "sitePrice": 600,
     "installFee": 0,
-    "specSnippet": ""
+    "specSnippet": "",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_94850",
@@ -45,7 +50,8 @@
     "currentPrice": 1800,
     "sitePrice": 1900,
     "installFee": 0,
-    "specSnippet": ""
+    "specSnippet": "",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_94845",
@@ -53,7 +59,8 @@
     "currentPrice": 600,
     "sitePrice": 600,
     "installFee": 0,
-    "specSnippet": "安裝費用＄0"
+    "specSnippet": "安裝費用＄0",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_52489",
@@ -61,7 +68,8 @@
     "currentPrice": 1450,
     "sitePrice": 1450,
     "installFee": 50,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄50"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄50",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_20647",
@@ -69,7 +77,8 @@
     "currentPrice": 5500,
     "sitePrice": 5500,
     "installFee": 0,
-    "specSnippet": "安裝費用＄0"
+    "specSnippet": "安裝費用＄0",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_18845",
@@ -77,7 +86,8 @@
     "currentPrice": 6400,
     "sitePrice": 6400,
     "installFee": 400,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄400"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄400",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7590",
@@ -85,7 +95,8 @@
     "currentPrice": 1000,
     "sitePrice": 1200,
     "installFee": 0,
-    "specSnippet": ""
+    "specSnippet": "",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7576",
@@ -93,7 +104,8 @@
     "currentPrice": 1200,
     "sitePrice": 1200,
     "installFee": 200,
-    "specSnippet": "網站購買不包含安裝，安裝費用：單張＄100，兩張＄200"
+    "specSnippet": "網站購買不包含安裝，安裝費用：單張＄100，兩張＄200",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7529",
@@ -101,7 +113,8 @@
     "currentPrice": 1200,
     "sitePrice": 1200,
     "installFee": 0,
-    "specSnippet": ""
+    "specSnippet": "",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7527",
@@ -109,7 +122,8 @@
     "currentPrice": 700,
     "sitePrice": 700,
     "installFee": 0,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄0"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄0",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_45838",
@@ -117,7 +131,8 @@
     "currentPrice": 8800,
     "sitePrice": 8800,
     "installFee": 200,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄200"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄200",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_127954",
@@ -125,7 +140,8 @@
     "currentPrice": 26000,
     "sitePrice": 26000,
     "installFee": 0,
-    "specSnippet": "網站價格為完工價，無寄送"
+    "specSnippet": "網站價格為完工價，無寄送",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_124571",
@@ -133,7 +149,8 @@
     "currentPrice": 28000,
     "sitePrice": 28000,
     "installFee": 0,
-    "specSnippet": "網站價格為完工價，無寄送"
+    "specSnippet": "網站價格為完工價，無寄送",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_97760",
@@ -141,7 +158,8 @@
     "currentPrice": 20000,
     "sitePrice": 20000,
     "installFee": 0,
-    "specSnippet": "網站價格為完工價，無寄送"
+    "specSnippet": "網站價格為完工價，無寄送",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_96391",
@@ -149,7 +167,8 @@
     "currentPrice": 26000,
     "sitePrice": 26000,
     "installFee": 0,
-    "specSnippet": "網站價格為完工價，無寄送"
+    "specSnippet": "網站價格為完工價，無寄送",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_96111",
@@ -157,7 +176,8 @@
     "currentPrice": 28000,
     "sitePrice": 28000,
     "installFee": 0,
-    "specSnippet": "網站價格為完工價，無寄送"
+    "specSnippet": "網站價格為完工價，無寄送",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_55607",
@@ -165,7 +185,8 @@
     "currentPrice": 26000,
     "sitePrice": 26000,
     "installFee": 0,
-    "specSnippet": "網站價格為完工價，無寄送"
+    "specSnippet": "網站價格為完工價，無寄送",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_62723",
@@ -173,7 +194,8 @@
     "currentPrice": 50,
     "sitePrice": 50,
     "installFee": 0,
-    "specSnippet": "網站購買不包含安裝"
+    "specSnippet": "網站購買不包含安裝",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_62721",
@@ -181,7 +203,8 @@
     "currentPrice": 100,
     "sitePrice": 100,
     "installFee": 0,
-    "specSnippet": "網站購買不包含安裝"
+    "specSnippet": "網站購買不包含安裝",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_31761",
@@ -189,7 +212,8 @@
     "currentPrice": 300,
     "sitePrice": 300,
     "installFee": 100,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄100"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄100",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7538",
@@ -197,7 +221,8 @@
     "currentPrice": 350,
     "sitePrice": 350,
     "installFee": 50,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄50"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄50",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7514",
@@ -205,7 +230,8 @@
     "currentPrice": 1100,
     "sitePrice": 1100,
     "installFee": 100,
-    "specSnippet": "網站購買不包含安裝，如需安裝費用＄100"
+    "specSnippet": "網站購買不包含安裝，如需安裝費用＄100",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7512",
@@ -213,7 +239,8 @@
     "currentPrice": 900,
     "sitePrice": 900,
     "installFee": 100,
-    "specSnippet": "網站購買不包含安裝，如需安裝費用＄100"
+    "specSnippet": "網站購買不包含安裝，如需安裝費用＄100",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7509",
@@ -221,7 +248,8 @@
     "currentPrice": 400,
     "sitePrice": 400,
     "installFee": 0,
-    "specSnippet": "網站購買不包含安裝，如需安裝費用＄0"
+    "specSnippet": "網站購買不包含安裝，如需安裝費用＄0",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7508",
@@ -229,7 +257,8 @@
     "currentPrice": 100,
     "sitePrice": 100,
     "installFee": 0,
-    "specSnippet": "網站購買不包含安裝"
+    "specSnippet": "網站購買不包含安裝",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7510",
@@ -237,7 +266,8 @@
     "currentPrice": 1300,
     "sitePrice": 1300,
     "installFee": 200,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄200"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄200",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7568",
@@ -245,7 +275,8 @@
     "currentPrice": 450,
     "sitePrice": 450,
     "installFee": 0,
-    "specSnippet": "網站購買不包含安裝"
+    "specSnippet": "網站購買不包含安裝",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7577",
@@ -253,7 +284,8 @@
     "currentPrice": 300,
     "sitePrice": 300,
     "installFee": 0,
-    "specSnippet": "網站購買不包含安裝"
+    "specSnippet": "網站購買不包含安裝",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_114539",
@@ -261,7 +293,8 @@
     "currentPrice": 400,
     "sitePrice": 400,
     "installFee": 0,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄0"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄0",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_109921",
@@ -269,7 +302,8 @@
     "currentPrice": 500,
     "sitePrice": 500,
     "installFee": 0,
-    "specSnippet": ""
+    "specSnippet": "",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_101751",
@@ -277,7 +311,8 @@
     "currentPrice": 500,
     "sitePrice": 600,
     "installFee": 0,
-    "specSnippet": "網站購買不包含安裝"
+    "specSnippet": "網站購買不包含安裝",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7567",
@@ -285,23 +320,26 @@
     "currentPrice": 100,
     "sitePrice": 100,
     "installFee": 0,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄0"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄0",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7550",
     "name": "呱樂電驢 - 螢幕保護貼 ( Model 3/Y各型號 )",
-    "currentPrice": 1000,
-    "sitePrice": 850,
+    "currentPrice": 0,
+    "sitePrice": 0,
     "installFee": 150,
-    "specSnippet": "適用車型如選項所示，提供高清版與四效合一，網站購買不包含安裝，安裝費用＄150"
+    "specSnippet": "適用車型如選項所示，提供高清版與四效合一，網站購買不包含安裝，安裝費用＄150",
+    "isPendingConfirm": true
   },
   {
     "id": "quack_19134",
     "name": "呱樂電驢 - 前後門檻四件套( 煥新版 Model 3/Y)",
-    "currentPrice": 2000,
-    "sitePrice": 2000,
+    "currentPrice": 0,
+    "sitePrice": 0,
     "installFee": 400,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄400"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄400",
+    "isPendingConfirm": true
   },
   {
     "id": "quack_7536",
@@ -309,7 +347,8 @@
     "currentPrice": 600,
     "sitePrice": 600,
     "installFee": 50,
-    "specSnippet": "網站購買無安裝，如需安裝費用＄50"
+    "specSnippet": "網站購買無安裝，如需安裝費用＄50",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_62967",
@@ -317,7 +356,8 @@
     "currentPrice": 1000,
     "sitePrice": 1000,
     "installFee": 200,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄200"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄200",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_62991",
@@ -325,7 +365,8 @@
     "currentPrice": 1800,
     "sitePrice": 1800,
     "installFee": 200,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄200"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄200",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_31762",
@@ -333,7 +374,8 @@
     "currentPrice": 300,
     "sitePrice": 300,
     "installFee": 0,
-    "specSnippet": "網站購買不包含安裝"
+    "specSnippet": "網站購買不包含安裝",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7580",
@@ -341,7 +383,8 @@
     "currentPrice": 300,
     "sitePrice": 300,
     "installFee": 50,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄50"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄50",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7530",
@@ -349,7 +392,8 @@
     "currentPrice": 1200,
     "sitePrice": 1200,
     "installFee": 100,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄100"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄100",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7557",
@@ -357,7 +401,8 @@
     "currentPrice": 1200,
     "sitePrice": 1200,
     "installFee": 0,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄0"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄0",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7558",
@@ -365,7 +410,8 @@
     "currentPrice": 1500,
     "sitePrice": 1500,
     "installFee": 100,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄100"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄100",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7569",
@@ -373,7 +419,8 @@
     "currentPrice": 500,
     "sitePrice": 500,
     "installFee": 50,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄50"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄50",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7541",
@@ -381,7 +428,8 @@
     "currentPrice": 500,
     "sitePrice": 500,
     "installFee": 0,
-    "specSnippet": ""
+    "specSnippet": "",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7547",
@@ -389,7 +437,8 @@
     "currentPrice": 300,
     "sitePrice": 300,
     "installFee": 0,
-    "specSnippet": ""
+    "specSnippet": "",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7579",
@@ -397,7 +446,8 @@
     "currentPrice": 450,
     "sitePrice": 450,
     "installFee": 50,
-    "specSnippet": "安裝費用＄50"
+    "specSnippet": "安裝費用＄50",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_62912",
@@ -405,7 +455,8 @@
     "currentPrice": 1200,
     "sitePrice": 1200,
     "installFee": 50,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄50"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄50",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_31760",
@@ -413,7 +464,8 @@
     "currentPrice": 900,
     "sitePrice": 900,
     "installFee": 50,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄50"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄50",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_31759",
@@ -421,15 +473,17 @@
     "currentPrice": 900,
     "sitePrice": 900,
     "installFee": 100,
-    "specSnippet": "安裝費用＄100"
+    "specSnippet": "安裝費用＄100",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7572",
     "name": "呱樂電驢 - 後廂開口防刮底座( 煥新版 Model 3 2024+ )",
-    "currentPrice": 1000,
-    "sitePrice": 1000,
+    "currentPrice": 0,
+    "sitePrice": 0,
     "installFee": 50,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄50"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄50",
+    "isPendingConfirm": true
   },
   {
     "id": "quack_7507",
@@ -437,7 +491,8 @@
     "currentPrice": 900,
     "sitePrice": 900,
     "installFee": 100,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄100"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄100",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7506",
@@ -445,7 +500,8 @@
     "currentPrice": 900,
     "sitePrice": 900,
     "installFee": 50,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄50"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄50",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7505",
@@ -453,7 +509,8 @@
     "currentPrice": 900,
     "sitePrice": 900,
     "installFee": 100,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄100"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄100",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7504",
@@ -461,7 +518,8 @@
     "currentPrice": 1800,
     "sitePrice": 1800,
     "installFee": 200,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄200"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄200",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_111152",
@@ -469,7 +527,8 @@
     "currentPrice": 2800,
     "sitePrice": 2800,
     "installFee": 200,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄200"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄200",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_111151",
@@ -477,7 +536,8 @@
     "currentPrice": 900,
     "sitePrice": 900,
     "installFee": 50,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄50"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄50",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_111150",
@@ -485,7 +545,8 @@
     "currentPrice": 3800,
     "sitePrice": 3800,
     "installFee": 100,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄100"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄100",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_111121",
@@ -493,7 +554,8 @@
     "currentPrice": 4800,
     "sitePrice": 4800,
     "installFee": 400,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄400"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄400",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_111117",
@@ -501,7 +563,8 @@
     "currentPrice": 3500,
     "sitePrice": 3500,
     "installFee": 200,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄200"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄200",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_110840",
@@ -509,7 +572,8 @@
     "currentPrice": 4700,
     "sitePrice": 4700,
     "installFee": 200,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄200"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄200",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_110838",
@@ -517,7 +581,8 @@
     "currentPrice": 3300,
     "sitePrice": 3300,
     "installFee": 200,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄200"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄200",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_110837",
@@ -525,7 +590,8 @@
     "currentPrice": 3500,
     "sitePrice": 3500,
     "installFee": 300,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄300"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄300",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_110836",
@@ -533,7 +599,8 @@
     "currentPrice": 5200,
     "sitePrice": 5200,
     "installFee": 300,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄300"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄300",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_110835",
@@ -541,7 +608,8 @@
     "currentPrice": 2800,
     "sitePrice": 2800,
     "installFee": 100,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄100"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄100",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_110832",
@@ -549,7 +617,8 @@
     "currentPrice": 2800,
     "sitePrice": 2800,
     "installFee": 100,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄100"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄100",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_110830",
@@ -557,7 +626,8 @@
     "currentPrice": 3200,
     "sitePrice": 3200,
     "installFee": 100,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄100"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄100",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_109853",
@@ -565,7 +635,8 @@
     "currentPrice": 3300,
     "sitePrice": 3300,
     "installFee": 100,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄100"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄100",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_109710",
@@ -573,7 +644,8 @@
     "currentPrice": 3500,
     "sitePrice": 3500,
     "installFee": 100,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄100"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄100",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7574",
@@ -581,7 +653,8 @@
     "currentPrice": 600,
     "sitePrice": 600,
     "installFee": 100,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄100"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄100",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7561",
@@ -589,7 +662,8 @@
     "currentPrice": 1500,
     "sitePrice": 1500,
     "installFee": 50,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄50"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄50",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7554",
@@ -597,7 +671,8 @@
     "currentPrice": 500,
     "sitePrice": 500,
     "installFee": 200,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄200"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄200",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7549",
@@ -605,7 +680,8 @@
     "currentPrice": 900,
     "sitePrice": 900,
     "installFee": 50,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄50"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄50",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7535",
@@ -613,7 +689,8 @@
     "currentPrice": 1500,
     "sitePrice": 1500,
     "installFee": 100,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄100"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄100",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7534",
@@ -621,7 +698,8 @@
     "currentPrice": 1300,
     "sitePrice": 1300,
     "installFee": 50,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄50"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄50",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7532",
@@ -629,7 +707,8 @@
     "currentPrice": 2500,
     "sitePrice": 2500,
     "installFee": 200,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄200"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄200",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_96896",
@@ -637,7 +716,8 @@
     "currentPrice": 1500,
     "sitePrice": 1500,
     "installFee": 200,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄200"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄200",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_45837",
@@ -645,7 +725,8 @@
     "currentPrice": 4500,
     "sitePrice": 4500,
     "installFee": 200,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄200"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄200",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_96898",
@@ -653,7 +734,8 @@
     "currentPrice": 1500,
     "sitePrice": 1500,
     "installFee": 200,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄200"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄200",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7499",
@@ -661,7 +743,8 @@
     "currentPrice": 4500,
     "sitePrice": 4500,
     "installFee": 200,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄200"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄200",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7500",
@@ -669,7 +752,8 @@
     "currentPrice": 1500,
     "sitePrice": 1500,
     "installFee": 200,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄200"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄200",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7494",
@@ -677,7 +761,8 @@
     "currentPrice": 4500,
     "sitePrice": 4500,
     "installFee": 200,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄200"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄200",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7552",
@@ -685,7 +770,8 @@
     "currentPrice": 3000,
     "sitePrice": 3000,
     "installFee": 100,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄100"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄100",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7503",
@@ -693,7 +779,8 @@
     "currentPrice": 2800,
     "sitePrice": 2800,
     "installFee": 700,
-    "specSnippet": "安裝費用＄700"
+    "specSnippet": "安裝費用＄700",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7497",
@@ -701,7 +788,8 @@
     "currentPrice": 100,
     "sitePrice": 100,
     "installFee": 0,
-    "specSnippet": ""
+    "specSnippet": "",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7544",
@@ -709,15 +797,17 @@
     "currentPrice": 1500,
     "sitePrice": 1500,
     "installFee": 0,
-    "specSnippet": ""
+    "specSnippet": "",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_130374",
     "name": "呱樂電驢 - 19吋輪框節能蓋-【P2款】( Model Y 2025+)",
-    "currentPrice": 3600,
-    "sitePrice": 3600,
+    "currentPrice": 0,
+    "sitePrice": 0,
     "installFee": 0,
-    "specSnippet": ""
+    "specSnippet": "",
+    "isPendingConfirm": true
   },
   {
     "id": "quack_130372",
@@ -725,7 +815,8 @@
     "currentPrice": 3600,
     "sitePrice": 3600,
     "installFee": 300,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄300"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄300",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_126485",
@@ -733,7 +824,8 @@
     "currentPrice": 3600,
     "sitePrice": 3600,
     "installFee": 300,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄300"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄300",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_95734",
@@ -741,7 +833,8 @@
     "currentPrice": 3600,
     "sitePrice": 3600,
     "installFee": 300,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄300"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄300",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_118778",
@@ -749,7 +842,8 @@
     "currentPrice": 3600,
     "sitePrice": 3600,
     "installFee": 300,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄300"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄300",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_95713",
@@ -757,7 +851,8 @@
     "currentPrice": 3600,
     "sitePrice": 3600,
     "installFee": 300,
-    "specSnippet": "安裝費用＄300"
+    "specSnippet": "安裝費用＄300",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_18840",
@@ -765,7 +860,8 @@
     "currentPrice": 3600,
     "sitePrice": 3600,
     "installFee": 300,
-    "specSnippet": "安裝費用＄300"
+    "specSnippet": "安裝費用＄300",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_95728",
@@ -773,7 +869,8 @@
     "currentPrice": 3600,
     "sitePrice": 3600,
     "installFee": 300,
-    "specSnippet": "安裝費用＄300"
+    "specSnippet": "安裝費用＄300",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_95712",
@@ -781,7 +878,8 @@
     "currentPrice": 3600,
     "sitePrice": 3600,
     "installFee": 300,
-    "specSnippet": "安裝費用＄300"
+    "specSnippet": "安裝費用＄300",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_39912",
@@ -789,7 +887,8 @@
     "currentPrice": 3600,
     "sitePrice": 3600,
     "installFee": 300,
-    "specSnippet": "安裝費用＄300"
+    "specSnippet": "安裝費用＄300",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_95716",
@@ -797,7 +896,8 @@
     "currentPrice": 3600,
     "sitePrice": 3600,
     "installFee": 300,
-    "specSnippet": "安裝費用＄300"
+    "specSnippet": "安裝費用＄300",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_103698",
@@ -805,7 +905,8 @@
     "currentPrice": 3600,
     "sitePrice": 3600,
     "installFee": 300,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄300"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄300",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_103699",
@@ -813,7 +914,8 @@
     "currentPrice": 3600,
     "sitePrice": 3600,
     "installFee": 300,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄300"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄300",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_95732",
@@ -821,7 +923,8 @@
     "currentPrice": 3600,
     "sitePrice": 3600,
     "installFee": 300,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄300"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄300",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_18843",
@@ -829,7 +932,8 @@
     "currentPrice": 3600,
     "sitePrice": 3600,
     "installFee": 300,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄300"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄300",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_95680",
@@ -837,7 +941,8 @@
     "currentPrice": 3600,
     "sitePrice": 3600,
     "installFee": 300,
-    "specSnippet": "安裝費用＄300"
+    "specSnippet": "安裝費用＄300",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_95681",
@@ -845,7 +950,8 @@
     "currentPrice": 3600,
     "sitePrice": 3600,
     "installFee": 300,
-    "specSnippet": "安裝費用＄300"
+    "specSnippet": "安裝費用＄300",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_95679",
@@ -853,7 +959,8 @@
     "currentPrice": 3600,
     "sitePrice": 3600,
     "installFee": 300,
-    "specSnippet": "安裝費用＄300"
+    "specSnippet": "安裝費用＄300",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7517",
@@ -861,7 +968,8 @@
     "currentPrice": 3600,
     "sitePrice": 3600,
     "installFee": 300,
-    "specSnippet": "安裝費用＄300"
+    "specSnippet": "安裝費用＄300",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_95682",
@@ -869,7 +977,8 @@
     "currentPrice": 3600,
     "sitePrice": 3600,
     "installFee": 300,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄300"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄300",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_95678",
@@ -877,7 +986,8 @@
     "currentPrice": 3600,
     "sitePrice": 3600,
     "installFee": 300,
-    "specSnippet": "安裝費用＄300"
+    "specSnippet": "安裝費用＄300",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_18842",
@@ -885,7 +995,8 @@
     "currentPrice": 3600,
     "sitePrice": 3600,
     "installFee": 300,
-    "specSnippet": "安裝費用＄300"
+    "specSnippet": "安裝費用＄300",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_18841",
@@ -893,7 +1004,8 @@
     "currentPrice": 3600,
     "sitePrice": 3600,
     "installFee": 300,
-    "specSnippet": "安裝費用＄300"
+    "specSnippet": "安裝費用＄300",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7523",
@@ -901,7 +1013,8 @@
     "currentPrice": 3600,
     "sitePrice": 3600,
     "installFee": 300,
-    "specSnippet": "安裝費用＄300"
+    "specSnippet": "安裝費用＄300",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7519",
@@ -909,7 +1022,8 @@
     "currentPrice": 3600,
     "sitePrice": 3600,
     "installFee": 300,
-    "specSnippet": "安裝費用＄300"
+    "specSnippet": "安裝費用＄300",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_18838",
@@ -917,7 +1031,8 @@
     "currentPrice": 3600,
     "sitePrice": 3600,
     "installFee": 300,
-    "specSnippet": "安裝費用＄300"
+    "specSnippet": "安裝費用＄300",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_18839",
@@ -925,15 +1040,17 @@
     "currentPrice": 3000,
     "sitePrice": 3000,
     "installFee": 0,
-    "specSnippet": ""
+    "specSnippet": "",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7564",
     "name": "呱樂電驢 - 節能蓋MY-21吋（F款）",
-    "currentPrice": 2000,
-    "sitePrice": 2000,
+    "currentPrice": 0,
+    "sitePrice": 0,
     "installFee": 0,
-    "specSnippet": ""
+    "specSnippet": "",
+    "isPendingConfirm": true
   },
   {
     "id": "quack_36269",
@@ -941,7 +1058,8 @@
     "currentPrice": 2500,
     "sitePrice": 2500,
     "installFee": 0,
-    "specSnippet": "網站購買不包含安裝"
+    "specSnippet": "網站購買不包含安裝",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7587",
@@ -949,7 +1067,8 @@
     "currentPrice": 6500,
     "sitePrice": 6500,
     "installFee": 0,
-    "specSnippet": ""
+    "specSnippet": "",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7540",
@@ -957,7 +1076,8 @@
     "currentPrice": 2500,
     "sitePrice": 2500,
     "installFee": 0,
-    "specSnippet": "安裝費用＄0"
+    "specSnippet": "安裝費用＄0",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7526",
@@ -965,7 +1085,8 @@
     "currentPrice": 5200,
     "sitePrice": 5200,
     "installFee": 0,
-    "specSnippet": "極致紋理款安裝費用＄0"
+    "specSnippet": "極致紋理款安裝費用＄0",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_119999",
@@ -973,7 +1094,8 @@
     "currentPrice": 990,
     "sitePrice": 1300,
     "installFee": 0,
-    "specSnippet": "網站購買不包含安裝"
+    "specSnippet": "網站購買不包含安裝",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_119313",
@@ -981,7 +1103,8 @@
     "currentPrice": 300,
     "sitePrice": 300,
     "installFee": 0,
-    "specSnippet": ""
+    "specSnippet": "",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_118777",
@@ -989,7 +1112,8 @@
     "currentPrice": 800,
     "sitePrice": 800,
     "installFee": 0,
-    "specSnippet": ""
+    "specSnippet": "",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_115154",
@@ -997,7 +1121,8 @@
     "currentPrice": 250,
     "sitePrice": 250,
     "installFee": 0,
-    "specSnippet": ""
+    "specSnippet": "",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_108953",
@@ -1005,7 +1130,8 @@
     "currentPrice": 2550,
     "sitePrice": 2550,
     "installFee": 0,
-    "specSnippet": ""
+    "specSnippet": "",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_101393",
@@ -1013,7 +1139,8 @@
     "currentPrice": 500,
     "sitePrice": 500,
     "installFee": 0,
-    "specSnippet": "網站購買不包含安裝"
+    "specSnippet": "網站購買不包含安裝",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7589",
@@ -1021,7 +1148,8 @@
     "currentPrice": 2100,
     "sitePrice": 2100,
     "installFee": 100,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄100"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄100",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7585",
@@ -1029,7 +1157,8 @@
     "currentPrice": 500,
     "sitePrice": 500,
     "installFee": 0,
-    "specSnippet": ""
+    "specSnippet": "",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7583",
@@ -1037,7 +1166,8 @@
     "currentPrice": 50,
     "sitePrice": 50,
     "installFee": 0,
-    "specSnippet": "網站購買不包含安裝"
+    "specSnippet": "網站購買不包含安裝",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7581",
@@ -1045,7 +1175,8 @@
     "currentPrice": 300,
     "sitePrice": 300,
     "installFee": 100,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄100"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄100",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7575",
@@ -1053,7 +1184,8 @@
     "currentPrice": 300,
     "sitePrice": 300,
     "installFee": 0,
-    "specSnippet": ""
+    "specSnippet": "",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7571",
@@ -1061,7 +1193,8 @@
     "currentPrice": 300,
     "sitePrice": 300,
     "installFee": 0,
-    "specSnippet": ""
+    "specSnippet": "",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7560",
@@ -1069,7 +1202,8 @@
     "currentPrice": 100,
     "sitePrice": 100,
     "installFee": 0,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄0"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄0",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7559",
@@ -1077,7 +1211,8 @@
     "currentPrice": 800,
     "sitePrice": 800,
     "installFee": 100,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄100"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄100",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7556",
@@ -1085,7 +1220,8 @@
     "currentPrice": 1000,
     "sitePrice": 1000,
     "installFee": 100,
-    "specSnippet": "安裝費用＄100"
+    "specSnippet": "安裝費用＄100",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7553",
@@ -1093,7 +1229,8 @@
     "currentPrice": 300,
     "sitePrice": 300,
     "installFee": 100,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄100"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄100",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_125548",
@@ -1101,7 +1238,8 @@
     "currentPrice": 10000,
     "sitePrice": 10000,
     "installFee": 0,
-    "specSnippet": ""
+    "specSnippet": "",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_108799",
@@ -1109,7 +1247,8 @@
     "currentPrice": 20800,
     "sitePrice": 20800,
     "installFee": 0,
-    "specSnippet": "網站價格為完工價，無寄送"
+    "specSnippet": "網站價格為完工價，無寄送",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_54927",
@@ -1117,7 +1256,8 @@
     "currentPrice": 16000,
     "sitePrice": 16000,
     "installFee": 0,
-    "specSnippet": ""
+    "specSnippet": "",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_43297",
@@ -1125,7 +1265,8 @@
     "currentPrice": 4200,
     "sitePrice": 4200,
     "installFee": 0,
-    "specSnippet": "網站價格為完工價，寄送僅限『椅墊款』"
+    "specSnippet": "網站價格為完工價，寄送僅限『椅墊款』",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_36268",
@@ -1133,7 +1274,8 @@
     "currentPrice": 13000,
     "sitePrice": 13000,
     "installFee": 0,
-    "specSnippet": "網站價格為完工價，無寄送"
+    "specSnippet": "網站價格為完工價，無寄送",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_36267",
@@ -1141,7 +1283,8 @@
     "currentPrice": 13000,
     "sitePrice": 13000,
     "installFee": 0,
-    "specSnippet": "網站價格為完工價，無寄送"
+    "specSnippet": "網站價格為完工價，無寄送",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_36204",
@@ -1149,7 +1292,8 @@
     "currentPrice": 13000,
     "sitePrice": 13000,
     "installFee": 0,
-    "specSnippet": "網站價格為完工價，無寄送"
+    "specSnippet": "網站價格為完工價，無寄送",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_36203",
@@ -1157,7 +1301,8 @@
     "currentPrice": 7500,
     "sitePrice": 7500,
     "installFee": 0,
-    "specSnippet": "網站價格為完工價，無寄送"
+    "specSnippet": "網站價格為完工價，無寄送",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_36202",
@@ -1165,7 +1310,8 @@
     "currentPrice": 9500,
     "sitePrice": 9500,
     "installFee": 0,
-    "specSnippet": "網站價格為完工價，無寄送"
+    "specSnippet": "網站價格為完工價，無寄送",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_36201",
@@ -1173,7 +1319,8 @@
     "currentPrice": 5000,
     "sitePrice": 5000,
     "installFee": 0,
-    "specSnippet": "網站價格為完工價，無寄送"
+    "specSnippet": "網站價格為完工價，無寄送",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_36200",
@@ -1181,7 +1328,8 @@
     "currentPrice": 12000,
     "sitePrice": 12000,
     "installFee": 0,
-    "specSnippet": "網站價格為完工價，無寄送"
+    "specSnippet": "網站價格為完工價，無寄送",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7573",
@@ -1189,7 +1337,8 @@
     "currentPrice": 7000,
     "sitePrice": 7000,
     "installFee": 0,
-    "specSnippet": "網站價格為完工價，無寄送"
+    "specSnippet": "網站價格為完工價，無寄送",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_76510",
@@ -1197,7 +1346,8 @@
     "currentPrice": 500,
     "sitePrice": 500,
     "installFee": 0,
-    "specSnippet": "網站購買不包含安裝"
+    "specSnippet": "網站購買不包含安裝",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_37227",
@@ -1205,7 +1355,8 @@
     "currentPrice": 1600,
     "sitePrice": 1600,
     "installFee": 0,
-    "specSnippet": "網站購買不包含安裝"
+    "specSnippet": "網站購買不包含安裝",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_103760",
@@ -1213,7 +1364,8 @@
     "currentPrice": 1300,
     "sitePrice": 1300,
     "installFee": 300,
-    "specSnippet": "網站購買不包含安裝，安裝費用＄300(含延長線組)"
+    "specSnippet": "網站購買不包含安裝，安裝費用＄300(含延長線組)",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_100613",
@@ -1221,7 +1373,8 @@
     "currentPrice": 1400,
     "sitePrice": 1400,
     "installFee": 0,
-    "specSnippet": "網站購買不包含安裝"
+    "specSnippet": "網站購買不包含安裝",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_100558",
@@ -1229,7 +1382,8 @@
     "currentPrice": 800,
     "sitePrice": 800,
     "installFee": 0,
-    "specSnippet": "網站購買不包含安裝"
+    "specSnippet": "網站購買不包含安裝",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_100323",
@@ -1237,7 +1391,8 @@
     "currentPrice": 1100,
     "sitePrice": 1100,
     "installFee": 0,
-    "specSnippet": "網站購買不包含安裝"
+    "specSnippet": "網站購買不包含安裝",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_99892",
@@ -1245,14 +1400,16 @@
     "currentPrice": 2400,
     "sitePrice": 2400,
     "installFee": 0,
-    "specSnippet": "網站購買不包含安裝"
+    "specSnippet": "網站購買不包含安裝",
+    "isPendingConfirm": false
   },
   {
     "id": "quack_94815",
     "name": "呱樂電驢 - JOWUA 全系列商品代理",
-    "currentPrice": 1000,
-    "sitePrice": 1000,
+    "currentPrice": 0,
+    "sitePrice": 0,
     "installFee": 0,
-    "specSnippet": ""
+    "specSnippet": "",
+    "isPendingConfirm": true
   }
 ]
