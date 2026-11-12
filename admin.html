@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260923">
+  <link rel="stylesheet" href="css/style.css?v=20261112_v105">
   <style>
     .admin-grid {
       display: grid;
@@ -333,6 +333,7 @@
           <option value="jowua_95">🏷️ JOWUA 代購 95 折</option>
           <option value="quack_installed">✅ 呱樂已含安裝費</option>
           <option value="pending">❓ 待確認 (門市例外項目)</option>
+          <option value="overridden">✏️ 後台自訂調整項目</option>
         </select>
       </div>
 
@@ -340,23 +341,37 @@
         <label for="adminSearchInput">🔍 關鍵字搜尋：</label>
         <input type="text" id="adminSearchInput" class="filter-input" placeholder="搜尋商品名稱、品牌、SKU..." onkeyup="renderMasterTable()">
       </div>
+
+      <!-- Quick Action Buttons for Abnormal/Pending Items & Database Export -->
+      <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; width: 100%; margin-top: 0.5rem; padding-top: 0.65rem; border-top: 1px dashed var(--border-color);">
+        <button id="btnQuickPending" type="button" class="btn" style="background: rgba(245, 158, 11, 0.15); border: 1.5px solid #f59e0b; color: #fbbf24; font-weight: 700; border-radius: var(--radius-sm); padding: 0.45rem 0.95rem; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem;">
+          ⚠️ 快速篩選：待確認 / 異常項目 (<span id="quickPendingCount">0</span> 件)
+        </button>
+        <button id="btnQuickOverridden" type="button" class="btn" style="background: rgba(56, 189, 248, 0.15); border: 1.5px solid #38bdf8; color: #38bdf8; font-weight: 700; border-radius: var(--radius-sm); padding: 0.45rem 0.95rem; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem;">
+          ✏️ 檢視已自訂調整項目 (<span id="quickOverriddenCount">0</span> 件)
+        </button>
+        <button id="btnExportJson" type="button" class="btn" style="margin-left: auto; background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-bright); font-weight: 600; border-radius: var(--radius-sm); padding: 0.45rem 1rem; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem;">
+          📥 匯出資料庫 (store.json)
+        </button>
+      </div>
     </div>
 
     <table class="audit-table">
       <thead>
         <tr>
-          <th style="width: 45px;">#</th>
-          <th style="width: 120px;">來源品牌</th>
+          <th style="width: 40px;">#</th>
+          <th style="width: 110px;">來源品牌</th>
           <th>商品名稱</th>
-          <th style="width: 100px;">類型</th>
-          <th style="width: 170px;">官網價 vs 報價金額</th>
-          <th style="width: 140px;">安裝與折扣標籤</th>
-          <th style="width: 200px;">適用車型與版本</th>
-          <th style="width: 110px;">官方頁面</th>
+          <th style="width: 85px;">類型</th>
+          <th style="width: 160px;">官網價 vs 報價金額</th>
+          <th style="width: 130px;">安裝與折扣標籤</th>
+          <th style="width: 180px;">適用車型與版本</th>
+          <th style="width: 110px; text-align: center;">操作 / 調整</th>
+          <th style="width: 90px;">官方頁面</th>
         </tr>
       </thead>
       <tbody id="masterInventoryBody">
-        <tr><td colspan="8" style="text-align: center;">正在載入商品主清單...</td></tr>
+        <tr><td colspan="9" style="text-align: center;">正在載入商品主清單...</td></tr>
       </tbody>
     </table>
 
@@ -404,9 +419,18 @@
   </main>
 </div>
 
-  <script>
+    <script type="module">
+    import {
+      getCustomOverrides,
+      saveCustomOverride,
+      removeCustomOverride,
+      clearAllCustomOverrides,
+      applyCustomOverrides
+    } from './js/overrides.js?v=20261112_v105';
+
     let allMasterProducts = [];
     let currentModelCounts = {};
+    let currentEditingProductId = null;
 
     const MODEL_NAMES = {
       'all': '全車型通用',
@@ -424,7 +448,7 @@
     function getAuthHeader() {
       const token = sessionStorage.getItem('adminToken') || '';
       return {
-        'Authorization': `Bearer ${token}`,
+        'Authorization': 'Bearer ' + token,
         'X-Admin-Token': token,
         'Content-Type': 'application/json'
       };
@@ -437,20 +461,20 @@
       const btnLogout = document.getElementById('btnLogout');
 
       if (!token) {
-        modal.style.display = 'flex';
-        content.style.filter = 'blur(10px)';
+        if (modal) modal.style.display = 'flex';
+        if (content) content.style.filter = 'blur(10px)';
         if (btnLogout) btnLogout.style.display = 'none';
         return false;
       }
 
-      modal.style.display = 'none';
-      content.style.filter = 'none';
+      if (modal) modal.style.display = 'none';
+      if (content) content.style.filter = 'none';
       if (btnLogout) btnLogout.style.display = 'inline-flex';
       return true;
     }
 
     async function handleLoginSubmit(e) {
-      e.preventDefault();
+      if (e) e.preventDefault();
       const username = document.getElementById('loginUsername').value.trim();
       const password = document.getElementById('loginPassword').value.trim();
       const errorBox = document.getElementById('loginErrorMsg');
@@ -528,15 +552,15 @@
           currentModelCounts = data.modelCounts || {};
 
           document.getElementById('mSitemaps').innerText = s.sitemapsFound || 0;
-          document.getElementById('mPages').innerText = `${s.categoryPagesCrawled || 0} 分類 / ${s.paginationPagesCrawled || 0} 頁`;
+          document.getElementById('mPages').innerText = (s.categoryPagesCrawled || 0) + ' 分類 / ' + (s.paginationPagesCrawled || 0) + ' 頁';
           document.getElementById('mTotalUrls').innerText = s.totalUrlsDiscovered || 0;
-          document.getElementById('mDedup').innerText = `${s.preDedupCount || 0} / ${s.postDedupCount || 0}`;
+          document.getElementById('mDedup').innerText = (s.preDedupCount || 0) + ' / ' + (s.postDedupCount || 0);
           document.getElementById('mSuccess').innerText = s.successfulCount || 0;
-          document.getElementById('mChanges').innerText = `+${s.addedCount || 0} / ~${s.updatedCount || 0} / -${s.delistedCount || 0}`;
+          document.getElementById('mChanges').innerText = '+' + (s.addedCount || 0) + ' / ~' + (s.updatedCount || 0) + ' / -' + (s.delistedCount || 0);
           document.getElementById('lastSyncTime').innerText = s.lastSyncTime ? new Date(s.lastSyncTime).toLocaleString('zh-TW') : '尚無同步紀錄';
 
           Object.keys(currentModelCounts).forEach(mId => {
-            const el = document.getElementById(`cnt-${mId}`);
+            const el = document.getElementById('cnt-' + mId);
             if (el) el.innerText = currentModelCounts[mId];
           });
 
@@ -547,7 +571,7 @@
             banner.innerHTML = '✅ <strong>完整收錄驗收通過：</strong> 所有 Sitemap、分類及分頁均已讀取完成，0 個失敗網址。';
           } else {
             banner.className = 'warning-banner warn';
-            banner.innerHTML = `⚠️ <strong>發現 ${failed.length} 個網址擷取異常：</strong> 系統已寫入失敗紀錄並進行多次重試。`;
+            banner.innerHTML = '⚠️ <strong>發現 ' + failed.length + ' 個網址擷取異常：</strong> 系統已寫入失敗紀錄並進行多次重試。';
           }
           return;
         }
@@ -563,9 +587,9 @@
       document.getElementById('mSitemaps').innerText = '2 (Jowua / 呱樂)';
       document.getElementById('mPages').innerText = '32 分類 / 89 頁';
       document.getElementById('mTotalUrls').innerText = allMasterProducts.length;
-      document.getElementById('mDedup').innerText = `${allMasterProducts.length} / ${allMasterProducts.length}`;
+      document.getElementById('mDedup').innerText = allMasterProducts.length + ' / ' + allMasterProducts.length;
       document.getElementById('mSuccess').innerText = allMasterProducts.length;
-      document.getElementById('mChanges').innerText = `+${allMasterProducts.length} / ~0 / -0`;
+      document.getElementById('mChanges').innerText = '+' + allMasterProducts.length + ' / ~0 / -0';
       document.getElementById('lastSyncTime').innerText = new Date().toLocaleString('zh-TW');
 
       const modelCounts = { all: allMasterProducts.length };
@@ -578,18 +602,38 @@
       });
 
       Object.keys(modelCounts).forEach(mId => {
-        const el = document.getElementById(`cnt-${mId}`);
+        const el = document.getElementById('cnt-' + mId);
         if (el) el.innerText = modelCounts[mId];
       });
 
       const banner = document.getElementById('statusBanner');
       banner.className = 'warning-banner success';
-      banner.innerHTML = `✅ <strong>完整收錄驗收通過：</strong> 靜態雲端資料庫已就緒，收錄 ${allMasterProducts.length} 項官方商品與套餐組合，0 個異常網址。`;
+      banner.innerHTML = '✅ <strong>完整收錄驗收通過：</strong> 靜態雲端資料庫已就緒，收錄 ' + allMasterProducts.length + ' 項官方商品與套餐組合，0 個異常網址。';
 
       const errorBody = document.getElementById('errorBody');
       if (errorBody) {
         errorBody.innerHTML = '<tr><td colspan="3" style="text-align: center; color: var(--text-dim);">完美！無任何失敗網址。</td></tr>';
       }
+    }
+
+    function updateQuickFilterCounts() {
+      const overrides = getCustomOverrides();
+      const overriddenIds = Object.keys(overrides);
+
+      let pendingCount = 0;
+      let overriddenCount = 0;
+
+      allMasterProducts.forEach(item => {
+        const isPending = !!(item.isPendingConfirm || item.price === 0 || !item.price || item.priceRange === '價格待確認');
+        if (isPending) pendingCount++;
+        if (item.isCustomOverridden || overriddenIds.includes(item.id)) overriddenCount++;
+      });
+
+      const pendingEl = document.getElementById('quickPendingCount');
+      if (pendingEl) pendingEl.innerText = pendingCount;
+
+      const overEl = document.getElementById('quickOverriddenCount');
+      if (overEl) overEl.innerText = overriddenCount;
     }
 
     async function loadMasterProducts() {
@@ -598,7 +642,9 @@
         if (res.ok) {
           const data = await res.json();
           allMasterProducts = data.products || [];
+          applyCustomOverrides(allMasterProducts);
           renderMasterTable();
+          updateQuickFilterCounts();
           return;
         }
       } catch(e) {
@@ -613,7 +659,9 @@
           ...p,
           source: (p.brand === 'Jowua' || p.storeId === 'jowua' || p.id.startsWith('jowua')) ? 'Jowua Global' : 'QuackEV 呱樂電驢工坊'
         }));
+        applyCustomOverrides(allMasterProducts);
         renderMasterTable();
+        updateQuickFilterCounts();
         computeFallbackStats();
       } catch(err) {
         console.error('Failed to load master products from data.js:', err);
@@ -628,6 +676,7 @@
 
       let filtered = allMasterProducts.filter(item => {
         const isJowua = (item.source && item.source.includes('Jowua')) || (item.id && item.id.includes('jowua'));
+        const isPending = !!(item.isPendingConfirm || item.price === 0 || !item.price || item.priceRange === '價格待確認');
 
         // Store filter
         if (storeId !== 'all') {
@@ -638,8 +687,9 @@
         // Install status filter
         if (installFilter !== 'all') {
           if (installFilter === 'jowua_95' && !isJowua) return false;
-          if (installFilter === 'quack_installed' && (isJowua || item.isPendingConfirm)) return false;
-          if (installFilter === 'pending' && (!item.isPendingConfirm && isJowua)) return false;
+          if (installFilter === 'quack_installed' && (isJowua || isPending)) return false;
+          if (installFilter === 'pending' && !isPending) return false;
+          if (installFilter === 'overridden' && !item.isCustomOverridden) return false;
         }
 
         // Keyword filter
@@ -682,54 +732,269 @@
         return true;
       });
 
-      document.getElementById('filteredCountText').innerText = `顯示 ${filtered.length} / ${allMasterProducts.length} 項商品`;
+      document.getElementById('filteredCountText').innerText = '顯示 ' + filtered.length + ' / ' + allMasterProducts.length + ' 項商品';
 
       const tbody = document.getElementById('masterInventoryBody');
       if (filtered.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; color: var(--text-dim);">沒有符合篩選條件的商品品項。</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="9" style="text-align: center; color: var(--text-dim); padding: 2.5rem 1rem;">沒有符合篩選條件的商品品項。</td></tr>';
         return;
       }
 
       tbody.innerHTML = filtered.map((item, idx) => {
-        const fitBadges = (item.fitment || []).map(f => `<span class="badge-model">${MODEL_NAMES[f] || f}</span>`).join('');
+        const fitBadges = (item.fitment || []).map(f => '<span class="badge-model">' + (MODEL_NAMES[f] || f) + '</span>').join('');
         const typeBadge = item.category === 'bundle' 
           ? '<span style="color:#fbbf24; font-weight:600;">🎁 特惠禮包</span>' 
           : '<span style="color:var(--text-dim);">📦 單品配件</span>';
 
         const isJowua = (item.source && item.source.includes('Jowua')) || (item.id && item.id.includes('jowua'));
+        const isPending = !!(item.isPendingConfirm || item.price === 0 || !item.price || item.priceRange === '價格待確認');
         let priceDisplay = '';
         let ruleBadge = '';
 
         if (isJowua) {
           const discountPrice = Math.round((item.price || 0) * 0.95);
-          priceDisplay = `
-            <div style="font-weight: 800; color: var(--primary);">NT$ ${discountPrice.toLocaleString()}</div>
-            <div style="font-size: 0.75rem; color: var(--text-dim);">JOWUA 官網原價 NT$ ${item.price ? item.price.toLocaleString() : '-'}</div>
-          `;
-          ruleBadge = `<span style="background: rgba(245, 158, 11, 0.15); color: #d97706; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.78rem;">🏷️ 好室代購 95 折</span>`;
+          priceDisplay = '<div style="font-weight: 800; color: var(--primary);">NT$ ' + discountPrice.toLocaleString() + '</div><div style="font-size: 0.75rem; color: var(--text-dim);">JOWUA 官網原價 NT$ ' + (item.price ? item.price.toLocaleString() : '-') + '</div>';
+          ruleBadge = '<span style="background: rgba(245, 158, 11, 0.15); color: #d97706; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.78rem;">🏷️ 好室代購 95 折</span>';
         } else {
-          if (item.isPendingConfirm || item.price === 0 || !item.price || item.priceRange === '價格待確認') {
-            priceDisplay = `<div style="font-weight: 800; color: #f59e0b;">價格待確認</div><div style="font-size: 0.72rem; color: #d97706;">呱樂官網未標價</div>`;
-            ruleBadge = `<span style="background: rgba(245, 158, 11, 0.2); color: #d97706; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.78rem;">❓ 價格待確認</span>`;
+          if (isPending) {
+            priceDisplay = '<div style="font-weight: 800; color: #f59e0b;">價格待確認</div><div style="font-size: 0.72rem; color: #d97706;">官網未標牌價</div>';
+            ruleBadge = '<span style="background: rgba(245, 158, 11, 0.2); color: #d97706; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.78rem;">❓ 價格待確認</span>';
           } else {
-            priceDisplay = `<div style="font-weight: 800; color: var(--text-bright);">NT$ ${item.price ? item.price.toLocaleString() : '-'}</div>`;
-            ruleBadge = `<span style="background: rgba(16, 185, 129, 0.15); color: #059669; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.78rem;">✅ 已含安裝費</span>`;
+            priceDisplay = '<div style="font-weight: 800; color: var(--text-bright);">NT$ ' + (item.price ? item.price.toLocaleString() : '-') + '</div>';
+            ruleBadge = '<span style="background: rgba(16, 185, 129, 0.15); color: #059669; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.78rem;">✅ 已含安裝費</span>';
           }
         }
 
-        return `
-          <tr>
-            <td>${idx + 1}</td>
-            <td><span class="badge" style="background: var(--bg-card-hover); font-weight: 600;">${item.source}</span></td>
-            <td style="font-weight: 600;">${item.name}</td>
-            <td>${typeBadge}</td>
-            <td>${priceDisplay}</td>
-            <td>${ruleBadge}</td>
-            <td>${fitBadges}</td>
-            <td><a href="${item.officialUrl}" target="_blank" style="color: var(--primary); font-weight: 600;">開啟官網頁面 ↗</a></td>
-          </tr>
-        `;
+        const editBtnStyle = isPending 
+          ? 'background: linear-gradient(135deg, #f59e0b, #d97706); color: #fff; border: 1px solid #f59e0b;' 
+          : (item.isCustomOverridden 
+              ? 'background: linear-gradient(135deg, #0284c7, #0369a1); color: #fff; border: 1px solid #38bdf8;' 
+              : 'background: var(--bg-card-hover); color: var(--text-bright); border: 1px solid var(--border-color);');
+
+        const editBtnText = isPending 
+          ? '⚠️ 調整金額' 
+          : (item.isCustomOverridden ? '✏️ 已自訂' : '✏️ 調整');
+
+        return '<tr>' +
+          '<td>' + (idx + 1) + '</td>' +
+          '<td><span class="badge" style="background: var(--bg-card-hover); font-weight: 600;">' + item.source + '</span></td>' +
+          '<td>' +
+            '<div style="font-weight: 600; line-height: 1.35;">' + item.name + '</div>' +
+            '<div style="font-size: 0.75rem; color: var(--text-dim); margin-top: 2px; font-family: monospace;">SKU: ' + item.id + '</div>' +
+          '</td>' +
+          '<td>' + typeBadge + '</td>' +
+          '<td>' + priceDisplay + '</td>' +
+          '<td>' + ruleBadge + '</td>' +
+          '<td>' + fitBadges + '</td>' +
+          '<td style="text-align: center;">' +
+            '<button type="button" class="btn-edit-item" data-id="' + item.id + '" style="padding: 6px 12px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; cursor: pointer; white-space: nowrap; display: inline-flex; align-items: center; gap: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.25); ' + editBtnStyle + '">' +
+              editBtnText +
+            '</button>' +
+          '</td>' +
+          '<td><a href="' + item.officialUrl + '" target="_blank" style="color: var(--primary); font-weight: 600;">開啟官網頁面 ↗</a></td>' +
+        '</tr>';
       }).join('');
+
+      // Bind edit button events
+      tbody.querySelectorAll('.btn-edit-item').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          openEditModal(btn.dataset.id);
+        });
+      });
+
+      updateQuickFilterCounts();
+    }
+
+    function openEditModal(productId) {
+      const item = allMasterProducts.find(p => p.id === productId);
+      if (!item) {
+        alert('找不到該商品資料：' + productId);
+        return;
+      }
+
+      currentEditingProductId = productId;
+
+      document.getElementById('modalItemBrandBadge').innerText = item.source || item.brand || '配件';
+      document.getElementById('modalItemIdText').innerText = 'SKU: ' + item.id;
+      document.getElementById('modalOfficialLink').href = item.officialUrl || '#';
+      document.getElementById('modalProductName').value = item.name || '';
+
+      const isPending = !!(item.isPendingConfirm || item.price === 0 || !item.price || item.priceRange === '價格待確認');
+      document.getElementById('modalIsPendingCheckbox').checked = isPending;
+
+      const price = item.price || 0;
+      const installFee = item.installFee || 0;
+      const partsPrice = item.partsPrice !== undefined ? item.partsPrice : (price > 0 && installFee > 0 ? (price - installFee) : price);
+
+      document.getElementById('modalTotalPrice').value = price;
+      document.getElementById('modalPartsPrice').value = partsPrice;
+      document.getElementById('modalInstallFee').value = installFee;
+      document.getElementById('modalDescription').value = item.description || item.shortDescription || '';
+
+      // Variants
+      const variantsWrapper = document.getElementById('modalVariantsWrapper');
+      const variantsList = document.getElementById('modalVariantsList');
+      const variantsCount = document.getElementById('modalVariantsCount');
+
+      if (item.variants && item.variants.length > 0) {
+        variantsWrapper.style.display = 'block';
+        variantsCount.innerText = item.variants.length;
+        variantsList.innerHTML = item.variants.map((v, vIdx) => {
+          const vPending = !!(v.isPendingConfirm || v.price === 0 || !v.price || v.priceRange === '價格待確認');
+          const vPrice = v.price || 0;
+          const vInstall = v.installFee || 0;
+          const vParts = v.partsPrice !== undefined ? v.partsPrice : (vPrice > 0 && vInstall > 0 ? (vPrice - vInstall) : vPrice);
+
+          return '<div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 10px 12px;">' +
+            '<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">' +
+              '<div style="font-weight: 700; font-size: 0.88rem; color: var(--text-bright);">' + (v.title || v.name || ('規格 ' + (vIdx + 1))) + '</div>' +
+              '<label style="display: inline-flex; align-items: center; gap: 5px; font-size: 0.8rem; color: #fbbf24; cursor: pointer; font-weight: 600;">' +
+                '<input type="checkbox" class="modal-variant-pending" data-variant-id="' + v.id + '" ' + (vPending ? 'checked' : '') + ' style="cursor: pointer; accent-color: #f59e0b;">' +
+                '標註待確認' +
+              '</label>' +
+            '</div>' +
+            '<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">' +
+              '<div>' +
+                '<span style="display: block; font-size: 0.72rem; color: var(--text-dim); margin-bottom: 2px;">完工總價 (NT$)</span>' +
+                '<input type="number" class="modal-variant-price filter-input" data-variant-id="' + v.id + '" value="' + vPrice + '" min="0" step="50" style="width: 100%; padding: 4px 8px; font-size: 0.88rem; font-weight: 700; color: var(--primary);">' +
+              '</div>' +
+              '<div>' +
+                '<span style="display: block; font-size: 0.72rem; color: var(--text-dim); margin-bottom: 2px;">零件價 Parts (NT$)</span>' +
+                '<input type="number" class="modal-variant-parts filter-input" data-variant-id="' + v.id + '" value="' + vParts + '" min="0" step="50" style="width: 100%; padding: 4px 8px; font-size: 0.85rem;">' +
+              '</div>' +
+              '<div>' +
+                '<span style="display: block; font-size: 0.72rem; color: var(--text-dim); margin-bottom: 2px;">工資 Labor (NT$)</span>' +
+                '<input type="number" class="modal-variant-install filter-input" data-variant-id="' + v.id + '" value="' + vInstall + '" min="0" step="50" style="width: 100%; padding: 4px 8px; font-size: 0.85rem;">' +
+              '</div>' +
+            '</div>' +
+          '</div>';
+        }).join('');
+
+        variantsList.querySelectorAll('.modal-variant-parts, .modal-variant-install').forEach(input => {
+          input.addEventListener('input', () => {
+            const vId = input.dataset.variantId;
+            const partsInput = variantsList.querySelector('.modal-variant-parts[data-variant-id="' + vId + '"]');
+            const instInput = variantsList.querySelector('.modal-variant-install[data-variant-id="' + vId + '"]');
+            const priceInput = variantsList.querySelector('.modal-variant-price[data-variant-id="' + vId + '"]');
+            const pendingInput = variantsList.querySelector('.modal-variant-pending[data-variant-id="' + vId + '"]');
+
+            const partsVal = Number(partsInput.value) || 0;
+            const instVal = Number(instInput.value) || 0;
+            const total = partsVal + instVal;
+            priceInput.value = total;
+
+            if (total > 0 && pendingInput.checked) {
+              pendingInput.checked = false;
+            }
+          });
+        });
+      } else {
+        variantsWrapper.style.display = 'none';
+        variantsList.innerHTML = '';
+      }
+
+      document.getElementById('editProductModal').style.display = 'flex';
+    }
+
+    function closeEditModal() {
+      document.getElementById('editProductModal').style.display = 'none';
+      currentEditingProductId = null;
+    }
+
+    async function saveProductEdit() {
+      if (!currentEditingProductId) return;
+      const item = allMasterProducts.find(p => p.id === currentEditingProductId);
+      if (!item) return;
+
+      const name = document.getElementById('modalProductName').value.trim() || item.name;
+      const isPendingConfirm = document.getElementById('modalIsPendingCheckbox').checked;
+      const totalPrice = Number(document.getElementById('modalTotalPrice').value) || 0;
+      const partsPrice = Number(document.getElementById('modalPartsPrice').value) || 0;
+      const installFee = Number(document.getElementById('modalInstallFee').value) || 0;
+      const description = document.getElementById('modalDescription').value.trim();
+
+      const overrideData = {
+        name,
+        price: totalPrice,
+        originalPrice: totalPrice,
+        partsPrice,
+        installFee,
+        isPendingConfirm,
+        priceRange: isPendingConfirm ? '價格待確認' : (totalPrice > 0 ? 'NT$ ' + totalPrice.toLocaleString() : ''),
+        description
+      };
+
+      if (item.variants && item.variants.length > 0) {
+        const variantsMap = {};
+        item.variants.forEach(v => {
+          const pInput = document.querySelector('.modal-variant-price[data-variant-id="' + v.id + '"]');
+          const partsInput = document.querySelector('.modal-variant-parts[data-variant-id="' + v.id + '"]');
+          const instInput = document.querySelector('.modal-variant-install[data-variant-id="' + v.id + '"]');
+          const pendInput = document.querySelector('.modal-variant-pending[data-variant-id="' + v.id + '"]');
+
+          const vPending = pendInput ? pendInput.checked : false;
+          const vPrice = pInput ? (Number(pInput.value) || 0) : (v.price || 0);
+          const vParts = partsInput ? (Number(partsInput.value) || 0) : (v.partsPrice || 0);
+          const vInst = instInput ? (Number(instInput.value) || 0) : (v.installFee || 0);
+
+          variantsMap[v.id] = {
+            title: v.title || v.name,
+            price: vPrice,
+            partsPrice: vParts,
+            installFee: vInst,
+            isPendingConfirm: vPending,
+            priceRange: vPending ? '價格待確認' : (vPrice > 0 ? 'NT$ ' + vPrice.toLocaleString() : '')
+          };
+        });
+        overrideData.variants = variantsMap;
+      }
+
+      saveCustomOverride(currentEditingProductId, overrideData);
+
+      try {
+        fetch('/api/admin/update-product', {
+          method: 'POST',
+          headers: getAuthHeader(),
+          body: JSON.stringify({ id: currentEditingProductId, ...overrideData })
+        }).catch(() => {});
+      } catch(e) {}
+
+      applyCustomOverrides(allMasterProducts);
+      closeEditModal();
+      renderMasterTable();
+      updateQuickFilterCounts();
+
+      alert('✅ 商品「' + name + '」設定已成功儲存！\n前台對外頁面、規格選單與 LINE 報價單已即時同步更新。');
+    }
+
+    async function resetProductEdit() {
+      if (!currentEditingProductId) return;
+      if (!confirm('確定要清除此商品的自訂調整，恢復原廠初始設定嗎？')) return;
+
+      removeCustomOverride(currentEditingProductId);
+      closeEditModal();
+      await loadMasterProducts();
+      alert('已恢復為原廠初始設定！');
+    }
+
+    function exportUpdatedStoreJson() {
+      if (!allMasterProducts || allMasterProducts.length === 0) {
+        alert('尚無商品資料可匯出！');
+        return;
+      }
+
+      const dateStr = new Date().toISOString().slice(0, 10);
+      const dataStr = JSON.stringify(allMasterProducts, null, 2);
+      const blob = new Blob([dataStr], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'store_master_' + dateStr + '.json';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
     }
 
     async function loadSample() {
@@ -768,18 +1033,63 @@
         return;
       }
 
-      body.innerHTML = sample.map((item, idx) => `
-        <tr>
-          <td>${idx + 1}</td>
-          <td><span class="badge" style="background: var(--bg-card-hover);">${item.source}</span></td>
-          <td style="font-weight: 600;">${item.name}</td>
-          <td style="color: var(--primary); font-weight: 600;">${(item.isPendingConfirm || item.price === 0 || !item.price || item.priceRange === '價格待確認') ? '<span style="color: #f59e0b; font-weight: 700;">價格待確認</span>' : (item.price ? `NT$ ${item.price.toLocaleString()}` : '-')}</td>
-          <td><span style="color:#34d399;">現貨供貨中</span></td>
-          <td>${(item.fitment || []).join(', ')}</td>
-          <td><a href="${item.officialUrl}" target="_blank" style="color: var(--primary);">開啟官網頁面 ↗</a></td>
-        </tr>
-      `).join('');
+      body.innerHTML = sample.map((item, idx) => '<tr>' +
+        '<td>' + (idx + 1) + '</td>' +
+        '<td><span class="badge" style="background: var(--bg-card-hover);">' + item.source + '</span></td>' +
+        '<td style="font-weight: 600;">' + item.name + '</td>' +
+        '<td style="color: var(--primary); font-weight: 600;">' + ((item.isPendingConfirm || item.price === 0 || !item.price || item.priceRange === '價格待確認') ? '<span style="color: #f59e0b; font-weight: 700;">價格待確認</span>' : (item.price ? ('NT$ ' + item.price.toLocaleString()) : '-')) + '</td>' +
+        '<td><span style="color:#34d399;">現貨供貨中</span></td>' +
+        '<td>' + (item.fitment || []).join(', ') + '</td>' +
+        '<td><a href="' + item.officialUrl + '" target="_blank" style="color: var(--primary);">開啟官網頁面 ↗</a></td>' +
+      '</tr>').join('');
     }
+
+    // Auto-sum on parts/labor input change in modal
+    document.getElementById('modalPartsPrice').addEventListener('input', () => {
+      const parts = Number(document.getElementById('modalPartsPrice').value) || 0;
+      const inst = Number(document.getElementById('modalInstallFee').value) || 0;
+      document.getElementById('modalTotalPrice').value = parts + inst;
+      if (parts + inst > 0 && document.getElementById('modalIsPendingCheckbox').checked) {
+        document.getElementById('modalIsPendingCheckbox').checked = false;
+      }
+    });
+
+    document.getElementById('modalInstallFee').addEventListener('input', () => {
+      const parts = Number(document.getElementById('modalPartsPrice').value) || 0;
+      const inst = Number(document.getElementById('modalInstallFee').value) || 0;
+      document.getElementById('modalTotalPrice').value = parts + inst;
+      if (parts + inst > 0 && document.getElementById('modalIsPendingCheckbox').checked) {
+        document.getElementById('modalIsPendingCheckbox').checked = false;
+      }
+    });
+
+    // Quick filter buttons
+    document.getElementById('btnQuickPending').addEventListener('click', () => {
+      document.getElementById('adminInstallStatusFilter').value = 'pending';
+      document.getElementById('adminSearchInput').value = '';
+      renderMasterTable();
+    });
+
+    document.getElementById('btnQuickOverridden').addEventListener('click', () => {
+      document.getElementById('adminInstallStatusFilter').value = 'overridden';
+      document.getElementById('adminSearchInput').value = '';
+      renderMasterTable();
+    });
+
+    document.getElementById('btnExportJson').addEventListener('click', exportUpdatedStoreJson);
+
+    // Modal buttons
+    document.getElementById('closeEditModalBtn').addEventListener('click', closeEditModal);
+    document.getElementById('modalCancelBtn').addEventListener('click', closeEditModal);
+    document.getElementById('modalSaveBtn').addEventListener('click', saveProductEdit);
+    document.getElementById('modalResetBtn').addEventListener('click', resetProductEdit);
+
+    // Click outside modal to close
+    document.getElementById('editProductModal').addEventListener('click', (e) => {
+      if (e.target.id === 'editProductModal') {
+        closeEditModal();
+      }
+    });
 
     // Bind Click Events on Vehicle Breakdown Cards
     document.querySelectorAll('#modelBreakdownGrid .metric-card.clickable').forEach(card => {
@@ -802,6 +1112,7 @@
     });
 
     document.getElementById('adminStoreFilter').addEventListener('change', renderMasterTable);
+    document.getElementById('adminInstallStatusFilter').addEventListener('change', renderMasterTable);
     document.getElementById('adminSearchInput').addEventListener('input', renderMasterTable);
 
     document.getElementById('btnResample').addEventListener('click', loadSample);
@@ -847,6 +1158,16 @@
       }
     });
 
+    // Expose handlers to window for HTML inline attributes
+    window.handleLoginSubmit = handleLoginSubmit;
+    window.handleLogout = handleLogout;
+    window.renderMasterTable = renderMasterTable;
+    window.openEditModal = openEditModal;
+    window.closeEditModal = closeEditModal;
+    window.saveProductEdit = saveProductEdit;
+    window.resetProductEdit = resetProductEdit;
+    window.exportUpdatedStoreJson = exportUpdatedStoreJson;
+
     // Initialize Page Check
     if (checkAdminAuth()) {
       loadStats();
@@ -854,5 +1175,100 @@
       loadSample();
     }
   </script>
+  <!-- Product Edit Modal -->
+  <div id="editProductModal" style="display: none; position: fixed; inset: 0; z-index: 99999; background: rgba(0,0,0,0.78); backdrop-filter: blur(8px); padding: 1.5rem; overflow-y: auto; align-items: center; justify-content: center;">
+    <div style="background: var(--bg-card); border: 1.5px solid var(--border-color); border-radius: 14px; width: 100%; max-width: 680px; margin: auto; box-shadow: 0 20px 40px rgba(0,0,0,0.5); overflow: hidden;">
+      
+      <!-- Modal Header -->
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border-color); background: var(--bg-card-hover);">
+        <div style="display: flex; align-items: center; gap: 0.6rem;">
+          <span style="font-size: 1.3rem;">✏️</span>
+          <h3 style="margin: 0; font-size: 1.15rem; color: var(--text-bright);">調整商品金額與細節設定</h3>
+        </div>
+        <button id="closeEditModalBtn" type="button" style="background: none; border: none; font-size: 1.4rem; color: var(--text-dim); cursor: pointer; line-height: 1;">&times;</button>
+      </div>
+
+      <!-- Modal Body -->
+      <div style="padding: 1.5rem; max-height: calc(85vh - 120px); overflow-y: auto;">
+        
+        <!-- Meta info -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <span id="modalItemBrandBadge" class="badge" style="background: var(--bg-card-hover); font-weight: 700;">-</span>
+            <span id="modalItemIdText" style="color: var(--text-dim); font-size: 0.82rem; font-family: monospace;">-</span>
+          </div>
+          <a id="modalOfficialLink" href="#" target="_blank" style="color: var(--primary); font-size: 0.85rem; font-weight: 600; text-decoration: none;">開啟官網頁面 ↗</a>
+        </div>
+
+        <!-- Product Name -->
+        <div style="margin-bottom: 1.2rem;">
+          <label style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--text-bright); margin-bottom: 5px;">商品名稱</label>
+          <input type="text" id="modalProductName" class="filter-input" style="width: 100%; font-size: 0.95rem; font-weight: 600;">
+        </div>
+
+        <!-- Pending Status Toggle (Special for unpriced items) -->
+        <div style="background: rgba(245, 158, 11, 0.12); border: 1.5px solid rgba(245, 158, 11, 0.4); border-radius: 10px; padding: 12px 14px; margin-bottom: 1.25rem;">
+          <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: 800; font-size: 0.95rem; color: #fbbf24;">
+            <input type="checkbox" id="modalIsPendingCheckbox" style="width: 18px; height: 18px; cursor: pointer; accent-color: #f59e0b;">
+            標註為「價格待確認」 (官網未標牌價 / 門市個別諮詢)
+          </label>
+          <div style="font-size: 0.8rem; color: var(--text-dim); margin-top: 4px; margin-left: 26px; line-height: 1.4;">
+            若此商品在官網無公開牌價，勾選此項時前端卡片、規格選單與 LINE 報價單將顯示「價格待確認」，不列入總金額計算。<br>
+            <strong>如您已有確認報價金額，請取消勾選此項</strong>，並在下方填寫完工價即可對外公開報價！
+          </div>
+        </div>
+
+        <!-- Prices breakdown -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 1.25rem;">
+          <div>
+            <label style="display: block; font-size: 0.82rem; font-weight: 700; color: var(--text-dim); margin-bottom: 4px;">完工總牌價 (NT$)</label>
+            <input type="number" id="modalTotalPrice" class="filter-input" style="width: 100%; font-size: 1.15rem; font-weight: 800; color: var(--primary);" min="0" step="50">
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.82rem; font-weight: 700; color: var(--text-dim); margin-bottom: 4px;">零件淨價 Parts (NT$)</label>
+            <input type="number" id="modalPartsPrice" class="filter-input" style="width: 100%; font-size: 1rem;" min="0" step="50">
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.82rem; font-weight: 700; color: var(--text-dim); margin-bottom: 4px;">施工工資 Labor (NT$)</label>
+            <input type="number" id="modalInstallFee" class="filter-input" style="width: 100%; font-size: 1rem;" min="0" step="50">
+          </div>
+        </div>
+
+        <!-- Variants Detailed Breakdown -->
+        <div id="modalVariantsWrapper" style="display: none; margin-bottom: 1.25rem; background: var(--bg-card-hover); padding: 12px; border-radius: 10px; border: 1px solid var(--border-color);">
+          <div style="font-size: 0.85rem; font-weight: 800; color: var(--text-bright); margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+            <span><i class="fas fa-list-ul" style="color: var(--tesla-red);"></i> 規格款式細部金額設定 (共 <span id="modalVariantsCount">0</span> 款)</span>
+            <span style="font-size: 0.75rem; color: var(--text-dim);">可分別微調各規格之售價與狀態</span>
+          </div>
+          <div id="modalVariantsList" style="display: flex; flex-direction: column; gap: 8px;">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+
+        <!-- Description / Note -->
+        <div>
+          <label style="display: block; font-size: 0.82rem; font-weight: 700; color: var(--text-dim); margin-bottom: 4px;">商品描述與門市施工備註</label>
+          <textarea id="modalDescription" class="filter-input" style="width: 100%; height: 70px; resize: vertical; font-size: 0.85rem; line-height: 1.4;"></textarea>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer -->
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; border-top: 1px solid var(--border-color); background: var(--bg-card-hover);">
+        <button id="modalResetBtn" type="button" style="background: rgba(239, 68, 68, 0.12); border: 1px solid #ef4444; color: #f87171; padding: 8px 14px; border-radius: 6px; cursor: pointer; font-weight: 700; font-size: 0.85rem;">
+          🔄 恢復原廠預設
+        </button>
+        <div style="display: flex; gap: 10px;">
+          <button id="modalCancelBtn" type="button" style="background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-dim); padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.85rem;">
+            取消
+          </button>
+          <button id="modalSaveBtn" type="button" style="background: linear-gradient(135deg, #10b981, #059669); border: none; color: #fff; padding: 8px 22px; border-radius: 6px; cursor: pointer; font-weight: 800; font-size: 0.9rem; box-shadow: 0 4px 12px rgba(16,185,129,0.35);">
+            💾 儲存並即時生效
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </body>
 </html>

@@ -6,6 +6,7 @@ import { db } from './server/db.js';
 import { JowuaAdapter } from './server/crawler/jowuaAdapter.js';
 import { QuackAdapter } from './server/crawler/quackAdapter.js';
 import { matchItem } from './server/searchEngine.js';
+import { syncDataJs } from './server/syncDataJs.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -96,6 +97,69 @@ const server = http.createServer(async (req, res) => {
       } catch (e) {
         res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
         return res.end(JSON.stringify({ success: false, message: '無效的請求格式' }));
+      }
+    });
+    return;
+  }
+
+  // 0.1 API: Update Product Details & Price (Requires Admin Auth)
+  if (pathname === '/api/admin/update-product' && req.method === 'POST') {
+    if (!checkAdminAuth(req)) {
+      res.writeHead(401, { 'Content-Type': 'application/json; charset=utf-8' });
+      return res.end(JSON.stringify({ error: '未授權存取，請先登入管理帳號！', code: 'NEED_LOGIN' }));
+    }
+
+    let body = '';
+    req.on('data', chunk => { body += chunk.toString(); });
+    req.on('end', () => {
+      try {
+        const payload = JSON.parse(body || '{}');
+        const { id, name, price, originalPrice, partsPrice, installFee, isPendingConfirm, priceRange, description, variants } = payload;
+        if (!id) {
+          res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+          return res.end(JSON.stringify({ success: false, message: '缺少商品 ID' }));
+        }
+
+        const storePath = path.join(__dirname, 'server', 'data', 'store.json');
+        if (fs.existsSync(storePath)) {
+          const store = JSON.parse(fs.readFileSync(storePath, 'utf8'));
+          const p = (store.products || []).find(x => x.id === id);
+          if (p) {
+            if (name !== undefined) p.name = name;
+            if (price !== undefined) p.price = Number(price);
+            if (originalPrice !== undefined) p.originalPrice = Number(originalPrice);
+            if (partsPrice !== undefined) p.partsPrice = Number(partsPrice);
+            if (installFee !== undefined) p.installFee = Number(installFee);
+            if (isPendingConfirm !== undefined) p.isPendingConfirm = !!isPendingConfirm;
+            if (priceRange !== undefined) p.priceRange = priceRange;
+            if (description !== undefined) p.shortDescription = description;
+            if (variants && typeof variants === 'object') {
+              if (Array.isArray(variants)) {
+                p.variants = variants;
+              } else if (Array.isArray(p.variants)) {
+                p.variants.forEach(v => {
+                  const vOv = variants[v.id];
+                  if (vOv) {
+                    if (vOv.title !== undefined) v.title = vOv.title;
+                    if (vOv.price !== undefined) v.price = Number(vOv.price);
+                    if (vOv.partsPrice !== undefined) v.partsPrice = Number(vOv.partsPrice);
+                    if (vOv.installFee !== undefined) v.installFee = Number(vOv.installFee);
+                    if (vOv.isPendingConfirm !== undefined) v.isPendingConfirm = !!vOv.isPendingConfirm;
+                    if (vOv.priceRange !== undefined) v.priceRange = vOv.priceRange;
+                  }
+                });
+              }
+            }
+            fs.writeFileSync(storePath, JSON.stringify(store, null, 2), 'utf8');
+            try { syncDataJs(); } catch(e) { console.warn('syncDataJs error:', e); }
+          }
+        }
+
+        res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+        return res.end(JSON.stringify({ success: true, message: '商品金額與細節已成功更新！' }));
+      } catch (err) {
+        res.writeHead(500, { 'Content-Type': 'application/json; charset=utf-8' });
+        return res.end(JSON.stringify({ success: false, message: err.message }));
       }
     });
     return;

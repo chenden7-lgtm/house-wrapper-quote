@@ -9,6 +9,7 @@ import { Visualizer } from './visualizer.js?v=20261112_v105';
 import { ChecklistManager } from './checklist.js?v=20261112_v105';
 import { QuotationManager } from './quotation.js?v=20261112_v105';
 import { PriceSyncEngine } from './sync.js?v=20261112_v105';
+import { applyCustomOverrides } from './overrides.js?v=20261112_v105';
 
 export function getBestMatchingVariant(item, selectedModelId) {
   if (!item || !item.variants || item.variants.length === 0) return null;
@@ -119,6 +120,7 @@ class TeslaApp {
     }
 
     try {
+      applyCustomOverrides(ACCESSORIES);
       this.renderAll();
     } catch (e) {
       console.error('renderAll error:', e);
@@ -254,6 +256,20 @@ class TeslaApp {
         const next = current === 'light' ? 'dark' : 'light';
         document.documentElement.setAttribute('data-theme', next);
         this.themeToggleBtn.innerHTML = next === 'light' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+      });
+    }
+
+    // Real-time custom overrides sync from admin panel
+    if (typeof window !== 'undefined') {
+      window.addEventListener('customOverridesUpdated', () => {
+        applyCustomOverrides(ACCESSORIES);
+        this.renderAll();
+      });
+      window.addEventListener('storage', (e) => {
+        if (e.key === 'tesla_custom_product_overrides') {
+          applyCustomOverrides(ACCESSORIES);
+          this.renderAll();
+        }
       });
     }
   }
