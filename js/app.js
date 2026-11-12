@@ -3,12 +3,12 @@
  * Integrates QuackEV & Jowua store catalogs, combo bundles, and LINE quotation exporter.
  */
 
-import { TESLA_MODELS, STORES, CATEGORIES, ACCESSORIES, BUNDLES } from './data.js?v=20260924_v100';
-import { FitmentEngine } from './fitment.js?v=20261029_v1';
-import { Visualizer } from './visualizer.js?v=20260924_v100';
-import { ChecklistManager } from './checklist.js?v=20260924_v100';
-import { QuotationManager } from './quotation.js?v=20261012_v1';
-import { PriceSyncEngine } from './sync.js?v=20260924_v100';
+import { TESLA_MODELS, STORES, CATEGORIES, ACCESSORIES, BUNDLES } from './data.js?v=20261112_v105';
+import { FitmentEngine } from './fitment.js?v=20261112_v105';
+import { Visualizer } from './visualizer.js?v=20261112_v105';
+import { ChecklistManager } from './checklist.js?v=20261112_v105';
+import { QuotationManager } from './quotation.js?v=20261112_v105';
+import { PriceSyncEngine } from './sync.js?v=20261112_v105';
 
 export function getBestMatchingVariant(item, selectedModelId) {
   if (!item || !item.variants || item.variants.length === 0) return null;
@@ -496,6 +496,7 @@ class TeslaApp {
         
         const isJowua = item.storeId === 'jowua' || item.brand === 'Jowua' || (item.id && item.id.startsWith('jowua_'));
         const isQuack = item.storeId === 'quackev' || item.brand === 'QuackEV' || item.brand === '呱樂電驢工坊' || (item.id && item.id.startsWith('quack_'));
+        const isPending = !!item.isPendingConfirm || item.price === 0 || !item.price || item.priceRange === '價格待確認';
 
         const discountPrice = isJowua ? Math.round(officialPrice * 0.95) : officialPrice;
 
@@ -507,14 +508,14 @@ class TeslaApp {
                 <span class="img-external-badge"><i class="fas fa-external-link-alt"></i> 官方頁面</span>
               </a>
               <span class="store-brand-badge ${item.storeId}">
-                ${item.isPendingConfirm ? 'QuackEV・價格待確認' : (isQuack ? 'QuackEV完工' : (isJowua ? 'Jowua代購95折' : item.brand))}
+                ${isPending ? 'QuackEV・價格待確認' : (isQuack ? 'QuackEV完工' : (isJowua ? 'Jowua代購95折' : item.brand))}
               </span>
             </div>
 
             <div class="product-card-body">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
                 <span style="font-size: 0.8rem; color: var(--text-muted);">${item.brand}</span>
-                ${item.isPendingConfirm ? `
+                ${isPending ? `
                   <span style="background: rgba(245, 158, 11, 0.15); color: #d97706; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; border: 1px solid rgba(245,158,11,0.3); display: inline-flex; align-items: center; gap: 3px;" title="呱樂官方未公開標示牌價，依門市諮詢為主">
                     <i class="fas fa-question-circle"></i> 價格待確認
                   </span>
@@ -546,7 +547,7 @@ class TeslaApp {
                   <select class="product-variant-select" id="variant-select-${item.id}" data-id="${item.id}" style="width: 100%; padding: 6px 8px; border-radius: 6px; background: var(--bg-card); color: var(--text-main); border: 1px solid var(--border-color); font-size: 0.82rem; font-weight: 600; cursor: pointer;">
                     ${item.variants.map(v => {
                       const varDisc = isJowua ? Math.round(v.price * 0.95) : v.price;
-                      const isVarPending = item.isPendingConfirm || v.isPendingConfirm;
+                      const isVarPending = isPending || v.isPendingConfirm || v.price === 0 || !v.price || v.priceRange === '價格待確認';
                       const varLabel = isVarPending
                         ? `${v.title} (價格待確認)`
                         : (isJowua ? `${v.title} (95折 NT$ ${varDisc.toLocaleString()} | 原價 $${v.price.toLocaleString()})` : `${v.title} (NT$ ${v.price.toLocaleString()})`);
@@ -559,7 +560,7 @@ class TeslaApp {
               <div class="product-card-footer">
                 <div>
                   <div class="product-price" id="card-price-${item.id}">
-                    ${item.isPendingConfirm ? `
+                    ${isPending ? `
                       <div style="font-size: 1.25rem; font-weight: 900; color: #f59e0b;">價格待確認</div>
                       <div style="font-size: 0.75rem; color: #d97706; font-weight: 700; margin-top: 2px;"><i class="fas fa-question-circle"></i> 呱樂官網未標價 / 洽門市報價${item.installFee > 0 ? ` (工資約$${item.installFee})` : ''}</div>
                     ` : (isJowua ? `
@@ -592,18 +593,19 @@ class TeslaApp {
           const itemId = e.currentTarget.dataset.id;
           const selectedOpt = e.currentTarget.options[e.currentTarget.selectedIndex];
           const newOfficialPrice = parseInt(selectedOpt.dataset.price);
-          const isPending = selectedOpt.dataset.pending === '1';
+          const isPendingOpt = selectedOpt.dataset.pending === '1';
           const priceEl = document.getElementById(`card-price-${itemId}`);
           const itemObj = ACCESSORIES.find(a => a.id === itemId);
           const itemIsJowua = itemObj && (itemObj.storeId === 'jowua' || itemObj.brand === 'Jowua' || (itemObj.id && itemObj.id.startsWith('jowua_')));
+          const itemIsPending = itemObj && (itemObj.isPendingConfirm || itemObj.price === 0 || !itemObj.price || itemObj.priceRange === '價格待確認');
 
           if (priceEl) {
-            if (isPending || (itemObj && itemObj.isPendingConfirm)) {
+            if (isPendingOpt || itemIsPending) {
               priceEl.innerHTML = `
                 <div style="font-size: 1.25rem; font-weight: 900; color: #f59e0b;">價格待確認</div>
                 <div style="font-size: 0.75rem; color: #d97706; font-weight: 700; margin-top: 2px;"><i class="fas fa-question-circle"></i> 呱樂官網未標價 / 洽門市報價${itemObj && itemObj.installFee > 0 ? ` (工資約$${itemObj.installFee})` : ''}</div>
               `;
-            } else if (!isNaN(newOfficialPrice)) {
+            } else if (!isNaN(newOfficialPrice) && newOfficialPrice > 0) {
               if (itemIsJowua) {
                 const newDisc = Math.round(newOfficialPrice * 0.95);
                 priceEl.innerHTML = `
@@ -745,7 +747,7 @@ class TeslaApp {
 
     const isJowua = item.storeId === 'jowua' || item.brand === 'Jowua' || (item.id && item.id.startsWith('jowua_'));
     const isQuack = item.storeId === 'quackev' || item.brand === 'QuackEV' || item.brand === '呱樂電驢工坊' || (item.id && item.id.startsWith('quack_'));
-    const isPending = !!item.isPendingConfirm;
+    const isPending = !!item.isPendingConfirm || item.price === 0 || !item.price || item.priceRange === '價格待確認';
 
     const discountPrice = isJowua ? Math.round(officialPrice * 0.95) : officialPrice;
 

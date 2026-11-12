@@ -708,7 +708,7 @@
           `;
           ruleBadge = `<span style="background: rgba(245, 158, 11, 0.15); color: #d97706; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.78rem;">🏷️ 好室代購 95 折</span>`;
         } else {
-          if (item.isPendingConfirm) {
+          if (item.isPendingConfirm || item.price === 0 || !item.price || item.priceRange === '價格待確認') {
             priceDisplay = `<div style="font-weight: 800; color: #f59e0b;">價格待確認</div><div style="font-size: 0.72rem; color: #d97706;">呱樂官網未標價</div>`;
             ruleBadge = `<span style="background: rgba(245, 158, 11, 0.2); color: #d97706; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.78rem;">❓ 價格待確認</span>`;
           } else {
@@ -773,7 +773,7 @@
           <td>${idx + 1}</td>
           <td><span class="badge" style="background: var(--bg-card-hover);">${item.source}</span></td>
           <td style="font-weight: 600;">${item.name}</td>
-          <td style="color: var(--primary); font-weight: 600;">${item.isPendingConfirm ? '<span style="color: #f59e0b; font-weight: 700;">價格待確認</span>' : (item.price ? `NT$ ${item.price.toLocaleString()}` : '-')}</td>
+          <td style="color: var(--primary); font-weight: 600;">${(item.isPendingConfirm || item.price === 0 || !item.price || item.priceRange === '價格待確認') ? '<span style="color: #f59e0b; font-weight: 700;">價格待確認</span>' : (item.price ? `NT$ ${item.price.toLocaleString()}` : '-')}</td>
           <td><span style="color:#34d399;">現貨供貨中</span></td>
           <td>${(item.fitment || []).join(', ')}</td>
           <td><a href="${item.officialUrl}" target="_blank" style="color: var(--primary);">開啟官網頁面 ↗</a></td>

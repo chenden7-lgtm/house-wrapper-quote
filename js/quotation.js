@@ -3,7 +3,7 @@
  * Formats quote drafts, calculates combo discounts, and exports LINE-ready text.
  */
 
-import { ACCESSORIES, BUNDLES, TESLA_MODELS } from './data.js?v=20260924_v100';
+import { ACCESSORIES, BUNDLES, TESLA_MODELS } from './data.js?v=20261112_v105';
 
 export class QuotationManager {
   constructor(storageKey = 'quoteCart') {
@@ -185,7 +185,7 @@ export class QuotationManager {
       }
 
       const isJowua = dataObj.storeId === 'jowua' || dataObj.brand === 'Jowua' || (dataObj.id && dataObj.id.startsWith('jowua_'));
-      const isPending = !!dataObj.isPendingConfirm;
+      const isPending = !!dataObj.isPendingConfirm || dataObj.price === 0 || !dataObj.price || dataObj.priceRange === '價格待確認';
       const unitPrice = isPending ? 0 : (isJowua ? Math.round(officialOriginalPrice * 0.95) : officialOriginalPrice);
       const subtotal = isPending ? 0 : (unitPrice * (q.quantity || 1));
 

@@ -6,7 +6,9 @@
     "sitePrice": 0,
     "installFee": 0,
     "specSnippet": "",
-    "isPendingConfirm": true
+    "isPendingConfirm": true,
+    "priceRange": "價格待確認",
+    "price": 0
   },
   {
     "id": "quack_146083",
@@ -15,7 +17,9 @@
     "sitePrice": 0,
     "installFee": 0,
     "specSnippet": "",
-    "isPendingConfirm": true
+    "isPendingConfirm": true,
+    "priceRange": "價格待確認",
+    "price": 0
   },
   {
     "id": "quack_133586",
@@ -24,7 +28,9 @@
     "sitePrice": 0,
     "installFee": 0,
     "specSnippet": "",
-    "isPendingConfirm": true
+    "isPendingConfirm": true,
+    "priceRange": "價格待確認",
+    "price": 0
   },
   {
     "id": "quack_133590",
@@ -33,7 +39,9 @@
     "sitePrice": 0,
     "installFee": 0,
     "specSnippet": "",
-    "isPendingConfirm": true
+    "isPendingConfirm": true,
+    "priceRange": "價格待確認",
+    "price": 0
   },
   {
     "id": "quack_94851",
@@ -330,7 +338,9 @@
     "sitePrice": 0,
     "installFee": 150,
     "specSnippet": "適用車型如選項所示，提供高清版與四效合一，網站購買不包含安裝，安裝費用＄150",
-    "isPendingConfirm": true
+    "isPendingConfirm": true,
+    "priceRange": "價格待確認",
+    "price": 0
   },
   {
     "id": "quack_19134",
@@ -339,7 +349,7 @@
     "sitePrice": 0,
     "installFee": 400,
     "specSnippet": "網站購買不包含安裝，安裝費用＄400",
-    "isPendingConfirm": true
+    "isPendingConfirm": false
   },
   {
     "id": "quack_7536",
@@ -483,7 +493,9 @@
     "sitePrice": 0,
     "installFee": 50,
     "specSnippet": "網站購買不包含安裝，安裝費用＄50",
-    "isPendingConfirm": true
+    "isPendingConfirm": true,
+    "priceRange": "價格待確認",
+    "price": 0
   },
   {
     "id": "quack_7507",
@@ -807,7 +819,9 @@
     "sitePrice": 0,
     "installFee": 0,
     "specSnippet": "",
-    "isPendingConfirm": true
+    "isPendingConfirm": true,
+    "priceRange": "價格待確認",
+    "price": 0
   },
   {
     "id": "quack_130372",
@@ -1050,7 +1064,7 @@
     "sitePrice": 0,
     "installFee": 0,
     "specSnippet": "",
-    "isPendingConfirm": true
+    "isPendingConfirm": false
   },
   {
     "id": "quack_36269",
@@ -1410,6 +1424,8 @@
     "sitePrice": 0,
     "installFee": 0,
     "specSnippet": "",
-    "isPendingConfirm": true
+    "isPendingConfirm": true,
+    "priceRange": "價格待確認",
+    "price": 0
   }
 ]

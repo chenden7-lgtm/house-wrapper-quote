@@ -10535,19 +10535,20 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 1000,
+      "price": 0,
       "priceRange": "價格待確認",
-      "originalPrice": 1000,
+      "originalPrice": 0,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 1000,
+          "price": 0,
           "sku": "QK-149469",
           "available": true,
-          "partsPrice": 1000,
+          "partsPrice": 0,
           "installFee": 0,
-          "isPendingConfirm": true
+          "isPendingConfirm": true,
+          "priceRange": "價格待確認"
         }
       ],
       "shortDescription": "",
@@ -10557,7 +10558,7 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "storeId": "quackev",
-      "partsPrice": 1000,
+      "partsPrice": 0,
       "installFee": 0,
       "isPendingConfirm": true
     },
@@ -10574,19 +10575,20 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 1000,
+      "price": 0,
       "priceRange": "價格待確認",
-      "originalPrice": 1000,
+      "originalPrice": 0,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 1000,
+          "price": 0,
           "sku": "QK-146083",
           "available": true,
-          "partsPrice": 1000,
+          "partsPrice": 0,
           "installFee": 0,
-          "isPendingConfirm": true
+          "isPendingConfirm": true,
+          "priceRange": "價格待確認"
         }
       ],
       "shortDescription": "",
@@ -10596,7 +10598,7 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "storeId": "quackev",
-      "partsPrice": 1000,
+      "partsPrice": 0,
       "installFee": 0,
       "isPendingConfirm": true
     },
@@ -10613,19 +10615,20 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 1000,
+      "price": 0,
       "priceRange": "價格待確認",
-      "originalPrice": 1000,
+      "originalPrice": 0,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 1000,
+          "price": 0,
           "sku": "QK-133586",
           "available": true,
-          "partsPrice": 1000,
+          "partsPrice": 0,
           "installFee": 0,
-          "isPendingConfirm": true
+          "isPendingConfirm": true,
+          "priceRange": "價格待確認"
         }
       ],
       "shortDescription": "",
@@ -10635,7 +10638,7 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "storeId": "quackev",
-      "partsPrice": 1000,
+      "partsPrice": 0,
       "installFee": 0,
       "isPendingConfirm": true
     },
@@ -10652,19 +10655,20 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 1000,
+      "price": 0,
       "priceRange": "價格待確認",
-      "originalPrice": 1000,
+      "originalPrice": 0,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 1000,
+          "price": 0,
           "sku": "QK-133590",
           "available": true,
-          "partsPrice": 1000,
+          "partsPrice": 0,
           "installFee": 0,
-          "isPendingConfirm": true
+          "isPendingConfirm": true,
+          "priceRange": "價格待確認"
         }
       ],
       "shortDescription": "",
@@ -10674,7 +10678,7 @@
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "storeId": "quackev",
-      "partsPrice": 1000,
+      "partsPrice": 0,
       "installFee": 0,
       "isPendingConfirm": true
     },
@@ -11864,76 +11868,82 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 1000,
+      "price": 0,
       "priceRange": "價格待確認",
-      "originalPrice": 1000,
+      "originalPrice": 0,
       "stockStatus": "in_stock",
       "variants": [
         {
           "id": "QK-7550-OLD-HD",
           "title": "Model 3/Y (舊版 2017-2024) / 高清版",
           "name": "Model 3/Y (舊版 2017-2024) / 高清版",
-          "price": 1000,
-          "partsPrice": 850,
+          "price": 0,
+          "partsPrice": 0,
           "installFee": 150,
           "sku": "QK-7550-OLD-HD",
           "available": true,
-          "isPendingConfirm": true
+          "isPendingConfirm": true,
+          "priceRange": "價格待確認"
         },
         {
           "id": "QK-7550-OLD-4IN1",
           "title": "Model 3/Y (舊版 2017-2024) / 四效合一 (防眩抗指紋)",
           "name": "Model 3/Y (舊版 2017-2024) / 四效合一 (防眩抗指紋)",
-          "price": 1150,
-          "partsPrice": 1000,
+          "price": 0,
+          "partsPrice": 0,
           "installFee": 150,
           "sku": "QK-7550-OLD-4IN1",
           "available": true,
-          "isPendingConfirm": true
+          "isPendingConfirm": true,
+          "priceRange": "價格待確認"
         },
         {
           "id": "QK-7550-HL-HD",
           "title": "Model 3/Y (煥新版 2024+) 前+後雙螢幕組 / 高清版",
           "name": "Model 3/Y (煥新版 2024+) 前+後雙螢幕組 / 高清版",
-          "price": 1400,
-          "partsPrice": 1250,
+          "price": 0,
+          "partsPrice": 0,
           "installFee": 150,
           "sku": "QK-7550-HL-HD",
           "available": true,
-          "isPendingConfirm": true
+          "isPendingConfirm": true,
+          "priceRange": "價格待確認"
         },
         {
           "id": "QK-7550-HL-4IN1",
           "title": "Model 3/Y (煥新版 2024+) 前+後雙螢幕組 / 四效合一 (防眩抗指紋)",
           "name": "Model 3/Y (煥新版 2024+) 前+後雙螢幕組 / 四效合一 (防眩抗指紋)",
-          "price": 1600,
-          "partsPrice": 1450,
+          "price": 0,
+          "partsPrice": 0,
           "installFee": 150,
           "sku": "QK-7550-HL-4IN1",
           "available": true,
-          "isPendingConfirm": true
+          "isPendingConfirm": true,
+          "priceRange": "價格待確認"
         },
         {
           "id": "QK-7550-JUN-16-HD",
           "title": "Model Y (煥新版 2025+) 16吋螢幕 / 高清版",
           "name": "Model Y (煥新版 2025+) 16吋螢幕 / 高清版",
-          "price": 1100,
-          "partsPrice": 950,
+          "price": 0,
+          "partsPrice": 0,
           "installFee": 150,
           "sku": "QK-7550-JUN-16-HD",
           "available": true,
-          "isPendingConfirm": true
+          "isPendingConfirm": true,
+          "priceRange": "價格待確認"
         },
         {
           "id": "QK-7550-JUN-16-4IN1",
           "title": "Model Y (煥新版 2025+) 16吋螢幕 / 四效合一 (防眩抗指紋)",
           "name": "Model Y (煥新版 2025+) 16吋螢幕 / 四效合一 (防眩抗指紋)",
-          "price": 1300,
-          "partsPrice": 1150,
+          "price": 0,
+          "partsPrice": 0,
           "installFee": 150,
           "sku": "QK-7550-JUN-16-4IN1",
           "available": true,
-          "isPendingConfirm": true
+          "isPendingConfirm": true,
+          "priceRange": "價格待確認"
         }
       ],
       "shortDescription": "呱樂電驢官方正品特斯拉專用螢幕保護貼，提供高清版與四效合一（防眩光抗指紋）款式，支援舊款 Model 3/Y、煥新版前後螢幕雙貼組與 16 吋專用規格。含門市專業無損施工貼合服務（工資 $150）。",
@@ -11942,7 +11952,7 @@
         "https://www.workband.com.tw/store_image/quackev/P1_20260531111024_1283.webp"
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
-      "partsPrice": 850,
+      "partsPrice": 0,
       "installFee": 150,
       "isPendingConfirm": true
     },
@@ -11960,7 +11970,6 @@
         "my_juniper"
       ],
       "price": 2400,
-      "priceRange": "價格待確認",
       "originalPrice": 2400,
       "stockStatus": "in_stock",
       "variants": [
@@ -11982,7 +11991,7 @@
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 2000,
       "installFee": 400,
-      "isPendingConfirm": true
+      "isPendingConfirm": false
     },
     {
       "id": "quack_7536",
@@ -12534,19 +12543,20 @@
       "fitment": [
         "m3_highland"
       ],
-      "price": 1050,
+      "price": 0,
       "priceRange": "價格待確認",
-      "originalPrice": 1050,
+      "originalPrice": 0,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 1050,
+          "price": 0,
           "sku": "QK-7572",
           "available": true,
-          "partsPrice": 1000,
+          "partsPrice": 0,
           "installFee": 50,
-          "isPendingConfirm": true
+          "isPendingConfirm": true,
+          "priceRange": "價格待確認"
         }
       ],
       "shortDescription": "後廂開口防刮底座( 煥新版 Model 3 2024+ )-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠",
@@ -12555,7 +12565,7 @@
         "https://www.workband.com.tw/store_image/quackev/P1_20260610124710_6431.webp"
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
-      "partsPrice": 1000,
+      "partsPrice": 0,
       "installFee": 50,
       "isPendingConfirm": true
     },
@@ -13840,19 +13850,20 @@
       "fitment": [
         "my_juniper"
       ],
-      "price": 3600,
+      "price": 0,
       "priceRange": "價格待確認",
-      "originalPrice": 3600,
+      "originalPrice": 0,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 3600,
+          "price": 0,
           "sku": "QK-130374",
           "available": true,
-          "partsPrice": 3600,
+          "partsPrice": 0,
           "installFee": 0,
-          "isPendingConfirm": true
+          "isPendingConfirm": true,
+          "priceRange": "價格待確認"
         }
       ],
       "shortDescription": "19吋輪框節能蓋-【P2款】( Model Y 2025+)-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優",
@@ -13861,7 +13872,7 @@
         "https://www.workband.com.tw/store_image/quackev/P1_20260909142955_4470.webp"
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
-      "partsPrice": 3600,
+      "partsPrice": 0,
       "installFee": 0,
       "isPendingConfirm": true
     },
@@ -14817,7 +14828,6 @@
         "my_juniper"
       ],
       "price": 2000,
-      "priceRange": "價格待確認",
       "originalPrice": 2000,
       "stockStatus": "in_stock",
       "variants": [
@@ -14839,7 +14849,7 @@
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 2000,
       "installFee": 0,
-      "isPendingConfirm": true
+      "isPendingConfirm": false
     },
     {
       "id": "quack_36269",
@@ -16291,19 +16301,20 @@
         "my_classic",
         "my_juniper"
       ],
-      "price": 1000,
+      "price": 0,
       "priceRange": "價格待確認",
-      "originalPrice": 1000,
+      "originalPrice": 0,
       "stockStatus": "in_stock",
       "variants": [
         {
           "name": "標準完工版",
-          "price": 1000,
+          "price": 0,
           "sku": "QK-94815",
           "available": true,
-          "partsPrice": 1000,
+          "partsPrice": 0,
           "installFee": 0,
-          "isPendingConfirm": true
+          "isPendingConfirm": true,
+          "priceRange": "價格待確認"
         }
       ],
       "shortDescription": "JOWUA 全系列商品代理-呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 呱樂電驢工坊-特斯拉改裝,特斯拉周邊配件,特斯拉一站式改裝,台南特斯拉改裝,仁德區特斯拉改裝 購物車 0 匯款通知 呱樂起源 ABOUT 限時優惠 DISCOUNT 限時優惠 最",
@@ -16312,7 +16323,7 @@
         "https://www.workband.com.tw/store_image/quackev/P1177466621357.webp"
       ],
       "lastUpdated": "2026-09-23T03:52:13.660Z",
-      "partsPrice": 1000,
+      "partsPrice": 0,
       "installFee": 0,
       "isPendingConfirm": true
     }

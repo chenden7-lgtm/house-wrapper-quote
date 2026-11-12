@@ -3,7 +3,7 @@
  * Handles comparison drawer, side-by-side spec comparisons.
  */
 
-import { ACCESSORIES } from './data.js?v=20260922_v3';
+import { ACCESSORIES } from './data.js?v=20261112_v105';
 
 export class CompareEngine {
   constructor() {

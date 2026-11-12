@@ -23,9 +23,11 @@ export function syncDataJs() {
 
   products.forEach(p => {
     const isJowua = p.source && p.source.includes('Jowua');
-    const isPending = !!p.isPendingConfirm;
-    const partsPrice = p.partsPrice !== undefined ? p.partsPrice : (isJowua ? p.price : (p.price - (p.installFee || 0)));
+    const isPending = !!p.isPendingConfirm || p.price === 0;
+    const partsPrice = isPending ? 0 : (p.partsPrice !== undefined ? p.partsPrice : (isJowua ? p.price : (p.price - (p.installFee || 0))));
     const installFee = p.installFee !== undefined ? p.installFee : 0;
+    const finalPrice = isPending ? 0 : (p.price || 1000);
+    const finalOrigPrice = isPending ? 0 : (p.originalPrice || p.price || 1000);
 
     const item = {
       id: p.id,
@@ -34,8 +36,8 @@ export function syncDataJs() {
       storeId: isJowua ? 'jowua' : 'quackev',
       category: p.category || 'interior',
       fitment: p.fitment || ['all'],
-      price: p.price || 1000,
-      originalPrice: p.originalPrice || p.price || 1000,
+      price: finalPrice,
+      originalPrice: finalOrigPrice,
       partsPrice: partsPrice,
       installFee: installFee,
       isPendingConfirm: isPending,
@@ -44,21 +46,24 @@ export function syncDataJs() {
       description: p.shortDescription || p.name,
       officialUrl: p.officialUrl || p.canonicalUrl,
       badge: isJowua ? 'Jowua 原廠正品' : (isPending ? '呱樂・價格待確認' : '呱樂門市完工'),
-      variants: p.variants && p.variants.length > 0 ? p.variants.map(v => ({
-        id: String(v.id || v.sku || p.id),
-        title: v.title || v.name || '標準版',
-        name: v.title || v.name || '標準版',
-        price: v.price || p.price || 1000,
-        partsPrice: v.partsPrice !== undefined ? v.partsPrice : partsPrice,
-        installFee: v.installFee !== undefined ? v.installFee : installFee,
-        isPendingConfirm: isPending || !!v.isPendingConfirm,
-        priceRange: v.priceRange || (isPending ? '價格待確認' : undefined),
-        sku: v.sku || `SKU-${p.id}`
-      })) : [{
+      variants: p.variants && p.variants.length > 0 ? p.variants.map(v => {
+        const vPending = isPending || !!v.isPendingConfirm || v.price === 0;
+        return {
+          id: String(v.id || v.sku || p.id),
+          title: v.title || v.name || '標準版',
+          name: v.title || v.name || '標準版',
+          price: vPending ? 0 : (v.price || finalPrice),
+          partsPrice: vPending ? 0 : (v.partsPrice !== undefined ? v.partsPrice : partsPrice),
+          installFee: v.installFee !== undefined ? v.installFee : installFee,
+          isPendingConfirm: vPending,
+          priceRange: v.priceRange || (vPending ? '價格待確認' : undefined),
+          sku: v.sku || `SKU-${p.id}`
+        };
+      }) : [{
         id: `v-${p.id}`,
         title: '標準完工版',
         name: '標準完工版',
-        price: p.price || 1000,
+        price: finalPrice,
         partsPrice: partsPrice,
         installFee: installFee,
         isPendingConfirm: isPending,
