@@ -3,8 +3,8 @@
  * Formats quote drafts, calculates combo discounts, and exports LINE-ready text.
  */
 
-import { ACCESSORIES, BUNDLES, TESLA_MODELS } from './data.js?v=20261112_v105';
-import { applyCustomOverrides } from './overrides.js?v=20261112_v105';
+import { ACCESSORIES, BUNDLES, TESLA_MODELS } from './data.js?v=20261113_v106';
+import { applyCustomOverrides } from './overrides.js?v=20261113_v106';
 
 export class QuotationManager {
   constructor(storageKey = 'quoteCart') {
@@ -188,7 +188,7 @@ export class QuotationManager {
 
       const isJowua = dataObj.storeId === 'jowua' || dataObj.brand === 'Jowua' || (dataObj.id && dataObj.id.startsWith('jowua_'));
       const isPending = !!dataObj.isPendingConfirm || dataObj.price === 0 || !dataObj.price || dataObj.priceRange === '價格待確認';
-      const unitPrice = isPending ? 0 : (isJowua ? Math.round(officialOriginalPrice * 0.95) : officialOriginalPrice);
+      const unitPrice = isPending ? 0 : officialOriginalPrice;
       const subtotal = isPending ? 0 : (unitPrice * (q.quantity || 1));
 
       return {
@@ -233,7 +233,7 @@ export class QuotationManager {
     lines.push(`----------------------------------------`);
 
     details.forEach((item, index) => {
-      let storeTag = '[JOWUA 代購 95折]';
+      let storeTag = '[JOWUA 官方正品]';
       if (item.type === 'electrical') {
         storeTag = '[⚡️電系改裝]';
       } else if (item.data.storeId === 'quackev') {
@@ -256,7 +256,7 @@ export class QuotationManager {
         lines.push(`   └ 數量：x${item.quantity}  報價：價格待確認`);
       } else {
         if (item.isJowua) {
-          lines.push(`   └ 好室代購 95 折優惠（JOWUA 官網原價 NT$ ${item.officialOriginalPrice.toLocaleString()}）`);
+          lines.push(`   └ 價格說明：JOWUA 官方原廠牌價（含好室多膜協助代購安裝）`);
         } else if (item.data.storeId === 'quackev') {
           lines.push(`   └ 價格說明：已包含所有門市施工安裝費`);
         }
@@ -265,7 +265,7 @@ export class QuotationManager {
           lines.push(`   └ 組合內含：${item.data.itemsIncluded.join(' + ')}`);
         }
 
-        lines.push(`   └ 數量：x${item.quantity}  優惠價：NT$ ${item.unitPrice.toLocaleString()}  小計：NT$ ${item.subtotal.toLocaleString()}`);
+        lines.push(`   └ 數量：x${item.quantity}  單價：NT$ ${item.unitPrice.toLocaleString()}  小計：NT$ ${item.subtotal.toLocaleString()}`);
       }
     });
 
@@ -308,9 +308,9 @@ export class QuotationManager {
         ` : `
           <div style="margin-bottom: 1.5rem; max-height: 360px; overflow-y: auto;">
             ${details.map(item => {
-              let storeBadgeText = 'JOWUA 95折代購';
-              let badgeBg = 'rgba(245,158,11,0.2)';
-              let badgeColor = '#b45309';
+              let storeBadgeText = 'JOWUA 原廠正品';
+              let badgeBg = 'rgba(232,86,55,0.15)';
+              let badgeColor = 'var(--primary)';
 
               if (item.type === 'electrical') {
                 storeBadgeText = '⚡️電系改裝';
@@ -348,8 +348,7 @@ export class QuotationManager {
                       ${item.isPending ? `
                         <span style="color: #f59e0b; font-weight: 700;"><i class="fas fa-question-circle"></i> 呱樂官網未標價 (洽門市確認)</span>
                       ` : (item.isJowua ? `
-                        <span>好室 95 折：<strong style="color: var(--primary);">NT$ ${item.unitPrice.toLocaleString()}</strong></span>
-                        <span style="font-size: 0.72rem; margin-left: 4px;">(官網原價 ${item.officialOriginalPrice.toLocaleString()})</span>
+                        <span>單價：<strong style="color: var(--text-bright);">NT$ ${item.unitPrice.toLocaleString()}</strong> (JOWUA 官網牌價)</span>
                       ` : `
                         <span>單價：NT$ ${item.unitPrice.toLocaleString()} (已含安裝費)</span>
                       `)}

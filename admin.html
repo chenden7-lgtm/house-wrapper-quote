@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261112_v105">
+  <link rel="stylesheet" href="css/style.css?v=20261113_v106">
   <style>
     .admin-grid {
       display: grid;
@@ -330,7 +330,7 @@
         <label for="adminInstallStatusFilter">🔧 安裝費與折扣狀態：</label>
         <select id="adminInstallStatusFilter" class="filter-select" onchange="renderMasterTable()">
           <option value="all">全部狀態</option>
-          <option value="jowua_95">🏷️ JOWUA 代購 95 折</option>
+          <option value="jowua_std">🏷️ JOWUA 官方牌價</option>
           <option value="quack_installed">✅ 呱樂已含安裝費</option>
           <option value="pending">❓ 待確認 (門市例外項目)</option>
           <option value="overridden">✏️ 後台自訂調整項目</option>
@@ -426,7 +426,7 @@
       removeCustomOverride,
       clearAllCustomOverrides,
       applyCustomOverrides
-    } from './js/overrides.js?v=20261112_v105';
+    } from './js/overrides.js?v=20261113_v106';
 
     let allMasterProducts = [];
     let currentModelCounts = {};
@@ -686,7 +686,7 @@
 
         // Install status filter
         if (installFilter !== 'all') {
-          if (installFilter === 'jowua_95' && !isJowua) return false;
+          if ((installFilter === 'jowua_std' || installFilter === 'jowua_95') && !isJowua) return false;
           if (installFilter === 'quack_installed' && (isJowua || isPending)) return false;
           if (installFilter === 'pending' && !isPending) return false;
           if (installFilter === 'overridden' && !item.isCustomOverridden) return false;
@@ -752,9 +752,8 @@
         let ruleBadge = '';
 
         if (isJowua) {
-          const discountPrice = Math.round((item.price || 0) * 0.95);
-          priceDisplay = '<div style="font-weight: 800; color: var(--primary);">NT$ ' + discountPrice.toLocaleString() + '</div><div style="font-size: 0.75rem; color: var(--text-dim);">JOWUA 官網原價 NT$ ' + (item.price ? item.price.toLocaleString() : '-') + '</div>';
-          ruleBadge = '<span style="background: rgba(245, 158, 11, 0.15); color: #d97706; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.78rem;">🏷️ 好室代購 95 折</span>';
+          priceDisplay = '<div style="font-weight: 800; color: var(--text-bright);">NT$ ' + (item.price ? item.price.toLocaleString() : '-') + '</div><div style="font-size: 0.75rem; color: var(--text-dim);">JOWUA 官網原價</div>';
+          ruleBadge = '<span style="background: rgba(232, 86, 55, 0.12); color: var(--primary); padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.78rem;">🏷️ JOWUA 原廠牌價</span>';
         } else {
           if (isPending) {
             priceDisplay = '<div style="font-weight: 800; color: #f59e0b;">價格待確認</div><div style="font-size: 0.72rem; color: #d97706;">官網未標牌價</div>';

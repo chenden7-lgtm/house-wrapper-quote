@@ -3,7 +3,7 @@
  * Filters accessories and combo packages by model, store brand, product type, and category.
  */
 
-import { ACCESSORIES, BUNDLES, TESLA_MODELS } from './data.js?v=20261112_v105';
+import { ACCESSORIES, BUNDLES, TESLA_MODELS } from './data.js?v=20261113_v106';
 
 export class FitmentEngine {
   constructor() {
