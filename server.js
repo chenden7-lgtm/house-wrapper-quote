@@ -114,7 +114,7 @@ const server = http.createServer(async (req, res) => {
     req.on('end', () => {
       try {
         const payload = JSON.parse(body || '{}');
-        const { id, name, price, originalPrice, partsPrice, installFee, isPendingConfirm, priceRange, description, variants } = payload;
+        const { id, name, price, originalPrice, partsPrice, installFee, isPendingConfirm, priceRange, description, variants, fitment } = payload;
         if (!id) {
           res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
           return res.end(JSON.stringify({ success: false, message: '缺少商品 ID' }));
@@ -133,6 +133,9 @@ const server = http.createServer(async (req, res) => {
             if (isPendingConfirm !== undefined) p.isPendingConfirm = !!isPendingConfirm;
             if (priceRange !== undefined) p.priceRange = priceRange;
             if (description !== undefined) p.shortDescription = description;
+            if (fitment !== undefined) {
+              p.fitment = Array.isArray(fitment) ? fitment : String(fitment).split(/[,，;；]+/).map(s => s.trim()).filter(Boolean);
+            }
             if (variants && typeof variants === 'object') {
               if (Array.isArray(variants)) {
                 p.variants = variants;

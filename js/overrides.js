@@ -79,6 +79,7 @@ export function applyCustomOverrides(products) {
       if (ov.priceRange !== undefined) p.priceRange = ov.priceRange;
       if (ov.description !== undefined) p.description = ov.description;
       if (ov.badge !== undefined) p.badge = ov.badge;
+      if (ov.fitment !== undefined) p.fitment = ov.fitment;
 
       if (ov.variants && Array.isArray(p.variants)) {
         p.variants.forEach(v => {

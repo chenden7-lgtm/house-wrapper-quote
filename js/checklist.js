@@ -3,7 +3,7 @@
  * Allows buyers to check off starter accessories, track budget, and export shopping list.
  */
 
-import { ACCESSORIES, INITIAL_CHECKLIST } from './data.js?v=20261113_v106';
+import { ACCESSORIES, INITIAL_CHECKLIST } from './data.js?v=20261114_v107';
 
 export class ChecklistManager {
   constructor(storageKey = 'tesla_owner_checklist') {

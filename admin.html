@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261113_v106">
+  <link rel="stylesheet" href="css/style.css?v=20261114_v107">
   <style>
     .admin-grid {
       display: grid;
@@ -426,7 +426,7 @@
       removeCustomOverride,
       clearAllCustomOverrides,
       applyCustomOverrides
-    } from './js/overrides.js?v=20261113_v106';
+    } from './js/overrides.js?v=20261114_v107';
 
     let allMasterProducts = [];
     let currentModelCounts = {};
@@ -444,6 +444,69 @@
       'mx_refresh': 'Model X',
       'cybertruck': 'Cybertruck'
     };
+
+    const FITMENT_TAG_OPTIONS = [
+      { id: 'all', name: '全車型通用 (all)' },
+      { id: 'm3_highland', name: 'Model 3 2024+ 煥新 (m3_highland)' },
+      { id: 'm3_2021_2023', name: 'Model 3 2021-23 (m3_2021_2023)' },
+      { id: 'm3_2018_2023', name: 'Model 3 2018-23 (m3_2018_2023)' },
+      { id: 'm3_2017_2020', name: 'Model 3 2018-20 (m3_2017_2020)' },
+      { id: 'my_classic', name: 'Model Y 2020-24 舊款 (my_classic)' },
+      { id: 'my_juniper', name: 'Model Y 2025+ 煥新 (my_juniper)' },
+      { id: 'ms_refresh', name: 'Model S (ms_refresh)' },
+      { id: 'mx_refresh', name: 'Model X (mx_refresh)' },
+      { id: 'cybertruck', name: 'Cybertruck (cybertruck)' }
+    ];
+
+    function parseFitmentList(str) {
+      if (!str) return [];
+      return str.split(/[,，;；]+/)
+        .map(s => s.trim())
+        .filter(Boolean);
+    }
+
+    function renderFitmentPills() {
+      const container = document.getElementById('modalFitmentPills');
+      if (!container) return;
+      const inputEl = document.getElementById('modalFitmentInput');
+      const currentTokens = parseFitmentList(inputEl ? inputEl.value : '');
+
+      container.innerHTML = FITMENT_TAG_OPTIONS.map(opt => {
+        const isSelected = currentTokens.includes(opt.id);
+        const bg = isSelected ? 'linear-gradient(135deg, #0284c7, #0369a1)' : 'var(--bg-card)';
+        const color = isSelected ? '#fff' : 'var(--text-bright)';
+        const border = isSelected ? '1px solid #38bdf8' : '1px solid var(--border-color)';
+        const shadow = isSelected ? 'box-shadow: 0 2px 8px rgba(2,132,199,0.35);' : '';
+
+        return `
+          <button type="button" class="btn-fitment-pill" data-model="${opt.id}" style="padding: 4px 10px; border-radius: 6px; font-size: 0.78rem; font-weight: 700; cursor: pointer; transition: all 0.15s ease; background: ${bg}; color: ${color}; border: ${border}; ${shadow}">
+            ${isSelected ? '✓ ' : '+ '}${opt.name}
+          </button>
+        `;
+      }).join('');
+
+      container.querySelectorAll('.btn-fitment-pill').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const modelId = btn.dataset.model;
+          let tokens = parseFitmentList(inputEl.value);
+
+          if (tokens.includes(modelId)) {
+            tokens = tokens.filter(t => t !== modelId);
+          } else {
+            if (modelId === 'all') {
+              tokens = ['all'];
+            } else {
+              tokens = tokens.filter(t => t !== 'all');
+              tokens.push(modelId);
+            }
+          }
+
+          inputEl.value = tokens.join(', ');
+          renderFitmentPills();
+        });
+      });
+    }
 
     function getAuthHeader() {
       const token = sessionStorage.getItem('adminToken') || '';
@@ -741,7 +804,9 @@
       }
 
       tbody.innerHTML = filtered.map((item, idx) => {
-        const fitBadges = (item.fitment || []).map(f => '<span class="badge-model">' + (MODEL_NAMES[f] || f) + '</span>').join('');
+        const fitBadges = (item.fitment && item.fitment.length > 0)
+          ? item.fitment.map(f => '<span class="badge-model" title="代碼: ' + f + '">' + (MODEL_NAMES[f] || f) + '</span>').join('')
+          : '<span class="badge-model" style="color:var(--text-dim);">全車型通用 (all)</span>';
         const typeBadge = item.category === 'bundle' 
           ? '<span style="color:#fbbf24; font-weight:600;">🎁 特惠禮包</span>' 
           : '<span style="color:var(--text-dim);">📦 單品配件</span>';
@@ -784,7 +849,12 @@
           '<td>' + typeBadge + '</td>' +
           '<td>' + priceDisplay + '</td>' +
           '<td>' + ruleBadge + '</td>' +
-          '<td>' + fitBadges + '</td>' +
+          '<td class="fitment-cell" data-id="' + item.id + '" style="cursor: pointer;" title="點擊可手動修改適用車型與版本">' +
+            '<div style="display: flex; flex-wrap: wrap; gap: 4px; align-items: center;">' +
+              fitBadges +
+              '<span style="font-size: 0.72rem; color: var(--primary); font-weight: 700; margin-left: 2px;" title="點擊編輯適用車型">✏️</span>' +
+            '</div>' +
+          '</td>' +
           '<td style="text-align: center;">' +
             '<button type="button" class="btn-edit-item" data-id="' + item.id + '" style="padding: 6px 12px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; cursor: pointer; white-space: nowrap; display: inline-flex; align-items: center; gap: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.25); ' + editBtnStyle + '">' +
               editBtnText +
@@ -799,6 +869,21 @@
         btn.addEventListener('click', (e) => {
           e.stopPropagation();
           openEditModal(btn.dataset.id);
+        });
+      });
+
+      // Bind fitment cell click events to quickly edit fitment
+      tbody.querySelectorAll('.fitment-cell').forEach(cell => {
+        cell.addEventListener('click', (e) => {
+          e.stopPropagation();
+          openEditModal(cell.dataset.id);
+          setTimeout(() => {
+            const fitInput = document.getElementById('modalFitmentInput');
+            if (fitInput) {
+              fitInput.focus();
+              fitInput.select();
+            }
+          }, 100);
         });
       });
 
@@ -818,6 +903,10 @@
       document.getElementById('modalItemIdText').innerText = 'SKU: ' + item.id;
       document.getElementById('modalOfficialLink').href = item.officialUrl || '#';
       document.getElementById('modalProductName').value = item.name || '';
+
+      // Fitment manual input & pills
+      document.getElementById('modalFitmentInput').value = (item.fitment || []).join(', ');
+      renderFitmentPills();
 
       const isPending = !!(item.isPendingConfirm || item.price === 0 || !item.price || item.priceRange === '價格待確認');
       document.getElementById('modalIsPendingCheckbox').checked = isPending;
@@ -907,6 +996,10 @@
       if (!item) return;
 
       const name = document.getElementById('modalProductName').value.trim() || item.name;
+      const fitmentRaw = document.getElementById('modalFitmentInput').value.trim();
+      const fitmentArray = parseFitmentList(fitmentRaw);
+      const finalFitment = fitmentArray.length > 0 ? fitmentArray : ['all'];
+
       const isPendingConfirm = document.getElementById('modalIsPendingCheckbox').checked;
       const totalPrice = Number(document.getElementById('modalTotalPrice').value) || 0;
       const partsPrice = Number(document.getElementById('modalPartsPrice').value) || 0;
@@ -915,6 +1008,7 @@
 
       const overrideData = {
         name,
+        fitment: finalFitment,
         price: totalPrice,
         originalPrice: totalPrice,
         partsPrice,
@@ -1062,6 +1156,19 @@
       }
     });
 
+    // Fitment input listeners
+    const fitmentInputEl = document.getElementById('modalFitmentInput');
+    if (fitmentInputEl) {
+      fitmentInputEl.addEventListener('input', renderFitmentPills);
+    }
+    const fitmentClearBtn = document.getElementById('modalFitmentClearBtn');
+    if (fitmentClearBtn) {
+      fitmentClearBtn.addEventListener('click', () => {
+        if (fitmentInputEl) fitmentInputEl.value = '';
+        renderFitmentPills();
+      });
+    }
+
     // Quick filter buttons
     document.getElementById('btnQuickPending').addEventListener('click', () => {
       document.getElementById('adminInstallStatusFilter').value = 'pending';
@@ -1203,6 +1310,23 @@
         <div style="margin-bottom: 1.2rem;">
           <label style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--text-bright); margin-bottom: 5px;">商品名稱</label>
           <input type="text" id="modalProductName" class="filter-input" style="width: 100%; font-size: 0.95rem; font-weight: 600;">
+        </div>
+
+        <!-- Applicable Models and Versions (Fitment) -->
+        <div style="margin-bottom: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+            <label style="font-size: 0.85rem; font-weight: 700; color: var(--text-bright); margin: 0; display: flex; align-items: center; gap: 6px;">
+              <span>🚗</span> 適用車型與版本 (支援直接手動輸入與快捷標籤)
+            </label>
+            <button id="modalFitmentClearBtn" type="button" style="background: none; border: none; font-size: 0.75rem; color: #f87171; cursor: pointer; text-decoration: underline;">清空全部</button>
+          </div>
+          <input type="text" id="modalFitmentInput" class="filter-input" placeholder="可直接手動輸入車型代碼或名稱，如: all 或 m3_highland, my_classic, my_juniper" style="width: 100%; font-size: 0.92rem; font-weight: 600; font-family: monospace; margin-bottom: 8px;">
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 6px; font-weight: 600;">
+            點擊下方常用車型標籤可快速加入或移除：
+          </div>
+          <div id="modalFitmentPills" style="display: flex; flex-wrap: wrap; gap: 6px;">
+            <!-- Rendered dynamically -->
+          </div>
         </div>
 
         <!-- Pending Status Toggle (Special for unpriced items) -->

@@ -3,8 +3,8 @@
  * Formats quote drafts, calculates combo discounts, and exports LINE-ready text.
  */
 
-import { ACCESSORIES, BUNDLES, TESLA_MODELS } from './data.js?v=20261113_v106';
-import { applyCustomOverrides } from './overrides.js?v=20261113_v106';
+import { ACCESSORIES, BUNDLES, TESLA_MODELS } from './data.js?v=20261114_v107';
+import { applyCustomOverrides } from './overrides.js?v=20261114_v107';
 
 export class QuotationManager {
   constructor(storageKey = 'quoteCart') {
