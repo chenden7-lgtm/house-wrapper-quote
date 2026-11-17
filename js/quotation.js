@@ -232,9 +232,18 @@ export class QuotationManager {
     lines.push(`指定車型：${selectedModelName}`);
     lines.push(`----------------------------------------`);
 
+    const hasTinting = details.some(item => 
+      (item.id && item.id.startsWith('tint-')) || 
+      (item.data && item.data.name && item.data.name.includes('[隔熱紙]'))
+    );
+
     details.forEach((item, index) => {
       let storeTag = '[JOWUA 官方正品]';
-      if (item.type === 'electrical') {
+      const isTint = (item.id && item.id.startsWith('tint-')) || (item.data && item.data.name && item.data.name.includes('[隔熱紙]'));
+
+      if (isTint) {
+        storeTag = '[☀️隔熱紙完工價]';
+      } else if (item.type === 'electrical') {
         storeTag = '[⚡️電系改裝]';
       } else if (item.data.storeId === 'quackev') {
         storeTag = '[呱樂完工價(已含安裝費)]';
@@ -255,7 +264,10 @@ export class QuotationManager {
         lines.push(`   └ 價格說明：官網無標示牌價，價格待確認 (含門市施工${item.data.installFee > 0 ? `，工資約${item.data.installFee}` : ''})`);
         lines.push(`   └ 數量：x${item.quantity}  報價：價格待確認`);
       } else {
-        if (item.isJowua) {
+        if (isTint) {
+          lines.push(`   └ 價格說明：隔熱紙完工價（含門市無塵室專業施工與品牌保固）`);
+          lines.push(`   └ 📢 提醒：隔熱紙透光度各品牌有所不同，請私訊官方 LINE 小編將協助提供深淺選擇！`);
+        } else if (item.isJowua) {
           lines.push(`   └ 價格說明：JOWUA 官方原廠牌價（含好室多膜協助代購安裝）`);
         } else if (item.data.storeId === 'quackev') {
           lines.push(`   └ 價格說明：已包含所有門市施工安裝費`);
@@ -271,6 +283,13 @@ export class QuotationManager {
 
     lines.push(`----------------------------------------`);
     lines.push(`💰 最終報價總額：NT$ ${totals.finalTotal.toLocaleString()}${totals.hasPending ? ' (+ 待確認項目另計)' : ''}`);
+
+    if (hasTinting) {
+      lines.push(`----------------------------------------`);
+      lines.push(`🔴【隔熱紙深淺透光度提醒】`);
+      lines.push(`   隔熱紙透光度各品牌有所不同，請私訊官方 LINE 小編將協助提供深淺選擇！`);
+      lines.push(`   （我們將依您的夜間視線與隔熱隱私偏好，專屬為您搭配最合適的前擋與車身深淺方案）`);
+    }
 
     if (this.customerNote.trim()) {
       lines.push(`📝 備註事項：${this.customerNote.trim()}`);
@@ -289,6 +308,10 @@ export class QuotationManager {
     const details = this.getItemDetails();
     const totals = this.calculateTotals();
     const selectedModelObj = TESLA_MODELS.find(m => m.id === selectedModelId) || TESLA_MODELS[0];
+    const hasTinting = details.some(item => 
+      (item.id && item.id.startsWith('tint-')) || 
+      (item.data && item.data.name && item.data.name.includes('[隔熱紙]'))
+    );
 
     container.innerHTML = `
       <div style="padding: 1.5rem;">
@@ -298,6 +321,16 @@ export class QuotationManager {
           </h2>
           <span style="font-size: 0.85rem; color: var(--text-muted);">鎖定車型：<strong>${selectedModelObj ? selectedModelObj.short : '全車型'}</strong></span>
         </div>
+
+        ${hasTinting ? `
+          <div style="background: rgba(239, 68, 68, 0.08); border: 1.5px solid #ef4444; border-left: 5px solid #dc2626; border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 0.6rem;">
+            <i class="fas fa-exclamation-circle" style="color: #dc2626; font-size: 1.15rem; margin-top: 2px; flex-shrink: 0;"></i>
+            <div style="font-size: 0.84rem; color: #dc2626; line-height: 1.5;">
+              <strong style="font-size: 0.9rem;">隔熱紙透光度各品牌有所不同，請私訊官方 LINE 小編將協助提供深淺選擇！</strong><br>
+              <span style="color: #ef4444; font-size: 0.8rem; font-weight: 600;">（複製報價單傳送至 LINE，小編將依您的夜間視線與隱私偏好，專屬協助挑選最合適的深淺透光度搭配）</span>
+            </div>
+          </div>
+        ` : ''}
 
         ${details.length === 0 ? `
           <div style="text-align: center; padding: 3rem 1rem; color: var(--text-muted); background: var(--bg-secondary); border-radius: var(--radius-md); border: 1px dashed var(--border-color);">
@@ -311,8 +344,13 @@ export class QuotationManager {
               let storeBadgeText = 'JOWUA 原廠正品';
               let badgeBg = 'rgba(232,86,55,0.15)';
               let badgeColor = 'var(--primary)';
+              const isTint = (item.id && item.id.startsWith('tint-')) || (item.data && item.data.name && item.data.name.includes('[隔熱紙]'));
 
-              if (item.type === 'electrical') {
+              if (isTint) {
+                storeBadgeText = '☀️ 隔熱紙完工價';
+                badgeBg = 'rgba(239, 68, 68, 0.15)';
+                badgeColor = '#dc2626';
+              } else if (item.type === 'electrical') {
                 storeBadgeText = '⚡️電系改裝';
                 badgeBg = 'rgba(232,86,55,0.2)';
                 badgeColor = 'var(--primary)';
@@ -342,6 +380,11 @@ export class QuotationManager {
                     ${item.variantTitle ? `
                       <div style="font-size: 0.78rem; color: var(--primary); font-weight: 600; margin-bottom: 2px;">
                         <i class="fas fa-check-circle" style="font-size: 0.7rem;"></i> 規格：${item.variantTitle}
+                      </div>
+                    ` : ''}
+                    ${isTint ? `
+                      <div style="font-size: 0.75rem; color: #dc2626; font-weight: 700; margin-bottom: 2px;">
+                        <i class="fas fa-info-circle"></i> 隔熱紙透光度各品牌有所不同，私訊 LINE 小編協助確認深淺
                       </div>
                     ` : ''}
                     <div style="font-size: 0.8rem; color: var(--text-muted);">
