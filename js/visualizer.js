@@ -3,7 +3,7 @@
  * Interactive car diagram hotspot selection & part fitting display.
  */
 
-import { ACCESSORIES, LOCATIONS } from './data.js?v=20261114_v107';
+import { ACCESSORIES, LOCATIONS } from './data.js?v=20261118_v109';
 
 export class Visualizer {
   constructor(containerId, onSelectPartCallback) {

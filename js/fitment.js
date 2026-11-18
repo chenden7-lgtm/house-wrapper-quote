@@ -3,7 +3,7 @@
  * Filters accessories and combo packages by model, store brand, product type, and category.
  */
 
-import { ACCESSORIES, BUNDLES, TESLA_MODELS } from './data.js?v=20261114_v107';
+import { ACCESSORIES, BUNDLES, TESLA_MODELS } from './data.js?v=20261118_v109';
 
 export class FitmentEngine {
   constructor() {
@@ -48,6 +48,7 @@ export class FitmentEngine {
    */
   checkCompatibility(item, modelId = this.selectedModelId) {
     if (!item) return { status: 'incompatible', note: '無效項目' };
+    if (item.hidden === true) return { status: 'incompatible', note: '已暫時關閉下架' };
 
     const title = item.name || '';
     const id = item.id || '';
@@ -207,6 +208,7 @@ export class FitmentEngine {
 
   getFilteredSingleItems() {
     return ACCESSORIES.filter(item => {
+      if (item.hidden === true) return false;
       // Model Fitment Filter - Filter out incompatible items
       const compat = this.checkCompatibility(item, this.selectedModelId);
       if (compat.status === 'incompatible') {
@@ -297,6 +299,7 @@ export class FitmentEngine {
 
   getFilteredBundles() {
     return BUNDLES.filter(bundle => {
+      if (bundle.hidden === true) return false;
       // Model Fitment Filter - Filter out incompatible bundles
       const compat = this.checkCompatibility(bundle, this.selectedModelId);
       if (compat.status === 'incompatible') {

@@ -15657,7 +15657,8 @@
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 20800,
       "installFee": 0,
-      "isPendingConfirm": false
+      "isPendingConfirm": false,
+      "hidden": true
     },
     {
       "id": "quack_54927",
@@ -15694,7 +15695,8 @@
       "lastUpdated": "2026-09-23T03:52:13.660Z",
       "partsPrice": 16000,
       "installFee": 0,
-      "isPendingConfirm": false
+      "isPendingConfirm": false,
+      "hidden": true
     },
     {
       "id": "quack_43297",

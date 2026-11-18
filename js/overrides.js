@@ -76,6 +76,7 @@ export function applyCustomOverrides(products) {
       if (ov.partsPrice !== undefined) p.partsPrice = ov.partsPrice;
       if (ov.installFee !== undefined) p.installFee = ov.installFee;
       if (ov.isPendingConfirm !== undefined) p.isPendingConfirm = ov.isPendingConfirm;
+      if (ov.hidden !== undefined) p.hidden = !!ov.hidden;
       if (ov.priceRange !== undefined) p.priceRange = ov.priceRange;
       if (ov.description !== undefined) p.description = ov.description;
       if (ov.badge !== undefined) p.badge = ov.badge;

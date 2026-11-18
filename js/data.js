@@ -10880,6 +10880,7 @@ export const ACCESSORIES = [
   },
   {
     "id": "quack_108799",
+    "hidden": true,
     "name": "呱樂電驢 - PAPAGO X898 行車記錄器 / 電子後視鏡 ( 煥新版 Model Y 2025+ )",
     "brand": "QuackEV",
     "storeId": "quackev",
@@ -10912,6 +10913,7 @@ export const ACCESSORIES = [
   },
   {
     "id": "quack_54927",
+    "hidden": true,
     "name": "呱樂電驢 - 快譯通電子後照鏡S95B（行車記錄器/測速提醒/前後鏡頭）",
     "brand": "QuackEV",
     "storeId": "quackev",

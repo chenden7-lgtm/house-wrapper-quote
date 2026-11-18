@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261117_v108">
+  <link rel="stylesheet" href="css/style.css?v=20261118_v109">
   <style>
     .admin-grid {
       display: grid;
@@ -334,6 +334,7 @@
           <option value="quack_installed">✅ 呱樂已含安裝費</option>
           <option value="pending">❓ 待確認 (門市例外項目)</option>
           <option value="overridden">✏️ 後台自訂調整項目</option>
+          <option value="hidden">🚫 已關閉/下架項目</option>
         </select>
       </div>
 
@@ -426,7 +427,7 @@
       removeCustomOverride,
       clearAllCustomOverrides,
       applyCustomOverrides
-    } from './js/overrides.js?v=20261117_v108';
+    } from './js/overrides.js?v=20261118_v109';
 
     let allMasterProducts = [];
     let currentModelCounts = {};
@@ -753,6 +754,7 @@
           if (installFilter === 'quack_installed' && (isJowua || isPending)) return false;
           if (installFilter === 'pending' && !isPending) return false;
           if (installFilter === 'overridden' && !item.isCustomOverridden) return false;
+          if (installFilter === 'hidden' && !item.hidden) return false;
         }
 
         // Keyword filter
@@ -839,11 +841,16 @@
           ? '⚠️ 調整金額' 
           : (item.isCustomOverridden ? '✏️ 已自訂' : '✏️ 調整');
 
-        return '<tr>' +
+        const hiddenBadge = item.hidden ? '<span style="background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.4); padding: 1px 6px; border-radius: 4px; font-weight: 800; font-size: 0.72rem; margin-left: 6px;">🚫 已關閉下架</span>' : '';
+        if (item.hidden) {
+          ruleBadge = '<span style="background: rgba(239, 68, 68, 0.15); color: #ef4444; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.78rem;">🚫 已關閉下架</span>';
+        }
+
+        return '<tr' + (item.hidden ? ' style="opacity: 0.62; background: rgba(239, 68, 68, 0.04);"' : '') + '>' +
           '<td>' + (idx + 1) + '</td>' +
           '<td><span class="badge" style="background: var(--bg-card-hover); font-weight: 600;">' + item.source + '</span></td>' +
           '<td>' +
-            '<div style="font-weight: 600; line-height: 1.35;">' + item.name + '</div>' +
+            '<div style="font-weight: 600; line-height: 1.35;">' + item.name + hiddenBadge + '</div>' +
             '<div style="font-size: 0.75rem; color: var(--text-dim); margin-top: 2px; font-family: monospace;">SKU: ' + item.id + '</div>' +
           '</td>' +
           '<td>' + typeBadge + '</td>' +
@@ -910,6 +917,8 @@
 
       const isPending = !!(item.isPendingConfirm || item.price === 0 || !item.price || item.priceRange === '價格待確認');
       document.getElementById('modalIsPendingCheckbox').checked = isPending;
+      const hiddenCb = document.getElementById('modalIsHiddenCheckbox');
+      if (hiddenCb) hiddenCb.checked = !!item.hidden;
 
       const price = item.price || 0;
       const installFee = item.installFee || 0;
@@ -1001,6 +1010,7 @@
       const finalFitment = fitmentArray.length > 0 ? fitmentArray : ['all'];
 
       const isPendingConfirm = document.getElementById('modalIsPendingCheckbox').checked;
+      const hidden = !!(document.getElementById('modalIsHiddenCheckbox') && document.getElementById('modalIsHiddenCheckbox').checked);
       const totalPrice = Number(document.getElementById('modalTotalPrice').value) || 0;
       const partsPrice = Number(document.getElementById('modalPartsPrice').value) || 0;
       const installFee = Number(document.getElementById('modalInstallFee').value) || 0;
@@ -1014,6 +1024,7 @@
         partsPrice,
         installFee,
         isPendingConfirm,
+        hidden,
         priceRange: isPendingConfirm ? '價格待確認' : (totalPrice > 0 ? 'NT$ ' + totalPrice.toLocaleString() : ''),
         description
       };
@@ -1326,6 +1337,17 @@
           </div>
           <div id="modalFitmentPills" style="display: flex; flex-wrap: wrap; gap: 6px;">
             <!-- Rendered dynamically -->
+          </div>
+        </div>
+
+        <!-- Visibility / Hide Toggle -->
+        <div style="background: rgba(239, 68, 68, 0.1); border: 1.5px solid rgba(239, 68, 68, 0.4); border-radius: 10px; padding: 12px 14px; margin-bottom: 1rem;">
+          <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: 800; font-size: 0.95rem; color: #f87171;">
+            <input type="checkbox" id="modalIsHiddenCheckbox" style="width: 18px; height: 18px; cursor: pointer; accent-color: #ef4444;">
+            🚫 暫時關閉 / 下架此商品（對外前台頁面隱藏不顯示）
+          </label>
+          <div style="font-size: 0.8rem; color: var(--text-dim); margin-top: 4px; margin-left: 26px; line-height: 1.4;">
+            勾選後此商品會立即從對外客戶頁隱藏（包含搜尋與車型篩選）；日後隨時可取消勾選重新開啟上架。
           </div>
         </div>
 

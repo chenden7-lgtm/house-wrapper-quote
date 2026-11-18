@@ -31,6 +31,7 @@ export function syncDataJs() {
 
     const item = {
       id: p.id,
+      hidden: !!p.hidden,
       name: p.name,
       brand: isJowua ? 'Jowua' : 'QuackEV',
       storeId: isJowua ? 'jowua' : 'quackev',
