@@ -4,7 +4,7 @@
  * 
  * 對外報價規則：
  * 1. 前擋 / 車身 / 天窗：採三家廠商（錸沛、ACME、星輝）最高成本價各加 NT$ 1,500
- * 2. 全車套裝優惠價（不含天窗）：維持內部三家最高套裝價（即不加價，作為套裝優惠）
+ * 2. 全車套裝優惠價（同系列全車套餐）：在原價基礎上統一加價 NT$ 3,000
  * 3. 客戶自選混搭折扣規則：
  *    - 選【前擋 ＋ 車身】：總金額自動現折 NT$ 500
  *    - 選【前擋 ＋ 車身 ＋ 天窗】：三部位全選總金額自動現折 NT$ 1,000
@@ -44,10 +44,10 @@ export const TINTING_BRANDS = [
         xinghui: { front: 15000, body: 25000, sunroof: 15000, full: 40000 }
       }
     },
-    // 對外報價 (各部位+1500，全車維持內部最高)
+    // 對外報價 (各部位+1500，全車+3000)
     prices: {
-      m3: { front: 16500, body: 36500, sunroof: 11500, full: 50000 },
-      my: { front: 16500, body: 26500, sunroof: 16500, full: 40000 }
+      m3: { front: 16500, body: 36500, sunroof: 11500, full: 53000 },
+      my: { front: 16500, body: 26500, sunroof: 16500, full: 43000 }
     }
   },
   {
@@ -71,8 +71,8 @@ export const TINTING_BRANDS = [
       }
     },
     prices: {
-      m3: { front: 15500, body: 23500, sunroof: 10500, full: 41000 },
-      my: { front: 13500, body: 21500, sunroof: 13500, full: 30000 }
+      m3: { front: 15500, body: 23500, sunroof: 10500, full: 44000 },
+      my: { front: 13500, body: 21500, sunroof: 13500, full: 33000 }
     }
   },
   {
@@ -96,8 +96,8 @@ export const TINTING_BRANDS = [
       }
     },
     prices: {
-      m3: { front: 11500, body: 21500, sunroof: 9500, full: 34000 },
-      my: { front: 11500, body: 19500, sunroof: 9500, full: 34000 }
+      m3: { front: 11500, body: 21500, sunroof: 9500, full: 37000 },
+      my: { front: 11500, body: 19500, sunroof: 9500, full: 37000 }
     }
   },
   {
@@ -121,8 +121,8 @@ export const TINTING_BRANDS = [
       }
     },
     prices: {
-      m3: { front: 7500, body: 16500, sunroof: 7500, full: 21000 },
-      my: { front: 8000, body: 13500, sunroof: 7500, full: 18500 }
+      m3: { front: 7500, body: 16500, sunroof: 7500, full: 24000 },
+      my: { front: 8000, body: 13500, sunroof: 7500, full: 21500 }
     }
   },
   {
@@ -146,8 +146,8 @@ export const TINTING_BRANDS = [
       }
     },
     prices: {
-      m3: { front: 13500, body: 25500, sunroof: 7500, full: 40000 },
-      my: { front: 13500, body: 21500, sunroof: 13500, full: 38000 }
+      m3: { front: 13500, body: 25500, sunroof: 7500, full: 43000 },
+      my: { front: 13500, body: 21500, sunroof: 13500, full: 41000 }
     }
   },
   {
@@ -171,8 +171,8 @@ export const TINTING_BRANDS = [
       }
     },
     prices: {
-      m3: { front: 11500, body: 17500, sunroof: 6500, full: 30000 },
-      my: { front: 11500, body: 16500, sunroof: 11500, full: 30000 }
+      m3: { front: 11500, body: 17500, sunroof: 6500, full: 33000 },
+      my: { front: 11500, body: 16500, sunroof: 11500, full: 33000 }
     }
   },
   {
@@ -196,8 +196,8 @@ export const TINTING_BRANDS = [
       }
     },
     prices: {
-      m3: { front: 16500, body: 31500, sunroof: 10500, full: 45000 },
-      my: { front: 16500, body: 31500, sunroof: 16500, full: 45000 }
+      m3: { front: 16500, body: 31500, sunroof: 10500, full: 48000 },
+      my: { front: 16500, body: 31500, sunroof: 16500, full: 48000 }
     }
   },
   {
@@ -221,8 +221,8 @@ export const TINTING_BRANDS = [
       }
     },
     prices: {
-      m3: { front: 16500, body: 31500, sunroof: 9500, full: 45000 },
-      my: { front: 16500, body: 31500, sunroof: 16500, full: 45000 }
+      m3: { front: 16500, body: 31500, sunroof: 9500, full: 48000 },
+      my: { front: 16500, body: 31500, sunroof: 16500, full: 48000 }
     }
   },
   {
@@ -246,8 +246,8 @@ export const TINTING_BRANDS = [
       }
     },
     prices: {
-      m3: { front: 11500, body: 25500, sunroof: 9500, full: 40000 },
-      my: { front: 11500, body: 21500, sunroof: 13500, full: 38000 }
+      m3: { front: 11500, body: 25500, sunroof: 9500, full: 43000 },
+      my: { front: 11500, body: 21500, sunroof: 13500, full: 41000 }
     }
   },
   {
@@ -271,8 +271,8 @@ export const TINTING_BRANDS = [
       }
     },
     prices: {
-      m3: { front: 10500, body: 17500, sunroof: 7500, full: 30000 },
-      my: { front: 10500, body: 17500, sunroof: 9500, full: 24000 }
+      m3: { front: 10500, body: 17500, sunroof: 7500, full: 33000 },
+      my: { front: 10500, body: 17500, sunroof: 9500, full: 27000 }
     }
   },
   {
@@ -296,8 +296,8 @@ export const TINTING_BRANDS = [
       }
     },
     prices: {
-      m3: { front: 11500, body: 19500, sunroof: 7500, full: 34000 },
-      my: { front: 11500, body: 15500, sunroof: 12500, full: 35000 }
+      m3: { front: 11500, body: 19500, sunroof: 7500, full: 37000 },
+      my: { front: 11500, body: 15500, sunroof: 12500, full: 38000 }
     }
   },
   {
