@@ -71,8 +71,8 @@ export const TINTING_BRANDS = [
       }
     },
     prices: {
-      m3: { front: 15500, body: 23500, sunroof: 10500, full: 44000 },
-      my: { front: 13500, body: 21500, sunroof: 13500, full: 33000 }
+      m3: { front: 15500, body: 23500, sunroof: 10500, full: 47000 },
+      my: { front: 13500, body: 21500, sunroof: 13500, full: 36000 }
     }
   },
   {
@@ -121,8 +121,8 @@ export const TINTING_BRANDS = [
       }
     },
     prices: {
-      m3: { front: 7500, body: 16500, sunroof: 7500, full: 24000 },
-      my: { front: 8000, body: 13500, sunroof: 7500, full: 21500 }
+      m3: { front: 7500, body: 16500, sunroof: 7500, full: 27000 },
+      my: { front: 8000, body: 13500, sunroof: 7500, full: 24500 }
     }
   },
   {
@@ -196,8 +196,8 @@ export const TINTING_BRANDS = [
       }
     },
     prices: {
-      m3: { front: 16500, body: 31500, sunroof: 10500, full: 48000 },
-      my: { front: 16500, body: 31500, sunroof: 16500, full: 48000 }
+      m3: { front: 16500, body: 31500, sunroof: 10500, full: 51000 },
+      my: { front: 16500, body: 31500, sunroof: 16500, full: 51000 }
     }
   },
   {
@@ -221,8 +221,8 @@ export const TINTING_BRANDS = [
       }
     },
     prices: {
-      m3: { front: 16500, body: 31500, sunroof: 9500, full: 48000 },
-      my: { front: 16500, body: 31500, sunroof: 16500, full: 48000 }
+      m3: { front: 16500, body: 31500, sunroof: 9500, full: 51000 },
+      my: { front: 16500, body: 31500, sunroof: 16500, full: 51000 }
     }
   },
   {
@@ -271,8 +271,8 @@ export const TINTING_BRANDS = [
       }
     },
     prices: {
-      m3: { front: 10500, body: 17500, sunroof: 7500, full: 33000 },
-      my: { front: 10500, body: 17500, sunroof: 9500, full: 27000 }
+      m3: { front: 10500, body: 17500, sunroof: 7500, full: 36000 },
+      my: { front: 10500, body: 17500, sunroof: 9500, full: 30000 }
     }
   },
   {
